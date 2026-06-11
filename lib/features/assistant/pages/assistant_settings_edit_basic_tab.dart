@@ -174,7 +174,7 @@ class _BasicSettingsTabState extends State<_BasicSettingsTab> {
               // Temperature
               _iosNavRow(
                 context,
-                icon: Lucide.Thermometer,
+                icon: Lucide.thermometer,
                 label: 'Temperature',
                 detailText: a.temperature != null
                     ? a.temperature!.toStringAsFixed(2)
@@ -185,7 +185,7 @@ class _BasicSettingsTabState extends State<_BasicSettingsTab> {
               // Top P
               _iosNavRow(
                 context,
-                icon: Lucide.Wand2,
+                icon: Lucide.wand2,
                 label: 'Top P',
                 detailText: a.topP != null
                     ? a.topP!.toStringAsFixed(2)
@@ -196,7 +196,7 @@ class _BasicSettingsTabState extends State<_BasicSettingsTab> {
               // Context messages
               _iosNavRow(
                 context,
-                icon: Lucide.MessagesSquare,
+                icon: Lucide.messagesSquare,
                 label: l10n.assistantEditContextMessagesTitle,
                 detailText: a.limitContextMessages
                     ? a.contextMessageSize.toString()
@@ -207,7 +207,7 @@ class _BasicSettingsTabState extends State<_BasicSettingsTab> {
               // Thinking budget
               _iosNavRow(
                 context,
-                icon: Lucide.Brain,
+                icon: Lucide.brain,
                 label: l10n.assistantEditThinkingBudgetTitle,
                 detailText: a.thinkingBudget?.toString() ?? '-',
                 onTap: () async {
@@ -233,7 +233,7 @@ class _BasicSettingsTabState extends State<_BasicSettingsTab> {
               // Max tokens
               _iosNavRow(
                 context,
-                icon: Lucide.Hash,
+                icon: Lucide.hash,
                 label: l10n.assistantEditMaxTokensTitle,
                 detailText:
                     a.maxTokens?.toString() ?? l10n.assistantEditMaxTokensHint,
@@ -243,7 +243,7 @@ class _BasicSettingsTabState extends State<_BasicSettingsTab> {
               // Use assistant avatar
               _iosSwitchRow(
                 context,
-                icon: Lucide.User,
+                icon: Lucide.user,
                 label: l10n.assistantEditUseAssistantAvatarTitle,
                 value: a.useAssistantAvatar,
                 onChanged: (v) => context
@@ -253,7 +253,7 @@ class _BasicSettingsTabState extends State<_BasicSettingsTab> {
               _iosDivider(context),
               _iosSwitchRow(
                 context,
-                icon: Lucide.CaseSensitive,
+                icon: Lucide.caseSensitive,
                 label: l10n.assistantEditUseAssistantNameTitle,
                 value: a.useAssistantName,
                 onChanged: (v) => context
@@ -264,7 +264,7 @@ class _BasicSettingsTabState extends State<_BasicSettingsTab> {
               // Stream output
               _iosSwitchRow(
                 context,
-                icon: Lucide.Zap,
+                icon: Lucide.zap,
                 label: l10n.assistantEditStreamOutputTitle,
                 value: a.streamOutput,
                 onChanged: (v) => context
@@ -295,7 +295,7 @@ class _BasicSettingsTabState extends State<_BasicSettingsTab> {
               children: [
                 Row(
                   children: [
-                    Icon(Lucide.MessageCircle, size: 18, color: cs.onSurface),
+                    Icon(Lucide.messageCircle, size: 18, color: cs.onSurface),
                     const SizedBox(width: 8),
                     Expanded(
                       child: Text(
@@ -312,7 +312,7 @@ class _BasicSettingsTabState extends State<_BasicSettingsTab> {
                       Tooltip(
                         message: l10n.defaultModelPageResetDefault,
                         child: _TactileIconButton(
-                          icon: Lucide.RotateCcw,
+                          icon: Lucide.rotateCcw,
                           color: cs.onSurface,
                           size: 20,
                           onTap: () async {
@@ -431,7 +431,7 @@ class _BasicSettingsTabState extends State<_BasicSettingsTab> {
               children: [
                 Row(
                   children: [
-                    Icon(Lucide.Image, size: 18, color: cs.onSurface),
+                    Icon(Lucide.image, size: 18, color: cs.onSurface),
                     const SizedBox(width: 8),
                     Expanded(
                       child: Text(
@@ -524,7 +524,7 @@ class _BasicSettingsTabState extends State<_BasicSettingsTab> {
                       Expanded(
                         child: _IosButton(
                           label: l10n.assistantEditClearButton,
-                          icon: Lucide.X,
+                          icon: Lucide.x,
                           onTap: () =>
                               context.read<AssistantProvider>().updateAssistant(
                                 a.copyWith(clearBackground: true),
@@ -1074,7 +1074,7 @@ class _BasicSettingsTabState extends State<_BasicSettingsTab> {
                 Row(
                   children: [
                     _TactileIconButton(
-                      icon: Lucide.X,
+                      icon: Lucide.x,
                       color: cs.onSurface,
                       size: 20,
                       onTap: () => Navigator.of(ctx).pop(),

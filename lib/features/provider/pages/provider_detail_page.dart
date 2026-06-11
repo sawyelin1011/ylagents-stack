@@ -150,7 +150,7 @@ class _ProviderDetailPageState extends State<ProviderDetailPage> {
         leading: Tooltip(
           message: l10n.settingsPageBackButton,
           child: _TactileIconButton(
-            icon: Lucide.ArrowLeft,
+            icon: Lucide.arrowLeft,
             color: cs.onSurface,
             semanticLabel: l10n.settingsPageBackButton,
             size: 22,
@@ -188,7 +188,7 @@ class _ProviderDetailPageState extends State<ProviderDetailPage> {
             Tooltip(
               message: l10n.providerDetailPageTestButton,
               child: _TactileIconButton(
-                icon: Lucide.HeartPulse,
+                icon: Lucide.heartPulse,
                 color: cs.onSurface,
                 semanticLabel: l10n.providerDetailPageTestButton,
                 size: 22,
@@ -202,7 +202,7 @@ class _ProviderDetailPageState extends State<ProviderDetailPage> {
             Tooltip(
               message: l10n.providerDetailPageCancelButton,
               child: _TactileIconButton(
-                icon: Lucide.X,
+                icon: Lucide.x,
                 color: cs.onSurface,
                 semanticLabel: l10n.providerDetailPageCancelButton,
                 size: 22,
@@ -215,7 +215,7 @@ class _ProviderDetailPageState extends State<ProviderDetailPage> {
                   ? l10n.providerDetailPageBatchDetecting
                   : l10n.providerDetailPageMultiSelectButton,
               child: _TactileIconButton(
-                icon: _isDetecting ? Lucide.Loader : Lucide.CheckSquare,
+                icon: _isDetecting ? Lucide.loader : Lucide.checkSquare,
                 color: cs.onSurface,
                 semanticLabel: _isDetecting
                     ? l10n.providerDetailPageBatchDetecting
@@ -227,7 +227,7 @@ class _ProviderDetailPageState extends State<ProviderDetailPage> {
           Tooltip(
             message: l10n.providerDetailPageShareTooltip,
             child: _TactileIconButton(
-              icon: Lucide.Share2,
+              icon: Lucide.share2,
               color: cs.onSurface,
               semanticLabel: l10n.providerDetailPageShareTooltip,
               size: 22,
@@ -240,7 +240,7 @@ class _ProviderDetailPageState extends State<ProviderDetailPage> {
             Tooltip(
               message: l10n.providerDetailPageDeleteProviderTooltip,
               child: _TactileIconButton(
-                icon: Lucide.Trash2,
+                icon: Lucide.trash2,
                 color: cs.error,
                 semanticLabel: l10n.providerDetailPageDeleteProviderTooltip,
                 size: 22,
@@ -311,9 +311,9 @@ class _ProviderDetailPageState extends State<ProviderDetailPage> {
           padding: const EdgeInsets.fromLTRB(12, 6, 12, 10),
           child: _BottomTabs(
             index: _index,
-            leftIcon: Lucide.Settings2,
+            leftIcon: Lucide.settings2,
             leftLabel: l10n.providerDetailPageConfigTab,
-            rightIcon: Lucide.Boxes,
+            rightIcon: Lucide.boxes,
             rightLabel: l10n.providerDetailPageModelsTab,
             onSelect: (i) {
               setState(() => _index = i);
@@ -759,7 +759,7 @@ class _ProviderDetailPageState extends State<ProviderDetailPage> {
                                 style: TextStyle(fontSize: 15, color: c),
                               ),
                             ),
-                            Icon(Lucide.ChevronRight, size: 16, color: c),
+                            Icon(Lucide.chevronRight, size: 16, color: c),
                           ],
                         ),
                       );
@@ -880,7 +880,7 @@ class _ProviderDetailPageState extends State<ProviderDetailPage> {
                               style: TextStyle(fontSize: 15, color: c),
                             ),
                           ),
-                          Icon(Lucide.ChevronRight, size: 16, color: c),
+                          Icon(Lucide.chevronRight, size: 16, color: c),
                         ],
                       ),
                     );
@@ -914,7 +914,7 @@ class _ProviderDetailPageState extends State<ProviderDetailPage> {
                     ? l10n.providerDetailPageHideTooltip
                     : l10n.providerDetailPageShowTooltip,
                 icon: Icon(
-                  _showApiKey ? Lucide.EyeOff : Lucide.Eye,
+                  _showApiKey ? Lucide.eyeOff : Lucide.eye,
                   color: cs.onSurface.withValues(alpha: 0.7),
                   size: 18,
                 ),
@@ -979,7 +979,7 @@ class _ProviderDetailPageState extends State<ProviderDetailPage> {
               actions: [
                 TextButton.icon(
                   onPressed: _importServiceAccountJson,
-                  icon: Icon(Lucide.Upload, size: 16),
+                  icon: Icon(Lucide.upload, size: 16),
                   label: Text(l10n.providerDetailPageImportJsonButton),
                 ),
               ],
@@ -1129,7 +1129,7 @@ class _ProviderDetailPageState extends State<ProviderDetailPage> {
                                 mainAxisSize: MainAxisSize.min,
                                 children: [
                                   Icon(
-                                    Lucide.Trash2,
+                                    Lucide.trash2,
                                     color: cs.error,
                                     size: 18,
                                   ),
@@ -1421,7 +1421,7 @@ class _ProviderDetailPageState extends State<ProviderDetailPage> {
               padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
               child: Row(
                 children: [
-                  // Icon(Lucide.Coins, size: 18, color: c),
+                  // Icon(Lucide.coins, size: 18, color: c),
                   // const SizedBox(width: 10),
                   Expanded(
                     child: Text(
@@ -1446,7 +1446,7 @@ class _ProviderDetailPageState extends State<ProviderDetailPage> {
                     ),
                     const SizedBox(width: 8),
                   ],
-                  Icon(Lucide.ChevronRight, size: 16, color: c),
+                  Icon(Lucide.chevronRight, size: 16, color: c),
                 ],
               ),
             );
@@ -1646,7 +1646,7 @@ class _ProviderDetailPageState extends State<ProviderDetailPage> {
                     style: TextStyle(fontSize: 15, color: c),
                   ),
                   const SizedBox(width: 6),
-                  Icon(Lucide.ChevronRight, size: 16, color: c),
+                  Icon(Lucide.chevronRight, size: 16, color: c),
                 ],
               ),
             );
@@ -1705,7 +1705,7 @@ class _ProviderDetailPageState extends State<ProviderDetailPage> {
                         ),
                       ),
                       const SizedBox(width: 6),
-                      Icon(Lucide.ChevronRight, size: 16, color: c),
+                      Icon(Lucide.chevronRight, size: 16, color: c),
                     ],
                   );
                 },
@@ -2050,7 +2050,7 @@ class _ProviderDetailPageState extends State<ProviderDetailPage> {
                 fit: FlexFit.loose,
                 child: _buildActionToolbarButton(
                   label: l10n.providerDetailPageFetchModelsButton,
-                  icon: Lucide.Boxes,
+                  icon: Lucide.boxes,
                   showLabel: !compact,
                   padding: compact ? iconButtonPadding : textButtonPadding,
                   colorScheme: cs,
@@ -2063,7 +2063,7 @@ class _ProviderDetailPageState extends State<ProviderDetailPage> {
                 fit: FlexFit.loose,
                 child: _buildActionToolbarButton(
                   label: l10n.providerDetailPageAddNewModelButton,
-                  icon: Lucide.Plus,
+                  icon: Lucide.plus,
                   showLabel: !compact,
                   padding: compact ? iconButtonPadding : textButtonPadding,
                   colorScheme: cs,
@@ -2079,7 +2079,7 @@ class _ProviderDetailPageState extends State<ProviderDetailPage> {
                 SizedBox(width: itemGap),
                 _buildActionToolbarButton(
                   label: l10n.providerDetailPageDeleteAllModelsTooltip,
-                  icon: Lucide.Trash2,
+                  icon: Lucide.trash2,
                   showLabel: false,
                   padding: const EdgeInsets.symmetric(
                     horizontal: 12,
@@ -2192,7 +2192,7 @@ class _ProviderDetailPageState extends State<ProviderDetailPage> {
         final selectLabel = allSelected
             ? l10n.mcpAssistantSheetClearAll
             : l10n.mcpAssistantSheetSelectAll;
-        final selectIcon = allSelected ? Lucide.Square : Lucide.CheckSquare;
+        final selectIcon = allSelected ? Lucide.square : Lucide.checkSquare;
         final deleteDisabled = _selectedModels.isEmpty || _isDetecting;
 
         return _buildToolbarShell(
@@ -2354,7 +2354,7 @@ class _ProviderDetailPageState extends State<ProviderDetailPage> {
               transitionBuilder: (child, anim) =>
                   ScaleTransition(scale: anim, child: child),
               child: Icon(
-                _detectUseStream ? Lucide.AudioWaveform : Lucide.SquareEqual,
+                _detectUseStream ? Lucide.audioWaveform : Lucide.squareEqual,
                 key: ValueKey(_detectUseStream),
                 size: 18,
                 color: colorScheme.onSurface,
@@ -2399,7 +2399,7 @@ class _ProviderDetailPageState extends State<ProviderDetailPage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Icon(
-                  _isDetecting ? Lucide.Loader : Lucide.HeartPulse,
+                  _isDetecting ? Lucide.loader : Lucide.heartPulse,
                   size: 20,
                   color: disabled
                       ? colorScheme.onSurface.withValues(alpha: 0.5)
@@ -2461,7 +2461,7 @@ class _ProviderDetailPageState extends State<ProviderDetailPage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Icon(
-                  Lucide.Trash2,
+                  Lucide.trash2,
                   size: 20,
                   color: disabled
                       ? colorScheme.onSurface.withValues(alpha: 0.5)
@@ -2877,7 +2877,7 @@ class _ProviderDetailPageState extends State<ProviderDetailPage> {
                                   ? Colors.white10
                                   : const Color(0xFFF2F3F5),
                               prefixIcon: Icon(
-                                Lucide.Search,
+                                Lucide.search,
                                 size: 20,
                                 color: cs.onSurface.withValues(alpha: 0.7),
                               ),
@@ -2901,8 +2901,8 @@ class _ProviderDetailPageState extends State<ProviderDetailPage> {
                                           ),
                                           icon: Icon(
                                             allSelected
-                                                ? Lucide.Square
-                                                : Lucide.CheckSquare,
+                                                ? Lucide.square
+                                                : Lucide.checkSquare,
                                             size: 22,
                                             color: cs.onSurface.withValues(
                                               alpha: 0.7,
@@ -2959,7 +2959,7 @@ class _ProviderDetailPageState extends State<ProviderDetailPage> {
                                         minHeight: 40,
                                       ),
                                       icon: Icon(
-                                        Lucide.Repeat,
+                                        Lucide.repeat,
                                         size: 22,
                                         color: cs.onSurface.withValues(
                                           alpha: 0.7,
@@ -3099,7 +3099,7 @@ class _ProviderDetailPageState extends State<ProviderDetailPage> {
                                                           curve: Curves
                                                               .easeOutCubic,
                                                           child: Icon(
-                                                            Lucide.ChevronRight,
+                                                            Lucide.chevronRight,
                                                             size: 20,
                                                             color: cs.onSurface
                                                                 .withValues(
@@ -3147,8 +3147,8 @@ class _ProviderDetailPageState extends State<ProviderDetailPage> {
                                                               : l10n.providerDetailPageAddGroupTooltip,
                                                           icon: Icon(
                                                             allAdded
-                                                                ? Lucide.Minus
-                                                                : Lucide.Plus,
+                                                                ? Lucide.minus
+                                                                : Lucide.plus,
                                                             size: 24,
                                                             color: allAdded
                                                                 ? cs.onSurface
@@ -3376,8 +3376,8 @@ class _ProviderDetailPageState extends State<ProviderDetailPage> {
                                                                         },
                                                                         icon: Icon(
                                                                           added
-                                                                              ? Lucide.Minus
-                                                                              : Lucide.Plus,
+                                                                              ? Lucide.minus
+                                                                              : Lucide.plus,
                                                                           size:
                                                                               24,
                                                                           color:
@@ -3482,7 +3482,7 @@ class _ModelCard extends StatelessWidget {
                   : (detectionErrorMessage ??
                         l10n.providerDetailPageDetectFailed),
               child: Icon(
-                detectionResult! ? Lucide.CheckCircle : Lucide.XCircle,
+                detectionResult! ? Lucide.checkCircle : Lucide.xCircle,
                 size: 16,
                 color: detectionResult! ? Colors.green : cs.error,
               ),
@@ -3537,7 +3537,7 @@ class _ModelCard extends StatelessWidget {
                 if (!isSelectionMode) ...[
                   const SizedBox(width: 8),
                   _TactileIconButton(
-                    icon: Lucide.Settings2,
+                    icon: Lucide.settings2,
                     color: cs.onSurface.withValues(alpha: 0.7),
                     size: 18,
                     semanticLabel: l10n.providerDetailPageEditTooltip,
@@ -3834,7 +3834,7 @@ class _ConnectionTestDialogState extends State<_ConnectionTestDialog> {
                     ),
                     const SizedBox(width: 8),
                     Icon(
-                      Lucide.ChevronDown,
+                      Lucide.chevronDown,
                       size: 16,
                       color: cs.onSurface.withValues(alpha: 0.7),
                     ),

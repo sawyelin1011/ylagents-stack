@@ -502,7 +502,7 @@ class _AddProviderSheetState extends State<_AddProviderSheet>
                       child: Padding(
                         padding: const EdgeInsets.only(left: 8),
                         child: _TactileIconButton(
-                          icon: Lucide.X,
+                          icon: Lucide.x,
                           color: cs.onSurface,
                           size: 22,
                           onTap: () => Navigator.of(context).maybePop(),
@@ -550,7 +550,7 @@ class _AddProviderSheetState extends State<_AddProviderSheet>
                 child: SizedBox(
                   width: double.infinity,
                   child: IosTileButton(
-                    icon: Lucide.Plus,
+                    icon: Lucide.plus,
                     label: l10n.addProviderSheetAddButton,
                     backgroundColor: cs.primary,
                     // No need to set foreground/border; component tints background lightly,

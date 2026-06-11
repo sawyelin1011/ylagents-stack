@@ -5,7 +5,7 @@ import 'slack_adapter.dart';
 import 'email_adapter.dart';
 import 'webhook_adapter.dart';
 import 'web_widget_adapter.dart';
-import '../models/agent_channel.dart';
+import '../../models/agent_channel.dart';
 
 /// Registry of all available channel adapters.
 ///

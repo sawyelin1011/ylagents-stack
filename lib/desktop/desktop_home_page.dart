@@ -177,7 +177,7 @@ class _DesktopHomePageState extends State<DesktopHomePage> {
         PopupMenuItem(
           value: 'translate',
           child: ListTile(
-            leading: const Icon(lucide.Lucide.Languages, size: 18),
+            leading: const Icon(lucide.Lucide.languages, size: 18),
             title: Text(l10n.desktopNavTranslateTooltip),
             dense: true,
             contentPadding: EdgeInsets.zero,
@@ -186,7 +186,7 @@ class _DesktopHomePageState extends State<DesktopHomePage> {
         PopupMenuItem(
           value: 'storage',
           child: ListTile(
-            leading: const Icon(lucide.Lucide.Folder, size: 18),
+            leading: const Icon(lucide.Lucide.folder, size: 18),
             title: Text(l10n.desktopNavStorageTooltip),
             dense: true,
             contentPadding: EdgeInsets.zero,

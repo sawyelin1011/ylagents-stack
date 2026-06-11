@@ -170,7 +170,7 @@ class _UserProfileDialogBodyState extends State<_UserProfileDialogBody> {
                             ),
                           ),
                           child: Icon(
-                            lucide.Lucide.Pencil,
+                            lucide.Lucide.pencil,
                             size: 14,
                             color: cs.onPrimary,
                           ),
@@ -245,7 +245,7 @@ class _UserProfileDialogBodyState extends State<_UserProfileDialogBody> {
       offset: const Offset(0, 8),
       items: [
         DesktopContextMenuItem(
-          icon: lucide.Lucide.User,
+          icon: lucide.Lucide.user,
           label: l10n.desktopAvatarMenuUseEmoji,
           onTap: () async {
             final emoji = await showEmojiPickerDialog(
@@ -259,7 +259,7 @@ class _UserProfileDialogBodyState extends State<_UserProfileDialogBody> {
           },
         ),
         DesktopContextMenuItem(
-          icon: lucide.Lucide.Image,
+          icon: lucide.Lucide.image,
           label: l10n.desktopAvatarMenuChangeFromImage,
           onTap: () async {
             // Desktop: choose an image file and persist it into app's avatars folder
@@ -291,7 +291,7 @@ class _UserProfileDialogBodyState extends State<_UserProfileDialogBody> {
           },
         ),
         DesktopContextMenuItem(
-          icon: lucide.Lucide.Link,
+          icon: lucide.Lucide.link,
           label: l10n.sideDrawerEnterLink,
           onTap: () async {
             await _inputAvatarUrl(context);
@@ -305,7 +305,7 @@ class _UserProfileDialogBodyState extends State<_UserProfileDialogBody> {
           },
         ),
         DesktopContextMenuItem(
-          icon: lucide.Lucide.RotateCw,
+          icon: lucide.Lucide.rotateCw,
           label: l10n.desktopAvatarMenuReset,
           onTap: () async {
             await up.resetAvatar();

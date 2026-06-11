@@ -20,7 +20,7 @@ class AgentTeam {
   final DateTime createdAt;
   final DateTime updatedAt;
 
-  const AgentTeam({
+  AgentTeam({
     required this.id,
     required this.name,
     this.description,

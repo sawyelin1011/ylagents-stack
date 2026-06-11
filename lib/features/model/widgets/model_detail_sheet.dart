@@ -333,7 +333,7 @@ class _ModelDetailSheetState extends State<_ModelDetailSheet>
         child: Row(
           children: [
             IosIconButton(
-              icon: Lucide.X,
+              icon: Lucide.x,
               size: 22,
               color: cs.onSurface,
               minSize: 36,
@@ -461,7 +461,7 @@ class _ModelDetailSheetState extends State<_ModelDetailSheet>
                             );
                           },
                           tooltip: l10n.shareProviderSheetCopyButton,
-                          icon: Lucide.Copy,
+                          icon: Lucide.copy,
                           color: cs.onSurface.withValues(alpha: 0.9),
                           hoverColor: cs.onSurface.withValues(alpha: 0.08),
                           pressedColor: cs.onSurface.withValues(alpha: 0.12),
@@ -801,7 +801,7 @@ class _ModelDetailSheetState extends State<_ModelDetailSheet>
       child: SizedBox(
         width: double.infinity,
         child: IosTileButton(
-          icon: widget.isNew ? Lucide.Plus : Lucide.Check,
+          icon: widget.isNew ? Lucide.plus : Lucide.check,
           label: widget.isNew
               ? l10n.modelDetailSheetAddButton
               : l10n.modelDetailSheetConfirmButton,
@@ -997,7 +997,7 @@ class _SegmentedSingle extends StatelessWidget {
                         Padding(
                           padding: const EdgeInsets.only(right: 6),
                           child: Icon(
-                            Lucide.Check,
+                            Lucide.check,
                             size: 16,
                             color: cs.primary,
                           ),
@@ -1112,7 +1112,7 @@ class _SegmentedMulti extends StatelessWidget {
                               Padding(
                                 padding: const EdgeInsets.only(right: 6),
                                 child: Icon(
-                                  Lucide.Check,
+                                  Lucide.check,
                                   size: 16,
                                   color: cs.primary,
                                 ),
@@ -1192,7 +1192,7 @@ class _HeaderRow extends StatelessWidget {
                 ),
               ),
               IosIconButton(
-                icon: Lucide.Trash2,
+                icon: Lucide.trash2,
                 size: 20,
                 color: cs.onSurface.withValues(alpha: 0.8),
                 onTap: onDelete,
@@ -1286,7 +1286,7 @@ class _BodyRow extends StatelessWidget {
                 ),
               ),
               IosIconButton(
-                icon: Lucide.Trash2,
+                icon: Lucide.trash2,
                 size: 20,
                 color: cs.onSurface.withValues(alpha: 0.8),
                 onTap: onDelete,
@@ -1413,7 +1413,7 @@ class _OutlinedAddButton extends StatelessWidget {
         child: Row(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Icon(Lucide.Plus, size: 18, color: cs.primary),
+            Icon(Lucide.plus, size: 18, color: cs.primary),
             const SizedBox(width: 6),
             Text(label, style: TextStyle(color: cs.primary)),
           ],

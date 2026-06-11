@@ -43,7 +43,7 @@ class ChatSelectionAppBar extends StatelessWidget
         mainAxisSize: MainAxisSize.min,
         children: [
           IosIconButton(
-            icon: Lucide.X,
+            icon: Lucide.x,
             size: 22,
             minSize: 44,
             semanticLabel: l10n.homePageCancel,
@@ -52,7 +52,7 @@ class ChatSelectionAppBar extends StatelessWidget
           if (onOpenMiniMap != null)
             IosIconButton(
               key: miniMapKey,
-              icon: Lucide.Map,
+              icon: Lucide.map,
               size: 20,
               minSize: 44,
               semanticLabel: l10n.miniMapTooltip,

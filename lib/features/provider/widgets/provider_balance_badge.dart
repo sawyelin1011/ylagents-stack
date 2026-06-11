@@ -144,7 +144,7 @@ class _ProviderBalanceBadgeState extends State<ProviderBalanceBadge> {
     final child = Row(
       mainAxisSize: MainAxisSize.min,
       children: [
-        Icon(Lucide.Coins, size: iconSize, color: color),
+        Icon(Lucide.coins, size: iconSize, color: color),
         const SizedBox(width: 4),
         Flexible(
           child: Text(

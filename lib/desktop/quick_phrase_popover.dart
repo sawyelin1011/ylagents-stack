@@ -293,7 +293,7 @@ class _RowItemState extends State<_RowItem> {
             children: [
               // Left: icon + title
               Icon(
-                widget.isGlobal ? Lucide.Zap : Lucide.botMessageSquare,
+                widget.isGlobal ? Lucide.zap : Lucide.botMessageSquare,
                 size: 16,
                 color: Theme.of(
                   context,

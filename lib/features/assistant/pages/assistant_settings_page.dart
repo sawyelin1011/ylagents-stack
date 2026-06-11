@@ -30,7 +30,7 @@ class AssistantSettingsPage extends StatelessWidget {
         leading: Tooltip(
           message: l10n.settingsPageBackButton,
           child: _TactileIconButton(
-            icon: Lucide.ArrowLeft,
+            icon: Lucide.arrowLeft,
             color: cs.onSurface,
             size: 22,
             onTap: () => Navigator.of(context).maybePop(),
@@ -41,7 +41,7 @@ class AssistantSettingsPage extends StatelessWidget {
           Tooltip(
             message: l10n.assistantSettingsAddSheetSave,
             child: _TactileIconButton(
-              icon: Lucide.Plus,
+              icon: Lucide.plus,
               color: cs.onSurface,
               size: 22,
               onTap: () async {
@@ -239,7 +239,7 @@ class _AssistantCard extends StatelessWidget {
                     child: Row(
                       mainAxisSize: MainAxisSize.min,
                       children: [
-                        Icon(Lucide.Copy, color: cs.primary, size: 18),
+                        Icon(Lucide.copy, color: cs.primary, size: 18),
                         const SizedBox(width: 6),
                         Text(
                           l10n.assistantSettingsCopyButton,
@@ -300,7 +300,7 @@ class _AssistantCard extends StatelessWidget {
                     child: Row(
                       mainAxisSize: MainAxisSize.min,
                       children: [
-                        Icon(Lucide.Trash2, color: cs.error, size: 18),
+                        Icon(Lucide.trash2, color: cs.error, size: 18),
                         const SizedBox(width: 6),
                         Text(
                           l10n.assistantSettingsDeleteButton,

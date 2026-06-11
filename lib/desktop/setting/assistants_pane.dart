@@ -142,7 +142,7 @@ class _AddAssistantButtonState extends State<_AddAssistantButton> {
             color: bg,
             borderRadius: BorderRadius.circular(10),
           ),
-          child: Icon(lucide.Lucide.Plus, size: 16, color: cs.primary),
+          child: Icon(lucide.Lucide.plus, size: 16, color: cs.primary),
         ),
       ),
     );
@@ -187,7 +187,7 @@ Future<String?> _showAddAssistantDesktopDialog(BuildContext context) async {
                         tooltip: MaterialLocalizations.of(
                           ctx,
                         ).closeButtonTooltip,
-                        icon: const Icon(lucide.Lucide.X, size: 18),
+                        icon: const Icon(lucide.Lucide.x, size: 18),
                         color: cs.onSurface,
                         onPressed: () => Navigator.of(ctx).maybePop(),
                       ),
@@ -289,7 +289,7 @@ class _DeleteAssistantIconState extends State<_DeleteAssistantIcon> {
           height: 28,
           decoration: BoxDecoration(color: bg, shape: BoxShape.circle),
           alignment: Alignment.center,
-          child: Icon(lucide.Lucide.Trash2, size: 15, color: cs.error),
+          child: Icon(lucide.Lucide.trash2, size: 15, color: cs.error),
         ),
       ),
     );
@@ -326,7 +326,7 @@ class _CopyAssistantIconState extends State<_CopyAssistantIcon> {
           height: 28,
           decoration: BoxDecoration(color: bg, shape: BoxShape.circle),
           alignment: Alignment.center,
-          child: Icon(lucide.Lucide.Copy, size: 15, color: cs.primary),
+          child: Icon(lucide.Lucide.copy, size: 15, color: cs.primary),
         ),
       ),
     );
@@ -385,7 +385,7 @@ Future<bool?> _confirmDeleteDesktop(BuildContext context) async {
                             tooltip: MaterialLocalizations.of(
                               ctx,
                             ).closeButtonTooltip,
-                            icon: const Icon(lucide.Lucide.X, size: 18),
+                            icon: const Icon(lucide.Lucide.x, size: 18),
                             color: cs.onSurface,
                             onPressed: () => Navigator.of(ctx).maybePop(false),
                           ),

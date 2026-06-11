@@ -91,19 +91,19 @@ class _StorageSpacePageState extends State<StorageSpacePage> {
   IconData _iconFor(StorageUsageCategoryKey key) {
     switch (key) {
       case StorageUsageCategoryKey.images:
-        return Lucide.Image;
+        return Lucide.image;
       case StorageUsageCategoryKey.files:
-        return Lucide.Paperclip;
+        return Lucide.paperclip;
       case StorageUsageCategoryKey.chatData:
-        return Lucide.MessagesSquare;
+        return Lucide.messagesSquare;
       case StorageUsageCategoryKey.assistantData:
-        return Lucide.Bot;
+        return Lucide.bot;
       case StorageUsageCategoryKey.cache:
-        return Lucide.Boxes;
+        return Lucide.boxes;
       case StorageUsageCategoryKey.logs:
-        return Lucide.FileText;
+        return Lucide.fileText;
       case StorageUsageCategoryKey.other:
-        return Lucide.Box;
+        return Lucide.box;
     }
   }
 
@@ -378,7 +378,7 @@ class _StorageSpacePageState extends State<StorageSpacePage> {
         leading: Tooltip(
           message: l10n.settingsPageBackButton,
           child: _TactileIconButton(
-            icon: Lucide.ArrowLeft,
+            icon: Lucide.arrowLeft,
             color: cs.onSurface,
             size: 22,
             onTap: () => Navigator.of(context).maybePop(),
@@ -387,7 +387,7 @@ class _StorageSpacePageState extends State<StorageSpacePage> {
         title: Text(l10n.storageSpacePageTitle),
         actions: [
           IosIconButton(
-            icon: Lucide.RefreshCw,
+            icon: Lucide.refreshCw,
             size: 20,
             minSize: 44,
             enabled: !_loading,
@@ -432,7 +432,7 @@ class _StorageSpacePageState extends State<StorageSpacePage> {
           Padding(
             padding: const EdgeInsets.only(right: 8, top: 2),
             child: IosIconButton(
-              icon: Lucide.RefreshCw,
+              icon: Lucide.refreshCw,
               size: 18,
               enabled: !_loading,
               onTap: _loading ? null : _refreshReport,
@@ -829,7 +829,7 @@ class _StorageCategoryPageState extends State<_StorageCategoryPage> {
         leading: Tooltip(
           message: l10n.settingsPageBackButton,
           child: _TactileIconButton(
-            icon: Lucide.ArrowLeft,
+            icon: Lucide.arrowLeft,
             color: Theme.of(context).colorScheme.onSurface,
             size: 22,
             onTap: () => Navigator.of(context).maybePop(),
@@ -838,7 +838,7 @@ class _StorageCategoryPageState extends State<_StorageCategoryPage> {
         title: Text(widget.title),
         actions: [
           IosIconButton(
-            icon: Lucide.RefreshCw,
+            icon: Lucide.refreshCw,
             size: 20,
             minSize: 44,
             enabled: !_refreshing,
@@ -1101,14 +1101,14 @@ class _CategoryDetail extends StatelessWidget {
         children: [
           IosTileButton(
             label: l10n.storageSpaceClearAvatarCacheButton,
-            icon: Lucide.User,
+            icon: Lucide.user,
             backgroundColor: cs.primary,
             enabled: !clearing && onClearCache != null,
             onTap: () => onClearCache?.call(avatarsOnly: true),
           ),
           IosTileButton(
             label: l10n.storageSpaceClearCacheButton,
-            icon: Lucide.Trash2,
+            icon: Lucide.trash2,
             backgroundColor: cs.primary,
             enabled: !clearing && onClearCache != null,
             onTap: () => onClearCache?.call(avatarsOnly: false),
@@ -1122,7 +1122,7 @@ class _CategoryDetail extends StatelessWidget {
         children: [
           IosTileButton(
             label: l10n.storageSpaceViewLogsButton,
-            icon: Lucide.Eye,
+            icon: Lucide.eye,
             backgroundColor: cs.primary,
             onTap: () {
               Navigator.of(
@@ -1132,7 +1132,7 @@ class _CategoryDetail extends StatelessWidget {
           ),
           IosTileButton(
             label: l10n.storageSpaceClearLogsButton,
-            icon: Lucide.Trash2,
+            icon: Lucide.trash2,
             backgroundColor: cs.primary,
             enabled: !clearing && onClearLogs != null,
             onTap: () => onClearLogs?.call(),
@@ -1499,13 +1499,13 @@ class _UploadManagerState extends State<_UploadManager> {
           label: _selectMode
               ? l10n.storageSpaceClearSelection
               : l10n.storageSpaceSelectAll,
-          icon: _selectMode ? Lucide.XCircle : Lucide.CheckSquare,
+          icon: _selectMode ? Lucide.xCircle : Lucide.checkSquare,
           backgroundColor: cs.primary,
           onTap: _selectMode ? _clearSelection : _selectAll,
         ),
         IosTileButton(
           label: l10n.homePageDelete,
-          icon: Lucide.Trash2,
+          icon: Lucide.trash2,
           backgroundColor: cs.error,
           enabled: _selected.isNotEmpty,
           onTap: _deleteSelected,
@@ -1654,7 +1654,7 @@ class _ImageTile extends StatelessWidget {
                       color: cs.onSurface.withValues(alpha: 0.04),
                       alignment: Alignment.center,
                       child: Icon(
-                        Lucide.ImageOff,
+                        Lucide.imageOff,
                         size: 18,
                         color: cs.onSurface.withValues(alpha: 0.55),
                       ),
@@ -1734,7 +1734,7 @@ class _FileRow extends StatelessWidget {
             ),
             const SizedBox(width: 10),
             Icon(
-              Lucide.Paperclip,
+              Lucide.paperclip,
               size: 18,
               color: cs.onSurface.withValues(alpha: 0.82),
             ),
@@ -1967,7 +1967,7 @@ Widget _iosNavRow(
           const SizedBox(width: 6),
         ],
         Icon(
-          Lucide.ChevronRight,
+          Lucide.chevronRight,
           size: 16,
           color: cs.onSurface.withValues(alpha: 0.75),
         ),

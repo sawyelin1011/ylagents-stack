@@ -42,7 +42,7 @@ class _SkillsPageState extends State<SkillsPage>
       appBar: AppBar(
         title: Row(
           children: [
-            Icon(lucide.Lucide.BookTemplate, size: 18, color: cs.primary),
+            Icon(lucide.Lucide.bookTemplate, size: 18, color: cs.primary),
             const SizedBox(width: 8),
             Text(l10n.skillsPageTitle),
           ],
@@ -89,7 +89,7 @@ class _InstalledTab extends StatelessWidget {
               children: [
                 const Spacer(),
                 OutlinedButton.icon(
-                  icon: const Icon(lucide.Lucide.Import, size: 14),
+                  icon: const Icon(lucide.Lucide.import, size: 14),
                   label: Text(l10n.skillsPageImport),
                   onPressed: () => _showImportDialog(context, l10n, cs),
                 ),
@@ -103,7 +103,7 @@ class _InstalledTab extends StatelessWidget {
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       Icon(
-                        lucide.Lucide.BookTemplate,
+                        lucide.Lucide.bookTemplate,
                         size: 56,
                         color: cs.onSurface.withValues(alpha: 0.15),
                       ),
@@ -237,7 +237,7 @@ class _MarketplaceTabState extends State<_MarketplaceTab> {
           child: TextField(
             decoration: InputDecoration(
               hintText: l10n.skillsPageSearchHint,
-              prefixIcon: Icon(lucide.Lucide.Search, size: 16),
+              prefixIcon: Icon(lucide.Lucide.search, size: 16),
               border: const OutlineInputBorder(),
               isDense: true,
             ),
@@ -321,7 +321,7 @@ class _SkillCard extends StatelessWidget {
           children: [
             Row(
               children: [
-                Icon(lucide.Lucide.BookTemplate, size: 18, color: cs.primary),
+                Icon(lucide.Lucide.bookTemplate, size: 18, color: cs.primary),
                 const SizedBox(width: 8),
                 Expanded(
                   child: Column(
@@ -359,7 +359,7 @@ class _SkillCard extends StatelessWidget {
                           backgroundColor: Colors.green.withValues(alpha: 0.1),
                         )
                       : FilledButton.tonalIcon(
-                          icon: const Icon(lucide.Lucide.Download, size: 14),
+                          icon: const Icon(lucide.Lucide.download, size: 14),
                           label: Text(l10n.skillsPageInstall),
                           onPressed: () async {
                             await context.read<SkillProvider>().install(skill);
@@ -371,7 +371,7 @@ class _SkillCard extends StatelessWidget {
                         )
                 else
                   OutlinedButton.icon(
-                    icon: Icon(lucide.Lucide.Trash, size: 14, color: cs.error),
+                    icon: Icon(lucide.Lucide.trash, size: 14, color: cs.error),
                     label: Text(
                       l10n.skillsPageUninstall,
                       style: TextStyle(color: cs.error),

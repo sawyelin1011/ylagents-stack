@@ -47,7 +47,7 @@ class AgentsPage extends StatelessWidget {
           children: [
             Row(
               children: [
-                Icon(lucide.Lucide.Bot, size: 24, color: cs.primary),
+                Icon(lucide.Lucide.bot, size: 24, color: cs.primary),
                 const SizedBox(width: 12),
                 Text(
                   l10n.desktopNavAgentsTooltip,
@@ -59,7 +59,7 @@ class AgentsPage extends StatelessWidget {
                 ),
                 const Spacer(),
                 OutlinedButton.icon(
-                  icon: const Icon(lucide.Lucide.Binary, size: 16),
+                  icon: const Icon(lucide.Lucide.binary, size: 16),
                   label: Text(l10n.agentsPageTraces),
                   onPressed: () {
                     Navigator.of(context).push(
@@ -69,7 +69,7 @@ class AgentsPage extends StatelessWidget {
                 ),
                 const SizedBox(width: 8),
                 OutlinedButton.icon(
-                  icon: const Icon(lucide.Lucide.Users, size: 16),
+                  icon: const Icon(lucide.Lucide.users, size: 16),
                   label: Text(l10n.agentsPageTeams),
                   onPressed: () {
                     Navigator.of(
@@ -79,7 +79,7 @@ class AgentsPage extends StatelessWidget {
                 ),
                 const SizedBox(width: 8),
                 FilledButton.icon(
-                  icon: const Icon(lucide.Lucide.Plus, size: 16),
+                  icon: const Icon(lucide.Lucide.plus, size: 16),
                   label: Text(l10n.agentFactoryNewAgent),
                   onPressed: () {
                     Navigator.of(context).push(
@@ -177,19 +177,19 @@ class AgentsPage extends StatelessWidget {
                                       if (agent != null) ...[
                                         if (agent.genome.identity.isNotEmpty)
                                           _GenomeChip(
-                                            icon: lucide.Lucide.User,
+                                            icon: lucide.Lucide.user,
                                             label: agent.genome.identity,
                                             colorScheme: cs,
                                           ),
                                         if (agent.genome.soul.isNotEmpty)
                                           _GenomeChip(
-                                            icon: lucide.Lucide.Heart,
+                                            icon: lucide.Lucide.heart,
                                             label: agent.genome.soul,
                                             colorScheme: cs,
                                           ),
                                         if (agent.genome.role.isNotEmpty)
                                           _GenomeChip(
-                                            icon: lucide.Lucide.Briefcase,
+                                            icon: lucide.Lucide.briefcase,
                                             label: agent.genome.role,
                                             colorScheme: cs,
                                           ),
@@ -258,7 +258,7 @@ class AgentsPage extends StatelessWidget {
                                     if (agent == null)
                                       IconButton(
                                         icon: Icon(
-                                          lucide.Lucide.Sparkles,
+                                          lucide.Lucide.sparkles,
                                           size: 16,
                                           color: cs.primary,
                                         ),
@@ -274,7 +274,7 @@ class AgentsPage extends StatelessWidget {
                                       if (agent.type == AgentType.lead)
                                         IconButton(
                                           icon: Icon(
-                                            lucide.Lucide.Play,
+                                            lucide.Lucide.play,
                                             size: 16,
                                             color: cs.tertiary,
                                           ),
@@ -294,8 +294,8 @@ class AgentsPage extends StatelessWidget {
                                       IconButton(
                                         icon: Icon(
                                           agent.enabled
-                                              ? lucide.Lucide.CheckCircle
-                                              : lucide.Lucide.XCircle,
+                                              ? lucide.Lucide.checkCircle
+                                              : lucide.Lucide.xCircle,
                                           size: 16,
                                           color: agent.enabled
                                               ? cs.primary
@@ -315,7 +315,7 @@ class AgentsPage extends StatelessWidget {
                                       ),
                                       IconButton(
                                         icon: Icon(
-                                          lucide.Lucide.Settings,
+                                          lucide.Lucide.settings,
                                           size: 16,
                                           color: cs.onSurface.withValues(
                                             alpha: 0.5,
@@ -347,7 +347,7 @@ class AgentsPage extends StatelessWidget {
                         mainAxisSize: MainAxisSize.min,
                         children: [
                           Icon(
-                            lucide.Lucide.Bot,
+                            lucide.Lucide.bot,
                             size: 48,
                             color: cs.onSurface.withValues(alpha: 0.2),
                           ),
@@ -587,19 +587,19 @@ class _AgentTypeBadge extends StatelessWidget {
       AgentType.lead => (
         colorScheme.tertiaryContainer,
         colorScheme.onTertiaryContainer,
-        lucide.Lucide.Crown,
+        lucide.Lucide.crown,
         l10n.agentTypeLead,
       ),
       AgentType.worker => (
         colorScheme.secondaryContainer,
         colorScheme.onSecondaryContainer,
-        lucide.Lucide.HardHat,
+        lucide.Lucide.hardHat,
         l10n.agentTypeWorker,
       ),
       AgentType.standard => (
         colorScheme.surfaceContainerHighest,
         colorScheme.onSurfaceVariant,
-        lucide.Lucide.Bot,
+        lucide.Lucide.bot,
         l10n.agentTypeStandard,
       ),
     };

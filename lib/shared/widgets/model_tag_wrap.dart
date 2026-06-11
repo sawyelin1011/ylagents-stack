@@ -137,7 +137,7 @@ class ModelTagWrap extends StatelessWidget {
                     Padding(
                       padding: const EdgeInsets.only(right: 2),
                       child: Icon(
-                        mod == Modality.text ? Lucide.Type : Lucide.Image,
+                        mod == Modality.text ? Lucide.type : Lucide.image,
                         size: 12,
                         color: isDark
                             ? cs.tertiary
@@ -145,7 +145,7 @@ class ModelTagWrap extends StatelessWidget {
                       ),
                     ),
                   Icon(
-                    Lucide.ChevronRight,
+                    Lucide.chevronRight,
                     size: 12,
                     color: isDark
                         ? cs.tertiary
@@ -155,7 +155,7 @@ class ModelTagWrap extends StatelessWidget {
                     Padding(
                       padding: const EdgeInsets.only(left: 2),
                       child: Icon(
-                        mod == Modality.text ? Lucide.Type : Lucide.Image,
+                        mod == Modality.text ? Lucide.type : Lucide.image,
                         size: 12,
                         color: isDark
                             ? cs.tertiary
@@ -181,7 +181,7 @@ class ModelTagWrap extends StatelessWidget {
               baseColor: cs.primary,
               padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 3),
               child: Icon(
-                Lucide.Hammer,
+                Lucide.hammer,
                 size: 12,
                 color: isDark ? cs.primary : cs.primary.withValues(alpha: 0.9),
               ),
@@ -212,7 +212,7 @@ class ModelTagWrap extends StatelessWidget {
                     );
                   }
                   return Icon(
-                    Lucide.Brain,
+                    Lucide.brain,
                     size: 12,
                     color: isDark
                         ? cs.secondary
@@ -221,7 +221,7 @@ class ModelTagWrap extends StatelessWidget {
                 },
                 placeholderBuilder: (_) {
                   return Icon(
-                    Lucide.Brain,
+                    Lucide.brain,
                     size: 12,
                     color: isDark
                         ? cs.secondary
@@ -316,7 +316,7 @@ class ModelCapsulesRow extends StatelessWidget {
       caps.add(
         labeledCapsule(
           label: '$inputLabel: $imageLabel',
-          icon: Icon(Lucide.Eye, size: iconSize, color: cs.secondary),
+          icon: Icon(Lucide.eye, size: iconSize, color: cs.secondary),
           color: cs.secondary,
         ),
       );
@@ -326,7 +326,7 @@ class ModelCapsulesRow extends StatelessWidget {
       caps.add(
         labeledCapsule(
           label: '$outputLabel: $imageLabel',
-          icon: Icon(Lucide.Image, size: iconSize, color: cs.tertiary),
+          icon: Icon(Lucide.image, size: iconSize, color: cs.tertiary),
           color: cs.tertiary,
         ),
       );
@@ -339,7 +339,7 @@ class ModelCapsulesRow extends StatelessWidget {
           caps.add(
             labeledCapsule(
               label: toolsLabel,
-              icon: Icon(Lucide.Hammer, size: iconSize, color: cs.primary),
+              icon: Icon(Lucide.hammer, size: iconSize, color: cs.primary),
               color: cs.primary,
             ),
           );
@@ -359,14 +359,14 @@ class ModelCapsulesRow extends StatelessWidget {
                     );
                   }
                   return Icon(
-                    Lucide.Brain,
+                    Lucide.brain,
                     size: iconSize,
                     color: cs.secondary,
                   );
                 },
                 placeholderBuilder: (_) {
                   return Icon(
-                    Lucide.Brain,
+                    Lucide.brain,
                     size: iconSize,
                     color: cs.secondary,
                   );

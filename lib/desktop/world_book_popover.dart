@@ -243,7 +243,7 @@ class _WorldBookListInner extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.only(bottom: 1),
             child: _CancelRow(
-              leading: Icon(Lucide.CircleX, size: 16, color: cs.onSurface),
+              leading: Icon(Lucide.circleX, size: 16, color: cs.onSurface),
               label: l10n.homePageCancel,
               onTap: () async {
                 try {
@@ -408,7 +408,7 @@ class _RowItemState extends State<_RowItem> {
           child: Row(
             children: [
               Icon(
-                Lucide.BookOpen,
+                Lucide.bookOpen,
                 size: 16,
                 color: widget.active
                     ? cs.primary.withValues(alpha: opacity)
@@ -460,7 +460,7 @@ class _RowItemState extends State<_RowItem> {
                     if (widget.active) ...[
                       const SizedBox(width: 6),
                       Icon(
-                        Lucide.Check,
+                        Lucide.check,
                         size: 14,
                         color: cs.primary.withValues(alpha: opacity),
                       ),

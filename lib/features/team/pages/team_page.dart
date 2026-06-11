@@ -37,7 +37,7 @@ class _TeamPageState extends State<TeamPage> {
       appBar: AppBar(
         title: Row(
           children: [
-            Icon(lucide.Lucide.Users, size: 18, color: cs.primary),
+            Icon(lucide.Lucide.users, size: 18, color: cs.primary),
             const SizedBox(width: 8),
             Text(l10n.teamPageTitle),
           ],
@@ -46,7 +46,7 @@ class _TeamPageState extends State<TeamPage> {
           Padding(
             padding: const EdgeInsets.only(right: 8),
             child: FilledButton.icon(
-              icon: const Icon(lucide.Lucide.Plus, size: 16),
+              icon: const Icon(lucide.Lucide.plus, size: 16),
               label: Text(l10n.teamPageCreateTeam),
               onPressed: () => _showCreateDialog(context, l10n, cs),
             ),
@@ -59,7 +59,7 @@ class _TeamPageState extends State<TeamPage> {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   Icon(
-                    lucide.Lucide.Users,
+                    lucide.Lucide.users,
                     size: 56,
                     color: cs.onSurface.withValues(alpha: 0.15),
                   ),
@@ -73,7 +73,7 @@ class _TeamPageState extends State<TeamPage> {
                   ),
                   const SizedBox(height: 24),
                   OutlinedButton.icon(
-                    icon: const Icon(lucide.Lucide.Plus, size: 16),
+                    icon: const Icon(lucide.Lucide.plus, size: 16),
                     label: Text(l10n.teamPageCreateTeam),
                     onPressed: () => _showCreateDialog(context, l10n, cs),
                   ),
@@ -101,7 +101,7 @@ class _TeamPageState extends State<TeamPage> {
                         Row(
                           children: [
                             Icon(
-                              lucide.Lucide.Users,
+                              lucide.Lucide.users,
                               size: 18,
                               color: cs.primary,
                             ),
@@ -158,7 +158,7 @@ class _TeamPageState extends State<TeamPage> {
                                   child: Row(
                                     children: [
                                       Icon(
-                                        lucide.Lucide.Trash,
+                                        lucide.Lucide.trash,
                                         size: 16,
                                         color: cs.error,
                                       ),
@@ -189,7 +189,7 @@ class _TeamPageState extends State<TeamPage> {
                         const SizedBox(height: 12),
                         // Lead agent
                         _AgentRow(
-                          icon: lucide.Lucide.Crown,
+                          icon: lucide.Lucide.crown,
                           label: l10n.teamPageLeadAgent,
                           agentName: leadAgent?.name ?? team.leadAgentId,
                           color: cs.tertiary,
@@ -201,7 +201,7 @@ class _TeamPageState extends State<TeamPage> {
                           (agent) => Padding(
                             padding: const EdgeInsets.only(top: 6),
                             child: _AgentRow(
-                              icon: lucide.Lucide.HardHat,
+                              icon: lucide.Lucide.hardHat,
                               label: '',
                               agentName: agent.name,
                               color: cs.primary,
@@ -226,7 +226,7 @@ class _TeamPageState extends State<TeamPage> {
                         Align(
                           alignment: Alignment.centerRight,
                           child: TextButton.icon(
-                            icon: const Icon(lucide.Lucide.UserPlus, size: 14),
+                            icon: const Icon(lucide.Lucide.userPlus, size: 14),
                             label: Text(l10n.teamPageManageMembers),
                             onPressed: () => _showManageMembersDialog(
                               context,
@@ -364,7 +364,7 @@ class _TeamPageState extends State<TeamPage> {
     AppLocalizations l10n,
     ColorScheme cs,
   ) {
-    final availableWorkers = agentProvider.teams
+    final availableWorkers = agentProvider.agents
         .where(
           (a) =>
               a.type == AgentType.worker &&
@@ -398,7 +398,7 @@ class _TeamPageState extends State<TeamPage> {
                 return ListTile(
                   dense: true,
                   leading: Icon(
-                    lucide.Lucide.HardHat,
+                    lucide.Lucide.hardHat,
                     size: 16,
                     color: cs.primary,
                   ),
@@ -407,7 +407,7 @@ class _TeamPageState extends State<TeamPage> {
                     style: const TextStyle(fontSize: 13),
                   ),
                   trailing: IconButton(
-                    icon: Icon(lucide.Lucide.X, size: 14, color: cs.error),
+                    icon: Icon(lucide.Lucide.x, size: 14, color: cs.error),
                     onPressed: () async {
                       await context.read<TeamProvider>().removeMember(
                         team.id,
@@ -466,7 +466,7 @@ class _TeamPageState extends State<TeamPage> {
                   (agent) => ListTile(
                     dense: true,
                     leading: Icon(
-                      lucide.Lucide.UserPlus,
+                      lucide.Lucide.userPlus,
                       size: 16,
                       color: cs.primary,
                     ),
@@ -476,7 +476,7 @@ class _TeamPageState extends State<TeamPage> {
                     ),
                     trailing: IconButton(
                       icon: Icon(
-                        lucide.Lucide.Plus,
+                        lucide.Lucide.plus,
                         size: 14,
                         color: cs.primary,
                       ),

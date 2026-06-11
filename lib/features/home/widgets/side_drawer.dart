@@ -216,28 +216,28 @@ class _SideDrawerState extends State<SideDrawer> with TickerProviderStateMixin {
         globalPosition: pos,
         items: [
           DesktopContextMenuItem(
-            icon: Lucide.Edit,
+            icon: Lucide.edit,
             label: l10n.sideDrawerMenuRename,
             onTap: () async {
               await _renameChat(context, chat);
             },
           ),
           DesktopContextMenuItem(
-            icon: Lucide.Pin,
+            icon: Lucide.pin,
             label: isPinned ? l10n.sideDrawerMenuUnpin : l10n.sideDrawerMenuPin,
             onTap: () async {
               await chatService.togglePinConversation(chat.id);
             },
           ),
           DesktopContextMenuItem(
-            icon: Lucide.RefreshCw,
+            icon: Lucide.refreshCw,
             label: l10n.sideDrawerMenuRegenerateTitle,
             onTap: () async {
               await _regenerateTitle(context, chat.id);
             },
           ),
           DesktopContextMenuItem(
-            icon: Lucide.Shuffle,
+            icon: Lucide.shuffle,
             label: l10n.sideDrawerMenuMoveTo,
             onTap: () async {
               final conv = chatService.getConversation(chat.id);
@@ -291,7 +291,7 @@ class _SideDrawerState extends State<SideDrawer> with TickerProviderStateMixin {
             },
           ),
           DesktopContextMenuItem(
-            icon: Lucide.Trash2,
+            icon: Lucide.trash2,
             label: l10n.sideDrawerMenuDelete,
             danger: true,
             onTap: () async {
@@ -399,14 +399,14 @@ class _SideDrawerState extends State<SideDrawer> with TickerProviderStateMixin {
                     ),
                     const SizedBox(height: 10),
                     row(
-                      icon: Lucide.Edit,
+                      icon: Lucide.edit,
                       label: l10n.sideDrawerMenuRename,
                       action: () async {
                         _renameChat(context, chat);
                       },
                     ),
                     row(
-                      icon: Lucide.Pin,
+                      icon: Lucide.pin,
                       label: isPinned
                           ? l10n.sideDrawerMenuUnpin
                           : l10n.sideDrawerMenuPin,
@@ -415,14 +415,14 @@ class _SideDrawerState extends State<SideDrawer> with TickerProviderStateMixin {
                       },
                     ),
                     row(
-                      icon: Lucide.RefreshCw,
+                      icon: Lucide.refreshCw,
                       label: l10n.sideDrawerMenuRegenerateTitle,
                       action: () async {
                         await _regenerateTitle(context, chat.id);
                       },
                     ),
                     row(
-                      icon: Lucide.Shuffle,
+                      icon: Lucide.shuffle,
                       label: l10n.sideDrawerMenuMoveTo,
                       action: () async {
                         final conv = chatService.getConversation(chat.id);
@@ -484,7 +484,7 @@ class _SideDrawerState extends State<SideDrawer> with TickerProviderStateMixin {
                       },
                     ),
                     row(
-                      icon: Lucide.Trash,
+                      icon: Lucide.trash,
                       label: l10n.sideDrawerMenuDelete,
                       color: Colors.redAccent,
                       action: () async {
@@ -811,7 +811,7 @@ class _SideDrawerState extends State<SideDrawer> with TickerProviderStateMixin {
 
   Widget _mobileModeSearchIcon(Color color, {Key? key}) {
     return Icon(
-      widget.globalSearchMode ? Lucide.Database : Lucide.botMessageSquare,
+      widget.globalSearchMode ? Lucide.database : Lucide.botMessageSquare,
       key: key,
       size: 16,
       color: color,
@@ -1177,7 +1177,7 @@ class _SideDrawerState extends State<SideDrawer> with TickerProviderStateMixin {
                 Tooltip(
                   message: l10n.backupReminderSnoozeTooltip,
                   child: IosIconButton(
-                    icon: Lucide.X,
+                    icon: Lucide.x,
                     size: 16,
                     color: textBase.withValues(alpha: 0.62),
                     padding: const EdgeInsets.all(6),
@@ -1435,7 +1435,7 @@ class _SideDrawerState extends State<SideDrawer> with TickerProviderStateMixin {
                                         right: 4,
                                       ),
                                       child: Icon(
-                                        Lucide.Search,
+                                        Lucide.search,
                                         size: 16,
                                         color: textBase.withValues(alpha: 0.6),
                                       ),
@@ -1458,7 +1458,7 @@ class _SideDrawerState extends State<SideDrawer> with TickerProviderStateMixin {
                                                 IosIconButton(
                                                   size: 16,
                                                   color: textBase,
-                                                  icon: Lucide.Search,
+                                                  icon: Lucide.search,
                                                   padding: const EdgeInsets.all(
                                                     4,
                                                   ),
@@ -1467,7 +1467,7 @@ class _SideDrawerState extends State<SideDrawer> with TickerProviderStateMixin {
                                                 IosIconButton(
                                                   size: 16,
                                                   color: textBase,
-                                                  icon: Lucide.History,
+                                                  icon: Lucide.history,
                                                   padding: const EdgeInsets.all(
                                                     4,
                                                   ),
@@ -1504,7 +1504,7 @@ class _SideDrawerState extends State<SideDrawer> with TickerProviderStateMixin {
                                                 IosIconButton(
                                                   size: 16,
                                                   color: textBase,
-                                                  icon: Lucide.X,
+                                                  icon: Lucide.x,
                                                   padding: const EdgeInsets.all(
                                                     4,
                                                   ),
@@ -1542,7 +1542,7 @@ class _SideDrawerState extends State<SideDrawer> with TickerProviderStateMixin {
                                             child: IosIconButton(
                                               size: 16,
                                               color: textBase,
-                                              icon: Lucide.History,
+                                              icon: Lucide.history,
                                               padding: const EdgeInsets.all(4),
                                               onTap: () async {
                                                 final keepSidebarOpenOnTopicTap =
@@ -1768,7 +1768,7 @@ class _SideDrawerState extends State<SideDrawer> with TickerProviderStateMixin {
                                                                       4,
                                                                     ),
                                                                 child: Icon(
-                                                                  Lucide.Search,
+                                                                  Lucide.search,
                                                                   size: 16,
                                                                   color: textBase
                                                                       .withValues(
@@ -1858,7 +1858,7 @@ class _SideDrawerState extends State<SideDrawer> with TickerProviderStateMixin {
                                   child: IosIconButton(
                                     size: 20,
                                     color: textBase,
-                                    icon: Lucide.History,
+                                    icon: Lucide.history,
                                     padding: const EdgeInsets.all(8),
                                     onTap: () async {
                                       final selectedId =
@@ -2008,7 +2008,7 @@ class _SideDrawerState extends State<SideDrawer> with TickerProviderStateMixin {
                                       ),
                                       curve: Curves.easeOutCubic,
                                       child: Icon(
-                                        Lucide.ChevronDown,
+                                        Lucide.chevronDown,
                                         size: 18,
                                         color: textBase.withValues(alpha: 0.7),
                                       ),
@@ -2158,7 +2158,7 @@ class _SideDrawerState extends State<SideDrawer> with TickerProviderStateMixin {
                               child: IosIconButton(
                                 size: 22,
                                 color: textBase,
-                                icon: Lucide.Languages,
+                                icon: Lucide.languages,
                                 padding: const EdgeInsets.all(10),
                                 onTap: () {
                                   Navigator.of(context).push(
@@ -2179,7 +2179,7 @@ class _SideDrawerState extends State<SideDrawer> with TickerProviderStateMixin {
                               child: IosIconButton(
                                 size: 22,
                                 color: textBase,
-                                icon: Lucide.Settings,
+                                icon: Lucide.settings,
                                 padding: const EdgeInsets.all(10),
                                 onTap: () {
                                   Navigator.of(context).push(
@@ -3312,7 +3312,7 @@ class _SideDrawerState extends State<SideDrawer> with TickerProviderStateMixin {
                         Row(
                           children: [
                             Icon(
-                              Lucide.BadgeInfo,
+                              Lucide.badgeInfo,
                               size: 18,
                               color: cs2.primary,
                             ),
@@ -3697,7 +3697,7 @@ class _GroupHeader extends StatelessWidget {
               duration: const Duration(milliseconds: 260),
               curve: Curves.easeOutCubic,
               child: Icon(
-                Lucide.ChevronRight,
+                Lucide.chevronRight,
                 size: 16,
                 color: textBase.withValues(alpha: 0.7),
               ),
@@ -4112,7 +4112,7 @@ class _AssistantInlineTileState extends State<_AssistantInlineTile> {
             if (!_isDesktop) ...[
               const SizedBox(width: 8),
               IosIconButton(
-                icon: Lucide.Pencil,
+                icon: Lucide.pencil,
                 size: 18,
                 color: cs.onSurface.withValues(alpha: 0.7),
                 padding: const EdgeInsets.all(8),

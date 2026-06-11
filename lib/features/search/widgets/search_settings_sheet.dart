@@ -218,7 +218,7 @@ class _SearchSettingsSheet extends StatelessWidget {
                         ),
                         child: Row(
                           children: [
-                            Icon(Lucide.Search, size: 20, color: cs.primary),
+                            Icon(Lucide.search, size: 20, color: cs.primary),
                             const SizedBox(width: 10),
                             Expanded(
                               child: Column(
@@ -291,7 +291,7 @@ class _SearchSettingsSheet extends StatelessWidget {
                             child: Row(
                               children: [
                                 Icon(
-                                  Lucide.Search,
+                                  Lucide.search,
                                   size: 20,
                                   color: cs.primary,
                                 ),
@@ -364,7 +364,7 @@ class _SearchSettingsSheet extends StatelessWidget {
                     ),
                     child: Row(
                       children: [
-                        Icon(Lucide.Globe, size: 20, color: cs.primary),
+                        Icon(Lucide.globe, size: 20, color: cs.primary),
                         const SizedBox(width: 10),
                         Expanded(
                           child: Column(
@@ -386,7 +386,7 @@ class _SearchSettingsSheet extends StatelessWidget {
                         IconButton(
                           tooltip:
                               l10n.searchSettingsSheetOpenSearchServicesTooltip,
-                          icon: Icon(Lucide.Settings, size: 20),
+                          icon: Icon(Lucide.settings, size: 20),
                           onPressed: () {
                             Navigator.of(context).push(
                               MaterialPageRoute(
@@ -449,7 +449,7 @@ class _SearchSettingsSheet extends StatelessWidget {
                                 ),
                               ),
                               if (isSelected)
-                                Icon(Lucide.Check, size: 18, color: cs.primary)
+                                Icon(Lucide.check, size: 18, color: cs.primary)
                               else
                                 const SizedBox(width: 18),
                             ],

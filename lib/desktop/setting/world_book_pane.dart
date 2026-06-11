@@ -312,13 +312,13 @@ class _DesktopWorldBookPaneState extends State<DesktopWorldBookPane> {
                         ),
                       ),
                       _SmallIconBtn(
-                        icon: lucide.Lucide.Import,
+                        icon: lucide.Lucide.import,
                         onTap: _importFromFile,
                         tooltip: l10n.providersPageImportTooltip,
                       ),
                       const SizedBox(width: 6),
                       _SmallIconBtn(
-                        icon: lucide.Lucide.Plus,
+                        icon: lucide.Lucide.plus,
                         onTap: () async {
                           final result = await _showBookEditDialog();
                           if (!mounted) return;
@@ -341,7 +341,7 @@ class _DesktopWorldBookPaneState extends State<DesktopWorldBookPane> {
                         mainAxisSize: MainAxisSize.min,
                         children: [
                           Icon(
-                            lucide.Lucide.BookOpen,
+                            lucide.Lucide.bookOpen,
                             size: 56,
                             color: cs.onSurface.withValues(alpha: 0.28),
                           ),
@@ -507,7 +507,7 @@ class _WorldBookCardState extends State<_WorldBookCard> {
                         duration: const Duration(milliseconds: 240),
                         curve: Curves.easeOutCubic,
                         child: Icon(
-                          lucide.Lucide.ChevronRight,
+                          lucide.Lucide.chevronRight,
                           size: 16,
                           color: cs.onSurface.withValues(alpha: 0.62),
                         ),
@@ -516,7 +516,7 @@ class _WorldBookCardState extends State<_WorldBookCard> {
                   ),
                 ),
                 const SizedBox(width: 8),
-                Icon(lucide.Lucide.BookOpen, size: 20, color: cs.primary),
+                Icon(lucide.Lucide.bookOpen, size: 20, color: cs.primary),
                 const SizedBox(width: 10),
                 Expanded(
                   child: Column(
@@ -562,25 +562,25 @@ class _WorldBookCardState extends State<_WorldBookCard> {
                 ),
                 const SizedBox(width: 8),
                 _SmallIconBtn(
-                  icon: lucide.Lucide.Plus,
+                  icon: lucide.Lucide.plus,
                   onTap: widget.onAddEntry,
                   tooltip: l10n.worldBookAddEntry,
                 ),
                 const SizedBox(width: 6),
                 _SmallIconBtn(
-                  icon: lucide.Lucide.Share2,
+                  icon: lucide.Lucide.share2,
                   onTap: widget.onExport,
                   tooltip: l10n.worldBookExport,
                 ),
                 const SizedBox(width: 6),
                 _SmallIconBtn(
-                  icon: lucide.Lucide.Settings2,
+                  icon: lucide.Lucide.settings2,
                   onTap: widget.onConfig,
                   tooltip: l10n.worldBookConfig,
                 ),
                 const SizedBox(width: 6),
                 _SmallIconBtn(
-                  icon: lucide.Lucide.Trash2,
+                  icon: lucide.Lucide.trash2,
                   onTap: widget.onDelete,
                   tooltip: l10n.worldBookDelete,
                 ),
@@ -645,7 +645,7 @@ class _EntriesPanel extends StatelessWidget {
         child: Row(
           children: [
             Icon(
-              lucide.Lucide.ListTree,
+              lucide.Lucide.listTree,
               size: 18,
               color: cs.onSurface.withValues(alpha: 0.55),
             ),
@@ -726,7 +726,7 @@ class _EntryRowState extends State<_EntryRow> {
             child: Row(
               children: [
                 Icon(
-                  lucide.Lucide.Bookmark,
+                  lucide.Lucide.bookmark,
                   size: 18,
                   color: widget.entry.enabled
                       ? cs.primary
@@ -763,13 +763,13 @@ class _EntryRowState extends State<_EntryRow> {
                 ),
                 const SizedBox(width: 8),
                 _SmallIconBtn(
-                  icon: lucide.Lucide.Settings2,
+                  icon: lucide.Lucide.settings2,
                   onTap: () => widget.onEdit(widget.entry),
                   tooltip: l10n.worldBookEditEntry,
                 ),
                 const SizedBox(width: 6),
                 _SmallIconBtn(
-                  icon: lucide.Lucide.Trash2,
+                  icon: lucide.Lucide.trash2,
                   onTap: () => widget.onDelete(widget.entry),
                   tooltip: l10n.worldBookDeleteEntry,
                 ),
@@ -881,7 +881,7 @@ class _WorldBookEditDialogState extends State<_WorldBookEditDialog> {
                         ),
                       ),
                       _SmallIconBtn(
-                        icon: lucide.Lucide.X,
+                        icon: lucide.Lucide.x,
                         onTap: () => Navigator.of(context).maybePop(),
                       ),
                     ],
@@ -1229,7 +1229,7 @@ class _WorldBookEntryEditDialogState extends State<_WorldBookEntryEditDialog> {
                         ),
                       ),
                       _SmallIconBtn(
-                        icon: lucide.Lucide.X,
+                        icon: lucide.Lucide.x,
                         onTap: () => Navigator.of(context).maybePop(),
                       ),
                     ],
@@ -1312,7 +1312,7 @@ class _WorldBookEntryEditDialogState extends State<_WorldBookEntryEditDialog> {
                                           ),
                                           const SizedBox(width: 8),
                                           _SmallIconBtn(
-                                            icon: lucide.Lucide.Plus,
+                                            icon: lucide.Lucide.plus,
                                             onTap: _addKeywordsFromInput,
                                             tooltip: l10n
                                                 .worldBookEntryKeywordAddTooltip,

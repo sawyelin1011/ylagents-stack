@@ -83,7 +83,7 @@ class _MessageEditDesktopDialogState extends State<_MessageEditDesktopDialog> {
                           );
                         },
                         icon: Icon(
-                          Lucide.MessageCirclePlus,
+                          Lucide.messageCirclePlus,
                           size: 18,
                           color: cs.primary,
                         ),
@@ -103,7 +103,7 @@ class _MessageEditDesktopDialogState extends State<_MessageEditDesktopDialog> {
                             MessageEditResult(content: text, shouldSend: false),
                           );
                         },
-                        icon: Icon(Lucide.Check, size: 18, color: cs.primary),
+                        icon: Icon(Lucide.check, size: 18, color: cs.primary),
                         label: Text(
                           l10n.messageEditPageSave,
                           style: TextStyle(
@@ -116,7 +116,7 @@ class _MessageEditDesktopDialogState extends State<_MessageEditDesktopDialog> {
                         tooltip: l10n.mcpPageClose,
                         onPressed: () => Navigator.of(context).maybePop(),
                         icon: Icon(
-                          Lucide.X,
+                          Lucide.x,
                           size: 18,
                           color: cs.onSurface.withValues(alpha: 0.75),
                         ),

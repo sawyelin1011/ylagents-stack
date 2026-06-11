@@ -157,17 +157,17 @@ class _LogViewerPageState extends State<LogViewerPage>
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-          icon: Icon(Lucide.ArrowLeft, color: cs.onSurface, size: 22),
+          icon: Icon(Lucide.arrowLeft, color: cs.onSurface, size: 22),
           onPressed: () => Navigator.of(context).maybePop(),
         ),
         title: Text(l10n.storageSpaceCategoryLogs),
         actions: [
           IconButton(
-            icon: Icon(Lucide.RefreshCw, color: cs.onSurface, size: 20),
+            icon: Icon(Lucide.refreshCw, color: cs.onSurface, size: 20),
             onPressed: _loadLogFiles,
           ),
           IconButton(
-            icon: Icon(Lucide.Settings, color: cs.onSurface, size: 20),
+            icon: Icon(Lucide.settings, color: cs.onSurface, size: 20),
             tooltip: l10n.logSettingsTitle,
             onPressed: () => _showLogSettings(context),
           ),
@@ -192,7 +192,7 @@ class _LogViewerPageState extends State<LogViewerPage>
                       _LogFilesList(
                         files: _requestLogFiles,
                         activeFileName: _activeRequestLog,
-                        emptyIcon: Lucide.Globe,
+                        emptyIcon: Lucide.globe,
                         emptyText: l10n.logViewerEmpty,
                         formatFileSize: _formatFileSize,
                         formatDate: _formatDate,
@@ -208,7 +208,7 @@ class _LogViewerPageState extends State<LogViewerPage>
                       _LogFilesList(
                         files: _appLogFiles,
                         activeFileName: _activeAppLog,
-                        emptyIcon: Lucide.Terminal,
+                        emptyIcon: Lucide.terminal,
                         emptyText: l10n.logViewerEmpty,
                         formatFileSize: _formatFileSize,
                         formatDate: _formatDate,
@@ -318,7 +318,7 @@ class _LogFilesList extends StatelessWidget {
                 children: [
                   _FileIcon(
                     isCurrent: isCurrentLog,
-                    icon: isCurrentLog ? Lucide.FileText : Lucide.FileClock,
+                    icon: isCurrentLog ? Lucide.fileText : Lucide.fileClock,
                   ),
                   const SizedBox(width: 12),
                   Expanded(
@@ -352,7 +352,7 @@ class _LogFilesList extends StatelessWidget {
                   ),
                   const SizedBox(width: 10),
                   Icon(
-                    Lucide.ChevronRight,
+                    Lucide.chevronRight,
                     color: cs.onSurface.withValues(alpha: 0.30),
                     size: 18,
                   ),
@@ -461,13 +461,13 @@ class _PlainLogContentPageState extends State<_PlainLogContentPage> {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-          icon: Icon(Lucide.ArrowLeft, color: cs.onSurface, size: 22),
+          icon: Icon(Lucide.arrowLeft, color: cs.onSurface, size: 22),
           onPressed: () => Navigator.of(context).maybePop(),
         ),
         title: Text(widget.title),
         actions: [
           IconButton(
-            icon: Icon(Lucide.Share2, color: cs.onSurface, size: 20),
+            icon: Icon(Lucide.share2, color: cs.onSurface, size: 20),
             tooltip: l10n.logViewerExport,
             onPressed: _exportFile,
           ),
@@ -573,17 +573,17 @@ class _RequestLogFilePageState extends State<_RequestLogFilePage> {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-          icon: Icon(Lucide.ArrowLeft, color: cs.onSurface, size: 22),
+          icon: Icon(Lucide.arrowLeft, color: cs.onSurface, size: 22),
           onPressed: () => Navigator.of(context).maybePop(),
         ),
         title: Text(widget.title),
         actions: [
           IconButton(
-            icon: Icon(Lucide.RefreshCw, color: cs.onSurface, size: 20),
+            icon: Icon(Lucide.refreshCw, color: cs.onSurface, size: 20),
             onPressed: _load,
           ),
           IconButton(
-            icon: Icon(Lucide.Share2, color: cs.onSurface, size: 20),
+            icon: Icon(Lucide.share2, color: cs.onSurface, size: 20),
             tooltip: l10n.logViewerExport,
             onPressed: _exportFile,
           ),
@@ -597,7 +597,7 @@ class _RequestLogFilePageState extends State<_RequestLogFilePage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Icon(
-                    Lucide.FileQuestion,
+                    Lucide.fileQuestion,
                     size: 46,
                     color: cs.onSurface.withValues(alpha: 0.28),
                   ),
@@ -698,7 +698,7 @@ class _RequestLogSummaryBar extends StatelessWidget {
           ),
           if (warnings > 0) ...[
             _CountPill(
-              icon: Lucide.BadgeInfo,
+              icon: Lucide.badgeInfo,
               label: '$warnings',
               bg: cs.tertiaryContainer.withValues(alpha: isDark ? 0.50 : 0.55),
               fg: cs.onTertiaryContainer.withValues(alpha: 0.92),
@@ -707,7 +707,7 @@ class _RequestLogSummaryBar extends StatelessWidget {
           ],
           if (errors > 0)
             _CountPill(
-              icon: Lucide.XCircle,
+              icon: Lucide.xCircle,
               label: '$errors',
               bg: errorPillBg,
               fg: errorPillFg,
@@ -893,7 +893,7 @@ class _InlineErrorPreview extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
       child: Row(
         children: [
-          Icon(Lucide.XCircle, size: 16, color: iconColor),
+          Icon(Lucide.xCircle, size: 16, color: iconColor),
           const SizedBox(width: 8),
           Expanded(
             child: Text(
@@ -1033,10 +1033,10 @@ class _StatusPill extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           if (isError || code >= 400) ...[
-            Icon(Lucide.XCircle, size: 14, color: fg),
+            Icon(Lucide.xCircle, size: 14, color: fg),
             const SizedBox(width: 6),
           ] else if (ok) ...[
-            Icon(Lucide.CheckCircle, size: 14, color: fg),
+            Icon(Lucide.checkCircle, size: 14, color: fg),
             const SizedBox(width: 6),
           ],
           Text(
@@ -1172,7 +1172,7 @@ class _RequestLogDetailPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-          icon: Icon(Lucide.ArrowLeft, color: cs.onSurface, size: 22),
+          icon: Icon(Lucide.arrowLeft, color: cs.onSurface, size: 22),
           onPressed: () => Navigator.of(context).maybePop(),
         ),
         title: Text(
@@ -1180,7 +1180,7 @@ class _RequestLogDetailPage extends StatelessWidget {
         ),
         actions: [
           IconButton(
-            icon: Icon(Lucide.Copy, color: cs.onSurface, size: 20),
+            icon: Icon(Lucide.copy, color: cs.onSurface, size: 20),
             tooltip: MaterialLocalizations.of(context).copyButtonLabel,
             onPressed: url.trim().isEmpty ? null : () => _copy(context, url),
           ),
@@ -1194,12 +1194,12 @@ class _RequestLogDetailPage extends StatelessWidget {
             const SizedBox(height: 12),
           ],
           _SectionCard(
-            icon: Lucide.BadgeInfo,
+            icon: Lucide.badgeInfo,
             title: l10n.logViewerSectionSummary,
             trailing: url.trim().isEmpty
                 ? null
                 : IosIconButton(
-                    icon: Lucide.Copy,
+                    icon: Lucide.copy,
                     size: 18,
                     padding: const EdgeInsets.all(6),
                     onTap: () => _copy(context, url),
@@ -1216,10 +1216,10 @@ class _RequestLogDetailPage extends StatelessWidget {
           if (query.isNotEmpty) ...[
             const SizedBox(height: 12),
             _SectionCard(
-              icon: Lucide.ListTree,
+              icon: Lucide.listTree,
               title: l10n.logViewerSectionParameters,
               trailing: IosIconButton(
-                icon: Lucide.Copy,
+                icon: Lucide.copy,
                 size: 18,
                 padding: const EdgeInsets.all(6),
                 onTap: () => _copy(context, _prettyJsonObj(query)),
@@ -1233,10 +1233,10 @@ class _RequestLogDetailPage extends StatelessWidget {
           if (reqHeaders != null && reqHeaders.isNotEmpty) ...[
             const SizedBox(height: 12),
             _SectionCard(
-              icon: Lucide.Hash,
+              icon: Lucide.hash,
               title: l10n.logViewerSectionRequestHeaders,
               trailing: IosIconButton(
-                icon: Lucide.Copy,
+                icon: Lucide.copy,
                 size: 18,
                 padding: const EdgeInsets.all(6),
                 onTap: () => _copy(context, reqHeadersText),
@@ -1247,10 +1247,10 @@ class _RequestLogDetailPage extends StatelessWidget {
           if (reqBodyText.trim().isNotEmpty) ...[
             const SizedBox(height: 12),
             _SectionCard(
-              icon: Lucide.ArrowUp,
+              icon: Lucide.arrowUp,
               title: l10n.logViewerSectionRequestBody,
               trailing: IosIconButton(
-                icon: Lucide.Copy,
+                icon: Lucide.copy,
                 size: 18,
                 padding: const EdgeInsets.all(6),
                 onTap: () => _copy(context, reqBodyText),
@@ -1261,10 +1261,10 @@ class _RequestLogDetailPage extends StatelessWidget {
           if (resHeaders != null && resHeaders.isNotEmpty) ...[
             const SizedBox(height: 12),
             _SectionCard(
-              icon: Lucide.Hash,
+              icon: Lucide.hash,
               title: l10n.logViewerSectionResponseHeaders,
               trailing: IosIconButton(
-                icon: Lucide.Copy,
+                icon: Lucide.copy,
                 size: 18,
                 padding: const EdgeInsets.all(6),
                 onTap: () => _copy(context, resHeadersText),
@@ -1275,10 +1275,10 @@ class _RequestLogDetailPage extends StatelessWidget {
           if (resBodyText.trim().isNotEmpty) ...[
             const SizedBox(height: 12),
             _SectionCard(
-              icon: Lucide.ArrowDown,
+              icon: Lucide.arrowDown,
               title: l10n.logViewerSectionResponseBody,
               trailing: IosIconButton(
-                icon: Lucide.Copy,
+                icon: Lucide.copy,
                 size: 18,
                 padding: const EdgeInsets.all(6),
                 onTap: () => _copy(context, resBodyText),
@@ -1292,7 +1292,7 @@ class _RequestLogDetailPage extends StatelessWidget {
           if (entry.warnings.isNotEmpty) ...[
             const SizedBox(height: 12),
             _SectionCard(
-              icon: Lucide.BadgeInfo,
+              icon: Lucide.badgeInfo,
               title: l10n.logViewerSectionWarnings,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -1353,7 +1353,7 @@ class _ErrorHeroCard extends StatelessWidget {
         children: [
           Row(
             children: [
-              Icon(Lucide.XCircle, size: 18, color: titleColor),
+              Icon(Lucide.xCircle, size: 18, color: titleColor),
               const SizedBox(width: 10),
               Expanded(
                 child: Text(

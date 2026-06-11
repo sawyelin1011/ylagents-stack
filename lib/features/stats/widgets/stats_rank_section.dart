@@ -35,7 +35,7 @@ class StatsRankSection extends StatelessWidget {
           ? Tooltip(
               message: l10n.statsPageShowAllTooltip,
               child: IconButton(
-                icon: const Icon(Lucide.Maximize, size: 16),
+                icon: const Icon(Lucide.maximize, size: 16),
                 visualDensity: VisualDensity.compact,
                 onPressed: () => _showAll(context),
               ),

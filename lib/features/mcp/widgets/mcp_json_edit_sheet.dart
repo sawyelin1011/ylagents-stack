@@ -126,7 +126,7 @@ class _McpJsonEditSheetState extends State<_McpJsonEditSheet> {
                 children: [
                   IconButton(
                     onPressed: () => Navigator.of(context).maybePop(),
-                    icon: Icon(Lucide.X, size: 20, color: cs.onSurface),
+                    icon: Icon(Lucide.x, size: 20, color: cs.onSurface),
                     tooltip: MaterialLocalizations.of(
                       context,
                     ).closeButtonTooltip,
@@ -142,7 +142,7 @@ class _McpJsonEditSheetState extends State<_McpJsonEditSheet> {
                   const Spacer(),
                   IconButton(
                     onPressed: _save,
-                    icon: Icon(Lucide.Check, size: 20, color: cs.primary),
+                    icon: Icon(Lucide.check, size: 20, color: cs.primary),
                     tooltip: AppLocalizations.of(
                       context,
                     )!.mcpServerEditSheetSave,

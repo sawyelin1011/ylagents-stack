@@ -25,7 +25,7 @@ class Haptics {
     } else if (_isAndroid) {
       _safe(() => system.HapticFeedback.lightImpact());
     } else if (_isWindows) {
-      _safeWin(HapticFeedback.lightImpact());
+      _safeWin(() => HapticFeedback.lightImpact());
     }
   }
 
@@ -37,7 +37,7 @@ class Haptics {
     } else if (_isAndroid) {
       _safe(() => system.HapticFeedback.mediumImpact());
     } else if (_isWindows) {
-      _safeWin(HapticFeedback.mediumImpact());
+      _safeWin(() => HapticFeedback.mediumImpact());
     }
   }
 
@@ -48,7 +48,7 @@ class Haptics {
     } else if (_isAndroid) {
       _safe(() => system.HapticFeedback.selectionClick());
     } else if (_isWindows) {
-      _safeWin(HapticFeedback.selectionClick());
+      _safeWin(() => HapticFeedback.selectionClick());
     }
   }
 
@@ -60,7 +60,7 @@ class Haptics {
     } else if (_isAndroid) {
       _safe(() => system.HapticFeedback.selectionClick());
     } else if (_isWindows) {
-      _safeWin(HapticFeedback.selectionClick());
+      _safeWin(() => HapticFeedback.selectionClick());
     }
   }
 

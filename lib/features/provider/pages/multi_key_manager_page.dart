@@ -52,7 +52,7 @@ class _MultiKeyManagerPageState extends State<MultiKeyManagerPage> {
         leading: Tooltip(
           message: l10n.settingsPageBackButton,
           child: _TactileIconButton(
-            icon: Lucide.ArrowLeft,
+            icon: Lucide.arrowLeft,
             color: cs.onSurface,
             semanticLabel: l10n.settingsPageBackButton,
             onTap: () => Navigator.of(context).maybePop(),
@@ -63,7 +63,7 @@ class _MultiKeyManagerPageState extends State<MultiKeyManagerPage> {
           Tooltip(
             message: l10n.multiKeyPageDeleteErrorsTooltip,
             child: _TactileIconButton(
-              icon: Lucide.Trash2,
+              icon: Lucide.trash2,
               color: cs.onSurface,
               semanticLabel: l10n.multiKeyPageDeleteErrorsTooltip,
               onTap: _onDeleteAllErrorKeys,
@@ -85,7 +85,7 @@ class _MultiKeyManagerPageState extends State<MultiKeyManagerPage> {
             Tooltip(
               message: l10n.multiKeyPageDetect,
               child: _TactileIconButton(
-                icon: Lucide.HeartPulse,
+                icon: Lucide.heartPulse,
                 color: cs.onSurface,
                 semanticLabel: l10n.multiKeyPageDetect,
                 onTap: _onDetect,
@@ -95,7 +95,7 @@ class _MultiKeyManagerPageState extends State<MultiKeyManagerPage> {
           Tooltip(
             message: l10n.multiKeyPageAdd,
             child: _TactileIconButton(
-              icon: Lucide.Plus,
+              icon: Lucide.plus,
               color: cs.onSurface,
               semanticLabel: l10n.multiKeyPageAdd,
               onTap: _onAddKeys,
@@ -213,7 +213,7 @@ class _MultiKeyManagerPageState extends State<MultiKeyManagerPage> {
                         style: TextStyle(fontSize: 15, color: c),
                       ),
                       const SizedBox(width: 6),
-                      Icon(Lucide.ChevronRight, size: 16, color: c),
+                      Icon(Lucide.chevronRight, size: 16, color: c),
                     ],
                   ),
                 ],
@@ -354,14 +354,14 @@ class _MultiKeyManagerPageState extends State<MultiKeyManagerPage> {
             )
           else if (onTest != null)
             _TactileIconButton(
-              icon: Lucide.HeartPulse,
+              icon: Lucide.heartPulse,
               color: cs.primary,
               semanticLabel: AppLocalizations.of(context)!.multiKeyPageDetect,
               onTap: onTest,
             ),
           const SizedBox(width: 4),
           _TactileIconButton(
-            icon: Lucide.Pencil,
+            icon: Lucide.pencil,
             color: cs.primary,
             semanticLabel: AppLocalizations.of(context)!.multiKeyPageEdit,
             onTap: () async {
@@ -370,7 +370,7 @@ class _MultiKeyManagerPageState extends State<MultiKeyManagerPage> {
           ),
           const SizedBox(width: 4),
           _TactileIconButton(
-            icon: Lucide.Trash2,
+            icon: Lucide.trash2,
             color: cs.error,
             semanticLabel: AppLocalizations.of(context)!.multiKeyPageDelete,
             onTap: () async {
@@ -875,7 +875,7 @@ class _MultiKeyManagerPageState extends State<MultiKeyManagerPage> {
                       Align(
                         alignment: Alignment.centerLeft,
                         child: _TactileIconButton(
-                          icon: Lucide.X,
+                          icon: Lucide.x,
                           color: cs.onSurface,
                           onTap: () => Navigator.of(ctx).maybePop(),
                         ),
@@ -921,7 +921,7 @@ class _MultiKeyManagerPageState extends State<MultiKeyManagerPage> {
                   width: double.infinity,
                   child: IosTileButton(
                     label: l10n.multiKeyPageAdd,
-                    icon: Lucide.Plus,
+                    icon: Lucide.plus,
                     backgroundColor: cs.primary,
                     onTap: () =>
                         Navigator.of(ctx).pop(_splitKeys(inputCtrl.text)),
@@ -992,7 +992,7 @@ class _MultiKeyManagerPageState extends State<MultiKeyManagerPage> {
                       Align(
                         alignment: Alignment.centerLeft,
                         child: _TactileIconButton(
-                          icon: Lucide.X,
+                          icon: Lucide.x,
                           color: cs.onSurface,
                           onTap: () => Navigator.of(ctx).maybePop(),
                         ),
@@ -1099,7 +1099,7 @@ class _MultiKeyManagerPageState extends State<MultiKeyManagerPage> {
                   width: double.infinity,
                   child: IosTileButton(
                     label: l10n.multiKeyPageSave,
-                    icon: Lucide.Check,
+                    icon: Lucide.check,
                     backgroundColor: cs.primary,
                     onTap: () {
                       final p = int.tryParse(priCtrl.text.trim()) ?? k.priority;

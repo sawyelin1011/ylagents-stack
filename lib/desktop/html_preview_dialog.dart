@@ -212,7 +212,7 @@ class _HtmlPreviewDialogState extends State<_HtmlPreviewDialog> {
                       const Spacer(),
                       // Right function buttons
                       IosIconButton(
-                        icon: Lucide.Terminal,
+                        icon: Lucide.terminal,
                         size: 18,
                         minSize: 34,
                         semanticLabel: l10n.messageWebViewConsoleLogs,
@@ -221,7 +221,7 @@ class _HtmlPreviewDialogState extends State<_HtmlPreviewDialog> {
                       const SizedBox(width: 4),
                       // Far right: close
                       IosIconButton(
-                        icon: Lucide.X,
+                        icon: Lucide.x,
                         size: 18,
                         minSize: 34,
                         semanticLabel: l10n.mcpPageClose,
@@ -338,7 +338,7 @@ class _ConsoleDialog extends StatelessWidget {
                       ),
                       const Spacer(),
                       IosIconButton(
-                        icon: Lucide.X,
+                        icon: Lucide.x,
                         size: 18,
                         minSize: 34,
                         semanticLabel: AppLocalizations.of(

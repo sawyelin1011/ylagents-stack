@@ -112,7 +112,7 @@ class _ConversationMcpSheet extends StatelessWidget {
                             .read<ChatService>()
                             .setConversationMcpServers(conversationId, ids);
                       },
-                      icon: Icon(Lucide.Check, size: 16, color: cs.primary),
+                      icon: Icon(Lucide.check, size: 16, color: cs.primary),
                       label: Text(l10n.mcpConversationSheetSelectAll),
                     ),
                     const SizedBox(width: 4),
@@ -125,7 +125,7 @@ class _ConversationMcpSheet extends StatelessWidget {
                               const <String>[],
                             );
                       },
-                      icon: Icon(Lucide.X, size: 16, color: cs.primary),
+                      icon: Icon(Lucide.x, size: 16, color: cs.primary),
                       label: Text(l10n.mcpConversationSheetClearAll),
                     ),
                   ],
@@ -220,7 +220,7 @@ class _ConversationMcpSheet extends StatelessWidget {
                                         ),
                                         alignment: Alignment.center,
                                         child: Icon(
-                                          Lucide.Terminal,
+                                          Lucide.terminal,
                                           size: 20,
                                           color: cs.primary,
                                         ),

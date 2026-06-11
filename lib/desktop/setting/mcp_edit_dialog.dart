@@ -241,7 +241,7 @@ class _DesktopMcpEditDialogState extends State<_DesktopMcpEditDialog>
               Padding(
                 padding: const EdgeInsets.only(right: 4),
                 child: _SmallIconBtn(
-                  icon: lucide.Lucide.RefreshCw,
+                  icon: lucide.Lucide.refreshCw,
                   tooltip: l10n.mcpServerEditSheetSyncToolsTooltip,
                   onTap: () async {
                     await context.read<McpProvider>().refreshTools(
@@ -251,7 +251,7 @@ class _DesktopMcpEditDialogState extends State<_DesktopMcpEditDialog>
                 ),
               ),
             _SmallIconBtn(
-              icon: lucide.Lucide.X,
+              icon: lucide.Lucide.x,
               tooltip: MaterialLocalizations.of(context).closeButtonTooltip,
               onTap: () => Navigator.of(context).maybePop(),
             ),
@@ -428,7 +428,7 @@ class _DesktopMcpEditDialogState extends State<_DesktopMcpEditDialog>
                       Align(
                         alignment: Alignment.centerRight,
                         child: _SmallIconBtn(
-                          icon: lucide.Lucide.Trash2,
+                          icon: lucide.Lucide.trash2,
                           tooltip: l10n.mcpServerEditSheetRemoveHeaderTooltip,
                           onTap: () => setState(() => _env.removeAt(i)),
                         ),
@@ -440,7 +440,7 @@ class _DesktopMcpEditDialogState extends State<_DesktopMcpEditDialog>
               Align(
                 alignment: Alignment.centerLeft,
                 child: OutlinedButton.icon(
-                  icon: const Icon(lucide.Lucide.Plus, size: 16),
+                  icon: const Icon(lucide.Lucide.plus, size: 16),
                   label: Text(l10n.mcpServerEditSheetStdioAddEnv),
                   style:
                       OutlinedButton.styleFrom(
@@ -510,7 +510,7 @@ class _DesktopMcpEditDialogState extends State<_DesktopMcpEditDialog>
                       Align(
                         alignment: Alignment.centerRight,
                         child: _SmallIconBtn(
-                          icon: lucide.Lucide.Trash2,
+                          icon: lucide.Lucide.trash2,
                           tooltip: l10n.mcpServerEditSheetRemoveHeaderTooltip,
                           onTap: () => setState(() => _headers.removeAt(i)),
                         ),
@@ -522,7 +522,7 @@ class _DesktopMcpEditDialogState extends State<_DesktopMcpEditDialog>
               Align(
                 alignment: Alignment.centerLeft,
                 child: OutlinedButton.icon(
-                  icon: const Icon(lucide.Lucide.Plus, size: 16),
+                  icon: const Icon(lucide.Lucide.plus, size: 16),
                   label: Text(l10n.mcpServerEditSheetAddHeader),
                   style:
                       OutlinedButton.styleFrom(
@@ -667,7 +667,7 @@ class _DesktopMcpEditDialogState extends State<_DesktopMcpEditDialog>
                     child: Row(
                       children: [
                         Icon(
-                          lucide.Lucide.Shield,
+                          lucide.Lucide.shield,
                           size: 13,
                           color: tool.needsApproval
                               ? cs.primary

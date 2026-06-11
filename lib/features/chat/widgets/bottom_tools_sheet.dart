@@ -118,19 +118,19 @@ class BottomToolsSheet extends StatelessWidget {
                     Row(
                       children: [
                         roundedAction(
-                          icon: Lucide.Camera,
+                          icon: Lucide.camera,
                           label: l10n.bottomToolsSheetCamera,
                           onTap: onCamera,
                         ),
                         const SizedBox(width: 12),
                         roundedAction(
-                          icon: Lucide.Image,
+                          icon: Lucide.image,
                           label: l10n.bottomToolsSheetPhotos,
                           onTap: onPhotos,
                         ),
                         const SizedBox(width: 12),
                         roundedAction(
-                          icon: Lucide.Paperclip,
+                          icon: Lucide.paperclip,
                           label: l10n.bottomToolsSheetUpload,
                           onTap: onUpload,
                         ),
@@ -214,7 +214,7 @@ class _LearningAndClearSectionState extends State<_LearningAndClearSection> {
             ),
             trailing ??
                 (selected
-                    ? Icon(Lucide.Check, size: 18, color: cs.primary)
+                    ? Icon(Lucide.check, size: 18, color: cs.primary)
                     : const SizedBox(width: 18)),
           ],
         ),
@@ -235,7 +235,7 @@ class _LearningAndClearSectionState extends State<_LearningAndClearSection> {
       mainAxisSize: MainAxisSize.min,
       children: [
         _row(
-          icon: Lucide.Layers,
+          icon: Lucide.layers,
           label: l10n.instructionInjectionTitle,
           selected: false,
           onTap: () async {
@@ -258,7 +258,7 @@ class _LearningAndClearSectionState extends State<_LearningAndClearSection> {
             });
           },
           trailing: Icon(
-            Lucide.ChevronRight,
+            Lucide.chevronRight,
             size: 18,
             color: cs.onSurface.withValues(alpha: 0.55),
           ),
@@ -266,7 +266,7 @@ class _LearningAndClearSectionState extends State<_LearningAndClearSection> {
         if (hasWorldBooks) ...[
           const SizedBox(height: 8),
           _row(
-            icon: Lucide.BookOpen,
+            icon: Lucide.bookOpen,
             label: l10n.worldBookTitle,
             selected: false,
             onTap: () async {
@@ -287,7 +287,7 @@ class _LearningAndClearSectionState extends State<_LearningAndClearSection> {
               });
             },
             trailing: Icon(
-              Lucide.ChevronRight,
+              Lucide.chevronRight,
               size: 18,
               color: cs.onSurface.withValues(alpha: 0.55),
             ),
@@ -296,7 +296,7 @@ class _LearningAndClearSectionState extends State<_LearningAndClearSection> {
         if (hasOcrModel) ...[
           const SizedBox(height: 8),
           _row(
-            icon: Lucide.Eye,
+            icon: Lucide.eye,
             label: l10n.bottomToolsSheetOcr,
             selected: settings.ocrEnabled,
             onTap: () async {
@@ -318,7 +318,7 @@ class _LearningAndClearSectionState extends State<_LearningAndClearSection> {
             widget.onClear?.call();
           },
           trailing: Icon(
-            Lucide.ChevronRight,
+            Lucide.chevronRight,
             size: 18,
             color: cs.onSurface.withValues(alpha: 0.55),
           ),

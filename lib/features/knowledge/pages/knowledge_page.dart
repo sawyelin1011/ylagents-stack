@@ -29,7 +29,7 @@ class KnowledgePage extends StatelessWidget {
           children: [
             Row(
               children: [
-                Icon(lucide.Lucide.BookOpen, size: 24, color: cs.primary),
+                Icon(lucide.Lucide.bookOpen, size: 24, color: cs.primary),
                 const SizedBox(width: 12),
                 Text(
                   l10n.desktopNavKnowledgeTooltip,
@@ -58,7 +58,7 @@ class KnowledgePage extends StatelessWidget {
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     Icon(
-                      lucide.Lucide.BookOpen,
+                      lucide.Lucide.bookOpen,
                       size: 48,
                       color: cs.onSurface.withValues(alpha: 0.2),
                     ),

@@ -151,7 +151,7 @@ class _SearchServicesPageState extends State<SearchServicesPage> {
         leading: Tooltip(
           message: l10n.searchServicesPageBackTooltip,
           child: _TactileIconButton(
-            icon: Lucide.ArrowLeft,
+            icon: Lucide.arrowLeft,
             color: cs.onSurface,
             size: 22,
             onTap: () => Navigator.of(context).maybePop(),
@@ -162,7 +162,7 @@ class _SearchServicesPageState extends State<SearchServicesPage> {
           Tooltip(
             message: l10n.searchServicesPageAddProvider,
             child: _TactileIconButton(
-              icon: Lucide.Plus,
+              icon: Lucide.plus,
               color: cs.onSurface,
               size: 22,
               onTap: _addService,
@@ -224,7 +224,7 @@ class _SearchServicesPageState extends State<SearchServicesPage> {
       return Row(
         mainAxisSize: MainAxisSize.min,
         children: [
-          _SmallTactileIcon(icon: Lucide.Minus, onTap: onMinus, enabled: true),
+          _SmallTactileIcon(icon: Lucide.minus, onTap: onMinus, enabled: true),
           const SizedBox(width: 8),
           Text(
             unit == null ? '$value' : '$value$unit',
@@ -234,7 +234,7 @@ class _SearchServicesPageState extends State<SearchServicesPage> {
             ),
           ),
           const SizedBox(width: 8),
-          _SmallTactileIcon(icon: Lucide.Plus, onTap: onPlus, enabled: true),
+          _SmallTactileIcon(icon: Lucide.plus, onTap: onPlus, enabled: true),
         ],
       );
     }
@@ -261,7 +261,7 @@ class _SearchServicesPageState extends State<SearchServicesPage> {
                     children: [
                       SizedBox(
                         width: 36,
-                        child: Icon(Lucide.HeartPulse, size: 18, color: c),
+                        child: Icon(Lucide.heartPulse, size: 18, color: c),
                       ),
                       const SizedBox(width: 12),
                       Expanded(
@@ -308,7 +308,7 @@ class _SearchServicesPageState extends State<SearchServicesPage> {
                     children: [
                       SizedBox(
                         width: 36,
-                        child: Icon(Lucide.ListOrdered, size: 18, color: c),
+                        child: Icon(Lucide.listOrdered, size: 18, color: c),
                       ),
                       const SizedBox(width: 12),
                       Expanded(
@@ -371,7 +371,7 @@ class _SearchServicesPageState extends State<SearchServicesPage> {
                     children: [
                       SizedBox(
                         width: 36,
-                        child: Icon(Lucide.History, size: 18, color: c),
+                        child: Icon(Lucide.history, size: 18, color: c),
                       ),
                       const SizedBox(width: 12),
                       Expanded(
@@ -506,7 +506,7 @@ class _SearchServicesPageState extends State<SearchServicesPage> {
                       ),
                     ],
                     const SizedBox(width: 8),
-                    Icon(Lucide.ChevronRight, size: 16, color: c),
+                    Icon(Lucide.chevronRight, size: 16, color: c),
                   ],
                 ),
               ),
@@ -535,7 +535,7 @@ class _SearchServicesPageState extends State<SearchServicesPage> {
               children: [
                 _sheetOption(
                   ctx,
-                  icon: Lucide.Activity,
+                  icon: Lucide.activity,
                   label: l10n.searchServicesPageTestConnectionTooltip,
                   onTap: () {
                     Navigator.of(ctx).pop();
@@ -545,7 +545,7 @@ class _SearchServicesPageState extends State<SearchServicesPage> {
                 _sheetDivider(ctx),
                 _sheetOption(
                   ctx,
-                  icon: Lucide.Trash2,
+                  icon: Lucide.trash2,
                   label: l10n.providerDetailPageDeleteButton,
                   onTap: () {
                     Navigator.of(ctx).pop();
@@ -774,7 +774,7 @@ class _AddServiceBottomSheetState extends State<_AddServiceBottomSheet> {
           children: [
             _sheetOption(
               context,
-              icon: Lucide.Globe,
+              icon: Lucide.globe,
               label: item['name'] as String,
               leading: _ServiceIcon(
                 type: item['type'] as String,
@@ -938,7 +938,7 @@ class _AddServiceBottomSheetState extends State<_AddServiceBottomSheet> {
             ),
             child: Row(
               children: [
-                Icon(Lucide.Search, size: 20, color: cs.primary),
+                Icon(Lucide.search, size: 20, color: cs.primary),
                 const SizedBox(width: 12),
                 Expanded(
                   child: Text(
@@ -2119,7 +2119,7 @@ Widget _sheetOption(
                   child: Center(
                     child:
                         leading ??
-                        Icon(icon ?? Lucide.ChevronRight, size: 20, color: c),
+                        Icon(icon ?? Lucide.chevronRight, size: 20, color: c),
                   ),
                 ),
                 const SizedBox(width: 12),

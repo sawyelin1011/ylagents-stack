@@ -62,7 +62,7 @@ class WorldBookSheet extends StatelessWidget {
                               final disabled = !book.enabled;
                               final canTap = !disabled || selected;
                               return _SelectableRow(
-                                icon: Lucide.BookOpen,
+                                icon: Lucide.bookOpen,
                                 label: book.name.trim().isEmpty
                                     ? l10n.worldBookUnnamed
                                     : book.name.trim(),
@@ -112,7 +112,7 @@ class _SheetTopBar extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 16),
         child: Row(
           children: [
-            _NavIconButton(icon: Lucide.ArrowLeft, onTap: onBack),
+            _NavIconButton(icon: Lucide.arrowLeft, onTap: onBack),
             Expanded(
               child: Center(
                 child: Text(
@@ -223,7 +223,7 @@ class _SelectableRow extends StatelessWidget {
             ),
             if (selected)
               Icon(
-                Lucide.Check,
+                Lucide.check,
                 size: 18,
                 color: cs.primary.withValues(alpha: opacity),
               )

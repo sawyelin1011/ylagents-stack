@@ -89,7 +89,7 @@ class _DesktopMcpTimeoutDialogState extends State<_DesktopMcpTimeoutDialog> {
                   ),
                   const Spacer(),
                   _SmallIconBtn(
-                    icon: lucide.Lucide.X,
+                    icon: lucide.Lucide.x,
                     tooltip: l10n.mcpPageClose,
                     onTap: () => Navigator.of(context).maybePop(),
                   ),

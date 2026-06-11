@@ -69,13 +69,13 @@ class _DesktopTtsServicesPaneState extends State<DesktopTtsServicesPane> {
                       Tooltip(
                         message: l10n.ttsServicesPageSettingsTooltip,
                         child: _SmallIconBtn(
-                          icon: lucide.Lucide.Settings2,
+                          icon: lucide.Lucide.settings2,
                           onTap: () => _showTtsSettingsDialog(context),
                         ),
                       ),
                       const SizedBox(width: 6),
                       _SmallIconBtn(
-                        icon: lucide.Lucide.Plus,
+                        icon: lucide.Lucide.plus,
                         onTap: _handleAddNetworkService,
                       ),
                     ],
@@ -230,7 +230,7 @@ class _NetworkServiceCardState extends State<_NetworkServiceCard> {
                   ),
                   const SizedBox(width: 8),
                   _SmallIconBtn(
-                    icon: lucide.Lucide.Settings2,
+                    icon: lucide.Lucide.settings2,
                     onTap: widget.onEdit,
                   ),
                   const SizedBox(width: 6),
@@ -240,8 +240,8 @@ class _NetworkServiceCardState extends State<_NetworkServiceCard> {
                     )!.ttsServicesPageTestVoiceTooltip,
                     child: _SmallIconBtn(
                       icon: _testing
-                          ? lucide.Lucide.Loader
-                          : lucide.Lucide.Volume2,
+                          ? lucide.Lucide.loader
+                          : lucide.Lucide.volume2,
                       onTap: () async {
                         setState(() {
                           _testing = true;
@@ -263,7 +263,7 @@ class _NetworkServiceCardState extends State<_NetworkServiceCard> {
                   ),
                   const SizedBox(width: 6),
                   _SmallIconBtn(
-                    icon: lucide.Lucide.Trash2,
+                    icon: lucide.Lucide.trash2,
                     onTap: widget.onDelete,
                   ),
                   // no check icon on desktop
@@ -346,7 +346,7 @@ void _showErrorDialog(BuildContext context, String message) {
                     ),
                   ),
                   _SmallIconBtn(
-                    icon: lucide.Lucide.X,
+                    icon: lucide.Lucide.x,
                     onTap: () => Navigator.of(ctx).maybePop(),
                   ),
                 ],
@@ -410,7 +410,7 @@ void _showTtsSettingsDialog(BuildContext context) {
                     ),
                   ),
                   _SmallIconBtn(
-                    icon: lucide.Lucide.X,
+                    icon: lucide.Lucide.x,
                     onTap: () => Navigator.of(ctx).maybePop(),
                   ),
                 ],
@@ -518,7 +518,7 @@ class _SystemTtsCardState extends State<_SystemTtsCard> {
           child: Row(
             children: [
               // Brand-like circular badge with a speaker icon
-              _CircleIconBadge(icon: lucide.Lucide.Volume2, size: 24),
+              _CircleIconBadge(icon: lucide.Lucide.volume2, size: 24),
               const SizedBox(width: 10),
               Expanded(
                 child: Column(
@@ -552,8 +552,8 @@ class _SystemTtsCardState extends State<_SystemTtsCard> {
                 message: l10n.ttsServicesPageTestVoiceTooltip,
                 child: _SmallIconBtn(
                   icon: tts.isSpeaking
-                      ? lucide.Lucide.CircleStop
-                      : lucide.Lucide.Volume2,
+                      ? lucide.Lucide.circleStop
+                      : lucide.Lucide.volume2,
                   onTap: available
                       ? () async {
                           if (!tts.isSpeaking) {
@@ -570,7 +570,7 @@ class _SystemTtsCardState extends State<_SystemTtsCard> {
               Tooltip(
                 message: l10n.ttsServicesPageSystemTtsSettingsTitle,
                 child: _SmallIconBtn(
-                  icon: lucide.Lucide.Settings2,
+                  icon: lucide.Lucide.settings2,
                   onTap: () => _showSettingsDialog(context),
                 ),
               ),
@@ -620,7 +620,7 @@ class _SystemTtsCardState extends State<_SystemTtsCard> {
                         ),
                       ),
                       _SmallIconBtn(
-                        icon: lucide.Lucide.X,
+                        icon: lucide.Lucide.x,
                         onTap: () => Navigator.of(ctx).maybePop(),
                       ),
                     ],
@@ -716,7 +716,7 @@ class _SystemTtsCardState extends State<_SystemTtsCard> {
                     alignment: Alignment.centerRight,
                     child: TextButton.icon(
                       onPressed: () => Navigator.of(ctx).maybePop(),
-                      icon: const Icon(lucide.Lucide.Check, size: 16),
+                      icon: const Icon(lucide.Lucide.check, size: 16),
                       label: Text(l10n.ttsServicesPageDoneButton),
                     ),
                   ),
@@ -899,7 +899,7 @@ class _SelectButtonState extends State<_SelectButton> {
               ),
               const SizedBox(width: 6),
               Icon(
-                lucide.Lucide.ChevronDown,
+                lucide.Lucide.chevronDown,
                 size: 16,
                 color: cs.onSurface.withValues(alpha: 0.8),
               ),
@@ -1017,7 +1017,7 @@ class _DialogOptionState extends State<_DialogOption> {
                 ),
               ),
               if (widget.selected)
-                Icon(lucide.Lucide.Check, size: 16, color: cs.primary),
+                Icon(lucide.Lucide.check, size: 16, color: cs.primary),
             ],
           ),
         ),
@@ -1163,7 +1163,7 @@ Future<TtsServiceOptions?> _showNetworkDialog(
                           ),
                         ),
                         _SmallIconBtn(
-                          icon: lucide.Lucide.X,
+                          icon: lucide.Lucide.x,
                           onTap: () => Navigator.of(ctx).maybePop(),
                         ),
                       ],

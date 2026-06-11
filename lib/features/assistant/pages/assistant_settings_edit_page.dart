@@ -85,49 +85,49 @@ List<_AssistantEditTabSpec> _assistantEditTabSpecs(
     _AssistantEditTabSpec(
       id: assistantEditTabBasic,
       label: l10n.assistantEditPageBasicTab,
-      icon: Lucide.Settings2,
+      icon: Lucide.settings2,
       child: _BasicSettingsTab(assistantId: assistantId),
     ),
     _AssistantEditTabSpec(
       id: assistantEditTabPrompts,
       label: l10n.assistantEditPagePromptsTab,
-      icon: Lucide.FileText,
+      icon: Lucide.fileText,
       child: _PromptTab(assistantId: assistantId),
     ),
     _AssistantEditTabSpec(
       id: assistantEditTabMemory,
       label: l10n.assistantEditPageMemoryTab,
-      icon: Lucide.Brain,
+      icon: Lucide.brain,
       child: _MemoryTab(assistantId: assistantId),
     ),
     _AssistantEditTabSpec(
       id: assistantEditTabLocalTools,
       label: l10n.assistantEditPageLocalToolsTab,
-      icon: Lucide.Wrench,
+      icon: Lucide.wrench,
       child: _LocalToolsTab(assistantId: assistantId),
     ),
     _AssistantEditTabSpec(
       id: assistantEditTabMcp,
       label: l10n.assistantEditPageMcpTab,
-      icon: Lucide.Terminal,
+      icon: Lucide.terminal,
       child: _McpTab(assistantId: assistantId),
     ),
     _AssistantEditTabSpec(
       id: assistantEditTabQuickPhrase,
       label: l10n.assistantEditPageQuickPhraseTab,
-      icon: Lucide.Zap,
+      icon: Lucide.zap,
       child: _QuickPhraseTab(assistantId: assistantId),
     ),
     _AssistantEditTabSpec(
       id: assistantEditTabCustom,
       label: l10n.assistantEditPageCustomTab,
-      icon: Lucide.EthernetPort,
+      icon: Lucide.ethernetPort,
       child: _CustomRequestTab(assistantId: assistantId),
     ),
     _AssistantEditTabSpec(
       id: assistantEditTabRegex,
       label: l10n.assistantEditPageRegexTab,
-      icon: Lucide.CaseSensitive,
+      icon: Lucide.caseSensitive,
       child: AssistantRegexTab(assistantId: assistantId),
     ),
   ];
@@ -300,7 +300,7 @@ class _AssistantSettingsEditPageState extends State<AssistantSettingsEditPage>
           leading: Tooltip(
             message: l10n.settingsPageBackButton,
             child: _TactileIconButton(
-              icon: Lucide.ArrowLeft,
+              icon: Lucide.arrowLeft,
               color: cs.onSurface,
               size: 22,
               onTap: () => Navigator.of(context).maybePop(),
@@ -325,7 +325,7 @@ class _AssistantSettingsEditPageState extends State<AssistantSettingsEditPage>
         leading: Tooltip(
           message: l10n.settingsPageBackButton,
           child: _TactileIconButton(
-            icon: Lucide.ArrowLeft,
+            icon: Lucide.arrowLeft,
             color: cs.onSurface,
             size: 22,
             onTap: () => Navigator.of(context).maybePop(),
@@ -340,7 +340,7 @@ class _AssistantSettingsEditPageState extends State<AssistantSettingsEditPage>
           Tooltip(
             message: l10n.assistantEditTabLayoutTooltip,
             child: IosIconButton(
-              icon: Lucide.Settings2,
+              icon: Lucide.settings2,
               color: cs.onSurface,
               size: 21,
               minSize: 44,
@@ -536,7 +536,7 @@ class _AssistantDetailSectionPage extends StatelessWidget {
           leading: Tooltip(
             message: l10n.settingsPageBackButton,
             child: IosIconButton(
-              icon: Lucide.ArrowLeft,
+              icon: Lucide.arrowLeft,
               color: cs.onSurface,
               size: 22,
               minSize: 44,
@@ -562,7 +562,7 @@ class _AssistantDetailSectionPage extends StatelessWidget {
         leading: Tooltip(
           message: l10n.settingsPageBackButton,
           child: IosIconButton(
-            icon: Lucide.ArrowLeft,
+            icon: Lucide.arrowLeft,
             color: cs.onSurface,
             size: 22,
             minSize: 44,
@@ -602,7 +602,7 @@ class _AssistantTabLayoutPage extends StatelessWidget {
         leading: Tooltip(
           message: l10n.settingsPageBackButton,
           child: IosIconButton(
-            icon: Lucide.ArrowLeft,
+            icon: Lucide.arrowLeft,
             color: cs.onSurface,
             size: 22,
             minSize: 44,
@@ -615,7 +615,7 @@ class _AssistantTabLayoutPage extends StatelessWidget {
           Tooltip(
             message: l10n.assistantEditTabLayoutResetTooltip,
             child: IosIconButton(
-              icon: Lucide.RotateCcw,
+              icon: Lucide.rotateCcw,
               color: cs.onSurface,
               size: 20,
               minSize: 44,
@@ -731,7 +731,7 @@ class _AssistantOutlineModeSwitch extends StatelessWidget {
       children: [
         _iosSwitchRow(
           context,
-          icon: Lucide.ListTree,
+          icon: Lucide.listTree,
           label: l10n.assistantEditOutlineModeTitle,
           value: settings.mobileAssistantDetailOutlineEnabled,
           onChanged: (enabled) => context
@@ -820,7 +820,7 @@ class _AssistantTabLayoutTile extends StatelessWidget {
                 child: Padding(
                   padding: const EdgeInsets.all(10),
                   child: Icon(
-                    Lucide.GripVertical,
+                    Lucide.gripVertical,
                     size: 18,
                     color: cs.onSurface.withValues(alpha: 0.42),
                   ),
@@ -1326,7 +1326,7 @@ Widget _iosNavRow(
                     ),
                   ),
                 if (accessory != null) accessory,
-                if (interactive) Icon(Lucide.ChevronRight, size: 16, color: c),
+                if (interactive) Icon(Lucide.chevronRight, size: 16, color: c),
               ],
             ),
           );
@@ -1544,7 +1544,7 @@ class _DesktopAssistantDialogShellState
                 ),
                 IconButton(
                   tooltip: MaterialLocalizations.of(context).closeButtonTooltip,
-                  icon: const Icon(Lucide.X, size: 18),
+                  icon: const Icon(Lucide.x, size: 18),
                   color: cs.onSurface,
                   onPressed: () => Navigator.of(context).maybePop(),
                 ),
@@ -2273,7 +2273,7 @@ class _DesktopAssistantBasicPaneState
                         Tooltip(
                           message: l10n.defaultModelPageResetDefault,
                           child: _TactileIconButton(
-                            icon: Lucide.RotateCcw,
+                            icon: Lucide.rotateCcw,
                             color: cs.onSurface,
                             size: 20,
                             onTap: () async {
@@ -2474,7 +2474,7 @@ class _DesktopAssistantBasicPaneState
                         Expanded(
                           child: _IosButton(
                             label: l10n.assistantEditClearButton,
-                            icon: Lucide.X,
+                            icon: Lucide.x,
                             onTap: () => context
                                 .read<AssistantProvider>()
                                 .updateAssistant(
@@ -2527,7 +2527,7 @@ class _DesktopAssistantBasicPaneState
       anchorKey: _avatarKey,
       items: [
         DesktopContextMenuItem(
-          icon: Lucide.User,
+          icon: Lucide.user,
           label: l10n.desktopAvatarMenuUseEmoji,
           onTap: () async {
             final emoji = await showEmojiPickerDialog(
@@ -2543,7 +2543,7 @@ class _DesktopAssistantBasicPaneState
           },
         ),
         DesktopContextMenuItem(
-          icon: Lucide.Image,
+          icon: Lucide.image,
           label: l10n.desktopAvatarMenuChangeFromImage,
           onTap: () async {
             try {
@@ -2574,7 +2574,7 @@ class _DesktopAssistantBasicPaneState
           },
         ),
         DesktopContextMenuItem(
-          icon: Lucide.Link,
+          icon: Lucide.link,
           label: l10n.assistantEditAvatarEnterLink,
           onTap: () async {
             await _inputAvatarUrl(context, a);
@@ -2588,7 +2588,7 @@ class _DesktopAssistantBasicPaneState
           },
         ),
         DesktopContextMenuItem(
-          icon: Lucide.RotateCw,
+          icon: Lucide.rotateCw,
           label: l10n.desktopAvatarMenuReset,
           onTap: () async {
             await context.read<AssistantProvider>().updateAssistant(

@@ -34,7 +34,7 @@ class TokenDetailPopup extends StatelessWidget {
       final cached = (cachedTokens ?? 0) > 0 ? cachedTokens! : 0;
       rows.add(
         _buildRow(
-          icon: Lucide.ArrowUp,
+          icon: Lucide.arrowUp,
           text: cached > 0
               ? l10n.tokenDetailPromptTokensWithCache(promptTokens!, cached)
               : l10n.tokenDetailPromptTokens(promptTokens!),
@@ -47,7 +47,7 @@ class TokenDetailPopup extends StatelessWidget {
     if (completionTokens != null && completionTokens! > 0) {
       rows.add(
         _buildRow(
-          icon: Lucide.ArrowDown,
+          icon: Lucide.arrowDown,
           text: l10n.tokenDetailCompletionTokens(completionTokens!),
           cs: cs,
         ),
@@ -63,7 +63,7 @@ class TokenDetailPopup extends StatelessWidget {
       final tokPerSec = completionTokens! / durationSec;
       rows.add(
         _buildRow(
-          icon: Lucide.Zap,
+          icon: Lucide.zap,
           text: l10n.tokenDetailSpeed(tokPerSec.toStringAsFixed(1)),
           cs: cs,
         ),

@@ -374,7 +374,7 @@ class _SearchContent extends StatelessWidget {
     // 1) Cancel item at top
     rows.add(
       _RowItem(
-        leading: Icon(Lucide.CircleX, size: 16, color: cs.onSurface),
+        leading: Icon(Lucide.circleX, size: 16, color: cs.onSurface),
         label: l10n.homePageCancel,
         selected: false,
         onTap: () async {
@@ -389,7 +389,7 @@ class _SearchContent extends StatelessWidget {
     if (supportsBuiltIn) {
       rows.add(
         _RowItem(
-          leading: Icon(Lucide.Search, size: 16, color: cs.onSurface),
+          leading: Icon(Lucide.search, size: 16, color: cs.onSurface),
           label: l10n.searchSettingsSheetBuiltinSearchTitle,
           selected: builtInEnabled && !claudeDynamicWebSearchEnabled,
           onTap: () async {
@@ -405,7 +405,7 @@ class _SearchContent extends StatelessWidget {
       if (supportsClaudeDynamicWebSearch) {
         rows.add(
           _RowItem(
-            leading: Icon(Lucide.Search, size: 16, color: cs.onSurface),
+            leading: Icon(Lucide.search, size: 16, color: cs.onSurface),
             label: l10n.searchSettingsSheetClaudeDynamicSearchTitle,
             selected: builtInEnabled && claudeDynamicWebSearchEnabled,
             onTap: () async {
@@ -537,7 +537,7 @@ class _RowItemState extends State<_RowItem> {
                 duration: const Duration(milliseconds: 160),
                 child: widget.selected
                     ? Icon(
-                        Lucide.Check,
+                        Lucide.check,
                         key: const ValueKey('check'),
                         size: 16,
                         color: cs.primary,

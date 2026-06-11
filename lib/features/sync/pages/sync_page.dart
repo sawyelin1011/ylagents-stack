@@ -51,7 +51,7 @@ class _SyncPageState extends State<SyncPage> {
       appBar: AppBar(
         title: Row(
           children: [
-            Icon(lucide.Lucide.RefreshCw, size: 18, color: cs.primary),
+            Icon(lucide.Lucide.refreshCw, size: 18, color: cs.primary),
             const SizedBox(width: 8),
             Text(l10n.syncPageTitle),
           ],
@@ -70,7 +70,7 @@ class _SyncPageState extends State<SyncPage> {
                           color: cs.onPrimary,
                         ),
                       )
-                    : Icon(lucide.Lucide.RefreshCw, size: 14),
+                    : Icon(lucide.Lucide.refreshCw, size: 14),
                 label: Text(
                   sync.isSyncing ? l10n.syncPageSyncing : l10n.syncPageSyncNow,
                 ),
@@ -144,7 +144,7 @@ class _DeviceSection extends StatelessWidget {
           children: [
             Row(
               children: [
-                Icon(lucide.Lucide.Smartphone, size: 18, color: cs.primary),
+                Icon(lucide.Lucide.smartphone, size: 18, color: cs.primary),
                 const SizedBox(width: 8),
                 Text(
                   l10n.syncPageDeviceSection,
@@ -182,7 +182,7 @@ class _DeviceSection extends StatelessWidget {
                 children: [
                   if (!auth.isRegistered)
                     FilledButton.icon(
-                      icon: const Icon(lucide.Lucide.Shield, size: 14),
+                      icon: const Icon(lucide.Lucide.shield, size: 14),
                       label: Text(l10n.syncPageRegister),
                       onPressed: () => _showRegisterDialog(context),
                       style: FilledButton.styleFrom(
@@ -209,7 +209,7 @@ class _DeviceSection extends StatelessWidget {
                     ),
                     const SizedBox(width: 8),
                     TextButton.icon(
-                      icon: const Icon(lucide.Lucide.LogOut, size: 14),
+                      icon: const Icon(lucide.Lucide.logOut, size: 14),
                       label: Text(l10n.syncPageUnregister),
                       onPressed: () => auth.unregisterDevice(),
                       style: TextButton.styleFrom(
@@ -311,7 +311,7 @@ class _ConfigSection extends StatelessWidget {
           children: [
             Row(
               children: [
-                Icon(lucide.Lucide.Settings, size: 18, color: cs.primary),
+                Icon(lucide.Lucide.settings, size: 18, color: cs.primary),
                 const SizedBox(width: 8),
                 Text(
                   l10n.syncPageConfigSection,
@@ -401,7 +401,7 @@ class _RecordsSection extends StatelessWidget {
           children: [
             Row(
               children: [
-                Icon(lucide.Lucide.Clock, size: 18, color: cs.primary),
+                Icon(lucide.Lucide.clock, size: 18, color: cs.primary),
                 const SizedBox(width: 8),
                 Expanded(
                   child: Text(
@@ -508,15 +508,15 @@ class _SyncRecordRow extends StatelessWidget {
   IconData _statusIcon(SyncStatus status) {
     switch (status) {
       case SyncStatus.syncing:
-        return lucide.Lucide.Loader;
+        return lucide.Lucide.loader;
       case SyncStatus.success:
-        return lucide.Lucide.CheckCircle;
+        return lucide.Lucide.checkCircle;
       case SyncStatus.failed:
-        return lucide.Lucide.AlertCircle;
+        return lucide.Lucide.alertCircle;
       case SyncStatus.paused:
-        return lucide.Lucide.PauseCircle;
+        return lucide.Lucide.pauseCircle;
       case SyncStatus.idle:
-        return lucide.Lucide.Circle;
+        return lucide.Lucide.circle;
     }
   }
 

@@ -2,7 +2,7 @@ import 'dart:convert';
 
 import 'package:http/http.dart' as http;
 
-import '../models/agent_channel.dart';
+import '../../models/agent_channel.dart';
 import 'channel_adapter.dart';
 
 /// Adapter for Slack Bot API channels.

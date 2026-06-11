@@ -31,7 +31,7 @@ class _RuntimePageState extends State<RuntimePage> {
       appBar: AppBar(
         title: Row(
           children: [
-            Icon(lucide.Lucide.Server, size: 18, color: cs.primary),
+            Icon(lucide.Lucide.server, size: 18, color: cs.primary),
             const SizedBox(width: 8),
             Text(l10n.runtimePageTitle),
           ],
@@ -90,7 +90,7 @@ class _HostStatusSection extends StatelessWidget {
           children: [
             Row(
               children: [
-                Icon(lucide.Lucide.Server, size: 18, color: cs.primary),
+                Icon(lucide.Lucide.server, size: 18, color: cs.primary),
                 const SizedBox(width: 8),
                 Text(
                   l10n.runtimePageHostSection,
@@ -147,7 +147,7 @@ class _HostStatusSection extends StatelessWidget {
               children: [
                 if (!isRunning)
                   FilledButton.icon(
-                    icon: const Icon(lucide.Lucide.Play, size: 14),
+                    icon: const Icon(lucide.Lucide.play, size: 14),
                     label: Text(l10n.runtimePageStart),
                     onPressed: () => runtime.startHost(),
                     style: FilledButton.styleFrom(
@@ -156,7 +156,7 @@ class _HostStatusSection extends StatelessWidget {
                   )
                 else ...[
                   OutlinedButton.icon(
-                    icon: const Icon(lucide.Lucide.StopCircle, size: 14),
+                    icon: const Icon(lucide.Lucide.stopCircle, size: 14),
                     label: Text(l10n.runtimePageStop),
                     onPressed: () => runtime.stopHost(),
                     style: OutlinedButton.styleFrom(
@@ -207,7 +207,7 @@ class _ActiveExecutionsSection extends StatelessWidget {
           children: [
             Row(
               children: [
-                Icon(lucide.Lucide.Activity, size: 18, color: cs.primary),
+                Icon(lucide.Lucide.activity, size: 18, color: cs.primary),
                 const SizedBox(width: 8),
                 Expanded(
                   child: Text(
@@ -250,7 +250,7 @@ class _ActiveExecutionsSection extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.only(top: 12),
                 child: OutlinedButton.icon(
-                  icon: const Icon(lucide.Lucide.Play, size: 14),
+                  icon: const Icon(lucide.Lucide.play, size: 14),
                   label: const Text('Run Agent'),
                   onPressed: () => _executeAgent(context, runtime),
                   style: OutlinedButton.styleFrom(
@@ -305,7 +305,7 @@ class _ScheduleSection extends StatelessWidget {
           children: [
             Row(
               children: [
-                Icon(lucide.Lucide.Clock, size: 18, color: cs.primary),
+                Icon(lucide.Lucide.clock, size: 18, color: cs.primary),
                 const SizedBox(width: 8),
                 Expanded(
                   child: Text(
@@ -378,7 +378,7 @@ class _HistorySection extends StatelessWidget {
           children: [
             Row(
               children: [
-                Icon(lucide.Lucide.History, size: 18, color: cs.primary),
+                Icon(lucide.Lucide.history, size: 18, color: cs.primary),
                 const SizedBox(width: 8),
                 Expanded(
                   child: Text(
@@ -493,15 +493,15 @@ class _ExecutionRow extends StatelessWidget {
   IconData _statusIcon(RuntimeExecutionStatus status) {
     switch (status) {
       case RuntimeExecutionStatus.running:
-        return lucide.Lucide.Loader;
+        return lucide.Lucide.loader;
       case RuntimeExecutionStatus.completed:
-        return lucide.Lucide.CheckCircle;
+        return lucide.Lucide.checkCircle;
       case RuntimeExecutionStatus.failed:
-        return lucide.Lucide.AlertCircle;
+        return lucide.Lucide.alertCircle;
       case RuntimeExecutionStatus.cancelled:
-        return lucide.Lucide.XCircle;
+        return lucide.Lucide.xCircle;
       case RuntimeExecutionStatus.pending:
-        return lucide.Lucide.Circle;
+        return lucide.Lucide.circle;
     }
   }
 
@@ -560,7 +560,7 @@ class _ScheduleRow extends StatelessWidget {
       child: Row(
         children: [
           Icon(
-            schedule.enabled ? lucide.Lucide.Bell : lucide.Lucide.BellOff,
+            schedule.enabled ? lucide.Lucide.bell : lucide.Lucide.bellOff,
             size: 14,
             color: schedule.enabled
                 ? cs.primary
@@ -588,8 +588,8 @@ class _ScheduleRow extends StatelessWidget {
           IconButton(
             icon: Icon(
               schedule.enabled
-                  ? lucide.Lucide.ToggleRight
-                  : lucide.Lucide.ToggleLeft,
+                  ? lucide.Lucide.toggleRight
+                  : lucide.Lucide.toggleLeft,
               size: 16,
             ),
             onPressed: () {

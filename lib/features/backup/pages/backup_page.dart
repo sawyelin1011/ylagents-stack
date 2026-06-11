@@ -100,7 +100,7 @@ class _BackupPageState extends State<BackupPage> {
                   children: [
                     // Padding(
                     //   padding: const EdgeInsets.only(top: 2),
-                    //   child: Icon(Lucide.BadgeInfo, size: 18, color: cs.primary),
+                    //   child: Icon(Lucide.badgeInfo, size: 18, color: cs.primary),
                     // ),
                     // const SizedBox(width: 10),
                     Expanded(
@@ -155,7 +155,7 @@ class _BackupPageState extends State<BackupPage> {
           children: [
             _ActionCard(
               color: cardColor,
-              icon: Lucide.RotateCw,
+              icon: Lucide.rotateCw,
               title: l10n.backupPageOverwriteMode,
               subtitle: l10n.backupPageOverwriteModeDescription,
               onTap: () => Navigator.of(ctx).pop(RestoreMode.overwrite),
@@ -163,7 +163,7 @@ class _BackupPageState extends State<BackupPage> {
             const SizedBox(height: 10),
             _ActionCard(
               color: cardColor,
-              icon: Lucide.GitFork,
+              icon: Lucide.gitFork,
               title: l10n.backupPageMergeMode,
               subtitle: l10n.backupPageMergeModeDescription,
               onTap: () => Navigator.of(ctx).pop(RestoreMode.merge),
@@ -263,7 +263,7 @@ class _BackupPageState extends State<BackupPage> {
               leading: Tooltip(
                 message: l10n.settingsPageBackButton,
                 child: _TactileIconButton(
-                  icon: Lucide.ArrowLeft,
+                  icon: Lucide.arrowLeft,
                   color: cs.onSurface,
                   size: 22,
                   onTap: () => Navigator.of(context).maybePop(),
@@ -281,7 +281,7 @@ class _BackupPageState extends State<BackupPage> {
                   children: [
                     _iosSwitchRow(
                       context,
-                      icon: Lucide.MessageSquare,
+                      icon: Lucide.messageSquare,
                       label: l10n.backupPageChatsLabel,
                       value: cfg.includeChats,
                       onChanged: (v) async {
@@ -297,7 +297,7 @@ class _BackupPageState extends State<BackupPage> {
                     _iosDivider(context),
                     _iosSwitchRow(
                       context,
-                      icon: Lucide.FileText,
+                      icon: Lucide.fileText,
                       label: l10n.backupPageFilesLabel,
                       value: cfg.includeFiles,
                       onChanged: (v) async {
@@ -325,7 +325,7 @@ class _BackupPageState extends State<BackupPage> {
                   children: [
                     _iosNavRow(
                       context,
-                      icon: Lucide.Settings,
+                      icon: Lucide.settings,
                       label: l10n.backupPageWebDavServerSettings,
                       onTap: () =>
                           _showWebDavSettingsPage(context, settings, vm, cfg),
@@ -333,7 +333,7 @@ class _BackupPageState extends State<BackupPage> {
                     _iosDivider(context),
                     _iosNavRow(
                       context,
-                      icon: Lucide.Cable,
+                      icon: Lucide.cable,
                       label: l10n.backupPageTestConnection,
                       onTap: vm.busy
                           ? null
@@ -355,7 +355,7 @@ class _BackupPageState extends State<BackupPage> {
                     _iosDivider(context),
                     _iosNavRow(
                       context,
-                      icon: Lucide.Import,
+                      icon: Lucide.import,
                       label: l10n.backupPageRestore,
                       onTap: vm.busy
                           ? null
@@ -738,7 +738,7 @@ class _BackupPageState extends State<BackupPage> {
                     _iosDivider(context),
                     _iosNavRow(
                       context,
-                      icon: Lucide.Upload,
+                      icon: Lucide.upload,
                       label: l10n.backupPageBackupNow,
                       onTap: vm.busy
                           ? null
@@ -773,7 +773,7 @@ class _BackupPageState extends State<BackupPage> {
                   children: [
                     _iosNavRow(
                       context,
-                      icon: Lucide.Settings,
+                      icon: Lucide.settings,
                       label: l10n.backupPageS3ServerSettings,
                       onTap: () =>
                           _showS3SettingsPage(context, settings, s3Vm, s3Cfg),
@@ -781,7 +781,7 @@ class _BackupPageState extends State<BackupPage> {
                     _iosDivider(context),
                     _iosNavRow(
                       context,
-                      icon: Lucide.Cable,
+                      icon: Lucide.cable,
                       label: l10n.backupPageTestConnection,
                       onTap: s3Vm.busy
                           ? null
@@ -803,7 +803,7 @@ class _BackupPageState extends State<BackupPage> {
                     _iosDivider(context),
                     _iosNavRow(
                       context,
-                      icon: Lucide.Import,
+                      icon: Lucide.import,
                       label: l10n.backupPageRestore,
                       onTap: s3Vm.busy
                           ? null
@@ -1168,7 +1168,7 @@ class _BackupPageState extends State<BackupPage> {
                     _iosDivider(context),
                     _iosNavRow(
                       context,
-                      icon: Lucide.Upload,
+                      icon: Lucide.upload,
                       label: l10n.backupPageBackupNow,
                       onTap: s3Vm.busy
                           ? null
@@ -1216,21 +1216,21 @@ class _BackupPageState extends State<BackupPage> {
         children: [
           _iosNavRow(
             context,
-            icon: Lucide.Export,
+            icon: Lucide.export,
             label: l10n.backupPageExportToFile,
             onTap: () => _doExport(context, vm),
           ),
           _iosDivider(context),
           _iosNavRow(
             context,
-            icon: Lucide.Import2,
+            icon: Lucide.import2,
             label: l10n.backupPageImportBackupFile,
             onTap: () => _doImportLocal(context, vm),
           ),
           _iosDivider(context),
           _iosNavRow(
             context,
-            icon: Lucide.Box,
+            icon: Lucide.box,
             label: l10n.backupPageImportFromCherryStudio,
             onTap: () async {
               // 1) Warn user that Cherry import is experimental
@@ -1302,7 +1302,7 @@ class _BackupPageState extends State<BackupPage> {
           _iosDivider(context),
           _iosNavRow(
             context,
-            icon: Lucide.Box,
+            icon: Lucide.box,
             label: l10n.backupPageImportFromChatbox,
             onTap: () async {
               // Pick Chatbox exported json
@@ -1499,7 +1499,7 @@ class _BackupReminderMobileSection extends StatelessWidget {
       children: [
         _iosSwitchRow(
           context,
-          icon: Lucide.Timer,
+          icon: Lucide.timer,
           label: l10n.backupReminderEnableTitle,
           value: reminder.enabled,
           onChanged: (value) async {
@@ -1524,7 +1524,7 @@ class _BackupReminderMobileSection extends StatelessWidget {
           _iosDivider(context),
           _iosNavRow(
             context,
-            icon: Lucide.Repeat,
+            icon: Lucide.repeat,
             label: l10n.backupReminderFrequencyTitle,
             detailText: backupReminderFrequencyLabel(
               l10n,
@@ -1558,7 +1558,7 @@ class _BackupReminderMobileSection extends StatelessWidget {
           _iosDivider(context),
           _iosNavRow(
             context,
-            icon: Lucide.CheckCircle,
+            icon: Lucide.checkCircle,
             label: l10n.backupReminderLastBackupTitle,
             detailText: backupReminderDateTimeLabel(
               context,
@@ -1568,7 +1568,7 @@ class _BackupReminderMobileSection extends StatelessWidget {
           _iosDivider(context),
           _iosNavRow(
             context,
-            icon: Lucide.Calendar,
+            icon: Lucide.calendar,
             label: l10n.backupReminderNextReminderTitle,
             detailText: backupReminderNextLabel(
               context,
@@ -1691,7 +1691,7 @@ class _ReminderFrequencyTileState extends State<_ReminderFrequencyTile> {
               ),
             ),
             if (widget.selected)
-              Icon(Lucide.Check, size: 18, color: cs.primary),
+              Icon(Lucide.check, size: 18, color: cs.primary),
           ],
         ),
       ),
@@ -2002,7 +2002,7 @@ Widget _iosNavRow(
                       ),
                     ),
                   ),
-                if (interactive) Icon(Lucide.ChevronRight, size: 16, color: c),
+                if (interactive) Icon(Lucide.chevronRight, size: 16, color: c),
               ],
             ),
           );
@@ -2279,12 +2279,12 @@ class _RemoteListSheet extends StatelessWidget {
                                     ),
                                   ),
                                   _SmallTactileIcon(
-                                    icon: Lucide.Import,
+                                    icon: Lucide.import,
                                     onTap: () => onRestore(it),
                                   ),
                                   const SizedBox(width: 6),
                                   _SmallTactileIcon(
-                                    icon: Lucide.Trash2,
+                                    icon: Lucide.trash2,
                                     onTap: () => onDelete(it),
                                     baseColor: cs.error,
                                   ),
@@ -2372,7 +2372,7 @@ class _ActionCard extends StatelessWidget {
                   ],
                 ),
               ),
-              const Icon(Lucide.ChevronRight, size: 18),
+              const Icon(Lucide.chevronRight, size: 18),
             ],
           ),
         );
@@ -2437,7 +2437,7 @@ class _WebDavSettingsPageState extends State<_WebDavSettingsPage> {
         leading: Tooltip(
           message: l10n.settingsPageBackButton,
           child: _TactileIconButton(
-            icon: Lucide.ArrowLeft,
+            icon: Lucide.arrowLeft,
             color: cs.onSurface,
             size: 22,
             onTap: () => Navigator.of(context).maybePop(),
@@ -2448,7 +2448,7 @@ class _WebDavSettingsPageState extends State<_WebDavSettingsPage> {
           Tooltip(
             message: l10n.backupPageSave,
             child: _TactileIconButton(
-              icon: Lucide.Check,
+              icon: Lucide.check,
               color: cs.onSurface,
               size: 22,
               onTap: _save,
@@ -2616,7 +2616,7 @@ class _S3SettingsPageState extends State<_S3SettingsPage> {
         leading: Tooltip(
           message: l10n.settingsPageBackButton,
           child: _TactileIconButton(
-            icon: Lucide.ArrowLeft,
+            icon: Lucide.arrowLeft,
             color: cs.onSurface,
             size: 22,
             onTap: () => Navigator.of(context).maybePop(),
@@ -2627,7 +2627,7 @@ class _S3SettingsPageState extends State<_S3SettingsPage> {
           Tooltip(
             message: l10n.backupPageSave,
             child: _TactileIconButton(
-              icon: Lucide.Check,
+              icon: Lucide.check,
               color: cs.onSurface,
               size: 22,
               onTap: _save,
@@ -2827,7 +2827,7 @@ class _PasswordToggleButtonState extends State<_PasswordToggleButton> {
         padding: const EdgeInsets.all(8),
         child: AnimatedIconSwap(
           child: Icon(
-            widget.showPassword ? Lucide.EyeOff : Lucide.Eye,
+            widget.showPassword ? Lucide.eyeOff : Lucide.eye,
             key: ValueKey(widget.showPassword ? 'hide' : 'show'),
             size: 20,
             color: color,

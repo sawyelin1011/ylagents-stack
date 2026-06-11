@@ -203,7 +203,7 @@ class _ModelFetchDialogBodyState extends State<_ModelFetchDialogBody> {
                           tooltip: l10n.mcpPageClose,
                           onPressed: () => Navigator.of(context).maybePop(),
                           icon: Icon(
-                            lucide.Lucide.X,
+                            lucide.Lucide.x,
                             size: 20,
                             color: cs.onSurface.withValues(alpha: 0.9),
                           ),
@@ -232,7 +232,7 @@ class _ModelFetchDialogBodyState extends State<_ModelFetchDialogBody> {
                                   ? Colors.white10
                                   : const Color(0xFFF2F3F5),
                               prefixIcon: Icon(
-                                lucide.Lucide.Search,
+                                lucide.Lucide.search,
                                 size: 18,
                                 color: cs.onSurface.withValues(alpha: 0.7),
                               ),
@@ -268,8 +268,8 @@ class _ModelFetchDialogBodyState extends State<_ModelFetchDialogBody> {
                                         ),
                                         icon: Icon(
                                           allHeaderFilteredSelected
-                                              ? lucide.Lucide.Square
-                                              : lucide.Lucide.CheckSquare,
+                                              ? lucide.Lucide.square
+                                              : lucide.Lucide.checkSquare,
                                           size: 18,
                                           color: cs.onSurface.withValues(
                                             alpha: 0.7,
@@ -341,7 +341,7 @@ class _ModelFetchDialogBodyState extends State<_ModelFetchDialogBody> {
                                     message: l10n.modelFetchInvertTooltip,
                                     child: IconButton(
                                       icon: Icon(
-                                        lucide.Lucide.Repeat,
+                                        lucide.Lucide.repeat,
                                         size: 18,
                                         color: cs.onSurface.withValues(
                                           alpha: 0.7,
@@ -514,7 +514,7 @@ class _ModelFetchDialogBodyState extends State<_ModelFetchDialogBody> {
                               duration: const Duration(milliseconds: 200),
                               curve: Curves.easeOutCubic,
                               child: Icon(
-                                lucide.Lucide.ChevronRight,
+                                lucide.Lucide.chevronRight,
                                 size: 18,
                                 color: cs.onSurface.withValues(alpha: 0.7),
                               ),
@@ -548,7 +548,7 @@ class _ModelFetchDialogBodyState extends State<_ModelFetchDialogBody> {
                             minHeight: 36,
                           ),
                           icon: Icon(
-                            allAdded ? lucide.Lucide.Minus : lucide.Lucide.Plus,
+                            allAdded ? lucide.Lucide.minus : lucide.Lucide.plus,
                             size: 18,
                             color: cs.onSurface.withValues(alpha: 0.75),
                           ),
@@ -682,7 +682,7 @@ class _ModelFetchDialogBodyState extends State<_ModelFetchDialogBody> {
                     if (mounted) setState(() {});
                   },
                   icon: Icon(
-                    added ? lucide.Lucide.Minus : lucide.Lucide.Plus,
+                    added ? lucide.Lucide.minus : lucide.Lucide.plus,
                     size: 18,
                     color: cs.onSurface.withValues(alpha: 0.75),
                   ),

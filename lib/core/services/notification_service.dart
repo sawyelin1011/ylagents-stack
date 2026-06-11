@@ -48,7 +48,7 @@ class NotificationService {
 
     // Initialize iOS
     if (PlatformInfo.isIOS) {
-      const IOSInitializationSettings iosInit = IOSInitializationSettings(
+      const DarwinInitializationSettings iosInit = DarwinInitializationSettings(
         requestAlertPermission: true,
         requestBadgePermission: true,
         requestSoundPermission: true,
@@ -72,7 +72,7 @@ class NotificationService {
     await ensureInitialized();
 
     if (PlatformInfo.isAndroid) {
-      return _ensureAndroidPermission();
+      return ensureAndroidNotificationsPermission();
     }
 
     if (PlatformInfo.isIOS) {
@@ -86,7 +86,8 @@ class NotificationService {
     return true;
   }
 
-  static Future<bool> _ensureAndroidPermission() async {
+  /// Ensure Android notification permissions are granted.
+  static Future<bool> ensureAndroidNotificationsPermission() async {
     final android = _plugin
         .resolvePlatformSpecificImplementation<
           AndroidFlutterLocalNotificationsPlugin
@@ -170,7 +171,7 @@ class NotificationService {
       title,
       body,
       const NotificationDetails(
-        iOS: IOSNotificationDetails(
+        iOS: DarwinNotificationDetails(
           presentAlert: true,
           presentBadge: true,
           presentSound: true,
@@ -223,7 +224,7 @@ class NotificationService {
         title ?? '',
         body ?? '',
         const NotificationDetails(
-          iOS: IOSNotificationDetails(
+          iOS: DarwinNotificationDetails(
             presentAlert: true,
             presentBadge: true,
             presentSound: true,

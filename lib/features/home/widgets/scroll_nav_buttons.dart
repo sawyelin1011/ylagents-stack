@@ -80,7 +80,7 @@ class ScrollNavButtonsPanel extends StatelessWidget {
                         mainAxisSize: MainAxisSize.min,
                         children: [
                           _GlassyCircleButton(
-                            icon: Lucide.ChevronsUp,
+                            icon: Lucide.chevronsUp,
                             iconSize: iconSize,
                             iconColor: iconColor,
                             padding: buttonPadding,
@@ -89,7 +89,7 @@ class ScrollNavButtonsPanel extends StatelessWidget {
                           ),
                           SizedBox(height: buttonSpacing),
                           _GlassyCircleButton(
-                            icon: Lucide.ChevronUp,
+                            icon: Lucide.chevronUp,
                             iconSize: iconSize,
                             iconColor: iconColor,
                             padding: buttonPadding,
@@ -98,7 +98,7 @@ class ScrollNavButtonsPanel extends StatelessWidget {
                           ),
                           SizedBox(height: buttonSpacing),
                           _GlassyCircleButton(
-                            icon: Lucide.ChevronDown,
+                            icon: Lucide.chevronDown,
                             iconSize: iconSize,
                             iconColor: iconColor,
                             padding: buttonPadding,
@@ -107,7 +107,7 @@ class ScrollNavButtonsPanel extends StatelessWidget {
                           ),
                           SizedBox(height: buttonSpacing),
                           _GlassyCircleButton(
-                            icon: Lucide.ChevronsDown,
+                            icon: Lucide.chevronsDown,
                             iconSize: iconSize,
                             iconColor: iconColor,
                             padding: buttonPadding,

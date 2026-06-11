@@ -41,7 +41,7 @@ class DashboardPage extends StatelessWidget {
               children: [
                 Expanded(
                   child: _StatCard(
-                    icon: lucide.Lucide.Bot,
+                    icon: lucide.Lucide.bot,
                     label: l10n.desktopNavAgentsTooltip,
                     value: '$agentCount',
                     color: cs.primary,
@@ -50,7 +50,7 @@ class DashboardPage extends StatelessWidget {
                 const SizedBox(width: 12),
                 Expanded(
                   child: _StatCard(
-                    icon: lucide.Lucide.MessageCircle,
+                    icon: lucide.Lucide.messageCircle,
                     label: l10n.desktopNavChatTooltip,
                     value: '${conversations.length}',
                     color: cs.secondary,
@@ -59,7 +59,7 @@ class DashboardPage extends StatelessWidget {
                 const SizedBox(width: 12),
                 Expanded(
                   child: _StatCard(
-                    icon: lucide.Lucide.CheckSquare,
+                    icon: lucide.Lucide.checkSquare,
                     label: l10n.dashboardPageTasks,
                     value: '${context.watch<TaskProvider>().taskCount}',
                     color: cs.tertiary,
@@ -83,12 +83,12 @@ class DashboardPage extends StatelessWidget {
               runSpacing: 8,
               children: [
                 _QuickActionChip(
-                  icon: lucide.Lucide.MessageCirclePlus,
+                  icon: lucide.Lucide.messageCirclePlus,
                   label: l10n.dashboardPageNewChat,
                   color: cs.primary,
                 ),
                 _QuickActionChip(
-                  icon: lucide.Lucide.Plus,
+                  icon: lucide.Lucide.plus,
                   label: l10n.dashboardPageNewAssistant,
                   color: cs.secondary,
                 ),
@@ -117,7 +117,7 @@ class DashboardPage extends StatelessWidget {
                         return ListTile(
                           dense: true,
                           leading: Icon(
-                            lucide.Lucide.MessageCircle,
+                            lucide.Lucide.messageCircle,
                             size: 18,
                             color: cs.primary.withValues(alpha: 0.7),
                           ),
@@ -186,10 +186,10 @@ class _WorkspaceHeader extends StatelessWidget {
           alignment: Alignment.center,
           child: Icon(
             ws.type == WorkspaceType.personal
-                ? lucide.Lucide.User
+                ? lucide.Lucide.user
                 : ws.type == WorkspaceType.project
-                ? lucide.Lucide.Boxes
-                : lucide.Lucide.Briefcase,
+                ? lucide.Lucide.boxes
+                : lucide.Lucide.briefcase,
             color: cs.primary,
             size: 24,
           ),

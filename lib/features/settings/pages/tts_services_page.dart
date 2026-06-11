@@ -27,7 +27,7 @@ class TtsServicesPage extends StatelessWidget {
         leading: Tooltip(
           message: l10n.ttsServicesPageBackButton,
           child: _TactileIconButton(
-            icon: Lucide.ArrowLeft,
+            icon: Lucide.arrowLeft,
             color: cs.onSurface,
             size: 22,
             onTap: () => Navigator.of(context).maybePop(),
@@ -38,7 +38,7 @@ class TtsServicesPage extends StatelessWidget {
           Tooltip(
             message: l10n.ttsServicesPageSettingsTooltip,
             child: _TactileIconButton(
-              icon: Lucide.Settings2,
+              icon: Lucide.settings2,
               color: cs.onSurface,
               size: 22,
               onTap: () => Navigator.of(context).push(
@@ -52,7 +52,7 @@ class TtsServicesPage extends StatelessWidget {
           Tooltip(
             message: l10n.ttsServicesPageAddTooltip,
             child: _TactileIconButton(
-              icon: Lucide.Plus,
+              icon: Lucide.plus,
               color: cs.onSurface,
               size: 22,
               onTap: () => _handleAddNetworkTts(context),
@@ -148,7 +148,7 @@ class TtsServicesPage extends StatelessWidget {
                                 ),
                                 const SizedBox(width: 8),
                                 _SmallTactileIcon(
-                                  icon: Lucide.Volume2,
+                                  icon: Lucide.volume2,
                                   baseColor: c,
                                   onTap: available
                                       ? () async {
@@ -161,7 +161,7 @@ class TtsServicesPage extends StatelessWidget {
                                 ),
                                 const SizedBox(width: 6),
                                 _SmallTactileIcon(
-                                  icon: Lucide.Settings2,
+                                  icon: Lucide.settings2,
                                   baseColor: c,
                                   onTap: available
                                       ? () => _showSystemTtsConfig(context)
@@ -176,7 +176,7 @@ class TtsServicesPage extends StatelessWidget {
                                         .watch<SettingsProvider>();
                                     final sel = sp2.usingSystemTts;
                                     return sel
-                                        ? Icon(Lucide.Check, size: 16, color: c)
+                                        ? Icon(Lucide.check, size: 16, color: c)
                                         : const SizedBox(width: 16);
                                   },
                                 ),
@@ -583,7 +583,7 @@ class _NetworkTtsRowMobileState extends State<_NetworkTtsRowMobile> {
                       ),
                       const SizedBox(width: 8),
                       _SmallTactileIcon(
-                        icon: Lucide.Settings2,
+                        icon: Lucide.settings2,
                         baseColor: c,
                         onTap: () async {
                           final sp = context.read<SettingsProvider>();
@@ -602,7 +602,7 @@ class _NetworkTtsRowMobileState extends State<_NetworkTtsRowMobile> {
                       ),
                       const SizedBox(width: 6),
                       _SmallTactileIcon(
-                        icon: _testing ? Lucide.Loader : Lucide.Volume2,
+                        icon: _testing ? Lucide.loader : Lucide.volume2,
                         baseColor: c,
                         onTap: () async {
                           setState(() {
@@ -624,7 +624,7 @@ class _NetworkTtsRowMobileState extends State<_NetworkTtsRowMobile> {
                       ),
                       const SizedBox(width: 6),
                       _SmallTactileIcon(
-                        icon: Lucide.Trash2,
+                        icon: Lucide.trash2,
                         baseColor: c,
                         onTap: () async {
                           final sp = context.read<SettingsProvider>();
@@ -646,7 +646,7 @@ class _NetworkTtsRowMobileState extends State<_NetworkTtsRowMobile> {
                           final sp2 = context.watch<SettingsProvider>();
                           final sel = (sp2.ttsServiceSelected == widget.index);
                           return sel
-                              ? Icon(Lucide.Check, size: 16, color: c)
+                              ? Icon(Lucide.check, size: 16, color: c)
                               : const SizedBox(width: 16);
                         },
                       ),
@@ -854,7 +854,7 @@ class _NetworkTtsEditorPageState extends State<_NetworkTtsEditorPage> {
         leading: Tooltip(
           message: l10n.ttsServicesPageBackButton,
           child: _TactileIconButton(
-            icon: Lucide.ArrowLeft,
+            icon: Lucide.arrowLeft,
             color: cs.onSurface,
             size: 22,
             onTap: () => Navigator.of(context).maybePop(),
@@ -871,7 +871,7 @@ class _NetworkTtsEditorPageState extends State<_NetworkTtsEditorPage> {
                 ? l10n.ttsServicesDialogAddButton
                 : l10n.ttsServicesDialogSaveButton,
             child: _TactileIconButton(
-              icon: Lucide.Check,
+              icon: Lucide.check,
               color: cs.onSurface,
               size: 22,
               onTap: _submit,
@@ -983,7 +983,7 @@ class _NetworkTtsEditorPageState extends State<_NetworkTtsEditorPage> {
                     label: widget.initial == null
                         ? l10n.ttsServicesDialogAddButton
                         : l10n.ttsServicesDialogSaveButton,
-                    icon: Lucide.Check,
+                    icon: Lucide.check,
                     onTap: _submit,
                     backgroundColor: cs.primary,
                     foregroundColor: cs.primary,
@@ -1269,7 +1269,7 @@ class _TtsEditorTextFieldState extends State<_TtsEditorTextField> {
               ),
               suffixIcon: widget.obscure
                   ? _SmallTactileIcon(
-                      icon: _obscured ? Lucide.Eye : Lucide.EyeOff,
+                      icon: _obscured ? Lucide.eye : Lucide.eyeOff,
                       onTap: () => setState(() => _obscured = !_obscured),
                     )
                   : null,
@@ -1422,7 +1422,7 @@ Future<void> _showSystemTtsConfig(BuildContext context) async {
                       type: NotificationType.success,
                     );
                   },
-                  icon: Icon(Lucide.Check, size: 16),
+                  icon: Icon(Lucide.check, size: 16),
                   label: Text(l10n.ttsServicesPageDoneButton),
                 ),
               ),
@@ -1503,7 +1503,7 @@ Widget _sheetSelectRow(
                     ),
                   ),
                 ),
-                Icon(Lucide.ChevronRight, size: 16, color: c),
+                Icon(Lucide.chevronRight, size: 16, color: c),
               ],
             ),
           );

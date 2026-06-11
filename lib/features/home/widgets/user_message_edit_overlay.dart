@@ -131,7 +131,7 @@ class UserMessageEditOverlay extends StatelessWidget {
                                   mainAxisSize: MainAxisSize.min,
                                   children: [
                                     Icon(
-                                      Lucide.Check,
+                                      Lucide.check,
                                       size: 16,
                                       color: cs.primary,
                                     ),
@@ -155,7 +155,7 @@ class UserMessageEditOverlay extends StatelessWidget {
                                 pressedBlendStrength: isDark ? 0.18 : 0.10,
                                 padding: const EdgeInsets.all(8),
                                 child: Icon(
-                                  Lucide.X,
+                                  Lucide.x,
                                   size: 18,
                                   color: cs.onSurface.withValues(alpha: 0.78),
                                 ),

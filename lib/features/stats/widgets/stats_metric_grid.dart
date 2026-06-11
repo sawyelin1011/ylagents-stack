@@ -15,32 +15,32 @@ class StatsMetricGrid extends StatelessWidget {
     final l10n = AppLocalizations.of(context)!;
     final items = [
       _MetricItem(
-        icon: Lucide.MessagesSquare,
+        icon: Lucide.messagesSquare,
         label: l10n.statsPageTotalConversations,
         value: _formatCompact(summary.totalConversations),
       ),
       _MetricItem(
-        icon: Lucide.MessageCircle,
+        icon: Lucide.messageCircle,
         label: l10n.statsPageTotalMessages,
         value: _formatCompact(summary.totalMessages),
       ),
       _MetricItem(
-        icon: Lucide.Activity,
+        icon: Lucide.activity,
         label: l10n.statsPageInputTokens,
         value: _formatCompact(summary.inputTokens),
       ),
       _MetricItem(
-        icon: Lucide.Activity,
+        icon: Lucide.activity,
         label: l10n.statsPageOutputTokens,
         value: _formatCompact(summary.outputTokens),
       ),
       _MetricItem(
-        icon: Lucide.Zap,
+        icon: Lucide.zap,
         label: l10n.statsPageCachedTokens,
         value: _formatCompact(summary.cachedTokens),
       ),
       _MetricItem(
-        icon: Lucide.Activity,
+        icon: Lucide.activity,
         label: l10n.statsPageLaunchCount,
         value: _formatCompact(summary.launchCount),
       ),

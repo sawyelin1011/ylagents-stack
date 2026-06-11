@@ -68,7 +68,7 @@ class _SelectCopyDesktopDialog extends StatelessWidget {
                       const Spacer(),
                       TextButton.icon(
                         onPressed: () => _copyAll(context),
-                        icon: Icon(Lucide.Copy, size: 18, color: cs.primary),
+                        icon: Icon(Lucide.copy, size: 18, color: cs.primary),
                         label: Text(
                           l10n.selectCopyPageCopyAll,
                           style: TextStyle(
@@ -81,7 +81,7 @@ class _SelectCopyDesktopDialog extends StatelessWidget {
                         tooltip: l10n.mcpPageClose,
                         onPressed: () => Navigator.of(context).maybePop(),
                         icon: Icon(
-                          Lucide.X,
+                          Lucide.x,
                           size: 18,
                           color: cs.onSurface.withValues(alpha: 0.75),
                         ),

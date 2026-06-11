@@ -67,7 +67,7 @@ class _ProviderBalancePageState extends State<ProviderBalancePage> {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-          icon: Icon(Lucide.ArrowLeft, size: 22),
+          icon: Icon(Lucide.arrowLeft, size: 22),
           onPressed: () => Navigator.of(context).maybePop(),
         ),
         title: Text(l10n.providerDetailPageBalanceTitle),
@@ -132,7 +132,7 @@ class _ProviderBalancePageState extends State<ProviderBalancePage> {
                 Tooltip(
                   message: l10n.providerDetailPageBalanceResetDefaultsTooltip,
                   child: IosIconButton(
-                    icon: Lucide.RefreshCw,
+                    icon: Lucide.refreshCw,
                     size: 18,
                     color: cs.onSurface.withValues(alpha: 0.72),
                     minSize: 36,
@@ -380,7 +380,7 @@ class _BalanceQueryButtonState extends State<_BalanceQueryButton> {
           child: Row(
             mainAxisSize: MainAxisSize.min,
             children: [
-              Icon(Lucide.Coins, size: 16, color: base),
+              Icon(Lucide.coins, size: 16, color: base),
               const SizedBox(width: 6),
               Text(
                 widget.label,

@@ -261,7 +261,7 @@ class HomeMobileScaffold extends StatelessWidget {
           minSize: 44,
           onTap: onOpenMiniMap,
           semanticLabel: AppLocalizations.of(context)!.miniMapTooltip,
-          icon: Lucide.Map,
+          icon: Lucide.map,
         ),
         IosIconButton(
           size: 22,
@@ -277,8 +277,8 @@ class HomeMobileScaffold extends StatelessWidget {
               ? AppLocalizations.of(context)!.temporaryChatToggleTooltip
               : AppLocalizations.of(context)!.titleForLocale,
           icon: canToggleTemporaryConversation && !temporaryConversationEnabled
-              ? Lucide.MessageCircleDashed
-              : Lucide.MessageCirclePlus,
+              ? Lucide.messageCircleDashed
+              : Lucide.messageCirclePlus,
           builder:
               canToggleTemporaryConversation && temporaryConversationEnabled
               ? (color) => SvgPicture.asset(
@@ -440,7 +440,7 @@ class ScrollNavigationButtons extends StatelessWidget {
                     padding: EdgeInsets.only(right: 16, bottom: bottomOffset),
                     child: _ScrollButton(
                       isDark: isDark,
-                      icon: Lucide.ChevronDown,
+                      icon: Lucide.chevronDown,
                       onTap: onScrollToBottom,
                     ),
                   ),
@@ -472,7 +472,7 @@ class ScrollNavigationButtons extends StatelessWidget {
                     ),
                     child: _ScrollButton(
                       isDark: isDark,
-                      icon: Lucide.ChevronUp,
+                      icon: Lucide.chevronUp,
                       onTap: onScrollToPreviousQuestion,
                     ),
                   ),
@@ -577,14 +577,14 @@ class SelectionToolbarOverlay extends StatelessWidget {
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     _GlassCircleButton(
-                      icon: Lucide.X,
+                      icon: Lucide.x,
                       color: cs.onSurface,
                       onTap: onCancel,
                       semanticLabel: l10n.homePageCancel,
                     ),
                     const SizedBox(width: 14),
                     _GlassCircleButton(
-                      icon: Lucide.Check,
+                      icon: Lucide.check,
                       color: cs.primary,
                       onTap: onConfirm,
                       semanticLabel: l10n.homePageDone,

@@ -162,7 +162,7 @@ class _ProviderGroupsPageState extends State<ProviderGroupsPage> {
         leading: Padding(
           padding: const EdgeInsets.only(left: 8),
           child: IosIconButton(
-            icon: Lucide.ChevronLeft,
+            icon: Lucide.chevronLeft,
             minSize: 44,
             onTap: () => Navigator.of(context).maybePop(),
           ),
@@ -172,7 +172,7 @@ class _ProviderGroupsPageState extends State<ProviderGroupsPage> {
           Padding(
             padding: const EdgeInsets.only(right: 8),
             child: IosIconButton(
-              icon: Lucide.Plus,
+              icon: Lucide.plus,
               minSize: 44,
               onTap: _createGroup,
             ),
@@ -285,7 +285,7 @@ class _ProviderGroupCard extends StatelessWidget {
               borderRadius: BorderRadius.circular(10),
               onTap: editAction,
               padding: const EdgeInsets.all(8),
-              child: Icon(Lucide.Pencil, size: 18, color: cs.onSurface),
+              child: Icon(Lucide.pencil, size: 18, color: cs.onSurface),
             ),
           ],
           if (deleteAction != null) ...[
@@ -295,7 +295,7 @@ class _ProviderGroupCard extends StatelessWidget {
               borderRadius: BorderRadius.circular(10),
               onTap: deleteAction,
               padding: const EdgeInsets.all(8),
-              child: Icon(Lucide.Trash2, size: 18, color: cs.error),
+              child: Icon(Lucide.trash2, size: 18, color: cs.error),
             ),
           ],
         ],

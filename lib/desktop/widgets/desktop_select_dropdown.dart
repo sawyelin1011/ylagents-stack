@@ -224,7 +224,7 @@ class _DesktopSelectDropdownState<T> extends State<DesktopSelectDropdown<T>> {
                       duration: const Duration(milliseconds: 200),
                       curve: Curves.easeOutCubic,
                       child: Icon(
-                        lucide.Lucide.ChevronDown,
+                        lucide.Lucide.chevronDown,
                         size: 16,
                         color: cs.onSurface.withValues(alpha: 0.7),
                       ),
@@ -408,7 +408,7 @@ class _DesktopSelectOptionTileState extends State<_DesktopSelectOptionTile> {
                 const SizedBox(width: 8),
                 Opacity(
                   opacity: widget.selected ? 1 : 0,
-                  child: Icon(lucide.Lucide.Check, size: 14, color: cs.primary),
+                  child: Icon(lucide.Lucide.check, size: 14, color: cs.primary),
                 ),
               ],
             ),

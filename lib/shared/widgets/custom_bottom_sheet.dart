@@ -558,7 +558,7 @@ class _SheetHeader extends StatelessWidget {
             width: 24,
             height: 24,
             child: IosIconButton(
-              icon: Lucide.X,
+              icon: Lucide.x,
               size: 20,
               padding: EdgeInsets.zero,
               color: cs.onSurface.withValues(alpha: 0.62),

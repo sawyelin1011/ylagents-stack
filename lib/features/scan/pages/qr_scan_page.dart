@@ -20,7 +20,7 @@ class _QrScanPageState extends State<QrScanPage> {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-          icon: const Icon(Lucide.ArrowLeft),
+          icon: const Icon(Lucide.arrowLeft),
           onPressed: () => Navigator.of(context).maybePop(),
         ),
         title: Text(l10n.qrScanPageTitle),

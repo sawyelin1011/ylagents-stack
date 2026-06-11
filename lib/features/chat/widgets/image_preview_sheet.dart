@@ -1177,7 +1177,7 @@ class _ImagePreviewSheetState extends State<_ImagePreviewSheet> {
                               ),
                               child: Center(
                                 child: Icon(
-                                  Lucide.MoreVertical,
+                                  Lucide.moreVertical,
                                   color: cs.onSurface.withValues(alpha: 0.9),
                                 ),
                               ),
@@ -1220,7 +1220,7 @@ class _ImagePreviewSheetState extends State<_ImagePreviewSheet> {
                                           mainAxisSize: MainAxisSize.min,
                                           children: [
                                             Icon(
-                                              Lucide.Download,
+                                              Lucide.download,
                                               color: cs.onPrimary,
                                             ),
                                             const SizedBox(width: 8),

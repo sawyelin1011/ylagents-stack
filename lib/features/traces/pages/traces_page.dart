@@ -35,7 +35,7 @@ class _TracesPageState extends State<TracesPage> {
       appBar: AppBar(
         title: Row(
           children: [
-            Icon(lucide.Lucide.Binary, size: 18, color: cs.primary),
+            Icon(lucide.Lucide.binary, size: 18, color: cs.primary),
             const SizedBox(width: 8),
             Text(l10n.tracesPageTitle),
           ],
@@ -47,7 +47,7 @@ class _TracesPageState extends State<TracesPage> {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   Icon(
-                    lucide.Lucide.Binary,
+                    lucide.Lucide.binary,
                     size: 56,
                     color: cs.onSurface.withValues(alpha: 0.15),
                   ),
@@ -71,11 +71,11 @@ class _TracesPageState extends State<TracesPage> {
 
                 final (IconData icon, Color color) = switch (trace.status) {
                   ExecutionStatus.completed => (
-                    lucide.Lucide.CheckCircle,
+                    lucide.Lucide.checkCircle,
                     Colors.green,
                   ),
-                  ExecutionStatus.failed => (lucide.Lucide.XCircle, cs.error),
-                  _ => (lucide.Lucide.Loader, cs.primary),
+                  ExecutionStatus.failed => (lucide.Lucide.xCircle, cs.error),
+                  _ => (lucide.Lucide.loader, cs.primary),
                 };
 
                 return Card(
@@ -110,7 +110,7 @@ class _TracesPageState extends State<TracesPage> {
                                   children: [
                                     if (leadAgent != null) ...[
                                       Icon(
-                                        lucide.Lucide.Crown,
+                                        lucide.Lucide.crown,
                                         size: 11,
                                         color: cs.onSurface.withValues(
                                           alpha: 0.5,
@@ -129,7 +129,7 @@ class _TracesPageState extends State<TracesPage> {
                                       const SizedBox(width: 12),
                                     ],
                                     Icon(
-                                      lucide.Lucide.Clock,
+                                      lucide.Lucide.clock,
                                       size: 11,
                                       color: cs.onSurface.withValues(
                                         alpha: 0.5,
@@ -162,7 +162,7 @@ class _TracesPageState extends State<TracesPage> {
                           ),
                           const SizedBox(width: 8),
                           Icon(
-                            lucide.Lucide.ChevronRight,
+                            lucide.Lucide.chevronRight,
                             size: 16,
                             color: cs.onSurface.withValues(alpha: 0.3),
                           ),
@@ -187,7 +187,7 @@ class _TracesPageState extends State<TracesPage> {
       builder: (ctx) => AlertDialog(
         title: Row(
           children: [
-            Icon(lucide.Lucide.Binary, size: 18, color: cs.primary),
+            Icon(lucide.Lucide.binary, size: 18, color: cs.primary),
             const SizedBox(width: 8),
             Expanded(
               child: Text(
@@ -352,10 +352,10 @@ class _TracesPageState extends State<TracesPage> {
   String _pad(int n) => n.toString().padLeft(2, '0');
 
   IconData _stepIcon(StepType type) => switch (type) {
-    StepType.plan => lucide.Lucide.ClipboardPen,
-    StepType.delegate => lucide.Lucide.GitFork,
-    StepType.execute => lucide.Lucide.Play,
-    StepType.review => lucide.Lucide.ClipboardCheck,
+    StepType.plan => lucide.Lucide.clipboardPen,
+    StepType.delegate => lucide.Lucide.gitFork,
+    StepType.execute => lucide.Lucide.play,
+    StepType.review => lucide.Lucide.clipboardCheck,
   };
 
   Color _stepIconColor(StepType type, ColorScheme cs) => switch (type) {
@@ -366,10 +366,10 @@ class _TracesPageState extends State<TracesPage> {
   };
 
   IconData _statusIcon(StepStatus status) => switch (status) {
-    StepStatus.pending => lucide.Lucide.Circle,
-    StepStatus.inProgress => lucide.Lucide.Loader,
-    StepStatus.completed => lucide.Lucide.CheckCircle,
-    StepStatus.failed => lucide.Lucide.XCircle,
+    StepStatus.pending => lucide.Lucide.circle,
+    StepStatus.inProgress => lucide.Lucide.loader,
+    StepStatus.completed => lucide.Lucide.checkCircle,
+    StepStatus.failed => lucide.Lucide.xCircle,
   };
 
   Color _statusColor(StepStatus status, ColorScheme cs) => switch (status) {

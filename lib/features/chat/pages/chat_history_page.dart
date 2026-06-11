@@ -56,7 +56,7 @@ class _ChatHistoryPageState extends State<ChatHistoryPage>
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-          icon: const Icon(Lucide.ArrowLeft),
+          icon: const Icon(Lucide.arrowLeft),
           onPressed: () => Navigator.of(context).maybePop(),
         ),
         title: Text(l10n.chatHistoryPageTitle),
@@ -65,7 +65,7 @@ class _ChatHistoryPageState extends State<ChatHistoryPage>
             tooltip: l10n.chatHistoryPageSearchTooltip,
             icon: AnimatedIconSwap(
               child: Icon(
-                _searching ? Lucide.X : Lucide.Search,
+                _searching ? Lucide.x : Lucide.search,
                 key: ValueKey(_searching ? 'x' : 'search'),
               ),
             ),
@@ -78,7 +78,7 @@ class _ChatHistoryPageState extends State<ChatHistoryPage>
           ),
           IconButton(
             tooltip: l10n.chatHistoryPageDeleteAllTooltip,
-            icon: const Icon(Lucide.Trash2),
+            icon: const Icon(Lucide.trash2),
             onPressed: () async {
               final confirm = await showDialog<bool>(
                 context: context,
@@ -179,14 +179,14 @@ class _ChatHistoryPageState extends State<ChatHistoryPage>
                               ),
                             ),
                             prefixIcon: Icon(
-                              Lucide.Search,
+                              Lucide.search,
                               color: cs.onSurface.withValues(alpha: 0.7),
                               size: 18,
                             ),
                             suffixIcon: (q.isNotEmpty)
                                 ? IconButton(
                                     icon: Icon(
-                                      Lucide.X,
+                                      Lucide.x,
                                       size: 16,
                                       color: cs.onSurface.withValues(
                                         alpha: 0.7,
@@ -281,7 +281,7 @@ class _ChatHistoryPageState extends State<ChatHistoryPage>
               ),
             ),
             const SizedBox(width: 8),
-            Icon(Lucide.Trash2, color: cs.onErrorContainer, size: 18),
+            Icon(Lucide.trash2, color: cs.onErrorContainer, size: 18),
           ],
         ),
       ),
@@ -338,7 +338,7 @@ class _ConversationCard extends StatelessWidget {
                   ),
                   alignment: Alignment.center,
                   child: Icon(
-                    Lucide.MessageCircle,
+                    Lucide.messageCircle,
                     size: 18,
                     color: cs.primary,
                   ),
@@ -362,7 +362,7 @@ class _ConversationCard extends StatelessWidget {
                       Row(
                         children: [
                           Icon(
-                            Lucide.History,
+                            Lucide.history,
                             size: 14,
                             color: cs.onSurface.withValues(alpha: 0.6),
                           ),
@@ -428,7 +428,7 @@ class _PinButton extends StatelessWidget {
           children: [
             AnimatedIconSwap(
               child: Icon(
-                pinned ? Lucide.PinOff : Lucide.Pin,
+                pinned ? Lucide.pinOff : Lucide.pin,
                 key: ValueKey(pinned ? 'pinOff' : 'pin'),
                 size: 16,
                 color: pinned

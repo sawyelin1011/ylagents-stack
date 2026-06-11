@@ -110,7 +110,7 @@ class _StatsPageState extends State<StatsPage> {
                 leftHeader: l10n.statsPageTopicColumn,
                 rightHeader: l10n.statsPageMessagesColumn,
                 items: snapshot.topicRank,
-                icon: Lucide.MessageSquare,
+                icon: Lucide.messageSquare,
               ),
             ];
             if (!wide) {
@@ -143,7 +143,7 @@ class _StatsPageState extends State<StatsPage> {
         leading: Tooltip(
           message: l10n.settingsPageBackButton,
           child: IosIconButton(
-            icon: Lucide.ArrowLeft,
+            icon: Lucide.arrowLeft,
             minSize: 44,
             size: 22,
             onTap: () => Navigator.of(context).maybePop(),
@@ -430,7 +430,7 @@ class _CustomRangeSheetState extends State<_CustomRangeSheet> {
                 ),
               ),
               IosIconButton(
-                icon: Lucide.X,
+                icon: Lucide.x,
                 size: 18,
                 padding: const EdgeInsets.all(7),
                 onTap: () => Navigator.of(context).pop(),
@@ -623,7 +623,7 @@ class _StatsDatePickerPanelState extends State<_StatsDatePickerPanel> {
             children: [
               IosIconButton(
                 key: const ValueKey('stats-date-picker-prev-year'),
-                icon: Lucide.ChevronLeft,
+                icon: Lucide.chevronLeft,
                 size: 18,
                 padding: const EdgeInsets.all(7),
                 onTap: _mode == _CalendarPickerMode.day
@@ -662,7 +662,7 @@ class _StatsDatePickerPanelState extends State<_StatsDatePickerPanel> {
               ),
               IosIconButton(
                 key: const ValueKey('stats-date-picker-next-year'),
-                icon: Lucide.ChevronRight,
+                icon: Lucide.chevronRight,
                 size: 18,
                 padding: const EdgeInsets.all(7),
                 onTap: _mode == _CalendarPickerMode.day

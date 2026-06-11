@@ -269,7 +269,7 @@ class _CitationSourcesDialogHeader extends StatelessWidget {
             width: 28,
             height: 28,
             child: IosIconButton(
-              icon: Lucide.X,
+              icon: Lucide.x,
               size: 20,
               padding: EdgeInsets.zero,
               color: cs.onSurface.withValues(alpha: 0.62),
@@ -464,7 +464,7 @@ class _FaviconIcon extends StatelessWidget {
     final cs = Theme.of(context).colorScheme;
     if (domain.isEmpty) {
       return Icon(
-        Lucide.Globe,
+        Lucide.globe,
         size: 14,
         color: cs.onSurface.withValues(alpha: 0.52),
       );
@@ -476,7 +476,7 @@ class _FaviconIcon extends StatelessWidget {
         height: 14,
         fit: BoxFit.contain,
         errorBuilder: (_, __, ___) => Icon(
-          Lucide.Globe,
+          Lucide.globe,
           size: 14,
           color: cs.onSurface.withValues(alpha: 0.52),
         ),

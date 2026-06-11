@@ -124,7 +124,7 @@ class _DesktopMcpJsonEditDialogState extends State<_DesktopMcpJsonEditDialog> {
                     ),
                     const Spacer(),
                     _SmallIconBtn(
-                      icon: lucide.Lucide.X,
+                      icon: lucide.Lucide.x,
                       tooltip: MaterialLocalizations.of(
                         context,
                       ).closeButtonTooltip,

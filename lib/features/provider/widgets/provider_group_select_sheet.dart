@@ -138,14 +138,14 @@ class ProviderGroupSelectSheet extends StatelessWidget {
                   ),
                 ),
                 IosIconButton(
-                  icon: Lucide.Plus,
+                  icon: Lucide.plus,
                   minSize: 40,
                   size: 20,
                   semanticLabel: l10n.providerGroupsCreateNewGroupAction,
                   onTap: () => unawaited(_createGroup(context, sp)),
                 ),
                 IosIconButton(
-                  icon: Lucide.Settings,
+                  icon: Lucide.settings,
                   minSize: 40,
                   size: 20,
                   semanticLabel: l10n.providerGroupsManageAction,

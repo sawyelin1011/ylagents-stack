@@ -96,7 +96,7 @@ class AssistantEntryActions {
       globalPosition: globalPosition,
       items: [
         DesktopContextMenuItem(
-          icon: Lucide.Pencil,
+          icon: Lucide.pencil,
           label: l10n.assistantTagsContextMenuEditAssistant,
           onTap: () => openAssistantSettings(
             context,
@@ -105,7 +105,7 @@ class AssistantEntryActions {
           ),
         ),
         DesktopContextMenuItem(
-          icon: Lucide.Copy,
+          icon: Lucide.copy,
           label: l10n.assistantSettingsCopyButton,
           onTap: () async {
             beforeAction?.call();
@@ -114,7 +114,7 @@ class AssistantEntryActions {
         ),
         if (hasTag)
           DesktopContextMenuItem(
-            icon: Lucide.Eraser,
+            icon: Lucide.eraser,
             label: l10n.assistantTagsClearTag,
             onTap: () async {
               beforeAction?.call();
@@ -122,7 +122,7 @@ class AssistantEntryActions {
             },
           ),
         DesktopContextMenuItem(
-          icon: Lucide.Bookmark,
+          icon: Lucide.bookmark,
           label: l10n.assistantTagsContextMenuManageTags,
           onTap: () async {
             beforeAction?.call();
@@ -133,7 +133,7 @@ class AssistantEntryActions {
           },
         ),
         DesktopContextMenuItem(
-          icon: Lucide.Trash2,
+          icon: Lucide.trash2,
           label: l10n.assistantTagsContextMenuDeleteAssistant,
           danger: true,
           onTap: () async {
@@ -212,19 +212,19 @@ class AssistantEntryActions {
               children: [
                 row(
                   l10n.assistantTagsContextMenuEditAssistant,
-                  Lucide.Pencil,
+                  Lucide.pencil,
                   () => openAssistantSettings(
                     context,
                     assistant.id,
                     beforeAction: beforeAction,
                   ),
                 ),
-                row(l10n.assistantSettingsCopyButton, Lucide.Copy, () async {
+                row(l10n.assistantSettingsCopyButton, Lucide.copy, () async {
                   beforeAction?.call();
                   await _duplicateAssistantFromMenu(context, assistant);
                 }),
                 if (hasTag)
-                  row(l10n.assistantTagsClearTag, Lucide.Eraser, () async {
+                  row(l10n.assistantTagsClearTag, Lucide.eraser, () async {
                     beforeAction?.call();
                     await context.read<TagProvider>().unassignAssistant(
                       assistant.id,
@@ -232,7 +232,7 @@ class AssistantEntryActions {
                   }),
                 row(
                   l10n.assistantTagsContextMenuManageTags,
-                  Lucide.Bookmark,
+                  Lucide.bookmark,
                   () async {
                     beforeAction?.call();
                     await Navigator.of(context).push(
@@ -245,7 +245,7 @@ class AssistantEntryActions {
                 ),
                 row(
                   l10n.assistantTagsContextMenuDeleteAssistant,
-                  Lucide.Trash2,
+                  Lucide.trash2,
                   () async {
                     beforeAction?.call();
                     await _deleteAssistant(context, assistant);

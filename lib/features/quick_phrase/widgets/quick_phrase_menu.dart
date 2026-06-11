@@ -81,7 +81,7 @@ class QuickPhraseMenu extends StatelessWidget {
                       //   padding: const EdgeInsets.fromLTRB(16, 16, 16, 12),
                       //   child: Row(
                       //     children: [
-                      //       Icon(Lucide.Zap, size: 18, color: cs.primary),
+                      //       Icon(Lucide.zap, size: 18, color: cs.primary),
                       //       const SizedBox(width: 8),
                       //       Text(
                       //         l10n.quickPhraseMenuTitle,
@@ -126,7 +126,7 @@ class QuickPhraseMenu extends StatelessWidget {
                                       children: [
                                         Icon(
                                           phrase.isGlobal
-                                              ? Lucide.Zap
+                                              ? Lucide.zap
                                               : Lucide.botMessageSquare,
                                           size: 14,
                                           color: cs.primary.withValues(

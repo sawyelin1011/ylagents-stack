@@ -59,7 +59,7 @@ class _DesktopSearchServicesPaneState extends State<DesktopSearchServicesPane> {
                         ),
                       ),
                       _SmallIconBtn(
-                        icon: lucide.Lucide.Plus,
+                        icon: lucide.Lucide.plus,
                         onTap: () async {
                           final settingsProvider = context
                               .read<SettingsProvider>();
@@ -164,7 +164,7 @@ class _DesktopSearchServicesPaneState extends State<DesktopSearchServicesPane> {
                 child: _sectionCard(
                   children: [
                     _ToggleRow(
-                      icon: lucide.Lucide.HeartPulse,
+                      icon: lucide.Lucide.heartPulse,
                       label: l10n.searchServicesPageAutoTestTitle,
                       value: settings.searchAutoTestOnLaunch,
                       onChanged: (v) => context
@@ -173,7 +173,7 @@ class _DesktopSearchServicesPaneState extends State<DesktopSearchServicesPane> {
                     ),
                     _divider(context),
                     _StepperRow(
-                      icon: lucide.Lucide.ListOrdered,
+                      icon: lucide.Lucide.listOrdered,
                       label: l10n.searchServicesPageMaxResults,
                       value: common.resultSize,
                       onMinus: common.resultSize > 1
@@ -199,7 +199,7 @@ class _DesktopSearchServicesPaneState extends State<DesktopSearchServicesPane> {
                     ),
                     _divider(context),
                     _StepperRow(
-                      icon: lucide.Lucide.History,
+                      icon: lucide.Lucide.history,
                       label: l10n.searchServicesPageTimeoutSeconds,
                       value: common.timeout ~/ 1000,
                       onMinus: common.timeout > 1000
@@ -372,7 +372,7 @@ class _ServiceCardState extends State<_ServiceCard> {
               Tooltip(
                 message: l10n.searchServicesPageEditServiceTooltip,
                 child: _SmallIconBtn(
-                  icon: lucide.Lucide.Settings2,
+                  icon: lucide.Lucide.settings2,
                   onTap: widget.onEdit,
                 ),
               ),
@@ -380,7 +380,7 @@ class _ServiceCardState extends State<_ServiceCard> {
               Tooltip(
                 message: l10n.searchServicesPageTestConnectionTooltip,
                 child: _SmallIconBtn(
-                  icon: lucide.Lucide.HeartPulse,
+                  icon: lucide.Lucide.heartPulse,
                   onTap: widget.onTest,
                 ),
               ),
@@ -388,7 +388,7 @@ class _ServiceCardState extends State<_ServiceCard> {
               Tooltip(
                 message: l10n.searchServicesPageDeleteServiceTooltip,
                 child: _SmallIconBtn(
-                  icon: lucide.Lucide.Trash2,
+                  icon: lucide.Lucide.trash2,
                   onTap: widget.onDelete,
                 ),
               ),
@@ -483,7 +483,7 @@ class _StepperRowState extends State<_StepperRow> {
             ),
           ),
           _StepperButton(
-            icon: lucide.Lucide.Minus,
+            icon: lucide.Lucide.minus,
             enabled: widget.onMinus != null,
             onTap: widget.onMinus ?? () {},
           ),
@@ -502,7 +502,7 @@ class _StepperRowState extends State<_StepperRow> {
           ),
           const SizedBox(width: 8),
           _StepperButton(
-            icon: lucide.Lucide.Plus,
+            icon: lucide.Lucide.plus,
             enabled: widget.onPlus != null,
             onTap: widget.onPlus ?? () {},
           ),
@@ -831,7 +831,7 @@ class _AddServiceDialogState extends State<_AddServiceDialog> {
                         ),
                       ),
                       _SmallIconBtn(
-                        icon: lucide.Lucide.X,
+                        icon: lucide.Lucide.x,
                         onTap: () => Navigator.of(context).maybePop(),
                       ),
                     ],
@@ -1243,7 +1243,7 @@ class _EditServiceDialogState extends State<_EditServiceDialog> {
                         ),
                       ),
                       _SmallIconBtn(
-                        icon: lucide.Lucide.X,
+                        icon: lucide.Lucide.x,
                         onTap: () => Navigator.of(context).maybePop(),
                       ),
                     ],
@@ -1848,7 +1848,7 @@ class _ServiceTypeDropdownState extends State<_ServiceTypeDropdown> {
                   duration: const Duration(milliseconds: 180),
                   curve: Curves.easeOutCubic,
                   child: Icon(
-                    lucide.Lucide.ChevronDown,
+                    lucide.Lucide.chevronDown,
                     size: 16,
                     color: cs.onSurface.withValues(alpha: 0.8),
                   ),
@@ -1920,7 +1920,7 @@ class _DropdownItemState extends State<_DropdownItem> {
                 ),
               ),
               if (widget.selected)
-                Icon(lucide.Lucide.Check, size: 16, color: cs.primary),
+                Icon(lucide.Lucide.check, size: 16, color: cs.primary),
             ],
           ),
         ),

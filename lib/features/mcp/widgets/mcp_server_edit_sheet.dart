@@ -336,7 +336,7 @@ class _McpServerEditSheetState extends State<_McpServerEditSheet>
                 Align(
                   alignment: Alignment.centerRight,
                   child: _TactileIconButton(
-                    icon: Lucide.Trash,
+                    icon: Lucide.trash,
                     color: cs.error,
                     semanticLabel: l10n.mcpServerEditSheetRemoveHeaderTooltip,
                     onTap: () => setState(() => _headers.removeAt(i)),
@@ -349,7 +349,7 @@ class _McpServerEditSheetState extends State<_McpServerEditSheet>
         Align(
           alignment: Alignment.centerLeft,
           child: IosTileButton(
-            icon: Lucide.Plus,
+            icon: Lucide.plus,
             label: l10n.mcpServerEditSheetAddHeader,
             backgroundColor: cs.primary,
             padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
@@ -464,7 +464,7 @@ class _McpServerEditSheetState extends State<_McpServerEditSheet>
                       child: Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 16),
                         child: _TactileIconButton(
-                          icon: Lucide.X,
+                          icon: Lucide.x,
                           color: cs.onSurface,
                           size: 22,
                           semanticLabel: l10n.mcpPageCancel,
@@ -478,7 +478,7 @@ class _McpServerEditSheetState extends State<_McpServerEditSheet>
                         child: Padding(
                           padding: const EdgeInsets.symmetric(horizontal: 16),
                           child: _TactileIconButton(
-                            icon: Lucide.RefreshCw,
+                            icon: Lucide.refreshCw,
                             color: cs.primary,
                             semanticLabel:
                                 l10n.mcpServerEditSheetSyncToolsTooltip,
@@ -677,7 +677,7 @@ class _McpServerEditSheetState extends State<_McpServerEditSheet>
                                               child: Row(
                                                 children: [
                                                   Icon(
-                                                    Lucide.Shield,
+                                                    Lucide.shield,
                                                     size: 13,
                                                     color: tool.needsApproval
                                                         ? cs.primary
@@ -734,7 +734,7 @@ class _McpServerEditSheetState extends State<_McpServerEditSheet>
                 child: SizedBox(
                   width: double.infinity,
                   child: IosTileButton(
-                    icon: isEdit ? Lucide.Check : Lucide.Plus,
+                    icon: isEdit ? Lucide.check : Lucide.plus,
                     label: l10n.mcpServerEditSheetSave,
                     backgroundColor: cs.primary,
                     onTap: _onSave,

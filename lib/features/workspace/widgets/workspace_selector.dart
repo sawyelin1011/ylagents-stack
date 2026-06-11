@@ -50,7 +50,7 @@ class WorkspaceSelector extends StatelessWidget {
             ),
             const SizedBox(width: 4),
             Icon(
-              lucide.Lucide.ChevronDown,
+              lucide.Lucide.chevronDown,
               size: 14,
               color: cs.onSurface.withValues(alpha: 0.5),
             ),
@@ -106,7 +106,7 @@ class WorkspaceSelector extends StatelessWidget {
                   ),
                 ),
                 if (ws.id == wsProvider.currentWorkspaceId)
-                  Icon(lucide.Lucide.Check, size: 14, color: cs.primary),
+                  Icon(lucide.Lucide.check, size: 14, color: cs.primary),
               ],
             ),
             onTap: () {
@@ -118,7 +118,7 @@ class WorkspaceSelector extends StatelessWidget {
         PopupMenuItem(
           child: Row(
             children: [
-              Icon(lucide.Lucide.Plus, size: 16, color: cs.primary),
+              Icon(lucide.Lucide.plus, size: 16, color: cs.primary),
               const SizedBox(width: 10),
               Text(
                 l10n.workspaceSelectorNewWorkspace,
@@ -212,11 +212,11 @@ class WorkspaceSelector extends StatelessWidget {
   IconData _iconForType(WorkspaceType type) {
     switch (type) {
       case WorkspaceType.personal:
-        return lucide.Lucide.User;
+        return lucide.Lucide.user;
       case WorkspaceType.project:
-        return lucide.Lucide.Boxes;
+        return lucide.Lucide.boxes;
       case WorkspaceType.client:
-        return lucide.Lucide.Briefcase;
+        return lucide.Lucide.briefcase;
     }
   }
 }

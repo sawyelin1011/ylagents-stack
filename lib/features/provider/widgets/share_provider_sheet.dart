@@ -149,7 +149,7 @@ Future<void> showShareProviderSheet(
                   children: [
                     Expanded(
                       child: IosTileButton(
-                        icon: Lucide.Copy,
+                        icon: Lucide.copy,
                         label: l10n.shareProviderSheetCopyButton,
                         onTap: () {
                           Clipboard.setData(ClipboardData(text: code));
@@ -164,7 +164,7 @@ Future<void> showShareProviderSheet(
                     const SizedBox(width: 10),
                     Expanded(
                       child: IosTileButton(
-                        icon: Lucide.Share2,
+                        icon: Lucide.share2,
                         label: l10n.shareProviderSheetShareButton,
                         onTap: () async {
                           final rect = shareAnchorRect(ctx);

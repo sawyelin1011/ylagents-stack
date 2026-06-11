@@ -294,7 +294,7 @@ class _DesktopTranslatePageState extends State<DesktopTranslatePage> {
                             Expanded(
                               child: _PaneContainer(
                                 overlay: _PaneActionButton(
-                                  icon: lucide.Lucide.Eraser,
+                                  icon: lucide.Lucide.eraser,
                                   label: l10n.translatePageClearAll,
                                   onTap: () {
                                     _source.clear();
@@ -320,7 +320,7 @@ class _DesktopTranslatePageState extends State<DesktopTranslatePage> {
                             Expanded(
                               child: _PaneContainer(
                                 overlay: _PaneActionButton(
-                                  icon: lucide.Lucide.Copy,
+                                  icon: lucide.Lucide.copy,
                                   label: l10n.translatePageCopyResult,
                                   onTap: () async {
                                     await Clipboard.setData(
@@ -546,7 +546,7 @@ class _LanguageDropdownState extends State<_LanguageDropdown> {
                       duration: const Duration(milliseconds: 200),
                       curve: Curves.easeOutCubic,
                       child: Icon(
-                        lucide.Lucide.ChevronDown,
+                        lucide.Lucide.chevronDown,
                         size: 14,
                         color: cs.onSurface.withValues(alpha: 0.45),
                       ),
@@ -783,7 +783,7 @@ class _LangOptionTileState extends State<_LangOptionTile> {
                 const SizedBox(width: 8),
                 Opacity(
                   opacity: widget.selected ? 1 : 0,
-                  child: Icon(lucide.Lucide.Check, size: 14, color: cs.primary),
+                  child: Icon(lucide.Lucide.check, size: 14, color: cs.primary),
                 ),
               ],
             ),
@@ -891,7 +891,7 @@ class _TranslateButtonState extends State<_TranslateButton> {
                     key: const ValueKey('translate'),
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      Icon(lucide.Lucide.Languages, size: 16, color: fg),
+                      Icon(lucide.Lucide.languages, size: 16, color: fg),
                       const SizedBox(width: 6),
                       Text(
                         l10n.chatMessageWidgetTranslateTooltip,
@@ -953,7 +953,7 @@ class _ModelPickerButton extends StatelessWidget {
                 }()
               else
                 Icon(
-                  lucide.Lucide.Bot,
+                  lucide.Lucide.bot,
                   size: 18,
                   color: cs.onSurface.withValues(alpha: 0.9),
                 ),

@@ -277,7 +277,7 @@ class _InstructionInjectionListInner extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.only(bottom: 1),
             child: _CancelRow(
-              leading: Icon(Lucide.CircleX, size: 16, color: cs.onSurface),
+              leading: Icon(Lucide.circleX, size: 16, color: cs.onSurface),
               label: l10n.homePageCancel,
               onTap: () async {
                 try {
@@ -385,7 +385,7 @@ class _GroupHeaderRowState extends State<_GroupHeaderRow> {
                     duration: const Duration(milliseconds: 220),
                     curve: Curves.easeOutCubic,
                     child: Icon(
-                      Lucide.ChevronRight,
+                      Lucide.chevronRight,
                       size: 16,
                       color: cs.onSurface.withValues(alpha: 0.7),
                     ),
@@ -530,7 +530,7 @@ class _RowItemState extends State<_RowItem> {
           child: Row(
             children: [
               Icon(
-                Lucide.Layers,
+                Lucide.layers,
                 size: 16,
                 color: widget.active
                     ? cs.primary
@@ -573,7 +573,7 @@ class _RowItemState extends State<_RowItem> {
                     ),
                     if (widget.active) ...[
                       const SizedBox(width: 6),
-                      Icon(Lucide.Check, size: 14, color: cs.primary),
+                      Icon(Lucide.check, size: 14, color: cs.primary),
                     ],
                   ],
                 ),

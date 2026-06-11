@@ -423,7 +423,7 @@ class _BackupReminderTimeWheelPanelState
           Expanded(
             child: IosTileButton(
               label: l10n.backupPageCancel,
-              icon: lucide.Lucide.X,
+              icon: lucide.Lucide.x,
               onTap: widget.onCancel,
             ),
           ),
@@ -431,7 +431,7 @@ class _BackupReminderTimeWheelPanelState
           Expanded(
             child: IosTileButton(
               label: l10n.backupPageSave,
-              icon: lucide.Lucide.Check,
+              icon: lucide.Lucide.check,
               backgroundColor: cs.primary,
               foregroundColor: cs.primary,
               onTap: _save,

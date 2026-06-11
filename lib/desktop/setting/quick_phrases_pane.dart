@@ -60,7 +60,7 @@ class _DesktopQuickPhrasesPaneState extends State<DesktopQuickPhrasesPane> {
                         ),
                       ),
                       _SmallIconBtn(
-                        icon: lucide.Lucide.Plus,
+                        icon: lucide.Lucide.plus,
                         onTap: () => _showAddEditDialog(context),
                       ),
                     ],
@@ -78,7 +78,7 @@ class _DesktopQuickPhrasesPaneState extends State<DesktopQuickPhrasesPane> {
                         mainAxisSize: MainAxisSize.min,
                         children: [
                           Icon(
-                            lucide.Lucide.Zap,
+                            lucide.Lucide.zap,
                             size: 56,
                             color: cs.onSurface.withValues(alpha: 0.28),
                           ),
@@ -218,7 +218,7 @@ class _QuickPhraseCardState extends State<_QuickPhraseCard> {
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Icon(lucide.Lucide.Zap, size: 20, color: cs.primary),
+              Icon(lucide.Lucide.zap, size: 20, color: cs.primary),
               const SizedBox(width: 10),
               Expanded(
                 child: Column(
@@ -249,11 +249,11 @@ class _QuickPhraseCardState extends State<_QuickPhraseCard> {
               ),
               const SizedBox(width: 8),
               _SmallIconBtn(
-                icon: lucide.Lucide.Settings2,
+                icon: lucide.Lucide.settings2,
                 onTap: widget.onEdit,
               ),
               const SizedBox(width: 6),
-              _SmallIconBtn(icon: lucide.Lucide.Trash2, onTap: widget.onDelete),
+              _SmallIconBtn(icon: lucide.Lucide.trash2, onTap: widget.onDelete),
             ],
           ),
         ),
@@ -322,7 +322,7 @@ class _QuickPhraseEditDialogState extends State<_QuickPhraseEditDialog> {
                         ),
                       ),
                       _SmallIconBtn(
-                        icon: lucide.Lucide.X,
+                        icon: lucide.Lucide.x,
                         onTap: () => Navigator.of(context).maybePop(),
                       ),
                     ],

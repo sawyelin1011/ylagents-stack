@@ -106,26 +106,26 @@ IconData _toolIconFor(String name, [Map<String, dynamic> args = const {}]) {
     case 'delete_memory':
       return Lucide.bookDashed;
     case 'search_web':
-      return Lucide.Earth;
+      return Lucide.earth;
     case 'builtin_search':
-      return Lucide.Search;
+      return Lucide.search;
     default:
-      return Lucide.Wrench;
+      return Lucide.wrench;
   }
 }
 
 IconData? _localToolIconFor(String name, Map<String, dynamic> args) {
   if (name == LocalToolNames.askUser) {
-    return Lucide.MessageCircleQuestionMark;
+    return Lucide.messageCircleQuestionMark;
   }
   return switch (name) {
     LocalToolNames.timeInfo => Lucide.clock,
     LocalToolNames.clipboard => switch ((args['action'] ?? '').toString()) {
-      'read' => Lucide.ClipboardCheck,
-      'write' => Lucide.ClipboardPen,
-      _ => Lucide.Clipboard,
+      'read' => Lucide.clipboardCheck,
+      'write' => Lucide.clipboardPen,
+      _ => Lucide.clipboard,
     },
-    LocalToolNames.textToSpeech => Lucide.Volume2,
+    LocalToolNames.textToSpeech => Lucide.volume2,
     _ => null,
   };
 }
@@ -213,7 +213,7 @@ Widget _buildTextToSpeechReplayRow(
           padding: const EdgeInsets.all(6),
           color: buttonColor,
           semanticLabel: l10n.ttsFloatingReplayTooltip,
-          builder: (color) => Icon(Lucide.RefreshCw, size: 14, color: color),
+          builder: (color) => Icon(Lucide.refreshCw, size: 14, color: color),
           onTap: () => _replayTextToSpeech(context, text),
         ),
       ),
@@ -281,7 +281,7 @@ Widget _buildToolImageFromPath(
     height: height ?? 180,
     color: cs.surfaceContainerHighest,
     child: Icon(
-      Lucide.ImageOff,
+      Lucide.imageOff,
       size: 24,
       color: cs.onSurface.withValues(alpha: 0.5),
     ),
@@ -403,7 +403,7 @@ void _showToolDetail(BuildContext context, ToolUIPart part) {
                             message: l10n.mcpPageClose,
                             child: IconButton(
                               icon: Icon(
-                                Lucide.X,
+                                Lucide.x,
                                 size: 18,
                                 color: cs.onSurface.withValues(alpha: 0.75),
                               ),
@@ -1117,7 +1117,7 @@ class _ChatMessageWidgetState extends State<ChatMessageWidget> {
                             mainAxisSize: MainAxisSize.min,
                             children: [
                               _MenuItem(
-                                icon: Lucide.Copy,
+                                icon: Lucide.copy,
                                 label: l10n.shareProviderSheetCopyButton,
                                 onTap: () async {
                                   Navigator.of(ctx).pop();
@@ -1142,7 +1142,7 @@ class _ChatMessageWidgetState extends State<ChatMessageWidget> {
                               ),
                               if (widget.onEdit != null)
                                 _MenuItem(
-                                  icon: Lucide.Pencil,
+                                  icon: Lucide.pencil,
                                   label: l10n.messageMoreSheetEdit,
                                   onTap: () {
                                     Navigator.of(ctx).pop();
@@ -1150,7 +1150,7 @@ class _ChatMessageWidgetState extends State<ChatMessageWidget> {
                                   },
                                 ),
                               _MenuItem(
-                                icon: Lucide.Trash2,
+                                icon: Lucide.trash2,
                                 danger: true,
                                 label: l10n.messageMoreSheetDelete,
                                 onTap: () {
@@ -1217,7 +1217,7 @@ class _ChatMessageWidgetState extends State<ChatMessageWidget> {
               height: 32,
               fit: BoxFit.cover,
               errorBuilder: (context, error, stackTrace) =>
-                  Icon(Lucide.User, size: 18, color: cs.primary),
+                  Icon(Lucide.user, size: 18, color: cs.primary),
             ),
           );
         },
@@ -1231,10 +1231,10 @@ class _ChatMessageWidgetState extends State<ChatMessageWidget> {
           child: Image.file(f, width: 32, height: 32, fit: BoxFit.cover),
         );
       } else {
-        avatarContent = Icon(Lucide.User, size: 18, color: cs.primary);
+        avatarContent = Icon(Lucide.user, size: 18, color: cs.primary);
       }
     } else {
-      avatarContent = Icon(Lucide.User, size: 18, color: cs.primary);
+      avatarContent = Icon(Lucide.user, size: 18, color: cs.primary);
     }
 
     return Container(
@@ -1406,7 +1406,7 @@ class _ChatMessageWidgetState extends State<ChatMessageWidget> {
                           child: IosIconButton(
                             size: 16,
                             padding: EdgeInsets.all(4),
-                            icon: Lucide.Copy,
+                            icon: Lucide.copy,
                             color: cs.onSurface.withValues(alpha: 0.9),
                             onTap:
                                 widget.onCopy ??
@@ -1432,7 +1432,7 @@ class _ChatMessageWidgetState extends State<ChatMessageWidget> {
                           child: IosIconButton(
                             size: 16,
                             padding: EdgeInsets.all(4),
-                            icon: Lucide.RefreshCw,
+                            icon: Lucide.refreshCw,
                             color: cs.onSurface.withValues(alpha: 0.9),
                             onTap: widget.onResend == null
                                 ? null
@@ -1449,7 +1449,7 @@ class _ChatMessageWidgetState extends State<ChatMessageWidget> {
                             child: IosIconButton(
                               size: 16,
                               padding: EdgeInsets.all(4),
-                              icon: Lucide.Pencil,
+                              icon: Lucide.pencil,
                               color: cs.onSurface.withValues(alpha: 0.9),
                               onTap: widget.onEdit,
                             ),
@@ -1493,7 +1493,7 @@ class _ChatMessageWidgetState extends State<ChatMessageWidget> {
                             child: IosIconButton(
                               size: 16,
                               padding: EdgeInsets.all(4),
-                              icon: Lucide.Ellipsis,
+                              icon: Lucide.ellipsis,
                               color: cs.onSurface.withValues(alpha: 0.9),
                               onTap: null,
                             ),
@@ -1531,7 +1531,7 @@ class _ChatMessageWidgetState extends State<ChatMessageWidget> {
       globalPosition: globalPosition,
       items: [
         DesktopContextMenuItem(
-          icon: Lucide.Copy,
+          icon: Lucide.copy,
           label: l10n.shareProviderSheetCopyButton,
           onTap: () async {
             if (widget.onCopy != null) {
@@ -1552,12 +1552,12 @@ class _ChatMessageWidgetState extends State<ChatMessageWidget> {
         ),
         if (widget.onEdit != null)
           DesktopContextMenuItem(
-            icon: Lucide.Pencil,
+            icon: Lucide.pencil,
             label: l10n.messageMoreSheetEdit,
             onTap: () => widget.onEdit?.call(),
           ),
         DesktopContextMenuItem(
-          icon: Lucide.Trash2,
+          icon: Lucide.trash2,
           label: l10n.messageMoreSheetDelete,
           danger: true,
           onTap: () => (widget.onDelete ?? widget.onMore)?.call(),
@@ -2127,7 +2127,7 @@ class _ChatMessageWidgetState extends State<ChatMessageWidget> {
                         color: cs.secondary.withValues(alpha: 0.1),
                         shape: BoxShape.circle,
                       ),
-                      child: Icon(Lucide.Bot, size: 18, color: cs.secondary),
+                      child: Icon(Lucide.bot, size: 18, color: cs.secondary),
                     ),
                 const SizedBox(width: 8),
               ],
@@ -2319,7 +2319,7 @@ class _ChatMessageWidgetState extends State<ChatMessageWidget> {
                         ),
                         child: Row(
                           children: [
-                            Icon(Lucide.Languages, size: 16, color: fg.strong),
+                            Icon(Lucide.languages, size: 16, color: fg.strong),
                             const SizedBox(width: 6),
                             Text(
                               l10n.chatMessageWidgetTranslation,
@@ -2332,8 +2332,8 @@ class _ChatMessageWidgetState extends State<ChatMessageWidget> {
                             const Spacer(),
                             Icon(
                               widget.translationExpanded
-                                  ? Lucide.ChevronDown
-                                  : Lucide.ChevronRight,
+                                  ? Lucide.chevronDown
+                                  : Lucide.chevronRight,
                               size: 18,
                               color: fg.strong,
                             ),
@@ -2465,7 +2465,7 @@ class _ChatMessageWidgetState extends State<ChatMessageWidget> {
                             child: IosIconButton(
                               size: 16,
                               padding: EdgeInsets.all(4),
-                              icon: Lucide.Copy,
+                              icon: Lucide.copy,
                               color: cs.onSurface.withValues(alpha: 0.9),
                               onTap:
                                   widget.onCopy ??
@@ -2493,7 +2493,7 @@ class _ChatMessageWidgetState extends State<ChatMessageWidget> {
                             child: IosIconButton(
                               size: 16,
                               padding: EdgeInsets.all(4),
-                              icon: Lucide.RefreshCw,
+                              icon: Lucide.refreshCw,
                               color: cs.onSurface.withValues(alpha: 0.9),
                               onTap: widget.onRegenerate == null
                                   ? null
@@ -2528,8 +2528,8 @@ class _ChatMessageWidgetState extends State<ChatMessageWidget> {
                                         ),
                                     child: Icon(
                                       ttsActive
-                                          ? Lucide.CircleStop
-                                          : Lucide.Volume2,
+                                          ? Lucide.circleStop
+                                          : Lucide.volume2,
                                       key: ValueKey(
                                         ttsActive ? 'stop' : 'speak',
                                       ),
@@ -2582,7 +2582,7 @@ class _ChatMessageWidgetState extends State<ChatMessageWidget> {
                               child: IosIconButton(
                                 size: 16,
                                 padding: EdgeInsets.all(4),
-                                icon: Lucide.Languages,
+                                icon: Lucide.languages,
                                 color: cs.onSurface.withValues(alpha: 0.9),
                                 onTap: null,
                               ),
@@ -2628,7 +2628,7 @@ class _ChatMessageWidgetState extends State<ChatMessageWidget> {
                               child: IosIconButton(
                                 size: 16,
                                 padding: EdgeInsets.all(4),
-                                icon: Lucide.Ellipsis,
+                                icon: Lucide.ellipsis,
                                 color: cs.onSurface.withValues(alpha: 0.9),
                                 onTap: null,
                               ),
@@ -3146,7 +3146,7 @@ class _BranchSelector extends StatelessWidget {
               size: 16,
               enabled: canPrev,
               color: cs.onSurface,
-              icon: Lucide.ChevronLeft,
+              icon: Lucide.chevronLeft,
               onTap: canPrev ? onPrev : null,
             ),
           ),
@@ -3178,7 +3178,7 @@ class _BranchSelector extends StatelessWidget {
               size: 16,
               enabled: canNext,
               color: cs.onSurface,
-              icon: Lucide.ChevronRight,
+              icon: Lucide.chevronRight,
               onTap: canNext ? onNext : null,
             ),
           ),
@@ -3469,8 +3469,8 @@ class _ChainOfThoughtCardState extends State<_ChainOfThoughtCard> {
                         child: Center(
                           child: Icon(
                             _showAllSteps
-                                ? Lucide.ChevronUp
-                                : Lucide.ChevronDown,
+                                ? Lucide.chevronUp
+                                : Lucide.chevronDown,
                             size: 16,
                             color: fg.strong,
                           ),
@@ -3824,8 +3824,8 @@ class _ChainOfThoughtReasoningStepState
           ? null
           : Icon(
               state == _ReasoningStepState.expanded
-                  ? Lucide.ChevronUp
-                  : Lucide.ChevronDown,
+                  ? Lucide.chevronUp
+                  : Lucide.chevronDown,
               size: 16,
               color: fg.muted,
             ),
@@ -4044,7 +4044,7 @@ class _ChainOfThoughtToolStepState extends State<_ChainOfThoughtToolStep> {
                 padding: const EdgeInsets.all(7),
                 color: cs.error,
                 semanticLabel: AppLocalizations.of(context)!.toolApprovalDeny,
-                builder: (color) => Icon(Lucide.X, size: 14, color: color),
+                builder: (color) => Icon(Lucide.x, size: 14, color: color),
                 onTap: () => _showDenyDialog(
                   context,
                   approvalService,
@@ -4059,7 +4059,7 @@ class _ChainOfThoughtToolStepState extends State<_ChainOfThoughtToolStep> {
                 semanticLabel: AppLocalizations.of(
                   context,
                 )!.toolApprovalApprove,
-                builder: (color) => Icon(Lucide.Check, size: 14, color: color),
+                builder: (color) => Icon(Lucide.check, size: 14, color: color),
                 onTap: () =>
                     approvalService.approve(approvalRequest.toolCallId),
               ),
@@ -4078,11 +4078,11 @@ class _ChainOfThoughtToolStepState extends State<_ChainOfThoughtToolStep> {
       extra: extra,
       indicator: _isAskUser
           ? Icon(
-              askUserExpanded ? Lucide.ChevronUp : Lucide.ChevronDown,
+              askUserExpanded ? Lucide.chevronUp : Lucide.chevronDown,
               size: 16,
               color: fg.muted,
             )
-          : Icon(Lucide.ChevronRight, size: 16, color: fg.muted),
+          : Icon(Lucide.chevronRight, size: 16, color: fg.muted),
       content: content,
       contentVisible: content != null && (!_isAskUser || askUserExpanded),
     );
@@ -4125,7 +4125,7 @@ class _ToolCallItemState extends State<_ToolCallItem> {
       height: height ?? 180,
       color: cs.surfaceContainerHighest,
       child: Icon(
-        Lucide.ImageOff,
+        Lucide.imageOff,
         size: 24,
         color: cs.onSurface.withValues(alpha: 0.5),
       ),
@@ -4252,7 +4252,7 @@ class _ToolCallItemState extends State<_ToolCallItem> {
                     width: 18,
                     height: 18,
                     child: Center(
-                      child: Icon(Lucide.Shield, size: 18, color: fg.accent),
+                      child: Icon(Lucide.shield, size: 18, color: fg.accent),
                     ),
                   )
                 else if (widget.part.loading)
@@ -4527,7 +4527,7 @@ class _ToolCallItemState extends State<_ToolCallItem> {
                               message: l10n.mcpPageClose,
                               child: IconButton(
                                 icon: Icon(
-                                  Lucide.X,
+                                  Lucide.x,
                                   size: 18,
                                   color: cs.onSurface.withValues(alpha: 0.75),
                                 ),
@@ -4867,7 +4867,7 @@ class _AskUserToolCardState extends State<_AskUserToolCard> {
             child: Row(
               children: [
                 Icon(
-                  Lucide.MessageCircleQuestionMark,
+                  Lucide.messageCircleQuestionMark,
                   size: 18,
                   color: fg.strong,
                 ),
@@ -4897,7 +4897,7 @@ class _AskUserToolCardState extends State<_AskUserToolCard> {
                   const SizedBox(width: 8),
                 ],
                 Icon(
-                  expanded ? Lucide.ChevronUp : Lucide.ChevronDown,
+                  expanded ? Lucide.chevronUp : Lucide.chevronDown,
                   size: 16,
                   color: fg.muted,
                 ),
@@ -5547,7 +5547,7 @@ class _AskUserSubmitButton extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             Icon(
-              Lucide.ArrowUp,
+              Lucide.arrowUp,
               size: 15,
               color: enabled
                   ? cs.onPrimary
@@ -5775,7 +5775,7 @@ class _SourceFaviconFallback extends StatelessWidget {
       width: size,
       height: size,
       child: Icon(
-        Lucide.Globe,
+        Lucide.globe,
         size: size * 0.72,
         color: cs.onSurface.withValues(alpha: 0.52),
       ),
@@ -5926,7 +5926,7 @@ class _ReasoningSectionState extends State<_ReasoningSection>
               turns: widget.expanded ? 0.25 : 0.0, // right -> down
               duration: const Duration(milliseconds: 220),
               curve: Curves.easeInOutCubic,
-              child: Icon(Lucide.ChevronRight, size: 18, color: fg.strong),
+              child: Icon(Lucide.chevronRight, size: 18, color: fg.strong),
             ),
           ],
         ),

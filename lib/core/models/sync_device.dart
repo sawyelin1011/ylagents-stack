@@ -14,7 +14,7 @@ class SyncDevice {
   final DateTime lastSyncAt;
   final DateTime registeredAt;
 
-  const SyncDevice({
+  SyncDevice({
     required this.id,
     required this.name,
     required this.platform,

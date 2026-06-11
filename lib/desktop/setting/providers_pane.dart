@@ -778,7 +778,7 @@ class _DesktopProvidersSearchField extends StatelessWidget {
         isDense: true,
         contentPadding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
         prefixIcon: Icon(
-          lucide.Lucide.Search,
+          lucide.Lucide.search,
           size: 16,
           color: cs.onSurface.withValues(alpha: 0.5),
         ),
@@ -790,7 +790,7 @@ class _DesktopProvidersSearchField extends StatelessWidget {
             ? IconButton(
                 onPressed: onClear,
                 icon: Icon(
-                  lucide.Lucide.X,
+                  lucide.Lucide.x,
                   size: 14,
                   color: cs.onSurface.withValues(alpha: 0.48),
                 ),
@@ -881,7 +881,7 @@ class _DesktopProviderGroupHeaderRowState
                 duration: const Duration(milliseconds: 260),
                 curve: Curves.easeOutCubic,
                 child: Icon(
-                  lucide.Lucide.ChevronRight,
+                  lucide.Lucide.chevronRight,
                   size: 16,
                   color: cs.onSurface.withValues(alpha: 0.7),
                 ),
@@ -1044,7 +1044,7 @@ class _DesktopProviderDetailPaneState
                       ),
                     ),
                     _IconBtn(
-                      icon: lucide.Lucide.X,
+                      icon: lucide.Lucide.x,
                       onTap: () => Navigator.of(ctx).maybePop(),
                     ),
                   ],
@@ -1127,7 +1127,7 @@ class _DesktopProviderDetailPaneState
                     ),
                     const SizedBox(width: 8),
                     _IconBtn(
-                      icon: lucide.Lucide.Settings,
+                      icon: lucide.Lucide.settings,
                       onTap: () => _showProviderSettingsDialog(context),
                     ),
                     if (kind == ProviderKind.openai &&
@@ -1334,7 +1334,7 @@ class _DesktopProviderDetailPaneState
                     Tooltip(
                       message: l10n.providerDetailPageTestButton,
                       child: _IconTextBtn(
-                        icon: lucide.Lucide.HeartPulse,
+                        icon: lucide.Lucide.heartPulse,
                         label: l10n.providerDetailPageTestButton,
                         onTap: () => _showTestConnectionDialog(context),
                       ),
@@ -1419,8 +1419,8 @@ class _DesktopProviderDetailPaneState
                                 turns: _showApiKey ? 0.5 : 0.0,
                                 child: Icon(
                                   _showApiKey
-                                      ? lucide.Lucide.EyeOff
-                                      : lucide.Lucide.Eye,
+                                      ? lucide.Lucide.eyeOff
+                                      : lucide.Lucide.eye,
                                   size: 18,
                                   color: Theme.of(context).colorScheme.onSurface
                                       .withValues(alpha: 0.8),
@@ -1855,7 +1855,7 @@ class _DesktopProviderDetailPaneState
                                       )
                                     : _IconBtn(
                                         key: const ValueKey('search-icon'),
-                                        icon: lucide.Lucide.Search,
+                                        icon: lucide.Lucide.search,
                                         onTap: () => setState(() {
                                           _showSearch = true;
                                           _searchFocus.addListener(() {
@@ -1879,7 +1879,7 @@ class _DesktopProviderDetailPaneState
                     Tooltip(
                       message: l10n.homePageCancel,
                       child: _IconBtn(
-                        icon: lucide.Lucide.X,
+                        icon: lucide.Lucide.x,
                         onTap: _exitSelectionMode,
                       ),
                     ),
@@ -1895,8 +1895,8 @@ class _DesktopProviderDetailPaneState
                         child: _IconBtn(
                           key: ValueKey(allSelected),
                           icon: allSelected
-                              ? lucide.Lucide.Square
-                              : lucide.Lucide.CheckSquare,
+                              ? lucide.Lucide.square
+                              : lucide.Lucide.checkSquare,
                           color: cs.onSurface.withValues(alpha: 0.85),
                           onTap: () {
                             setState(() {
@@ -1934,8 +1934,8 @@ class _DesktopProviderDetailPaneState
                                 ScaleTransition(scale: anim, child: child),
                             child: Icon(
                               _detectUseStream
-                                  ? lucide.Lucide.AudioWaveform
-                                  : lucide.Lucide.SquareEqual,
+                                  ? lucide.Lucide.audioWaveform
+                                  : lucide.Lucide.squareEqual,
                               key: ValueKey(_detectUseStream),
                               size: 18,
                               color: cs.onSurface.withValues(alpha: 0.85),
@@ -1951,8 +1951,8 @@ class _DesktopProviderDetailPaneState
                           : l10n.providerDetailPageBatchDetectStart,
                       child: _IconTextBtn(
                         icon: _isDetecting
-                            ? lucide.Lucide.Loader
-                            : lucide.Lucide.HeartPulse,
+                            ? lucide.Lucide.loader
+                            : lucide.Lucide.heartPulse,
                         label: _isDetecting
                             ? l10n.providerDetailPageBatchDetecting
                             : l10n.providerDetailPageBatchDetectButton,
@@ -1970,7 +1970,7 @@ class _DesktopProviderDetailPaneState
                       message:
                           l10n.providerDetailPageDeleteSelectedModelsTooltip,
                       child: _IconTextBtn(
-                        icon: lucide.Lucide.Trash2,
+                        icon: lucide.Lucide.trash2,
                         label:
                             l10n.providerDetailPageDeleteSelectedModelsButton,
                         color: _selectedModels.isEmpty || _isDetecting
@@ -1984,7 +1984,7 @@ class _DesktopProviderDetailPaneState
                       Tooltip(
                         message: l10n.providerDetailPageMultiSelectButton,
                         child: _IconBtn(
-                          icon: lucide.Lucide.CheckSquare,
+                          icon: lucide.Lucide.checkSquare,
                           onTap: _enterSelectionMode,
                         ),
                       )
@@ -1992,7 +1992,7 @@ class _DesktopProviderDetailPaneState
                       Tooltip(
                         message: l10n.providerDetailPageBatchDetecting,
                         child: _IconBtn(
-                          icon: lucide.Lucide.Loader,
+                          icon: lucide.Lucide.loader,
                           onTap: () {},
                         ),
                       ),
@@ -2000,7 +2000,7 @@ class _DesktopProviderDetailPaneState
                     Tooltip(
                       message: l10n.providerDetailPageAddNewModelButton,
                       child: _IconBtn(
-                        icon: lucide.Lucide.Plus,
+                        icon: lucide.Lucide.plus,
                         onTap: () => _createModel(context),
                       ),
                     ),
@@ -2009,7 +2009,7 @@ class _DesktopProviderDetailPaneState
                       Tooltip(
                         message: l10n.providerDetailPageDeleteAllModelsTooltip,
                         child: _IconBtn(
-                          icon: lucide.Lucide.Trash2,
+                          icon: lucide.Lucide.trash2,
                           color: cs.onSurface.withValues(alpha: 0.85),
                           onTap: _confirmDeleteAllModels,
                         ),
@@ -2019,7 +2019,7 @@ class _DesktopProviderDetailPaneState
                     Tooltip(
                       message: l10n.providerDetailPageFetchModelsButton,
                       child: _IconTextBtn(
-                        icon: lucide.Lucide.RefreshCcwDot,
+                        icon: lucide.Lucide.refreshCcwDot,
                         label: l10n.providerDetailPageFetchModelsButton,
                         onTap: () async {
                           final providerName = widget.displayName;
@@ -2371,7 +2371,7 @@ class _DesktopProviderDetailPaneState
                                 ),
                               ),
                               _IconBtn(
-                                icon: lucide.Lucide.X,
+                                icon: lucide.Lucide.x,
                                 onTap: () => Navigator.of(ctx).maybePop(),
                               ),
                             ],
@@ -2401,7 +2401,7 @@ class _DesktopProviderDetailPaneState
                                 offset: const Offset(0, 8),
                                 items: [
                                   DesktopContextMenuItem(
-                                    icon: lucide.Lucide.Image,
+                                    icon: lucide.Lucide.image,
                                     label: l10n2.sideDrawerChooseImage,
                                     onTap: () async {
                                       try {
@@ -2436,7 +2436,7 @@ class _DesktopProviderDetailPaneState
                                     },
                                   ),
                                   DesktopContextMenuItem(
-                                    icon: lucide.Lucide.Link,
+                                    icon: lucide.Lucide.link,
                                     label: l10n2.sideDrawerEnterLink,
                                     onTap: () async {
                                       await _inputProviderAvatarUrl(
@@ -2446,7 +2446,7 @@ class _DesktopProviderDetailPaneState
                                     },
                                   ),
                                   DesktopContextMenuItem(
-                                    icon: lucide.Lucide.RotateCw,
+                                    icon: lucide.Lucide.rotateCw,
                                     label: l10n2.desktopAvatarMenuReset,
                                     onTap: () async {
                                       await context
@@ -2572,7 +2572,7 @@ class _DesktopProviderDetailPaneState
                                   ),
                                   const SizedBox(width: 8),
                                   _IconBtn(
-                                    icon: lucide.Lucide.Plus,
+                                    icon: lucide.Lucide.plus,
                                     onTap: () => unawaited(() async {
                                       final controller =
                                           TextEditingController();
@@ -2626,7 +2626,7 @@ class _DesktopProviderDetailPaneState
                                   ),
                                   const SizedBox(width: 4),
                                   _IconBtn(
-                                    icon: lucide.Lucide.Settings,
+                                    icon: lucide.Lucide.settings,
                                     onTap: () => unawaited(
                                       showDialog<void>(
                                         context: ctx,
@@ -2881,7 +2881,7 @@ class _DesktopProviderDetailPaneState
                                               message: l10n
                                                   .providerDetailPageBalanceResetDefaultsTooltip,
                                               child: _IconBtn(
-                                                icon: lucide.Lucide.RotateCcw,
+                                                icon: lucide.Lucide.rotateCcw,
                                                 color: cs.onSurface.withValues(
                                                   alpha: 0.78,
                                                 ),
@@ -2935,7 +2935,7 @@ class _DesktopProviderDetailPaneState
                                                   : l10n.providerDetailPageBalanceQueryButton,
                                               child: _IconBtn(
                                                 icon: _balanceLoading
-                                                    ? lucide.Lucide.Loader
+                                                    ? lucide.Lucide.loader
                                                     : lucide
                                                           .Lucide
                                                           .RefreshCcwDot,
@@ -3763,7 +3763,7 @@ class _DesktopProviderDetailPaneState
                                   ),
                                 ),
                                 _IconBtn(
-                                  icon: lucide.Lucide.X,
+                                  icon: lucide.Lucide.x,
                                   onTap: () => Navigator.of(c2).maybePop(),
                                 ),
                               ],
@@ -3942,7 +3942,7 @@ class _DesktopProviderDetailPaneState
                             Tooltip(
                               message: l10n.multiKeyPageDeleteErrorsTooltip,
                               child: _IconBtn(
-                                icon: lucide.Lucide.Trash2,
+                                icon: lucide.Lucide.trash2,
                                 onTap: () => deleteAllErrorKeys(dctx),
                               ),
                             ),
@@ -3966,14 +3966,14 @@ class _DesktopProviderDetailPaneState
                               Tooltip(
                                 message: l10n.multiKeyPageDetect,
                                 child: _IconBtn(
-                                  icon: lucide.Lucide.HeartPulse,
+                                  icon: lucide.Lucide.heartPulse,
                                   onTap: () => detectAll(dctx),
                                   onLongPress: () => pickDetectModel(dctx),
                                 ),
                               ),
                             const SizedBox(width: 6),
                             _IconBtn(
-                              icon: lucide.Lucide.X,
+                              icon: lucide.Lucide.x,
                               onTap: () => Navigator.of(ctx).maybePop(),
                             ),
                           ],
@@ -4459,7 +4459,7 @@ class _DesktopProviderDetailPaneState
                       ),
                     ),
                     _IconBtn(
-                      icon: lucide.Lucide.X,
+                      icon: lucide.Lucide.x,
                       onTap: () => Navigator.of(ctx).maybePop(false),
                     ),
                   ],
@@ -4580,7 +4580,7 @@ class _DesktopProviderDetailPaneState
                       ),
                     ),
                     _IconBtn(
-                      icon: lucide.Lucide.X,
+                      icon: lucide.Lucide.x,
                       onTap: () => Navigator.of(ctx).maybePop(false),
                     ),
                   ],
@@ -5310,12 +5310,12 @@ class _DesktopProviderGroupsDialogState
                       ),
                     ),
                     _IconBtn(
-                      icon: lucide.Lucide.Plus,
+                      icon: lucide.Lucide.plus,
                       onTap: () => unawaited(_createGroup(context)),
                     ),
                     const SizedBox(width: 6),
                     _IconBtn(
-                      icon: lucide.Lucide.X,
+                      icon: lucide.Lucide.x,
                       onTap: () => Navigator.of(context).maybePop(),
                     ),
                   ],
@@ -5442,12 +5442,12 @@ class _DesktopProviderGroupCard extends StatelessWidget {
           _DesktopCountPill(count: count),
           if (editAction != null) ...[
             const SizedBox(width: 10),
-            _IconBtn(icon: lucide.Lucide.Pencil, onTap: editAction),
+            _IconBtn(icon: lucide.Lucide.pencil, onTap: editAction),
           ],
           if (deleteAction != null) ...[
             const SizedBox(width: 4),
             _IconBtn(
-              icon: lucide.Lucide.Trash2,
+              icon: lucide.Lucide.trash2,
               color: cs.error,
               onTap: deleteAction,
             ),
@@ -5518,7 +5518,7 @@ class _DesktopDragHandleState extends State<_DesktopDragHandle> {
         ),
         alignment: Alignment.center,
         child: Icon(
-          lucide.Lucide.GripVertical,
+          lucide.Lucide.gripVertical,
           size: 18,
           color: cs.onSurface.withValues(alpha: 0.7),
         ),
@@ -5657,7 +5657,7 @@ class _DesktopProviderShareDialogState
                     ),
                   ),
                   _IconBtn(
-                    icon: lucide.Lucide.X,
+                    icon: lucide.Lucide.x,
                     onTap: () => Navigator.of(context).maybePop(),
                   ),
                 ],
@@ -5934,14 +5934,14 @@ class _ProviderListRowState extends State<_ProviderListRow> {
         onSecondaryTapDown: (details) async {
           final items = <DesktopContextMenuItem>[
             DesktopContextMenuItem(
-              icon: lucide.Lucide.Share2,
+              icon: lucide.Lucide.share2,
               label: AppLocalizations.of(
                 context,
               )!.desktopProviderContextMenuShare,
               onTap: widget.onShare,
             ),
             DesktopContextMenuItem(
-              icon: lucide.Lucide.Pencil,
+              icon: lucide.Lucide.pencil,
               label: AppLocalizations.of(
                 context,
               )!.providerDetailPageEditTooltip,
@@ -5949,7 +5949,7 @@ class _ProviderListRowState extends State<_ProviderListRow> {
             ),
             if (widget.onDelete != null)
               DesktopContextMenuItem(
-                icon: lucide.Lucide.Trash2,
+                icon: lucide.Lucide.trash2,
                 label: AppLocalizations.of(
                   context,
                 )!.providerDetailPageDeleteProviderTooltip,
@@ -6075,7 +6075,7 @@ class _AddFullWidthButtonState extends State<_AddFullWidthButton> {
               mainAxisSize: MainAxisSize.min,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Icon(lucide.Lucide.Plus, size: 16, color: cs.primary),
+                Icon(lucide.Lucide.plus, size: 16, color: cs.primary),
                 const SizedBox(width: 6),
                 Text(
                   widget.label,
@@ -6230,20 +6230,20 @@ class _DesktopKeyRow extends StatelessWidget {
                 Tooltip(
                   message: l10n.multiKeyPageDetect,
                   child: _IconBtn(
-                    icon: lucide.Lucide.HeartPulse,
+                    icon: lucide.Lucide.heartPulse,
                     onTap: onTest,
                     color: cs.primary,
                   ),
                 ),
               const SizedBox(width: 4),
               _IconBtn(
-                icon: lucide.Lucide.Pencil,
+                icon: lucide.Lucide.pencil,
                 onTap: onEdit,
                 color: cs.primary,
               ),
               const SizedBox(width: 4),
               _IconBtn(
-                icon: lucide.Lucide.Trash2,
+                icon: lucide.Lucide.trash2,
                 onTap: onDelete,
                 color: cs.error,
               ),
@@ -6332,7 +6332,7 @@ class _ModelGroupAccordionState extends State<_ModelGroupAccordion> {
                         duration: const Duration(milliseconds: 180),
                         curve: Curves.easeOutCubic,
                         child: Icon(
-                          lucide.Lucide.ChevronRight,
+                          lucide.Lucide.chevronRight,
                           size: 16,
                           color: cs.onSurface.withValues(alpha: 0.9),
                         ),
@@ -6517,8 +6517,8 @@ class _ModelRow extends StatelessWidget {
                             l10n.providerDetailPageDetectFailed),
                   child: Icon(
                     detectionResult!
-                        ? lucide.Lucide.CheckCircle
-                        : lucide.Lucide.XCircle,
+                        ? lucide.Lucide.checkCircle
+                        : lucide.Lucide.xCircle,
                     size: 16,
                     color: detectionResult! ? Colors.green : cs.error,
                   ),
@@ -6530,7 +6530,7 @@ class _ModelRow extends StatelessWidget {
               ModelCapsulesRow(model: info),
               const SizedBox(width: 8),
               _IconBtn(
-                icon: lucide.Lucide.Settings2,
+                icon: lucide.Lucide.settings2,
                 onTap: () async {
                   await showDesktopModelEditDialog(
                     context,
@@ -6541,7 +6541,7 @@ class _ModelRow extends StatelessWidget {
               ),
               const SizedBox(width: 4),
               _IconBtn(
-                icon: lucide.Lucide.Minus,
+                icon: lucide.Lucide.minus,
                 onTap: () async {
                   final sp = context.read<SettingsProvider>();
                   final ap = context.read<AssistantProvider>();

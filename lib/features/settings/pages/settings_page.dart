@@ -62,21 +62,21 @@ class SettingsPage extends StatelessWidget {
                 children: [
                   _sheetOption(
                     ctx,
-                    icon: Lucide.Monitor,
+                    icon: Lucide.monitor,
                     label: modeLabel(ThemeMode.system),
                     onTap: () => Navigator.of(ctx).pop(ThemeMode.system),
                   ),
                   _sheetDivider(ctx),
                   _sheetOption(
                     ctx,
-                    icon: Lucide.Sun,
+                    icon: Lucide.sun,
                     label: modeLabel(ThemeMode.light),
                     onTap: () => Navigator.of(ctx).pop(ThemeMode.light),
                   ),
                   _sheetDivider(ctx),
                   _sheetOption(
                     ctx,
-                    icon: Lucide.Moon,
+                    icon: Lucide.moon,
                     label: modeLabel(ThemeMode.dark),
                     onTap: () => Navigator.of(ctx).pop(ThemeMode.dark),
                   ),
@@ -109,7 +109,7 @@ class SettingsPage extends StatelessWidget {
         leading: Tooltip(
           message: l10n.settingsPageBackButton,
           child: _TactileIconButton(
-            icon: Lucide.ArrowLeft,
+            icon: Lucide.arrowLeft,
             color: cs.onSurface,
             size: 22,
             onTap: () => Navigator.of(context).maybePop(),
@@ -129,7 +129,7 @@ class SettingsPage extends StatelessWidget {
                 child: Row(
                   children: [
                     Icon(
-                      Lucide.MessageCircleWarning,
+                      Lucide.messageCircleWarning,
                       size: 18,
                       color: cs.error,
                     ),
@@ -154,7 +154,7 @@ class SettingsPage extends StatelessWidget {
             children: [
               _iosNavRow(
                 context,
-                icon: Lucide.SunMoon,
+                icon: Lucide.sunMoon,
                 label: l10n.settingsPageColorMode,
                 detailText: modeLabel(settings.themeMode),
                 onTap: pickThemeMode,
@@ -162,7 +162,7 @@ class SettingsPage extends StatelessWidget {
               _iosDivider(context),
               _iosNavRow(
                 context,
-                icon: Lucide.Monitor,
+                icon: Lucide.monitor,
                 label: l10n.settingsPageDisplay,
                 onTap: () {
                   Navigator.of(context).push(
@@ -175,7 +175,7 @@ class SettingsPage extends StatelessWidget {
               _iosDivider(context),
               _iosNavRow(
                 context,
-                icon: Lucide.Bot,
+                icon: Lucide.bot,
                 label: l10n.settingsPageAssistant,
                 onTap: () {
                   Navigator.of(context).push(
@@ -194,7 +194,7 @@ class SettingsPage extends StatelessWidget {
             children: [
               _iosNavRow(
                 context,
-                icon: Lucide.Heart,
+                icon: Lucide.heart,
                 label: l10n.settingsPageDefaultModel,
                 onTap: () {
                   Navigator.of(context).push(
@@ -205,7 +205,7 @@ class SettingsPage extends StatelessWidget {
               _iosDivider(context),
               _iosNavRow(
                 context,
-                icon: Lucide.Boxes,
+                icon: Lucide.boxes,
                 label: l10n.settingsPageProviders,
                 onTap: () {
                   Navigator.of(context).push(
@@ -216,7 +216,7 @@ class SettingsPage extends StatelessWidget {
               _iosDivider(context),
               _iosNavRow(
                 context,
-                icon: Lucide.Earth,
+                icon: Lucide.earth,
                 label: l10n.settingsPageSearch,
                 onTap: () {
                   Navigator.of(context).push(
@@ -229,7 +229,7 @@ class SettingsPage extends StatelessWidget {
               _iosDivider(context),
               _iosNavRow(
                 context,
-                icon: Lucide.Volume2,
+                icon: Lucide.volume2,
                 label: l10n.settingsPageTts,
                 onTap: () {
                   Navigator.of(context).push(
@@ -240,7 +240,7 @@ class SettingsPage extends StatelessWidget {
               _iosDivider(context),
               _iosNavRow(
                 context,
-                icon: Lucide.Terminal,
+                icon: Lucide.terminal,
                 label: l10n.settingsPageMcp,
                 onTap: () {
                   Navigator.of(
@@ -251,7 +251,7 @@ class SettingsPage extends StatelessWidget {
               _iosDivider(context),
               _iosNavRow(
                 context,
-                icon: Lucide.BookOpen,
+                icon: Lucide.bookOpen,
                 label: l10n.settingsPageWorldBook,
                 onTap: () {
                   Navigator.of(context).push(
@@ -262,7 +262,7 @@ class SettingsPage extends StatelessWidget {
               _iosDivider(context),
               _iosNavRow(
                 context,
-                icon: Lucide.Zap,
+                icon: Lucide.zap,
                 label: l10n.settingsPageQuickPhrase,
                 onTap: () {
                   Navigator.of(context).push(
@@ -273,7 +273,7 @@ class SettingsPage extends StatelessWidget {
               _iosDivider(context),
               _iosNavRow(
                 context,
-                icon: Lucide.Layers,
+                icon: Lucide.layers,
                 label: l10n.settingsPageInstructionInjection,
                 onTap: () {
                   Navigator.of(context).push(
@@ -286,7 +286,7 @@ class SettingsPage extends StatelessWidget {
               _iosDivider(context),
               _iosNavRow(
                 context,
-                icon: Lucide.EthernetPort,
+                icon: Lucide.ethernetPort,
                 label: l10n.settingsPageNetworkProxy,
                 onTap: () {
                   Navigator.of(context).push(
@@ -303,7 +303,7 @@ class SettingsPage extends StatelessWidget {
             children: [
               _iosNavRow(
                 context,
-                icon: Lucide.Database,
+                icon: Lucide.database,
                 label: l10n.settingsPageBackup,
                 onTap: () {
                   Navigator.of(
@@ -314,7 +314,7 @@ class SettingsPage extends StatelessWidget {
               _iosDivider(context),
               _iosNavRow(
                 context,
-                icon: Lucide.HardDrive,
+                icon: Lucide.hardDrive,
                 label: l10n.settingsPageChatStorage,
                 detailBuilder: (_) => const _ChatStorageSummary(),
                 onTap: () {
@@ -332,7 +332,7 @@ class SettingsPage extends StatelessWidget {
             children: [
               _iosNavRow(
                 context,
-                icon: Lucide.BadgeInfo,
+                icon: Lucide.badgeInfo,
                 label: l10n.settingsPageAbout,
                 onTap: () {
                   Navigator.of(
@@ -343,7 +343,7 @@ class SettingsPage extends StatelessWidget {
               _iosDivider(context),
               _iosNavRow(
                 context,
-                icon: Lucide.ChartColumnBig,
+                icon: Lucide.chartColumnBig,
                 label: l10n.settingsPageStatistics,
                 onTap: () {
                   Navigator.of(
@@ -354,7 +354,7 @@ class SettingsPage extends StatelessWidget {
               _iosDivider(context),
               _iosNavRow(
                 context,
-                icon: Lucide.Library,
+                icon: Lucide.library,
                 label: l10n.settingsPageDocs,
                 onTap: () async {
                   final uri = Uri.parse('https://kelivo.psycheas.top/');
@@ -367,7 +367,7 @@ class SettingsPage extends StatelessWidget {
                 _iosDivider(context),
                 _iosNavRow(
                   context,
-                  icon: Lucide.FileText,
+                  icon: Lucide.fileText,
                   label: l10n.settingsPageLogs,
                   onTap: () {
                     Navigator.of(context).push(
@@ -379,7 +379,7 @@ class SettingsPage extends StatelessWidget {
               _iosDivider(context),
               _iosNavRow(
                 context,
-                icon: Lucide.Heart,
+                icon: Lucide.heart,
                 label: l10n.settingsPageSponsor,
                 onTap: () {
                   Navigator.of(context).push(
@@ -390,7 +390,7 @@ class SettingsPage extends StatelessWidget {
               // _iosDivider(context),
               // _iosNavRow(
               //   context,
-              //   icon: Lucide.Share2,
+              //   icon: Lucide.share2,
               //   label: l10n.settingsPageShare,
               //   onTap: () async {
               //     // Provide anchor rect from overlay for iPad share sheet
@@ -601,7 +601,7 @@ Widget _iosNavRow(
                       ),
                     ),
                   ),
-                if (interactive) Icon(Lucide.ChevronRight, size: 16, color: c),
+                if (interactive) Icon(Lucide.chevronRight, size: 16, color: c),
               ],
             ),
           );

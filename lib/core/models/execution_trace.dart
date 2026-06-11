@@ -24,7 +24,7 @@ class ExecutionTrace {
   final DateTime createdAt;
   final DateTime updatedAt;
 
-  const ExecutionTrace({
+  ExecutionTrace({
     required this.id,
     required this.workspaceId,
     required this.leadAgentId,

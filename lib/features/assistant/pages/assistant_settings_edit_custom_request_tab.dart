@@ -123,7 +123,7 @@ class _CustomRequestTab extends StatelessWidget {
                         return Row(
                           mainAxisSize: MainAxisSize.min,
                           children: [
-                            Icon(Lucide.Plus, size: 16, color: color),
+                            Icon(Lucide.plus, size: 16, color: color),
                             const SizedBox(width: 4),
                             Text(
                               l10n.assistantEditCustomHeadersAdd,
@@ -190,7 +190,7 @@ class _CustomRequestTab extends StatelessWidget {
                         return Row(
                           mainAxisSize: MainAxisSize.min,
                           children: [
-                            Icon(Lucide.Plus, size: 16, color: color),
+                            Icon(Lucide.plus, size: 16, color: color),
                             const SizedBox(width: 4),
                             Text(
                               l10n.assistantEditCustomBodyAdd,
@@ -328,7 +328,7 @@ class _HeaderRowState extends State<_HeaderRow> {
             ),
             const SizedBox(width: 8),
             _TactileIconButton(
-              icon: Lucide.Trash2,
+              icon: Lucide.trash2,
               color: cs.error,
               size: 20,
               onTap: widget.onDelete,
@@ -443,7 +443,7 @@ class _BodyRowState extends State<_BodyRow> {
             ),
             const SizedBox(width: 8),
             _TactileIconButton(
-              icon: Lucide.Trash2,
+              icon: Lucide.trash2,
               color: cs.error,
               size: 20,
               onTap: widget.onDelete,

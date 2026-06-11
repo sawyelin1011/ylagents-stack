@@ -301,7 +301,7 @@ Future<void> showImportProviderSheet(BuildContext context) async {
                         Align(
                           alignment: Alignment.centerLeft,
                           child: _TactileIconButton(
-                            icon: Lucide.Camera,
+                            icon: Lucide.camera,
                             color: cs.onSurface,
                             size: 22,
                             semanticLabel:
@@ -391,7 +391,7 @@ Future<void> showImportProviderSheet(BuildContext context) async {
                         Align(
                           alignment: Alignment.centerRight,
                           child: _TactileIconButton(
-                            icon: Lucide.Image,
+                            icon: Lucide.image,
                             color: cs.onSurface,
                             size: 22,
                             semanticLabel:
@@ -548,7 +548,7 @@ Future<void> showImportProviderSheet(BuildContext context) async {
                     children: [
                       Expanded(
                         child: IosTileButton(
-                          icon: Lucide.X,
+                          icon: Lucide.x,
                           label: l10n.importProviderSheetCancelButton,
                           onTap: () {
                             Haptics.light();
@@ -564,7 +564,7 @@ Future<void> showImportProviderSheet(BuildContext context) async {
                       const SizedBox(width: 12),
                       Expanded(
                         child: IosTileButton(
-                          icon: Lucide.Import,
+                          icon: Lucide.import,
                           label: l10n.importProviderSheetImportButton,
                           onTap: () async {
                             final raw = controller.text.trim();

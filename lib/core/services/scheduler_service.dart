@@ -54,7 +54,7 @@ class ScheduledRun {
   final DateTime? lastRunAt;
   final DateTime? nextRunAt;
 
-  const ScheduledRun({
+  ScheduledRun({
     required this.id,
     required this.agentId,
     required this.agentName,

@@ -57,7 +57,7 @@ class _MemoryTab extends StatelessWidget {
                             tooltip: MaterialLocalizations.of(
                               ctx,
                             ).closeButtonTooltip,
-                            icon: const Icon(Lucide.X, size: 18),
+                            icon: const Icon(Lucide.x, size: 18),
                             color: cs.onSurface,
                             onPressed: () => Navigator.of(ctx).maybePop(),
                           ),
@@ -187,7 +187,7 @@ class _MemoryTab extends StatelessWidget {
                 children: [
                   Row(
                     children: [
-                      Icon(Lucide.Library, size: 18, color: cs.primary),
+                      Icon(Lucide.library, size: 18, color: cs.primary),
                       const SizedBox(width: 8),
                       Expanded(
                         child: Text(
@@ -234,7 +234,7 @@ class _MemoryTab extends StatelessWidget {
                       Expanded(
                         child: _IosButton(
                           label: l10n.assistantEditEmojiDialogCancel,
-                          icon: Lucide.X,
+                          icon: Lucide.x,
                           onTap: () => Navigator.of(ctx).pop(),
                           filled: false,
                           neutral: true,
@@ -244,7 +244,7 @@ class _MemoryTab extends StatelessWidget {
                       Expanded(
                         child: _IosButton(
                           label: l10n.assistantEditEmojiDialogSave,
-                          icon: Lucide.Check,
+                          icon: Lucide.check,
                           onTap: () async {
                             final text = controller.text.trim();
                             if (text.isEmpty) return;
@@ -332,7 +332,7 @@ class _MemoryTab extends StatelessWidget {
               _iosDivider(context),
               _iosSwitchRow(
                 context,
-                icon: Lucide.History,
+                icon: Lucide.history,
                 label: l10n.assistantEditRecentChatsSwitchTitle,
                 value: a.enableRecentChatsReference,
                 onChanged: (v) async {
@@ -381,7 +381,7 @@ class _MemoryTab extends StatelessWidget {
                   return Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      Icon(Lucide.Plus, size: 16, color: color),
+                      Icon(Lucide.plus, size: 16, color: color),
                       const SizedBox(width: 4),
                       Text(
                         l10n.assistantEditAddMemoryButton,
@@ -442,7 +442,7 @@ class _MemoryTab extends StatelessWidget {
                     ),
                     const SizedBox(width: 6),
                     _TactileIconButton(
-                      icon: Lucide.Pencil,
+                      icon: Lucide.pencil,
                       size: 18,
                       color: cs.primary,
                       onTap: () => _showAddEditSheet(
@@ -453,7 +453,7 @@ class _MemoryTab extends StatelessWidget {
                     ),
                     const SizedBox(width: 6),
                     _TactileIconButton(
-                      icon: Lucide.Trash2,
+                      icon: Lucide.trash2,
                       size: 18,
                       color: cs.error,
                       onTap: () async {
@@ -532,7 +532,7 @@ class _MemoryTab extends StatelessWidget {
                           Row(
                             children: [
                               Icon(
-                                Lucide.MessageSquare,
+                                Lucide.messageSquare,
                                 size: 14,
                                 color: cs.onSurface.withValues(alpha: 0.5),
                               ),
@@ -565,7 +565,7 @@ class _MemoryTab extends StatelessWidget {
                               ),
                               const SizedBox(width: 6),
                               _TactileIconButton(
-                                icon: Lucide.Pencil,
+                                icon: Lucide.pencil,
                                 size: 18,
                                 color: cs.primary,
                                 onTap: () => _showEditSummarySheet(
@@ -576,7 +576,7 @@ class _MemoryTab extends StatelessWidget {
                               ),
                               const SizedBox(width: 6),
                               _TactileIconButton(
-                                icon: Lucide.Trash2,
+                                icon: Lucide.trash2,
                                 size: 18,
                                 color: cs.error,
                                 onTap: () => _confirmDeleteSummary(
@@ -655,7 +655,7 @@ class _MemoryTab extends StatelessWidget {
                             tooltip: MaterialLocalizations.of(
                               ctx,
                             ).closeButtonTooltip,
-                            icon: const Icon(Lucide.X, size: 18),
+                            icon: const Icon(Lucide.x, size: 18),
                             color: cs.onSurface,
                             onPressed: () => Navigator.of(ctx).maybePop(),
                           ),
@@ -773,7 +773,7 @@ class _MemoryTab extends StatelessWidget {
               children: [
                 Row(
                   children: [
-                    Icon(Lucide.FileText, size: 18, color: cs.primary),
+                    Icon(Lucide.fileText, size: 18, color: cs.primary),
                     const SizedBox(width: 8),
                     Expanded(
                       child: Text(
@@ -827,7 +827,7 @@ class _MemoryTab extends StatelessWidget {
                     Expanded(
                       child: _IosButton(
                         label: l10n.assistantEditEmojiDialogCancel,
-                        icon: Lucide.X,
+                        icon: Lucide.x,
                         onTap: () => Navigator.of(ctx).pop(),
                         filled: false,
                         neutral: true,
@@ -837,7 +837,7 @@ class _MemoryTab extends StatelessWidget {
                     Expanded(
                       child: _IosButton(
                         label: l10n.assistantEditEmojiDialogSave,
-                        icon: Lucide.Check,
+                        icon: Lucide.check,
                         onTap: () async {
                           final text = controller.text.trim();
                           if (text.isEmpty) {
@@ -1029,7 +1029,7 @@ class _RecentChatsSummaryFrequencySection extends StatelessWidget {
                   children: [
                     Row(
                       children: [
-                        Icon(Lucide.FileClock, size: 18, color: cs.primary),
+                        Icon(Lucide.fileClock, size: 18, color: cs.primary),
                         const SizedBox(width: 8),
                         Expanded(
                           child: Text(
@@ -1090,7 +1090,7 @@ class _RecentChatsSummaryFrequencySection extends StatelessWidget {
                         Expanded(
                           child: _IosButton(
                             label: l10n.assistantEditEmojiDialogCancel,
-                            icon: Lucide.X,
+                            icon: Lucide.x,
                             onTap: () => Navigator.of(ctx).pop(),
                             filled: false,
                             neutral: true,
@@ -1100,7 +1100,7 @@ class _RecentChatsSummaryFrequencySection extends StatelessWidget {
                         Expanded(
                           child: _IosButton(
                             label: l10n.assistantEditEmojiDialogSave,
-                            icon: Lucide.Check,
+                            icon: Lucide.check,
                             onTap: parsed == null
                                 ? () {
                                     showAppSnackBar(
@@ -1149,7 +1149,7 @@ class _RecentChatsSummaryFrequencySection extends StatelessWidget {
               SizedBox(
                 width: 36,
                 child: Icon(
-                  Lucide.FileClock,
+                  Lucide.fileClock,
                   size: 20,
                   color: cs.onSurface.withValues(alpha: 0.9),
                 ),
@@ -1208,7 +1208,7 @@ class _RecentChatsSummaryFrequencySection extends StatelessWidget {
                 _FrequencyChipButton(
                   label:
                       l10n.assistantEditRecentChatsSummaryFrequencyCustomButton,
-                  icon: Lucide.Pencil,
+                  icon: Lucide.pencil,
                   emphasized: true,
                   onTap: () => _showCustomCountInput(context),
                 ),

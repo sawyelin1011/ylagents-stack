@@ -47,7 +47,7 @@ class _DisplaySettingsPageState extends State<DisplaySettingsPage> {
         leading: Tooltip(
           message: l10n.settingsPageBackButton,
           child: _TactileIconButton(
-            icon: Lucide.ArrowLeft,
+            icon: Lucide.arrowLeft,
             color: cs.onSurface,
             size: 22,
             onTap: () => Navigator.of(context).maybePop(),
@@ -63,7 +63,7 @@ class _DisplaySettingsPageState extends State<DisplaySettingsPage> {
             children: [
               _iosNavRow(
                 context,
-                icon: Lucide.Palette,
+                icon: Lucide.palette,
                 label: l10n.displaySettingsPageThemeSettingsTitle,
                 detailText: paletteName(),
                 onTap: () => Navigator.of(context).push(
@@ -73,7 +73,7 @@ class _DisplaySettingsPageState extends State<DisplaySettingsPage> {
               _iosDivider(context),
               _iosNavRow(
                 context,
-                icon: Lucide.Languages,
+                icon: Lucide.languages,
                 label: l10n.displaySettingsPageLanguageTitle,
                 detailBuilder: (ctx) {
                   final settings = ctx.watch<SettingsProvider>();
@@ -105,7 +105,7 @@ class _DisplaySettingsPageState extends State<DisplaySettingsPage> {
               _iosDivider(context),
               _iosNavRow(
                 context,
-                icon: Lucide.MessageCircleMore,
+                icon: Lucide.messageCircleMore,
                 label: l10n.displaySettingsPageChatItemDisplayTitle,
                 onTap: () => Navigator.of(context).push(
                   MaterialPageRoute(
@@ -116,7 +116,7 @@ class _DisplaySettingsPageState extends State<DisplaySettingsPage> {
               _iosDivider(context),
               _iosNavRow(
                 context,
-                icon: Lucide.TextInitial,
+                icon: Lucide.textInitial,
                 label: l10n.displaySettingsPageRenderingSettingsTitle,
                 onTap: () => Navigator.of(context).push(
                   MaterialPageRoute(
@@ -138,7 +138,7 @@ class _DisplaySettingsPageState extends State<DisplaySettingsPage> {
               _iosDivider(context),
               _iosNavRow(
                 context,
-                icon: Lucide.Vibrate,
+                icon: Lucide.vibrate,
                 label: l10n.displaySettingsPageHapticsSettingsTitle,
                 onTap: () => Navigator.of(context).push(
                   MaterialPageRoute(
@@ -150,7 +150,7 @@ class _DisplaySettingsPageState extends State<DisplaySettingsPage> {
               if (Platform.isAndroid)
                 _iosNavRow(
                   context,
-                  icon: Lucide.Monitor,
+                  icon: Lucide.monitor,
                   label: l10n.displaySettingsPageAndroidBackgroundChatTitle,
                   detailBuilder: (ctx) {
                     final sp = ctx.watch<SettingsProvider>();
@@ -196,7 +196,7 @@ class _DisplaySettingsPageState extends State<DisplaySettingsPage> {
               if (Platform.isIOS)
                 _iosNavRow(
                   context,
-                  icon: Lucide.Activity,
+                  icon: Lucide.activity,
                   label: l10n.displaySettingsPageIosBackgroundChatTitle,
                   detailBuilder: (ctx) {
                     final sp = ctx.watch<SettingsProvider>();
@@ -222,7 +222,7 @@ class _DisplaySettingsPageState extends State<DisplaySettingsPage> {
               if (Platform.isIOS) _iosDivider(context),
               _iosNavRow(
                 context,
-                icon: Lucide.MessageSquare,
+                icon: Lucide.messageSquare,
                 label: l10n.displaySettingsPageChatMessageBackgroundTitle,
                 detailBuilder: (ctx) {
                   final sp = ctx.watch<SettingsProvider>();
@@ -253,7 +253,7 @@ class _DisplaySettingsPageState extends State<DisplaySettingsPage> {
               _iosDivider(context),
               _iosNavRow(
                 context,
-                icon: Lucide.Type,
+                icon: Lucide.type,
                 label: l10n.displaySettingsPageAppFontTitle,
                 detailBuilder: (ctx) {
                   final sp = ctx.watch<SettingsProvider>();
@@ -283,7 +283,7 @@ class _DisplaySettingsPageState extends State<DisplaySettingsPage> {
               _iosDivider(context),
               _iosNavRow(
                 context,
-                icon: Lucide.Code,
+                icon: Lucide.code,
                 label: l10n.displaySettingsPageCodeFontTitle,
                 detailBuilder: (ctx) {
                   final sp = ctx.watch<SettingsProvider>();
@@ -313,7 +313,7 @@ class _DisplaySettingsPageState extends State<DisplaySettingsPage> {
               _iosDivider(context),
               _iosNavRow(
                 context,
-                icon: Lucide.CaseSensitive,
+                icon: Lucide.caseSensitive,
                 label: l10n.displaySettingsPageChatFontSizeTitle,
                 detailBuilder: (ctx) {
                   final scale = ctx.watch<SettingsProvider>().chatFontScale;
@@ -330,7 +330,7 @@ class _DisplaySettingsPageState extends State<DisplaySettingsPage> {
               _iosDivider(context),
               _iosNavRow(
                 context,
-                icon: Lucide.ArrowDown,
+                icon: Lucide.arrowDown,
                 label: l10n.displaySettingsPageAutoScrollIdleTitle,
                 detailBuilder: (ctx) {
                   final sp = ctx.watch<SettingsProvider>();
@@ -357,7 +357,7 @@ class _DisplaySettingsPageState extends State<DisplaySettingsPage> {
               _iosDivider(context),
               _iosNavRow(
                 context,
-                icon: Lucide.Image,
+                icon: Lucide.image,
                 label: l10n.displaySettingsPageChatBackgroundMaskTitle,
                 detailBuilder: (ctx) {
                   final v = ctx
@@ -376,7 +376,7 @@ class _DisplaySettingsPageState extends State<DisplaySettingsPage> {
               _iosDivider(context),
               _iosNavRow(
                 context,
-                icon: Lucide.RectangleHorizontal,
+                icon: Lucide.rectangleHorizontal,
                 label: l10n.displaySettingsPageChatInputBackgroundOpacityTitle,
                 detailBuilder: (ctx) {
                   final brightness = Theme.of(ctx).brightness;
@@ -1323,7 +1323,7 @@ Widget _noticeCard(
     child: Row(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Icon(Lucide.BadgeInfo, size: 18, color: cs.primary),
+        Icon(Lucide.badgeInfo, size: 18, color: cs.primary),
         const SizedBox(width: 10),
         Expanded(
           child: Column(
@@ -1544,7 +1544,7 @@ Widget _iosNavRow(
                       ),
                     ),
                   ),
-                if (interactive) Icon(Lucide.ChevronRight, size: 16, color: c),
+                if (interactive) Icon(Lucide.chevronRight, size: 16, color: c),
               ],
             ),
           );
@@ -1734,7 +1734,7 @@ class ChatItemDisplaySettingsPage extends StatelessWidget {
         leading: Tooltip(
           message: l10n.settingsPageBackButton,
           child: _TactileIconButton(
-            icon: Lucide.ArrowLeft,
+            icon: Lucide.arrowLeft,
             color: cs.onSurface,
             size: 22,
             onTap: () => Navigator.of(context).maybePop(),
@@ -1749,7 +1749,7 @@ class ChatItemDisplaySettingsPage extends StatelessWidget {
             children: [
               _iosSwitchRow(
                 context,
-                icon: Lucide.User,
+                icon: Lucide.user,
                 label: l10n.displaySettingsPageShowUserAvatarTitle,
                 value: sp.showUserAvatar,
                 onChanged: (v) =>
@@ -1758,7 +1758,7 @@ class ChatItemDisplaySettingsPage extends StatelessWidget {
               _iosDivider(context),
               _iosSwitchRow(
                 context,
-                icon: Lucide.MessageCircle,
+                icon: Lucide.messageCircle,
                 label: l10n.displaySettingsPageShowUserNameTitle,
                 value: sp.showUserName,
                 onChanged: (v) =>
@@ -1776,7 +1776,7 @@ class ChatItemDisplaySettingsPage extends StatelessWidget {
               _iosDivider(context),
               _iosSwitchRow(
                 context,
-                icon: Lucide.Ellipsis,
+                icon: Lucide.ellipsis,
                 label: l10n.displaySettingsPageShowUserMessageActionsTitle,
                 value: sp.showUserMessageActions,
                 onChanged: (v) => context
@@ -1786,7 +1786,7 @@ class ChatItemDisplaySettingsPage extends StatelessWidget {
               _iosDivider(context),
               _iosSwitchRow(
                 context,
-                icon: Lucide.Bot,
+                icon: Lucide.bot,
                 label: l10n.displaySettingsPageChatModelIconTitle,
                 value: sp.showModelIcon,
                 onChanged: (v) =>
@@ -1795,7 +1795,7 @@ class ChatItemDisplaySettingsPage extends StatelessWidget {
               _iosDivider(context),
               _iosSwitchRow(
                 context,
-                icon: Lucide.Bot,
+                icon: Lucide.bot,
                 label: l10n.displaySettingsPageUseNewAssistantAvatarUxTitle,
                 value: sp.useNewAssistantAvatarUx,
                 onChanged: (v) => context
@@ -1805,7 +1805,7 @@ class ChatItemDisplaySettingsPage extends StatelessWidget {
               _iosDivider(context),
               _iosSwitchRow(
                 context,
-                icon: Lucide.MessageSquare,
+                icon: Lucide.messageSquare,
                 label: l10n.displaySettingsPageShowModelNameTitle,
                 value: sp.showModelName,
                 onChanged: (v) =>
@@ -1823,7 +1823,7 @@ class ChatItemDisplaySettingsPage extends StatelessWidget {
               _iosDivider(context),
               _iosSwitchRow(
                 context,
-                icon: Lucide.Globe,
+                icon: Lucide.globe,
                 label: l10n.displaySettingsPageShowProviderInChatMessageTitle,
                 value: sp.showProviderInChatMessage,
                 onChanged: (v) => context
@@ -1833,7 +1833,7 @@ class ChatItemDisplaySettingsPage extends StatelessWidget {
               _iosDivider(context),
               _iosSwitchRow(
                 context,
-                icon: Lucide.Type,
+                icon: Lucide.type,
                 label: l10n.displaySettingsPageShowTokenStatsTitle,
                 value: sp.showTokenStats,
                 onChanged: (v) =>
@@ -1859,7 +1859,7 @@ class RenderingSettingsPage extends StatelessWidget {
         leading: Tooltip(
           message: l10n.settingsPageBackButton,
           child: _TactileIconButton(
-            icon: Lucide.ArrowLeft,
+            icon: Lucide.arrowLeft,
             color: cs.onSurface,
             size: 22,
             onTap: () => Navigator.of(context).maybePop(),
@@ -1874,7 +1874,7 @@ class RenderingSettingsPage extends StatelessWidget {
             children: [
               _iosSwitchRow(
                 context,
-                icon: Lucide.Hash,
+                icon: Lucide.hash,
                 label: l10n.displaySettingsPageEnableDollarLatexTitle,
                 value: sp.enableDollarLatex,
                 onChanged: (v) =>
@@ -1883,7 +1883,7 @@ class RenderingSettingsPage extends StatelessWidget {
               _iosDivider(context),
               _iosSwitchRow(
                 context,
-                icon: Lucide.Code,
+                icon: Lucide.code,
                 label: l10n.displaySettingsPageEnableMathTitle,
                 value: sp.enableMathRendering,
                 onChanged: (v) =>
@@ -1892,7 +1892,7 @@ class RenderingSettingsPage extends StatelessWidget {
               _iosDivider(context),
               _iosSwitchRow(
                 context,
-                icon: Lucide.TextSelect,
+                icon: Lucide.textSelect,
                 label: l10n.displaySettingsPageEnableUserMarkdownTitle,
                 value: sp.enableUserMarkdown,
                 onChanged: (v) =>
@@ -1901,7 +1901,7 @@ class RenderingSettingsPage extends StatelessWidget {
               _iosDivider(context),
               _iosSwitchRow(
                 context,
-                icon: Lucide.Brain,
+                icon: Lucide.brain,
                 label: l10n.displaySettingsPageEnableReasoningMarkdownTitle,
                 value: sp.enableReasoningMarkdown,
                 onChanged: (v) => context
@@ -1911,7 +1911,7 @@ class RenderingSettingsPage extends StatelessWidget {
               _iosDivider(context),
               _iosSwitchRow(
                 context,
-                icon: Lucide.MessageSquare,
+                icon: Lucide.messageSquare,
                 label: l10n.displaySettingsPageEnableAssistantMarkdownTitle,
                 value: sp.enableAssistantMarkdown,
                 onChanged: (v) => context
@@ -1921,7 +1921,7 @@ class RenderingSettingsPage extends StatelessWidget {
               _iosDivider(context),
               _iosSwitchRow(
                 context,
-                icon: Lucide.FoldVertical,
+                icon: Lucide.foldVertical,
                 label: l10n.displaySettingsPageAutoCollapseCodeBlockTitle,
                 value: sp.autoCollapseCodeBlock,
                 onChanged: (v) => context
@@ -1936,7 +1936,7 @@ class RenderingSettingsPage extends StatelessWidget {
                 _iosDivider(context),
                 _iosSwitchRow(
                   context,
-                  icon: Lucide.WrapText,
+                  icon: Lucide.wrapText,
                   label: l10n.displaySettingsPageMobileCodeBlockWrapTitle,
                   value: sp.mobileCodeBlockWrap,
                   onChanged: (v) => context
@@ -2031,7 +2031,7 @@ class _AutoCollapseCodeBlockLinesRowState
         children: [
           SizedBox(
             width: 36,
-            child: Icon(Lucide.ListOrdered, size: 20, color: baseColor),
+            child: Icon(Lucide.listOrdered, size: 20, color: baseColor),
           ),
           const SizedBox(width: 12),
           Expanded(
@@ -2093,7 +2093,7 @@ class BehaviorStartupSettingsPage extends StatelessWidget {
         leading: Tooltip(
           message: l10n.settingsPageBackButton,
           child: _TactileIconButton(
-            icon: Lucide.ArrowLeft,
+            icon: Lucide.arrowLeft,
             color: cs.onSurface,
             size: 22,
             onTap: () => Navigator.of(context).maybePop(),
@@ -2108,7 +2108,7 @@ class BehaviorStartupSettingsPage extends StatelessWidget {
             children: [
               _iosSwitchRow(
                 context,
-                icon: Lucide.Brain,
+                icon: Lucide.brain,
                 label: l10n.displaySettingsPageAutoCollapseThinkingTitle,
                 value: sp.autoCollapseThinking,
                 onChanged: (v) =>
@@ -2117,7 +2117,7 @@ class BehaviorStartupSettingsPage extends StatelessWidget {
               _iosDivider(context),
               _iosSwitchRow(
                 context,
-                icon: Lucide.ListTree,
+                icon: Lucide.listTree,
                 label: l10n.displaySettingsPageCollapseThinkingStepsTitle,
                 value: sp.collapseThinkingSteps,
                 onChanged: (v) => context
@@ -2127,7 +2127,7 @@ class BehaviorStartupSettingsPage extends StatelessWidget {
               _iosDivider(context),
               _iosSwitchRow(
                 context,
-                icon: Lucide.FileText,
+                icon: Lucide.fileText,
                 label: l10n.displaySettingsPageShowToolResultSummaryTitle,
                 value: sp.showToolResultSummary,
                 onChanged: (v) => context
@@ -2137,7 +2137,7 @@ class BehaviorStartupSettingsPage extends StatelessWidget {
               _iosDivider(context),
               _iosSwitchRow(
                 context,
-                icon: Lucide.TextSelect,
+                icon: Lucide.textSelect,
                 label: l10n.displaySettingsPageInsertSuggestionOnlyTitle,
                 value: sp.insertSuggestionOnTapOnly,
                 onChanged: (v) => context
@@ -2147,7 +2147,7 @@ class BehaviorStartupSettingsPage extends StatelessWidget {
               _iosDivider(context),
               _iosSwitchRow(
                 context,
-                icon: Lucide.RefreshCw,
+                icon: Lucide.refreshCw,
                 label: l10n
                     .displaySettingsPageRegenerateDeleteTrailingMessagesTitle,
                 value: sp.regenerateDeleteTrailingMessages,
@@ -2158,7 +2158,7 @@ class BehaviorStartupSettingsPage extends StatelessWidget {
               _iosDivider(context),
               _iosSwitchRow(
                 context,
-                icon: Lucide.MessageCircleWarning,
+                icon: Lucide.messageCircleWarning,
                 label: l10n.displaySettingsPageShowRegenerateConfirmDialogTitle,
                 value: sp.showRegenerateConfirmDialog,
                 onChanged: (v) => context
@@ -2168,7 +2168,7 @@ class BehaviorStartupSettingsPage extends StatelessWidget {
               _iosDivider(context),
               _iosSwitchRow(
                 context,
-                icon: Lucide.BadgeInfo,
+                icon: Lucide.badgeInfo,
                 label: l10n.displaySettingsPageShowUpdatesTitle,
                 value: sp.showAppUpdates,
                 onChanged: (v) =>
@@ -2177,7 +2177,7 @@ class BehaviorStartupSettingsPage extends StatelessWidget {
               _iosDivider(context),
               _iosNavRow(
                 context,
-                icon: Lucide.ChevronRight,
+                icon: Lucide.chevronRight,
                 label: l10n.displaySettingsPageMessageNavButtonsTitle,
                 detailBuilder: (_) =>
                     Text(switch (sp.mobileMessageNavButtonsMode) {
@@ -2193,7 +2193,7 @@ class BehaviorStartupSettingsPage extends StatelessWidget {
               _iosDivider(context),
               _iosSwitchRow(
                 context,
-                icon: Lucide.Calendar,
+                icon: Lucide.calendar,
                 label: l10n.displaySettingsPageShowChatListDateTitle,
                 value: sp.showChatListDate,
                 onChanged: (v) =>
@@ -2202,7 +2202,7 @@ class BehaviorStartupSettingsPage extends StatelessWidget {
               _iosDivider(context),
               _iosSwitchRow(
                 context,
-                icon: Lucide.Crop,
+                icon: Lucide.crop,
                 label: l10n.displaySettingsPageEnableImageCropperTitle,
                 subtitle: l10n.displaySettingsPageEnableImageCropperSubtitle,
                 value: sp.imageCropperEnabled,
@@ -2223,7 +2223,7 @@ class BehaviorStartupSettingsPage extends StatelessWidget {
               _iosDivider(context),
               _iosSwitchRow(
                 context,
-                icon: Lucide.ListTree,
+                icon: Lucide.listTree,
                 label: l10n.displaySettingsPageKeepSidebarOpenOnTopicTapTitle,
                 value: sp.keepSidebarOpenOnTopicTap,
                 onChanged: (v) => context
@@ -2233,7 +2233,7 @@ class BehaviorStartupSettingsPage extends StatelessWidget {
               _iosDivider(context),
               _iosSwitchRow(
                 context,
-                icon: Lucide.UnfoldVertical,
+                icon: Lucide.unfoldVertical,
                 label: l10n
                     .displaySettingsPageKeepAssistantListExpandedOnSidebarCloseTitle,
                 value: sp.keepAssistantListExpandedOnSidebarClose,
@@ -2244,7 +2244,7 @@ class BehaviorStartupSettingsPage extends StatelessWidget {
               _iosDivider(context),
               _iosSwitchRow(
                 context,
-                icon: Lucide.Shuffle,
+                icon: Lucide.shuffle,
                 label: l10n.displaySettingsPageNewChatOnAssistantSwitchTitle,
                 value: sp.newChatOnAssistantSwitch,
                 onChanged: (v) => context
@@ -2254,7 +2254,7 @@ class BehaviorStartupSettingsPage extends StatelessWidget {
               _iosDivider(context),
               _iosSwitchRow(
                 context,
-                icon: Lucide.Trash2,
+                icon: Lucide.trash2,
                 label: l10n.displaySettingsPageNewChatAfterDeleteTitle,
                 value: sp.newChatAfterDelete,
                 onChanged: (v) =>
@@ -2263,7 +2263,7 @@ class BehaviorStartupSettingsPage extends StatelessWidget {
               _iosDivider(context),
               _iosSwitchRow(
                 context,
-                icon: Lucide.MessageCirclePlus,
+                icon: Lucide.messageCirclePlus,
                 label: l10n.displaySettingsPageNewChatOnLaunchTitle,
                 value: sp.newChatOnLaunch,
                 onChanged: (v) =>
@@ -2272,7 +2272,7 @@ class BehaviorStartupSettingsPage extends StatelessWidget {
               _iosDivider(context),
               _iosSwitchRow(
                 context,
-                icon: Lucide.CornerDownLeft,
+                icon: Lucide.cornerDownLeft,
                 label: l10n.displaySettingsPageEnterToSendTitle,
                 value: sp.enterToSendOnMobile,
                 onChanged: (v) =>
@@ -2347,7 +2347,7 @@ class _IosBackgroundSettingsPageState extends State<IosBackgroundSettingsPage> {
         leading: Tooltip(
           message: l10n.settingsPageBackButton,
           child: _TactileIconButton(
-            icon: Lucide.ArrowLeft,
+            icon: Lucide.arrowLeft,
             color: cs.onSurface,
             size: 22,
             onTap: () => Navigator.of(context).maybePop(),
@@ -2368,7 +2368,7 @@ class _IosBackgroundSettingsPageState extends State<IosBackgroundSettingsPage> {
             children: [
               _iosSwitchRow(
                 context,
-                icon: Lucide.Activity,
+                icon: Lucide.activity,
                 label: l10n.iosBackgroundGenerationEnableTitle,
                 subtitle: l10n.iosBackgroundGenerationEnableSubtitle,
                 value: sp.iosBackgroundGenerationEnabled,
@@ -2379,7 +2379,7 @@ class _IosBackgroundSettingsPageState extends State<IosBackgroundSettingsPage> {
               _iosDivider(context),
               _iosSwitchRow(
                 context,
-                icon: Lucide.RefreshCw,
+                icon: Lucide.refreshCw,
                 label: l10n.iosBackgroundTaskRefreshTitle,
                 subtitle: l10n.iosBackgroundTaskRefreshSubtitle,
                 value: sp.iosBackgroundTaskRefreshEnabled,
@@ -2390,7 +2390,7 @@ class _IosBackgroundSettingsPageState extends State<IosBackgroundSettingsPage> {
               _iosDivider(context),
               _iosSwitchRow(
                 context,
-                icon: Lucide.Timer,
+                icon: Lucide.timer,
                 label: l10n.iosLiveActivityTitle,
                 subtitle: l10n.iosLiveActivitySubtitle,
                 value: sp.iosLiveActivityEnabled,
@@ -2401,7 +2401,7 @@ class _IosBackgroundSettingsPageState extends State<IosBackgroundSettingsPage> {
               _iosDivider(context),
               _iosSwitchRow(
                 context,
-                icon: Lucide.MessageCircle,
+                icon: Lucide.messageCircle,
                 label: l10n.iosBackgroundNotificationsTitle,
                 subtitle: l10n.iosBackgroundNotificationsSubtitle,
                 value: sp.iosBackgroundNotificationsEnabled,
@@ -2418,7 +2418,7 @@ class _IosBackgroundSettingsPageState extends State<IosBackgroundSettingsPage> {
                 children: [
                   _iosNavRow(
                     context,
-                    icon: Lucide.BadgeInfo,
+                    icon: Lucide.badgeInfo,
                     label: l10n.iosBackgroundNativeStatusTitle,
                     detailText: status == null
                         ? l10n.iosBackgroundNativeStatusUnavailable
@@ -2430,7 +2430,7 @@ class _IosBackgroundSettingsPageState extends State<IosBackgroundSettingsPage> {
                   _iosDivider(context),
                   _iosNavRow(
                     context,
-                    icon: Lucide.MessageCircle,
+                    icon: Lucide.messageCircle,
                     label: status?.notificationsAuthorized == true
                         ? l10n.iosBackgroundNotificationsAuthorized
                         : l10n.iosBackgroundNotificationsNotAuthorized,
@@ -2462,7 +2462,7 @@ class HapticsSettingsPage extends StatelessWidget {
         leading: Tooltip(
           message: l10n.settingsPageBackButton,
           child: _TactileIconButton(
-            icon: Lucide.ArrowLeft,
+            icon: Lucide.arrowLeft,
             color: cs.onSurface,
             size: 22,
             onTap: () => Navigator.of(context).maybePop(),
@@ -2477,7 +2477,7 @@ class HapticsSettingsPage extends StatelessWidget {
             children: [
               _iosSwitchRow(
                 context,
-                icon: Lucide.Vibrate,
+                icon: Lucide.vibrate,
                 label: l10n.displaySettingsPageHapticsGlobalTitle,
                 value: sp.hapticsGlobalEnabled,
                 onChanged: (v) =>
@@ -2504,7 +2504,7 @@ class HapticsSettingsPage extends StatelessWidget {
               _iosDivider(context),
               _iosSwitchRow(
                 context,
-                icon: Lucide.ListOrdered,
+                icon: Lucide.listOrdered,
                 label: l10n.displaySettingsPageHapticsOnListItemTapTitle,
                 value: sp.hapticsOnListItemTap,
                 onChanged: (v) =>
@@ -2513,7 +2513,7 @@ class HapticsSettingsPage extends StatelessWidget {
               _iosDivider(context),
               _iosSwitchRow(
                 context,
-                icon: Lucide.Square,
+                icon: Lucide.square,
                 label: l10n.displaySettingsPageHapticsOnCardTapTitle,
                 value: sp.hapticsOnCardTap,
                 onChanged: (v) =>
@@ -2522,7 +2522,7 @@ class HapticsSettingsPage extends StatelessWidget {
               _iosDivider(context),
               _iosSwitchRow(
                 context,
-                icon: Lucide.Vibrate,
+                icon: Lucide.vibrate,
                 label: l10n.displaySettingsPageHapticsOnGenerateTitle,
                 value: sp.hapticsOnGenerate,
                 onChanged: (v) =>

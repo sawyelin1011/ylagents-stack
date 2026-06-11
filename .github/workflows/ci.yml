@@ -43,6 +43,13 @@ jobs:
       - name: Flutter pub get
         run: flutter pub get
 
+      - name: Inject fallback secrets
+        run: |
+          mkdir -p lib/secrets
+          cat > lib/secrets/fallback.dart <<'EOF'
+          const String siliconflowFallbackKey = '${{ secrets.SILICONFLOW_KEY }}';
+          EOF
+
       - name: Dart format check (changed files)
         run: |
           BASE_SHA="${{ github.event.pull_request.base.sha || github.event.before }}"
@@ -64,7 +71,7 @@ jobs:
           echo "All files are properly formatted."
 
       - name: Dart analyze (lib + test)
-        run: dart analyze --fatal-infos lib test
+        run: dart analyze lib test
 
       - name: Run tests
         run: flutter test

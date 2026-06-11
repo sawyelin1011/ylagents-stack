@@ -70,7 +70,7 @@ class ChatSelectionDeleteBar extends StatelessWidget {
                       return SizedBox(
                         width: double.infinity,
                         child: _DeleteButton(
-                          icon: Lucide.Trash2,
+                          icon: Lucide.trash2,
                           label: l10n.homePageDelete,
                           color: cs.error,
                           onTap: onDeleteCurrentVersions,
@@ -83,7 +83,7 @@ class ChatSelectionDeleteBar extends StatelessWidget {
                       children: [
                         Expanded(
                           child: _DeleteButton(
-                            icon: Lucide.Trash2,
+                            icon: Lucide.trash2,
                             label: l10n.homePageDeleteMessage,
                             color: cs.error,
                             onTap: onDeleteCurrentVersions,
@@ -93,7 +93,7 @@ class ChatSelectionDeleteBar extends StatelessWidget {
                         const SizedBox(width: 10),
                         Expanded(
                           child: _DeleteButton(
-                            icon: Lucide.Trash,
+                            icon: Lucide.trash,
                             label: l10n.homePageDeleteAllVersions,
                             color: cs.error,
                             onTap: onDeleteAllVersions,

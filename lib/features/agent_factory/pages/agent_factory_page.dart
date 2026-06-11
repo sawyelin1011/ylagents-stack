@@ -145,7 +145,7 @@ class _AgentFactoryPageState extends State<AgentFactoryPage> {
       appBar: AppBar(
         title: Text(l10n.agentFactoryTitle),
         leading: IconButton(
-          icon: const Icon(lucide.Lucide.ArrowLeft),
+          icon: const Icon(lucide.Lucide.arrowLeft),
           onPressed: () => Navigator.of(context).pop(),
         ),
         actions: [
@@ -221,7 +221,7 @@ class _AgentFactoryPageState extends State<AgentFactoryPage> {
         const SizedBox(height: 20),
         // Start from scratch card
         _TemplateCard(
-          icon: lucide.Lucide.Sparkles,
+          icon: lucide.Lucide.sparkles,
           title: l10n.agentFactoryScratch,
           description: l10n.agentFactoryScratchDesc,
           isSelected: _selectedTemplate == null,
@@ -253,10 +253,10 @@ class _AgentFactoryPageState extends State<AgentFactoryPage> {
 
   IconData _iconForTemplate(String iconName) {
     return switch (iconName) {
-      'Code' => lucide.Lucide.Code,
-      'Pen' => lucide.Lucide.Pencil,
-      'Search' => lucide.Lucide.Search,
-      _ => lucide.Lucide.Bot,
+      'Code' => lucide.Lucide.code,
+      'Pen' => lucide.Lucide.pencil,
+      'Search' => lucide.Lucide.search,
+      _ => lucide.Lucide.bot,
     };
   }
 
@@ -457,7 +457,7 @@ class _AgentFactoryPageState extends State<AgentFactoryPage> {
         const SizedBox(height: 20),
         // Summary cards
         _ReviewCard(
-          icon: lucide.Lucide.User,
+          icon: lucide.Lucide.user,
           title: l10n.agentFactoryStepIdentity,
           children: [
             _ReviewRow(
@@ -475,7 +475,7 @@ class _AgentFactoryPageState extends State<AgentFactoryPage> {
         ),
         const SizedBox(height: 12),
         _ReviewCard(
-          icon: lucide.Lucide.Shapes,
+          icon: lucide.Lucide.shapes,
           title: l10n.agentFactoryStepGenome,
           children: [
             _ReviewRow(
@@ -633,7 +633,7 @@ class _StepIndicator extends StatelessWidget {
                 child: Center(
                   child: isCompleted
                       ? Icon(
-                          lucide.Lucide.Check,
+                          lucide.Lucide.check,
                           size: 14,
                           color: colorScheme.onPrimary,
                         )
@@ -748,7 +748,7 @@ class _TemplateCard extends StatelessWidget {
                 ),
               ),
               if (isSelected)
-                Icon(lucide.Lucide.Check, color: colorScheme.primary, size: 18),
+                Icon(lucide.Lucide.check, color: colorScheme.primary, size: 18),
             ],
           ),
         ),

@@ -83,7 +83,7 @@ class ChatSelectionExportBar extends StatelessWidget {
                           children: [
                             Expanded(
                               child: _SelectionActionButton(
-                                icon: Lucide.FileText,
+                                icon: Lucide.fileText,
                                 label: l10n.chatSelectionExportTxt,
                                 color: cs.tertiary,
                                 onTap: onExportTxt,
@@ -93,7 +93,7 @@ class ChatSelectionExportBar extends StatelessWidget {
                             const SizedBox(width: 10),
                             Expanded(
                               child: _SelectionActionButton(
-                                icon: Lucide.BookOpenText,
+                                icon: Lucide.bookOpenText,
                                 label: l10n.chatSelectionExportMd,
                                 color: cs.primary,
                                 onTap: onExportMarkdown,
@@ -103,7 +103,7 @@ class ChatSelectionExportBar extends StatelessWidget {
                             const SizedBox(width: 10),
                             Expanded(
                               child: _SelectionActionButton(
-                                icon: Lucide.Image,
+                                icon: Lucide.image,
                                 label: l10n.chatSelectionExportImage,
                                 color: cs.secondary,
                                 onTap: onExportImage,
@@ -117,7 +117,7 @@ class ChatSelectionExportBar extends StatelessWidget {
                           children: [
                             Expanded(
                               child: _ToggleCard(
-                                icon: Lucide.Wrench,
+                                icon: Lucide.wrench,
                                 label: l10n.chatSelectionThinkingTools,
                                 selected: showThinkingTools,
                                 enabled: true,
@@ -128,7 +128,7 @@ class ChatSelectionExportBar extends StatelessWidget {
                             const SizedBox(width: 10),
                             Expanded(
                               child: _ToggleCard(
-                                icon: Lucide.Brain,
+                                icon: Lucide.brain,
                                 label: l10n.chatSelectionThinkingContent,
                                 selected: showThinkingContent,
                                 enabled: showThinkingTools,

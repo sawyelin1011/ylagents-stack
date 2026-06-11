@@ -141,7 +141,7 @@ Future<LanguageOption?> showLanguageSelector(BuildContext context) async {
       ),
     ),
     DesktopContextMenuItem(
-      icon: Lucide.X,
+      icon: Lucide.x,
       label: l10n.languageSelectSheetClearButton,
       onTap: () => selected = const LanguageOption(
         code: '__clear__',
@@ -235,7 +235,7 @@ class _LanguageSelectSheetState extends State<_LanguageSelectSheet> {
                           child: Row(
                             children: [
                               Icon(
-                                Lucide.X,
+                                Lucide.x,
                                 size: 20,
                                 color: Colors.red.shade600,
                               ),

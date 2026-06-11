@@ -945,14 +945,14 @@ class _ChatInputBarState extends State<ChatInputBar>
             width: (widget.modelIcon != null) ? modelButtonW : normalButtonW,
             builder: () => _CompactIconButton(
               tooltip: l10n.chatInputBarSelectModelTooltip,
-              icon: Lucide.Boxes,
+              icon: Lucide.boxes,
               modelIcon: true,
               onTap: lockTap(widget.onSelectModel),
               onLongPress: lockTap(widget.onLongPressSelectModel),
               child: widget.modelIcon,
             ),
             menu: DesktopContextMenuItem(
-              icon: Lucide.Boxes,
+              icon: Lucide.boxes,
               label: l10n.chatInputBarSelectModelTooltip,
               onTap: lockTap(widget.onSelectModel),
             ),
@@ -999,7 +999,7 @@ class _ChatInputBarState extends State<ChatInputBar>
               if (!appSearchEnabled && !builtinSearchActive) {
                 return _CompactIconButton(
                   tooltip: l10n.chatInputBarOnlineSearchTooltip,
-                  icon: Lucide.Globe,
+                  icon: Lucide.globe,
                   active: false,
                   onTap: lockTap(widget.onOpenSearch),
                 );
@@ -1008,7 +1008,7 @@ class _ChatInputBarState extends State<ChatInputBar>
               if (builtinSearchActive) {
                 return _CompactIconButton(
                   tooltip: l10n.chatInputBarOnlineSearchTooltip,
-                  icon: Lucide.Search,
+                  icon: Lucide.search,
                   active: true,
                   onTap: lockTap(widget.onOpenSearch),
                 );
@@ -1016,7 +1016,7 @@ class _ChatInputBarState extends State<ChatInputBar>
               // External provider search -> brand icon
               return _CompactIconButton(
                 tooltip: l10n.chatInputBarOnlineSearchTooltip,
-                icon: Lucide.Globe,
+                icon: Lucide.globe,
                 active: true,
                 onTap: lockTap(widget.onOpenSearch),
                 childBuilder: (c) {
@@ -1039,7 +1039,7 @@ class _ChatInputBarState extends State<ChatInputBar>
                       );
                     }
                   } else {
-                    return Icon(Lucide.Globe, size: 20, color: c);
+                    return Icon(Lucide.globe, size: 20, color: c);
                   }
                 },
               );
@@ -1048,14 +1048,14 @@ class _ChatInputBarState extends State<ChatInputBar>
               // Prefer vector icon if brandAsset is svg, otherwise pick reasonable default
               if (!appSearchEnabled && !builtinSearchActive) {
                 return DesktopContextMenuItem(
-                  icon: Lucide.Globe,
+                  icon: Lucide.globe,
                   label: l10n.chatInputBarOnlineSearchTooltip,
                   onTap: lockTap(widget.onOpenSearch),
                 );
               }
               if (builtinSearchActive) {
                 return DesktopContextMenuItem(
-                  icon: Lucide.Search,
+                  icon: Lucide.search,
                   label: l10n.chatInputBarOnlineSearchTooltip,
                   onTap: lockTap(widget.onOpenSearch),
                 );
@@ -1068,7 +1068,7 @@ class _ChatInputBarState extends State<ChatInputBar>
                 );
               }
               return DesktopContextMenuItem(
-                icon: Lucide.Globe,
+                icon: Lucide.globe,
                 label: l10n.chatInputBarOnlineSearchTooltip,
                 onTap: lockTap(widget.onOpenSearch),
               );
@@ -1082,7 +1082,7 @@ class _ChatInputBarState extends State<ChatInputBar>
               width: normalButtonW,
               builder: () => _CompactIconButton(
                 tooltip: l10n.chatInputBarReasoningStrengthTooltip,
-                icon: Lucide.Brain,
+                icon: Lucide.brain,
                 active: widget.reasoningActive,
                 onTap: lockTap(widget.onConfigureReasoning),
                 childBuilder: (c) => ReasoningIcons.budgetIcon(
@@ -1107,13 +1107,13 @@ class _ChatInputBarState extends State<ChatInputBar>
               width: normalButtonW,
               builder: () => _CompactIconButton(
                 tooltip: l10n.chatInputBarMcpServersTooltip,
-                icon: Lucide.Hammer,
+                icon: Lucide.hammer,
                 active: widget.mcpActive,
                 onTap: lockTap(widget.onOpenMcp),
                 onLongPress: lockTap(widget.onLongPressMcp),
               ),
               menu: DesktopContextMenuItem(
-                icon: Lucide.Hammer,
+                icon: Lucide.hammer,
                 label: l10n.chatInputBarMcpServersTooltip,
                 onTap: lockTap(widget.onOpenMcp),
               ),
@@ -1127,12 +1127,12 @@ class _ChatInputBarState extends State<ChatInputBar>
               width: normalButtonW,
               builder: () => _CompactIconButton(
                 tooltip: l10n.chatInputBarQuickPhraseTooltip,
-                icon: Lucide.Zap,
+                icon: Lucide.zap,
                 onTap: lockTap(widget.onQuickPhrase),
                 onLongPress: lockTap(widget.onLongPressQuickPhrase),
               ),
               menu: DesktopContextMenuItem(
-                icon: Lucide.Zap,
+                icon: Lucide.zap,
                 label: l10n.chatInputBarQuickPhraseTooltip,
                 onTap: lockTap(widget.onQuickPhrase),
               ),
@@ -1146,11 +1146,11 @@ class _ChatInputBarState extends State<ChatInputBar>
               width: normalButtonW,
               builder: () => _CompactIconButton(
                 tooltip: l10n.bottomToolsSheetCamera,
-                icon: Lucide.Camera,
+                icon: Lucide.camera,
                 onTap: lockTap(widget.onPickCamera),
               ),
               menu: DesktopContextMenuItem(
-                icon: Lucide.Camera,
+                icon: Lucide.camera,
                 label: l10n.bottomToolsSheetCamera,
                 onTap: lockTap(widget.onPickCamera),
               ),
@@ -1164,11 +1164,11 @@ class _ChatInputBarState extends State<ChatInputBar>
               width: normalButtonW,
               builder: () => _CompactIconButton(
                 tooltip: l10n.bottomToolsSheetPhotos,
-                icon: Lucide.Image,
+                icon: Lucide.image,
                 onTap: lockTap(widget.onPickPhotos),
               ),
               menu: DesktopContextMenuItem(
-                icon: Lucide.Image,
+                icon: Lucide.image,
                 label: l10n.bottomToolsSheetPhotos,
                 onTap: lockTap(widget.onPickPhotos),
               ),
@@ -1182,11 +1182,11 @@ class _ChatInputBarState extends State<ChatInputBar>
               width: normalButtonW,
               builder: () => _CompactIconButton(
                 tooltip: l10n.bottomToolsSheetUpload,
-                icon: Lucide.Paperclip,
+                icon: Lucide.paperclip,
                 onTap: lockTap(widget.onUploadFiles),
               ),
               menu: DesktopContextMenuItem(
-                icon: Lucide.Paperclip,
+                icon: Lucide.paperclip,
                 label: l10n.bottomToolsSheetUpload,
                 onTap: lockTap(widget.onUploadFiles),
               ),
@@ -1200,13 +1200,13 @@ class _ChatInputBarState extends State<ChatInputBar>
               width: normalButtonW,
               builder: () => _CompactIconButton(
                 tooltip: l10n.instructionInjectionTitle,
-                icon: Lucide.Layers,
+                icon: Lucide.layers,
                 active: widget.learningModeActive,
                 onTap: lockTap(widget.onToggleLearningMode),
                 onLongPress: lockTap(widget.onLongPressLearning),
               ),
               menu: DesktopContextMenuItem(
-                icon: Lucide.Layers,
+                icon: Lucide.layers,
                 label: l10n.instructionInjectionTitle,
                 onTap: lockTap(widget.onToggleLearningMode),
               ),
@@ -1220,12 +1220,12 @@ class _ChatInputBarState extends State<ChatInputBar>
               width: normalButtonW,
               builder: () => _CompactIconButton(
                 tooltip: l10n.worldBookTitle,
-                icon: Lucide.BookOpen,
+                icon: Lucide.bookOpen,
                 active: widget.worldBookActive,
                 onTap: lockTap(widget.onOpenWorldBook),
               ),
               menu: DesktopContextMenuItem(
-                icon: Lucide.BookOpen,
+                icon: Lucide.bookOpen,
                 label: l10n.worldBookTitle,
                 onTap: lockTap(widget.onOpenWorldBook),
               ),
@@ -1246,7 +1246,7 @@ class _ChatInputBarState extends State<ChatInputBar>
                     onTap: lockTap(widget.onCompressContext),
                   ),
                 DesktopContextMenuItem(
-                  icon: Lucide.Eraser,
+                  icon: Lucide.eraser,
                   label: l10n.bottomToolsSheetClearContext,
                   onTap: lockTap(widget.onClearContext),
                 ),
@@ -1261,12 +1261,12 @@ class _ChatInputBarState extends State<ChatInputBar>
                 key: _contextMgmtAnchorKey,
                 child: _CompactIconButton(
                   tooltip: l10n.contextManagement,
-                  icon: Lucide.Eraser,
+                  icon: Lucide.eraser,
                   onTap: _composerLocked ? null : showContextMenu,
                 ),
               ),
               menu: DesktopContextMenuItem(
-                icon: Lucide.Eraser,
+                icon: Lucide.eraser,
                 label: l10n.contextManagement,
                 onTap: _composerLocked ? null : showContextMenu,
               ),
@@ -1280,11 +1280,11 @@ class _ChatInputBarState extends State<ChatInputBar>
               width: normalButtonW,
               builder: () => _CompactIconButton(
                 tooltip: l10n.miniMapTooltip,
-                icon: Lucide.Map,
+                icon: Lucide.map,
                 onTap: lockTap(widget.onOpenMiniMap),
               ),
               menu: DesktopContextMenuItem(
-                icon: Lucide.Map,
+                icon: Lucide.map,
                 label: l10n.miniMapTooltip,
                 onTap: lockTap(widget.onOpenMiniMap),
               ),
@@ -1298,12 +1298,12 @@ class _ChatInputBarState extends State<ChatInputBar>
               width: normalButtonW,
               builder: () => _CompactIconButton(
                 tooltip: l10n.chatInputBarOcrTooltip,
-                icon: Lucide.Eye,
+                icon: Lucide.eye,
                 active: widget.ocrActive,
                 onTap: lockTap(widget.onToggleOcr),
               ),
               menu: DesktopContextMenuItem(
-                icon: Lucide.Eye,
+                icon: Lucide.eye,
                 label: l10n.chatInputBarOcrTooltip,
                 onTap: lockTap(widget.onToggleOcr),
               ),
@@ -1360,7 +1360,7 @@ class _ChatInputBarState extends State<ChatInputBar>
               key: _leftOverflowAnchorKey,
               child: _CompactIconButton(
                 tooltip: l10n.chatInputBarMoreTooltip,
-                icon: Lucide.Plus,
+                icon: Lucide.plus,
                 onTap: () {
                   showDesktopAnchoredMenu(
                     context,
@@ -1792,14 +1792,14 @@ class _ChatInputBarState extends State<ChatInputBar>
                                         //     globalPosition: globalPos,
                                         //     items: [
                                         //       DesktopContextMenuItem(
-                                        //         icon: Lucide.Clipboard,
+                                        //         icon: Lucide.clipboard,
                                         //         label: l10n.pasteButtonLabel,
                                         //         onTap: () async {
                                         //           await _handlePasteFromClipboard();
                                         //         },
                                         //       ),
                                         //       DesktopContextMenuItem(
-                                        //         icon: Lucide.Cut,
+                                        //         icon: Lucide.cut,
                                         //         label: l10n.cutButtonLabel,
                                         //         onTap: () async {
                                         //           final s = _controller.selection;
@@ -1816,7 +1816,7 @@ class _ChatInputBarState extends State<ChatInputBar>
                                         //         },
                                         //       ),
                                         //       DesktopContextMenuItem(
-                                        //         icon: Lucide.Copy,
+                                        //         icon: Lucide.copy,
                                         //         label: l10n.copyButtonLabel,
                                         //         onTap: () async {
                                         //           final s2 = _controller.selection;
@@ -1827,7 +1827,7 @@ class _ChatInputBarState extends State<ChatInputBar>
                                         //         },
                                         //       ),
                                         //       // DesktopContextMenuItem(
-                                        //       //   // icon: Lucide.TextSelect,
+                                        //       //   // icon: Lucide.textSelect,
                                         //       //   label: l10n.selectAllButtonLabel,
                                         //       //   onTap: () {
                                         //       //     if (hasText) {
@@ -1920,8 +1920,8 @@ class _ChatInputBarState extends State<ChatInputBar>
                                     },
                                     child: Icon(
                                       _isExpanded
-                                          ? Lucide.ChevronsDownUp
-                                          : Lucide.ChevronsUpDown,
+                                          ? Lucide.chevronsDownUp
+                                          : Lucide.chevronsUpDown,
                                       size: 16,
                                       color: theme.colorScheme.onSurface
                                           .withValues(alpha: 0.45),
@@ -1952,7 +1952,7 @@ class _ChatInputBarState extends State<ChatInputBar>
                                         tooltip: AppLocalizations.of(
                                           context,
                                         )!.chatInputBarMoreTooltip,
-                                        icon: Lucide.Plus,
+                                        icon: Lucide.plus,
                                         active: widget.moreOpen,
                                         onTap: _composerLocked
                                             ? null
@@ -1974,8 +1974,8 @@ class _ChatInputBarState extends State<ChatInputBar>
                                               ),
                                           child: Icon(
                                             widget.moreOpen
-                                                ? Lucide.X
-                                                : Lucide.Plus,
+                                                ? Lucide.x
+                                                : Lucide.plus,
                                             key: ValueKey(
                                               widget.moreOpen ? 'close' : 'add',
                                             ),
@@ -1996,7 +1996,7 @@ class _ChatInputBarState extends State<ChatInputBar>
                                           ? widget.onStop
                                           : null,
                                       color: theme.colorScheme.primary,
-                                      icon: Lucide.ArrowUp,
+                                      icon: Lucide.arrowUp,
                                       tooltip: widget.sendButtonTooltip,
                                     ),
                                   ],
@@ -2183,7 +2183,7 @@ class _ImageModePill extends StatelessWidget {
                   child: Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      Icon(Lucide.Brush, size: 14, color: iconColor),
+                      Icon(Lucide.brush, size: 14, color: iconColor),
                       const SizedBox(width: 5),
                       Flexible(
                         child: Text(
@@ -2205,7 +2205,7 @@ class _ImageModePill extends StatelessWidget {
                           child: Padding(
                             padding: const EdgeInsets.all(5),
                             child: Icon(
-                              Lucide.X,
+                              Lucide.x,
                               size: 13,
                               color: (isDark ? scheme.onSurfaceVariant : fg)
                                   .withValues(

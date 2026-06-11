@@ -211,7 +211,7 @@ class _SheetTopBar extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 16),
         child: Row(
           children: [
-            _NavIconButton(icon: Lucide.ArrowLeft, onTap: onBack),
+            _NavIconButton(icon: Lucide.arrowLeft, onTap: onBack),
             Expanded(
               child: Center(
                 child: Text(
@@ -292,7 +292,7 @@ class _GroupHeader extends StatelessWidget {
                   duration: const Duration(milliseconds: 260),
                   curve: Curves.easeOutCubic,
                   child: Icon(
-                    Lucide.ChevronRight,
+                    Lucide.chevronRight,
                     size: 16,
                     color: textBase.withValues(alpha: 0.7),
                   ),
@@ -348,7 +348,7 @@ class _InstructionInjectionRow extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 12),
         child: Row(
           children: [
-            Icon(Lucide.Layers, size: 20, color: onColor),
+            Icon(Lucide.layers, size: 20, color: onColor),
             const SizedBox(width: 10),
             Expanded(
               child: Text(
@@ -363,7 +363,7 @@ class _InstructionInjectionRow extends StatelessWidget {
               ),
             ),
             if (selected)
-              Icon(Lucide.Check, size: 18, color: cs.primary)
+              Icon(Lucide.check, size: 18, color: cs.primary)
             else
               const SizedBox(width: 18),
           ],

@@ -1512,7 +1512,7 @@ class _ExportDialogState extends State<_ExportDialog> {
                     IconButton(
                       tooltip: l10n.mcpPageClose,
                       icon: Icon(
-                        Lucide.X,
+                        Lucide.x,
                         size: 18,
                         color: cs.onSurface.withValues(alpha: 0.75),
                       ),
@@ -1530,20 +1530,20 @@ class _ExportDialogState extends State<_ExportDialog> {
                     child: ListView(
                       children: [
                         _ExportOptionTile(
-                          icon: Lucide.BookOpenText,
+                          icon: Lucide.bookOpenText,
                           title: l10n.messageExportSheetMarkdown,
                           subtitle:
                               l10n.messageExportSheetSingleMarkdownSubtitle,
                           onTap: _exporting ? null : _onExportMarkdown,
                         ),
                         _ExportOptionTile(
-                          icon: Lucide.FileText,
+                          icon: Lucide.fileText,
                           title: l10n.messageExportSheetPlainText,
                           subtitle: l10n.messageExportSheetSingleTxtSubtitle,
                           onTap: _exporting ? null : _onExportTxt,
                         ),
                         _ExportOptionTile(
-                          icon: Lucide.Image,
+                          icon: Lucide.image,
                           title: l10n.messageExportSheetExportImage,
                           subtitle:
                               l10n.messageExportSheetSingleExportImageSubtitle,
@@ -1742,7 +1742,7 @@ class _BatchExportDialogState extends State<_BatchExportDialog> {
                     IconButton(
                       tooltip: l10n.mcpPageClose,
                       icon: Icon(
-                        Lucide.X,
+                        Lucide.x,
                         size: 18,
                         color: cs.onSurface.withValues(alpha: 0.75),
                       ),
@@ -1760,20 +1760,20 @@ class _BatchExportDialogState extends State<_BatchExportDialog> {
                     child: ListView(
                       children: [
                         _ExportOptionTile(
-                          icon: Lucide.BookOpenText,
+                          icon: Lucide.bookOpenText,
                           title: l10n.messageExportSheetMarkdown,
                           subtitle:
                               l10n.messageExportSheetBatchMarkdownSubtitle,
                           onTap: _exporting ? null : _onExportMarkdown,
                         ),
                         _ExportOptionTile(
-                          icon: Lucide.FileText,
+                          icon: Lucide.fileText,
                           title: l10n.messageExportSheetPlainText,
                           subtitle: l10n.messageExportSheetBatchTxtSubtitle,
                           onTap: _exporting ? null : _onExportTxt,
                         ),
                         _ExportOptionTile(
-                          icon: Lucide.Image,
+                          icon: Lucide.image,
                           title: l10n.messageExportSheetExportImage,
                           subtitle:
                               l10n.messageExportSheetBatchExportImageSubtitle,
@@ -1997,7 +1997,7 @@ class _BatchExportSheetState extends State<_BatchExportSheet> {
                 controller: sc,
                 children: [
                   _ExportOptionTile(
-                    icon: Lucide.BookOpenText,
+                    icon: Lucide.bookOpenText,
                     title: l10n.messageExportSheetMarkdown,
                     subtitle: l10n.messageExportSheetBatchMarkdownSubtitle,
                     onTap: _exporting
@@ -2007,7 +2007,7 @@ class _BatchExportSheetState extends State<_BatchExportSheet> {
                           },
                   ),
                   _ExportOptionTile(
-                    icon: Lucide.FileText,
+                    icon: Lucide.fileText,
                     title: l10n.messageExportSheetPlainText,
                     subtitle: l10n.messageExportSheetBatchTxtSubtitle,
                     onTap: _exporting
@@ -2017,7 +2017,7 @@ class _BatchExportSheetState extends State<_BatchExportSheet> {
                           },
                   ),
                   _ExportOptionTile(
-                    icon: Lucide.Image,
+                    icon: Lucide.image,
                     title: l10n.messageExportSheetExportImage,
                     subtitle: l10n.messageExportSheetBatchExportImageSubtitle,
                     onTap: _exporting
@@ -2252,7 +2252,7 @@ class _ExportSheetState extends State<_ExportSheet> {
                 controller: sc,
                 children: [
                   _ExportOptionTile(
-                    icon: Lucide.BookOpenText,
+                    icon: Lucide.bookOpenText,
                     title: l10n.messageExportSheetMarkdown,
                     subtitle: l10n.messageExportSheetSingleMarkdownSubtitle,
                     onTap: _exporting
@@ -2262,7 +2262,7 @@ class _ExportSheetState extends State<_ExportSheet> {
                           },
                   ),
                   _ExportOptionTile(
-                    icon: Lucide.FileText,
+                    icon: Lucide.fileText,
                     title: l10n.messageExportSheetPlainText,
                     subtitle: l10n.messageExportSheetSingleTxtSubtitle,
                     onTap: _exporting
@@ -2272,7 +2272,7 @@ class _ExportSheetState extends State<_ExportSheet> {
                           },
                   ),
                   _ExportOptionTile(
-                    icon: Lucide.Image,
+                    icon: Lucide.image,
                     title: l10n.messageExportSheetExportImage,
                     subtitle: l10n.messageExportSheetSingleExportImageSubtitle,
                     onTap: _exporting

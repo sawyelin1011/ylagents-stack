@@ -221,7 +221,7 @@ class _McpServersContent extends StatelessWidget {
     // Top clear row
     rows.add(
       _RowItem(
-        leading: Icon(Lucide.CircleX, size: 16, color: cs.onSurface),
+        leading: Icon(Lucide.circleX, size: 16, color: cs.onSurface),
         label: l10n.assistantEditClearButton, // '清除'
         selected: false,
         onTap: () async {
@@ -238,7 +238,7 @@ class _McpServersContent extends StatelessWidget {
       rows.add(
         _RowItem(
           leading: Icon(
-            Lucide.Hammer,
+            Lucide.hammer,
             size: 16,
             color: isSelected ? cs.primary : cs.onSurface,
           ),
@@ -351,7 +351,7 @@ class _RowItemState extends State<_RowItem> {
                 duration: const Duration(milliseconds: 160),
                 child: widget.selected
                     ? Icon(
-                        Lucide.Check,
+                        Lucide.check,
                         key: const ValueKey('check'),
                         size: 16,
                         color: cs.primary,

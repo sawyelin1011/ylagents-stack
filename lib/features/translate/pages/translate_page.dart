@@ -252,7 +252,7 @@ class _TranslatePageState extends State<TranslatePage> {
         leading: Tooltip(
           message: l10n.settingsPageBackButton,
           child: _TactileIconButton(
-            icon: lucide.Lucide.ArrowLeft,
+            icon: lucide.Lucide.arrowLeft,
             color: cs.onSurface,
             size: 22,
             onTap: () => Navigator.of(context).maybePop(),
@@ -266,7 +266,7 @@ class _TranslatePageState extends State<TranslatePage> {
             child: Padding(
               padding: const EdgeInsets.only(right: 4),
               child: IosIconButton(
-                icon: lucide.Lucide.Clipboard,
+                icon: lucide.Lucide.clipboard,
                 size: 20,
                 padding: const EdgeInsets.all(8),
                 onTap: _pasteFromClipboard,
@@ -279,7 +279,7 @@ class _TranslatePageState extends State<TranslatePage> {
             child: Padding(
               padding: const EdgeInsets.only(right: 4),
               child: IosIconButton(
-                icon: lucide.Lucide.Copy,
+                icon: lucide.Lucide.copy,
                 size: 20,
                 padding: const EdgeInsets.all(8),
                 onTap: _copyResult,
@@ -292,7 +292,7 @@ class _TranslatePageState extends State<TranslatePage> {
             child: Padding(
               padding: const EdgeInsets.only(right: 4),
               child: IosIconButton(
-                icon: lucide.Lucide.Eraser,
+                icon: lucide.Lucide.eraser,
                 size: 20,
                 padding: const EdgeInsets.all(8),
                 onTap: _clearAll,
@@ -311,7 +311,7 @@ class _TranslatePageState extends State<TranslatePage> {
                 if (asset != null) {
                   return Image.asset(asset, width: 22, height: 22);
                 }
-                return Icon(lucide.Lucide.Bot, size: 22, color: color);
+                return Icon(lucide.Lucide.bot, size: 22, color: color);
               },
               onTap: _pickModel,
             ),
@@ -406,7 +406,7 @@ class _TranslatePageState extends State<TranslatePage> {
                           ),
                           const SizedBox(width: 6),
                           Icon(
-                            lucide.Lucide.ChevronDown,
+                            lucide.Lucide.chevronDown,
                             size: 18,
                             color: cs.onSurface.withValues(alpha: 0.7),
                           ),
@@ -459,7 +459,7 @@ class _TranslatePageState extends State<TranslatePage> {
                               mainAxisSize: MainAxisSize.min,
                               children: [
                                 Icon(
-                                  lucide.Lucide.Languages,
+                                  lucide.Lucide.languages,
                                   size: 18,
                                   color: isDark ? Colors.black : Colors.white,
                                 ),

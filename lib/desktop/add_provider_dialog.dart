@@ -364,7 +364,7 @@ class _AddProviderDialogBodyState extends State<_AddProviderDialogBody>
                       IconButton(
                         tooltip: l10n.mcpPageClose,
                         icon: Icon(
-                          lucide.Lucide.X,
+                          lucide.Lucide.x,
                           size: 20,
                           color: cs.onSurface.withValues(alpha: 0.9),
                         ),
@@ -411,7 +411,7 @@ class _AddProviderDialogBodyState extends State<_AddProviderDialogBody>
                     children: [
                       const Spacer(),
                       _PrimaryDeskButton(
-                        icon: lucide.Lucide.Plus,
+                        icon: lucide.Lucide.plus,
                         label: l10n.addProviderSheetAddButton,
                         onTap: _onAdd,
                       ),

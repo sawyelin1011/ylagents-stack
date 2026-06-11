@@ -401,7 +401,7 @@ class _ReasoningContent extends StatelessWidget {
                 value: 128000,
               ),
             tile(
-              leadingBuilder: (c) => Icon(Lucide.Hash, size: 16, color: c),
+              leadingBuilder: (c) => Icon(Lucide.hash, size: 16, color: c),
               label: l10n.reasoningBudgetSheetCustomLabel,
               value: -999999,
               activeOverride: customActive,
@@ -416,7 +416,7 @@ class _ReasoningContent extends StatelessWidget {
                       ),
                     )
                   : Icon(
-                      Lucide.ChevronRight,
+                      Lucide.chevronRight,
                       size: 16,
                       color: Theme.of(
                         context,
@@ -529,7 +529,7 @@ class _HoverRowState extends State<_HoverRow> {
                 duration: const Duration(milliseconds: 160),
                 child: widget.selected
                     ? Icon(
-                        Lucide.Check,
+                        Lucide.check,
                         key: const ValueKey('check'),
                         size: 16,
                         color: cs.primary,

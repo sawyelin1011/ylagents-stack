@@ -35,7 +35,7 @@ class ThemeSettingsPage extends StatelessWidget {
         leading: Tooltip(
           message: l10n.settingsPageBackButton,
           child: _TactileIconButton(
-            icon: Lucide.ArrowLeft,
+            icon: Lucide.arrowLeft,
             color: cs.onSurface,
             size: 22,
             onTap: () => Navigator.of(context).maybePop(),
@@ -54,7 +54,7 @@ class ThemeSettingsPage extends StatelessWidget {
               children: [
                 _iosSwitchRow(
                   context,
-                  icon: Lucide.Palette,
+                  icon: Lucide.palette,
                   label: l10n.themeSettingsPageUseDynamicColorTitle,
                   subtitle: l10n.themeSettingsPageUseDynamicColorSubtitle,
                   value: settings.useDynamicColor,
@@ -69,7 +69,7 @@ class ThemeSettingsPage extends StatelessWidget {
             children: [
               _iosSwitchRow(
                 context,
-                icon: Lucide.Square,
+                icon: Lucide.square,
                 label: l10n.themeSettingsPageUsePureBackgroundTitle,
                 subtitle: l10n.themeSettingsPageUsePureBackgroundSubtitle,
                 value: settings.usePureBackground,
@@ -340,7 +340,7 @@ Widget _paletteRow(
                 child: Text(title, style: TextStyle(fontSize: 15, color: c)),
               ),
               if (selected)
-                Icon(Lucide.Check, size: 18, color: cs.primary)
+                Icon(Lucide.check, size: 18, color: cs.primary)
               else
                 const SizedBox(width: 18, height: 18),
             ],

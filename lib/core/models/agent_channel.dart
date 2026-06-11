@@ -39,7 +39,7 @@ class AgentChannel {
   final DateTime createdAt;
   final DateTime updatedAt;
 
-  const AgentChannel({
+  AgentChannel({
     required this.id,
     required this.name,
     required this.agentId,

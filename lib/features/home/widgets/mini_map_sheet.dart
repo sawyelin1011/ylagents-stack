@@ -158,7 +158,7 @@ class _MiniMapSheetState extends State<_MiniMapSheet>
                 // Pinned title
                 Row(
                   children: [
-                    Icon(Lucide.Map, size: 18, color: cs.primary),
+                    Icon(Lucide.map, size: 18, color: cs.primary),
                     const SizedBox(width: 8),
                     Expanded(
                       child: Text(
@@ -177,7 +177,7 @@ class _MiniMapSheetState extends State<_MiniMapSheet>
                       child: IconButton(
                         padding: EdgeInsets.zero,
                         icon: Icon(
-                          Lucide.ChevronsDown,
+                          Lucide.chevronsDown,
                           size: 18,
                           color: cs.onSurface,
                         ),
@@ -286,7 +286,7 @@ class _MiniMapSheetState extends State<_MiniMapSheet>
                       child: IconButton(
                         padding: EdgeInsets.zero,
                         icon: Icon(
-                          Lucide.X,
+                          Lucide.x,
                           size: 18,
                           color: cs.onSurface.withValues(alpha: 0.7),
                         ),
@@ -305,7 +305,7 @@ class _MiniMapSheetState extends State<_MiniMapSheet>
                 width: 36,
                 child: IconButton(
                   padding: EdgeInsets.zero,
-                  icon: Icon(Lucide.Search, size: 20, color: cs.onSurface),
+                  icon: Icon(Lucide.search, size: 20, color: cs.onSurface),
                   onPressed: _startSearch,
                   tooltip: MaterialLocalizations.of(context).searchFieldLabel,
                 ),

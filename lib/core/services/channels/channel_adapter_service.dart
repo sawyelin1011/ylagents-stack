@@ -1,4 +1,4 @@
-import '../models/agent_channel.dart';
+import '../../models/agent_channel.dart';
 import 'channel_adapter.dart';
 import 'telegram_adapter.dart';
 import 'discord_adapter.dart';

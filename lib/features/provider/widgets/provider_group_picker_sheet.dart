@@ -120,7 +120,7 @@ class ProviderGroupPickerSheet extends StatelessWidget {
                   ),
                 ),
                 if (selected)
-                  Icon(Lucide.Check, size: 18, color: cs.primary)
+                  Icon(Lucide.check, size: 18, color: cs.primary)
                 else
                   const SizedBox(width: 18),
               ],
@@ -160,14 +160,14 @@ class ProviderGroupPickerSheet extends StatelessWidget {
                   ),
                 ),
                 IosIconButton(
-                  icon: Lucide.Plus,
+                  icon: Lucide.plus,
                   minSize: 40,
                   size: 20,
                   semanticLabel: l10n.providerGroupsCreateNewGroupAction,
                   onTap: () => unawaited(_createAndAssign(context, sp)),
                 ),
                 IosIconButton(
-                  icon: Lucide.Settings,
+                  icon: Lucide.settings,
                   minSize: 40,
                   size: 20,
                   semanticLabel: l10n.providerGroupsManageAction,

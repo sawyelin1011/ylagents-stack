@@ -1159,7 +1159,7 @@ class _ImageViewerPageState extends State<ImageViewerPage>
         image: true,
         label: l10n.imageViewerPageImageLoadFailed,
         child: Icon(
-          Lucide.ImageOff,
+          Lucide.imageOff,
           color: Colors.white.withValues(alpha: 0.72),
           size: 64,
         ),
@@ -1303,7 +1303,7 @@ class _ImageViewerPageState extends State<ImageViewerPage>
             children: [
               _GlassCircleButton(
                 label: l10n.imageViewerPageCloseButton,
-                icon: Lucide.X,
+                icon: Lucide.x,
                 onTap: () => Navigator.of(context).maybePop(),
               ),
               const Spacer(),
@@ -1339,7 +1339,7 @@ class _ImageViewerPageState extends State<ImageViewerPage>
               child: Center(
                 child: _GlassCircleButton(
                   label: l10n.imageViewerPagePreviousButton,
-                  icon: Lucide.ChevronLeft,
+                  icon: Lucide.chevronLeft,
                   onTap: _canGoPrevious ? _showPrevious : null,
                   size: 52,
                 ),
@@ -1352,7 +1352,7 @@ class _ImageViewerPageState extends State<ImageViewerPage>
               child: Center(
                 child: _GlassCircleButton(
                   label: l10n.imageViewerPageNextButton,
-                  icon: Lucide.ChevronRight,
+                  icon: Lucide.chevronRight,
                   onTap: _canGoNext ? _showNext : null,
                   size: 52,
                 ),
@@ -1375,59 +1375,59 @@ class _ImageViewerPageState extends State<ImageViewerPage>
     final actions = <Widget>[
       _GlassCircleButton(
         label: l10n.imageViewerPageSaveButton,
-        icon: Lucide.Download,
+        icon: Lucide.download,
         loading: _saving,
         onTap: _saving ? null : _saveCurrent,
       ),
       if (_isDesktop)
         _GlassCircleButton(
           label: l10n.imageViewerPageCopyButton,
-          icon: Lucide.Copy,
+          icon: Lucide.copy,
           loading: _copying,
           onTap: _copying ? null : _copyCurrent,
         ),
       _GlassCircleButton(
         label: l10n.imageViewerPageShareButton,
-        icon: Lucide.Share2,
+        icon: Lucide.share2,
         loading: _sharing,
         onTap: _sharing ? null : _shareCurrent,
       ),
       const _GlassDivider(),
       _GlassCircleButton(
         label: l10n.imageViewerPageFlipHorizontalButton,
-        icon: Lucide.FlipHorizontal2,
+        icon: Lucide.flipHorizontal2,
         onTap: _flipCurrentHorizontally,
       ),
       _GlassCircleButton(
         label: l10n.imageViewerPageFlipVerticalButton,
-        icon: Lucide.FlipVertical2,
+        icon: Lucide.flipVertical2,
         onTap: _flipCurrentVertically,
       ),
       _GlassCircleButton(
         label: l10n.imageViewerPageRotateLeftButton,
-        icon: Lucide.RotateCcw,
+        icon: Lucide.rotateCcw,
         onTap: _rotateCurrentLeft,
       ),
       _GlassCircleButton(
         label: l10n.imageViewerPageRotateRightButton,
-        icon: Lucide.RotateCw,
+        icon: Lucide.rotateCw,
         onTap: _rotateCurrentRight,
       ),
       if (!compact) ...[
         const _GlassDivider(),
         _GlassCircleButton(
           label: l10n.imageViewerPageZoomOutButton,
-          icon: Lucide.ZoomOut,
+          icon: Lucide.zoomOut,
           onTap: () => _zoomBy(0.8),
         ),
         _GlassCircleButton(
           label: l10n.imageViewerPageResetZoomButton,
-          icon: Lucide.RotateCcw,
+          icon: Lucide.rotateCcw,
           onTap: _resetZoom,
         ),
         _GlassCircleButton(
           label: l10n.imageViewerPageZoomInButton,
-          icon: Lucide.ZoomIn,
+          icon: Lucide.zoomIn,
           onTap: () => _zoomBy(1.25),
         ),
       ],

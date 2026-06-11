@@ -1,4 +1,4 @@
-import '../models/agent_channel.dart';
+import '../../models/agent_channel.dart';
 
 /// Result of a channel send operation.
 class ChannelResult {

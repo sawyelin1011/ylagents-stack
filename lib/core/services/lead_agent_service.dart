@@ -95,7 +95,17 @@ class LeadAgentService {
         workspaceId,
       );
       for (final task in subTasks) {
-        await taskProvider.createTask(task);
+        await taskProvider.createTask(
+          title: task.title,
+          description: task.description,
+          workspaceId: task.workspaceId,
+          status: task.status,
+          priority: task.priority,
+          assigneeAgentId: task.assigneeAgentId,
+          conversationId: task.conversationId,
+          dueDate: task.dueDate,
+          tags: task.tags,
+        );
         trace = trace.copyWith(
           steps: [
             ...trace.steps,
@@ -280,6 +290,8 @@ class LeadAgentService {
           ),
           description:
               'Original request: $userRequest\n\nTask: ${step.description}',
+          createdAt: DateTime.now(),
+          updatedAt: DateTime.now(),
           workspaceId: workspaceId,
           status: TaskStatus.todo,
           assigneeAgentId: assigneeId,

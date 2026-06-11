@@ -159,7 +159,7 @@ class _DebugPageState extends State<DebugPage> {
       appBar: AppBar(
         leading: IconButton(
           tooltip: l10n.settingsPageBackButton,
-          icon: Icon(Lucide.ArrowLeft, color: cs.onSurface),
+          icon: Icon(Lucide.arrowLeft, color: cs.onSurface),
           onPressed: () => Navigator.of(context).maybePop(),
         ),
         title: Text(l10n.debugPageTitle),
@@ -175,7 +175,7 @@ class _DebugPageState extends State<DebugPage> {
                 label: _runningAction == _DebugAction.oversized
                     ? l10n.debugPageCreatingButton
                     : l10n.debugPageCreateOversizedConversationButton,
-                icon: Lucide.Database,
+                icon: Lucide.database,
                 backgroundColor: cs.primary,
                 enabled: !_isBusy,
                 onTap: _createOversizedConversation,
@@ -186,7 +186,7 @@ class _DebugPageState extends State<DebugPage> {
                 label: _runningAction == _DebugAction.manyMessages
                     ? l10n.debugPageCreatingButton
                     : l10n.debugPageCreateManyMessagesConversationButton,
-                icon: Lucide.MessagesSquare,
+                icon: Lucide.messagesSquare,
                 backgroundColor: cs.primary,
                 enabled: !_isBusy,
                 onTap: _createManyMessagesConversation,
@@ -197,7 +197,7 @@ class _DebugPageState extends State<DebugPage> {
                 label: _runningAction == _DebugAction.dailyMixedMarkdown
                     ? l10n.debugPageCreatingButton
                     : l10n.debugPageCreateDailyMixedMarkdownConversationButton,
-                icon: Lucide.FileText,
+                icon: Lucide.fileText,
                 backgroundColor: cs.primary,
                 enabled: !_isBusy,
                 onTap: _createDailyMixedMarkdownConversation,
@@ -208,7 +208,7 @@ class _DebugPageState extends State<DebugPage> {
                 label: _runningAction == _DebugAction.longReasoning
                     ? l10n.debugPageCreatingButton
                     : l10n.debugPageCreateLongReasoningConversationButton,
-                icon: Lucide.Brain,
+                icon: Lucide.brain,
                 backgroundColor: cs.primary,
                 enabled: !_isBusy,
                 onTap: _createLongReasoningConversation,

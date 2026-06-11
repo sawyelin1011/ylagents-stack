@@ -97,7 +97,7 @@ class _LeadAgentExecutionPageState extends State<LeadAgentExecutionPage> {
       appBar: AppBar(
         title: Row(
           children: [
-            Icon(lucide.Lucide.Crown, size: 18, color: cs.tertiary),
+            Icon(lucide.Lucide.crown, size: 18, color: cs.tertiary),
             const SizedBox(width: 8),
             Text(widget.agent.name),
           ],
@@ -147,7 +147,7 @@ class _LeadAgentExecutionPageState extends State<LeadAgentExecutionPage> {
                                   color: Colors.white,
                                 ),
                               )
-                            : Icon(lucide.Lucide.Play, size: 16),
+                            : Icon(lucide.Lucide.play, size: 16),
                         label: Text(
                           _isExecuting
                               ? l10n.leadAgentExecuting
@@ -171,7 +171,7 @@ class _LeadAgentExecutionPageState extends State<LeadAgentExecutionPage> {
                         mainAxisSize: MainAxisSize.min,
                         children: [
                           Icon(
-                            lucide.Lucide.Crown,
+                            lucide.Lucide.crown,
                             size: 48,
                             color: cs.onSurface.withValues(alpha: 0.15),
                           ),
@@ -243,32 +243,32 @@ class _StatusBanner extends StatelessWidget {
   Widget build(BuildContext context) {
     final (IconData icon, Color color, String label) = switch (trace.status) {
       ExecutionStatus.planning => (
-        lucide.Lucide.Clipboard,
+        lucide.Lucide.clipboard,
         cs.primary,
         l10n.leadAgentStatusPlanning,
       ),
       ExecutionStatus.delegating => (
-        lucide.Lucide.GitFork,
+        lucide.Lucide.gitFork,
         cs.primary,
         l10n.leadAgentStatusDelegating,
       ),
       ExecutionStatus.executing => (
-        lucide.Lucide.Loader,
+        lucide.Lucide.loader,
         cs.secondary,
         l10n.leadAgentStatusExecuting,
       ),
       ExecutionStatus.reviewing => (
-        lucide.Lucide.ClipboardCheck,
+        lucide.Lucide.clipboardCheck,
         cs.tertiary,
         l10n.leadAgentStatusReviewing,
       ),
       ExecutionStatus.completed => (
-        lucide.Lucide.CheckCircle,
+        lucide.Lucide.checkCircle,
         Colors.green,
         l10n.leadAgentStatusCompleted,
       ),
       ExecutionStatus.failed => (
-        lucide.Lucide.XCircle,
+        lucide.Lucide.xCircle,
         cs.error,
         l10n.leadAgentStatusFailed,
       ),
@@ -327,10 +327,10 @@ class _StepCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final (IconData icon, Color color) = switch (step.type) {
-      StepType.plan => (lucide.Lucide.ClipboardPen, cs.primary),
-      StepType.delegate => (lucide.Lucide.GitFork, cs.secondary),
-      StepType.execute => (lucide.Lucide.Play, cs.primary),
-      StepType.review => (lucide.Lucide.ClipboardCheck, cs.tertiary),
+      StepType.plan => (lucide.Lucide.clipboardPen, cs.primary),
+      StepType.delegate => (lucide.Lucide.gitFork, cs.secondary),
+      StepType.execute => (lucide.Lucide.play, cs.primary),
+      StepType.review => (lucide.Lucide.clipboardCheck, cs.tertiary),
     };
 
     final Color statusColor = switch (step.status) {
@@ -393,10 +393,10 @@ class _StepCard extends StatelessWidget {
             const SizedBox(width: 8),
             Icon(
               switch (step.status) {
-                StepStatus.pending => lucide.Lucide.Circle,
-                StepStatus.inProgress => lucide.Lucide.Loader,
-                StepStatus.completed => lucide.Lucide.CheckCircle,
-                StepStatus.failed => lucide.Lucide.XCircle,
+                StepStatus.pending => lucide.Lucide.circle,
+                StepStatus.inProgress => lucide.Lucide.loader,
+                StepStatus.completed => lucide.Lucide.checkCircle,
+                StepStatus.failed => lucide.Lucide.xCircle,
               },
               size: 16,
               color: statusColor,

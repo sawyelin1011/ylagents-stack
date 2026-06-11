@@ -92,7 +92,7 @@ class _QuickPhrasesPageState extends State<QuickPhrasesPage> {
         leading: Tooltip(
           message: l10n.quickPhraseBackTooltip,
           child: _TactileIconButton(
-            icon: Lucide.ArrowLeft,
+            icon: Lucide.arrowLeft,
             color: Theme.of(context).colorScheme.onSurface,
             size: 22,
             onTap: () => Navigator.of(context).maybePop(),
@@ -107,7 +107,7 @@ class _QuickPhrasesPageState extends State<QuickPhrasesPage> {
           Tooltip(
             message: l10n.quickPhraseAddTooltip,
             child: _TactileIconButton(
-              icon: Lucide.Plus,
+              icon: Lucide.plus,
               color: Theme.of(context).colorScheme.onSurface,
               size: 22,
               onTap: () => _showAddEditSheet(),
@@ -122,7 +122,7 @@ class _QuickPhrasesPageState extends State<QuickPhrasesPage> {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   Icon(
-                    Lucide.Zap,
+                    Lucide.zap,
                     size: 64,
                     color: cs.onSurface.withValues(alpha: 0.3),
                   ),
@@ -202,7 +202,7 @@ class _QuickPhrasesPageState extends State<QuickPhrasesPage> {
                                     mainAxisSize: MainAxisSize.min,
                                     children: [
                                       Icon(
-                                        Lucide.Trash2,
+                                        Lucide.trash2,
                                         color: cs.error,
                                         size: 18,
                                       ),
@@ -254,7 +254,7 @@ class _QuickPhrasesPageState extends State<QuickPhrasesPage> {
                                           Row(
                                             children: [
                                               Icon(
-                                                Lucide.Zap,
+                                                Lucide.zap,
                                                 size: 18,
                                                 color: cs.primary,
                                               ),
@@ -292,7 +292,7 @@ class _QuickPhrasesPageState extends State<QuickPhrasesPage> {
                                     ),
                                     const SizedBox(width: 8),
                                     Icon(
-                                      Lucide.ChevronRight,
+                                      Lucide.chevronRight,
                                       size: 16,
                                       color: Theme.of(context)
                                           .colorScheme

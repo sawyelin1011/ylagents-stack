@@ -112,7 +112,7 @@ class _AssistantRegexTabState extends State<AssistantRegexTab> {
             mainAxisSize: MainAxisSize.min,
             children: [
               Icon(
-                Lucide.Wand2,
+                Lucide.wand2,
                 size: 64,
                 color: cs.primary.withValues(alpha: 0.6),
               ),
@@ -143,7 +143,7 @@ class _AssistantRegexTabState extends State<AssistantRegexTab> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      Icon(Lucide.Plus, size: 18, color: cs.primary),
+                      Icon(Lucide.plus, size: 18, color: cs.primary),
                       const SizedBox(width: 8),
                       Text(
                         l10n.assistantEditAddRegexButton,
@@ -204,7 +204,7 @@ class _AssistantRegexTabState extends State<AssistantRegexTab> {
           bottom: 60,
           child: Center(
             child: _GlassCircleButton(
-              icon: Lucide.Plus,
+              icon: Lucide.plus,
               color: cs.primary,
               onTap: () => _addOrEdit(),
             ),
@@ -351,7 +351,7 @@ class _AssistantRegexDesktopPaneState extends State<AssistantRegexDesktopPane> {
                   child: Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      Icon(Lucide.Plus, size: 16, color: cs.primary),
+                      Icon(Lucide.plus, size: 16, color: cs.primary),
                       const SizedBox(width: 6),
                       Text(
                         l10n.assistantEditAddRegexButton,
@@ -521,7 +521,7 @@ class _RegexRuleCardState extends State<_RegexRuleCard> {
                       child: Row(
                         mainAxisSize: MainAxisSize.min,
                         children: [
-                          Icon(Lucide.Trash2, size: 16, color: cs.error),
+                          Icon(Lucide.trash2, size: 16, color: cs.error),
                           const SizedBox(width: 6),
                           Text(
                             l10n.assistantRegexDeleteButton,
@@ -763,7 +763,7 @@ Future<_RegexFormData?> _showRegexBottomSheet(
                         child: Row(
                           children: [
                             IosIconButton(
-                              icon: Lucide.X,
+                              icon: Lucide.x,
                               size: 20,
                               minSize: 44,
                               onTap: () => Navigator.of(ctx).maybePop(),
@@ -1000,7 +1000,7 @@ Future<_RegexFormData?> _showRegexDialog(
                               ),
                             ),
                             IosIconButton(
-                              icon: Lucide.X,
+                              icon: Lucide.x,
                               size: 18,
                               padding: const EdgeInsets.all(8),
                               onTap: () => Navigator.of(ctx).maybePop(),

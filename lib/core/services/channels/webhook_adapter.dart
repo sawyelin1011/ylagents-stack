@@ -4,7 +4,7 @@ import 'dart:math';
 import 'package:crypto/crypto.dart';
 import 'package:http/http.dart' as http;
 
-import '../models/agent_channel.dart';
+import '../../models/agent_channel.dart';
 import 'channel_adapter.dart';
 
 /// Adapter for REST webhook channels.

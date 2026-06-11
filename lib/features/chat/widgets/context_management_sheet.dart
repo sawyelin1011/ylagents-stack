@@ -65,7 +65,7 @@ class ContextManagementSheet extends StatelessWidget {
           ),
           const SizedBox(height: 8),
           _OptionRow(
-            icon: Lucide.Eraser,
+            icon: Lucide.eraser,
             label: clearLabel ?? l10n.bottomToolsSheetClearContext,
             description: l10n.clearContextDesc,
             onTap: () {

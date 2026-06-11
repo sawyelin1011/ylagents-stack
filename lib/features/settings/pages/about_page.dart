@@ -109,7 +109,7 @@ class _AboutPageState extends State<AboutPage> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      Icon(Lucide.Sparkles, size: 28, color: cs.primary),
+                      Icon(Lucide.sparkles, size: 28, color: cs.primary),
                       const SizedBox(height: 16),
                       Expanded(
                         child: SingleChildScrollView(
@@ -155,7 +155,7 @@ class _AboutPageState extends State<AboutPage> {
                                           child: Padding(
                                             padding: const EdgeInsets.all(6),
                                             child: Icon(
-                                              Lucide.FolderOpen,
+                                              Lucide.folderOpen,
                                               size: 20,
                                               color: cs.primary,
                                             ),
@@ -225,7 +225,7 @@ class _AboutPageState extends State<AboutPage> {
                                           child: Padding(
                                             padding: const EdgeInsets.all(6),
                                             child: Icon(
-                                              Lucide.FolderOpen,
+                                              Lucide.folderOpen,
                                               size: 20,
                                               color: cs.primary,
                                             ),
@@ -298,7 +298,7 @@ class _AboutPageState extends State<AboutPage> {
         leading: Tooltip(
           message: l10n.settingsPageBackButton,
           child: _TactileIconButton(
-            icon: Lucide.ArrowLeft,
+            icon: Lucide.arrowLeft,
             color: cs.onSurface,
             size: 22,
             onTap: () => Navigator.of(context).maybePop(),
@@ -377,7 +377,7 @@ class _AboutPageState extends State<AboutPage> {
               // Version (tap 7x to unlock easter egg) — logic unchanged
               _iosNavRow(
                 context,
-                icon: Lucide.Code,
+                icon: Lucide.code,
                 label: l10n.aboutPageVersion,
                 detailBuilder: (_) => Text(
                   _version.isEmpty ? '...' : '$_version / $_buildNumber',
@@ -387,7 +387,7 @@ class _AboutPageState extends State<AboutPage> {
               _iosDivider(context),
               _iosNavRow(
                 context,
-                icon: Lucide.Phone,
+                icon: Lucide.phone,
                 label: l10n.aboutPageSystem,
                 detailBuilder: (_) =>
                     Text(_systemInfo.isEmpty ? '...' : _systemInfo),
@@ -396,7 +396,7 @@ class _AboutPageState extends State<AboutPage> {
               _iosDivider(context),
               _iosNavRow(
                 context,
-                icon: Lucide.Earth,
+                icon: Lucide.earth,
                 label: l10n.aboutPageWebsite,
                 onTap: () async {
                   final uri = Uri.parse('https://kelivo.psycheas.top/');
@@ -415,7 +415,7 @@ class _AboutPageState extends State<AboutPage> {
               _iosDivider(context),
               _iosNavRow(
                 context,
-                icon: Lucide.FileText,
+                icon: Lucide.fileText,
                 label: l10n.aboutPageLicense,
                 onTap: () => _openUrl(
                   'https://github.com/Chevey339/kelivo/blob/master/LICENSE',
@@ -618,7 +618,7 @@ Widget _iosNavRow(
                       ),
                     ),
                   ),
-                if (interactive) Icon(Lucide.ChevronRight, size: 16, color: c),
+                if (interactive) Icon(Lucide.chevronRight, size: 16, color: c),
               ],
             ),
           );
@@ -692,7 +692,7 @@ Widget _iosNavRowSvgLeading(
                       ),
                     ),
                   ),
-                if (interactive) Icon(Lucide.ChevronRight, size: 16, color: c),
+                if (interactive) Icon(Lucide.chevronRight, size: 16, color: c),
               ],
             ),
           );

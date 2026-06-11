@@ -250,7 +250,7 @@ class _PromptTabState extends State<_PromptTab> {
                   ),
                 ),
                 IosIconButton(
-                  icon: Lucide.Maximize2,
+                  icon: Lucide.maximize2,
                   size: 20,
                   padding: const EdgeInsets.all(8),
                   minSize: 38,
@@ -479,7 +479,7 @@ class _PromptTabState extends State<_PromptTab> {
           runSpacing: 8,
           children: [
             _HoverPillButton(
-              icon: Lucide.User,
+              icon: Lucide.user,
               color: cs.primary,
               label: l10n.assistantEditPresetAddUser,
               onTap: () {
@@ -502,7 +502,7 @@ class _PromptTabState extends State<_PromptTab> {
               },
             ),
             _HoverPillButton(
-              icon: Lucide.Bot,
+              icon: Lucide.bot,
               color: cs.secondary,
               label: l10n.assistantEditPresetAddAssistant,
               onTap: () {
@@ -812,7 +812,7 @@ class _PresetMessageCardState extends State<_PresetMessageCard> {
     final borderColor = _hover
         ? cs.primary.withValues(alpha: isDark ? 0.35 : 0.45)
         : cs.outlineVariant.withValues(alpha: isDark ? 0.12 : 0.08);
-    final icon = widget.role == 'assistant' ? Lucide.Bot : Lucide.User;
+    final icon = widget.role == 'assistant' ? Lucide.bot : Lucide.user;
     final badgeColor = widget.role == 'assistant' ? cs.secondary : cs.primary;
 
     final card = Container(
@@ -843,9 +843,9 @@ class _PresetMessageCardState extends State<_PresetMessageCard> {
             ),
           ),
           const SizedBox(width: 8),
-          _HoverIconButton(icon: Lucide.Settings2, onTap: widget.onEdit),
+          _HoverIconButton(icon: Lucide.settings2, onTap: widget.onEdit),
           const SizedBox(width: 4),
-          _HoverIconButton(icon: Lucide.Trash2, onTap: widget.onDelete),
+          _HoverIconButton(icon: Lucide.trash2, onTap: widget.onDelete),
         ],
       ),
     );
@@ -1309,7 +1309,7 @@ Future<void> _showEditPresetDialog(
                     ),
                     IconButton(
                       tooltip: MaterialLocalizations.of(ctx).closeButtonTooltip,
-                      icon: const Icon(Lucide.X, size: 18),
+                      icon: const Icon(Lucide.x, size: 18),
                       color: cs.onSurface,
                       onPressed: () => Navigator.of(ctx).maybePop(),
                     ),
@@ -1385,7 +1385,7 @@ Future<void> _showEditPresetDialog(
             children: [
               Row(
                 children: [
-                  Icon(Lucide.MessageSquare, size: 18, color: cs.primary),
+                  Icon(Lucide.messageSquare, size: 18, color: cs.primary),
                   const SizedBox(width: 8),
                   Expanded(
                     child: Text(
@@ -1431,7 +1431,7 @@ Future<void> _showEditPresetDialog(
                   Expanded(
                     child: _IosButton(
                       label: l10n.assistantEditEmojiDialogCancel,
-                      icon: Lucide.X,
+                      icon: Lucide.x,
                       onTap: () => Navigator.of(ctx).pop(),
                       filled: false,
                       neutral: true,
@@ -1441,7 +1441,7 @@ Future<void> _showEditPresetDialog(
                   Expanded(
                     child: _IosButton(
                       label: l10n.assistantEditEmojiDialogSave,
-                      icon: Lucide.Check,
+                      icon: Lucide.check,
                       onTap: () async {
                         await save();
                         if (context.mounted) Navigator.of(ctx).pop();

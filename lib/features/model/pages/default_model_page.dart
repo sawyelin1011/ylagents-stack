@@ -27,7 +27,7 @@ class DefaultModelPage extends StatelessWidget {
         leading: Tooltip(
           message: l10n.defaultModelPageBackTooltip,
           child: _TactileIconButton(
-            icon: Lucide.ArrowLeft,
+            icon: Lucide.arrowLeft,
             color: cs.onSurface,
             size: 22,
             onTap: () => Navigator.of(context).maybePop(),
@@ -40,7 +40,7 @@ class DefaultModelPage extends StatelessWidget {
         padding: const EdgeInsets.fromLTRB(16, 16, 16, 24),
         children: [
           _ModelCard(
-            icon: Lucide.MessageCircle,
+            icon: Lucide.messageCircle,
             title: l10n.defaultModelPageChatModelTitle,
             subtitle: l10n.defaultModelPageChatModelSubtitle,
             modelProvider: settings.currentModelProvider,
@@ -57,7 +57,7 @@ class DefaultModelPage extends StatelessWidget {
           ),
           const SizedBox(height: 16),
           _ModelCard(
-            icon: Lucide.NotebookTabs,
+            icon: Lucide.notebookTabs,
             title: l10n.defaultModelPageTitleModelTitle,
             subtitle: l10n.defaultModelPageTitleModelSubtitle,
             modelProvider: settings.titleModelProvider,
@@ -77,7 +77,7 @@ class DefaultModelPage extends StatelessWidget {
           ),
           const SizedBox(height: 16),
           _ModelCard(
-            icon: Lucide.FileText,
+            icon: Lucide.fileText,
             title: l10n.defaultModelPageSummaryModelTitle,
             subtitle: l10n.defaultModelPageSummaryModelSubtitle,
             modelProvider: settings.summaryModelProvider,
@@ -98,7 +98,7 @@ class DefaultModelPage extends StatelessWidget {
           ),
           const SizedBox(height: 16),
           _ModelCard(
-            icon: Lucide.MessagesSquare,
+            icon: Lucide.messagesSquare,
             title: l10n.defaultModelPageSuggestionModelTitle,
             subtitle: l10n.defaultModelPageSuggestionModelSubtitle,
             modelProvider: settings.suggestionModelProvider,
@@ -143,7 +143,7 @@ class DefaultModelPage extends StatelessWidget {
           ),
           const SizedBox(height: 16),
           _ModelCard(
-            icon: Lucide.Languages,
+            icon: Lucide.languages,
             title: l10n.defaultModelPageTranslateModelTitle,
             subtitle: l10n.defaultModelPageTranslateModelSubtitle,
             modelProvider: settings.translateModelProvider,
@@ -163,7 +163,7 @@ class DefaultModelPage extends StatelessWidget {
           ),
           const SizedBox(height: 16),
           _ModelCard(
-            icon: Lucide.Eye,
+            icon: Lucide.eye,
             title: l10n.defaultModelPageOcrModelTitle,
             subtitle: l10n.defaultModelPageOcrModelSubtitle,
             modelProvider: settings.ocrModelProvider,
@@ -867,7 +867,7 @@ class _ModelCard extends StatelessWidget {
                   Tooltip(
                     message: l10n.defaultModelPageResetDefault,
                     child: _TactileIconButton(
-                      icon: Lucide.RotateCcw,
+                      icon: Lucide.rotateCcw,
                       color: cs.onSurface,
                       size: 20,
                       onTap: onReset!,
@@ -875,7 +875,7 @@ class _ModelCard extends StatelessWidget {
                   ),
                 if (configAction != null)
                   _TactileIconButton(
-                    icon: Lucide.Settings,
+                    icon: Lucide.settings,
                     color: cs.onSurface,
                     size: 20,
                     onTap: configAction!,

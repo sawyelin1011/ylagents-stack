@@ -101,7 +101,7 @@ class _AssistantMcpSheet extends StatelessWidget {
                         Positioned(
                           left: 0,
                           child: IosIconButton(
-                            icon: Lucide.X,
+                            icon: Lucide.x,
                             size: 18,
                             minSize: 34,
                             padding: const EdgeInsets.all(8),
@@ -119,7 +119,7 @@ class _AssistantMcpSheet extends StatelessWidget {
                         Positioned(
                           right: 0,
                           child: IosIconButton(
-                            icon: Lucide.Check,
+                            icon: Lucide.check,
                             size: 18,
                             minSize: 34,
                             padding: const EdgeInsets.all(8),
@@ -191,7 +191,7 @@ class _AssistantMcpSheet extends StatelessWidget {
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
                                 Icon(
-                                  Lucide.Hammer,
+                                  Lucide.hammer,
                                   size: 18,
                                   color: cs.primary,
                                 ),

@@ -81,7 +81,7 @@ class _SponsorPageState extends State<SponsorPage> {
         leading: Tooltip(
           message: l10n.settingsPageBackButton,
           child: _TactileIconButton(
-            icon: Lucide.ArrowLeft,
+            icon: Lucide.arrowLeft,
             color: cs.onSurface,
             size: 22,
             onTap: () => Navigator.of(context).maybePop(),
@@ -98,7 +98,7 @@ class _SponsorPageState extends State<SponsorPage> {
             children: [
               _iosNavRow(
                 context,
-                icon: Lucide.Heart,
+                icon: Lucide.heart,
                 label: l10n.sponsorPageAfdianTitle,
                 onTap: () async {
                   final uri = Uri.parse('https://afdian.com/a/kelivo');
@@ -110,7 +110,7 @@ class _SponsorPageState extends State<SponsorPage> {
               _iosDivider(context),
               _iosNavRow(
                 context,
-                icon: Lucide.Link,
+                icon: Lucide.link,
                 label: l10n.sponsorPageWeChatTitle,
                 onTap: () async {
                   final uri = Uri.parse(wechatQrUrl);
@@ -439,7 +439,7 @@ Widget _iosNavRow(
                       ),
                     ),
                   ),
-                if (interactive) Icon(Lucide.ChevronRight, size: 16, color: c),
+                if (interactive) Icon(Lucide.chevronRight, size: 16, color: c),
               ],
             ),
           );

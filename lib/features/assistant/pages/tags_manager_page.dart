@@ -124,7 +124,7 @@ class _TagsManagerPageState extends State<TagsManagerPage> {
         leading: Padding(
           padding: const EdgeInsets.only(left: 8),
           child: IosIconButton(
-            icon: Lucide.ChevronLeft,
+            icon: Lucide.chevronLeft,
             minSize: 44,
             onTap: () => Navigator.of(context).maybePop(),
           ),
@@ -134,7 +134,7 @@ class _TagsManagerPageState extends State<TagsManagerPage> {
           Padding(
             padding: const EdgeInsets.only(right: 8),
             child: IosIconButton(
-              icon: Lucide.Plus,
+              icon: Lucide.plus,
               minSize: 44,
               onTap: () => _createTag(context),
             ),
@@ -238,9 +238,9 @@ class _MobileTagCard extends StatelessWidget {
                 ),
               ),
             ),
-            iconBtn(Lucide.Pencil, onRename),
+            iconBtn(Lucide.pencil, onRename),
             const SizedBox(width: 4),
-            iconBtn(Lucide.Trash2, onDelete, color: cs.error),
+            iconBtn(Lucide.trash2, onDelete, color: cs.error),
           ],
         ),
       ),

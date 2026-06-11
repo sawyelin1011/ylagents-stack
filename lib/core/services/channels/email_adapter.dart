@@ -4,7 +4,7 @@ import 'dart:io';
 import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:http/http.dart' as http;
 
-import '../models/agent_channel.dart';
+import '../../models/agent_channel.dart';
 import 'channel_adapter.dart';
 
 /// Adapter for Email channels (SMTP outbound).

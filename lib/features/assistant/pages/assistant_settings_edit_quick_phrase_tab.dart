@@ -62,7 +62,7 @@ class _QuickPhraseTab extends StatelessWidget {
                             tooltip: MaterialLocalizations.of(
                               ctx,
                             ).closeButtonTooltip,
-                            icon: const Icon(Lucide.X, size: 18),
+                            icon: const Icon(Lucide.x, size: 18),
                             color: cs.onSurface,
                             onPressed: () => Navigator.of(ctx).maybePop(),
                           ),
@@ -244,7 +244,7 @@ class _QuickPhraseTab extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             children: [
               Icon(
-                Lucide.Zap,
+                Lucide.zap,
                 size: 64,
                 color: cs.primary.withValues(alpha: 0.6),
               ),
@@ -262,7 +262,7 @@ class _QuickPhraseTab extends StatelessWidget {
                 constraints: const BoxConstraints(minWidth: 200),
                 child: _IosButton(
                   label: l10n.assistantEditAddQuickPhraseButton,
-                  icon: Lucide.Plus,
+                  icon: Lucide.plus,
                   filled: true,
                   neutral: false,
                   onTap: () => _showAddEditSheet(context),
@@ -337,7 +337,7 @@ class _QuickPhraseTab extends StatelessWidget {
                                 mainAxisSize: MainAxisSize.min,
                                 children: [
                                   Icon(
-                                    Lucide.Trash2,
+                                    Lucide.trash2,
                                     color: cs.error,
                                     size: 18,
                                   ),
@@ -405,7 +405,7 @@ class _QuickPhraseTab extends StatelessWidget {
                                       ),
                                     ),
                                     Icon(
-                                      Lucide.ChevronRight,
+                                      Lucide.chevronRight,
                                       size: 18,
                                       color: cs.onSurface.withValues(
                                         alpha: 0.4,
@@ -442,7 +442,7 @@ class _QuickPhraseTab extends StatelessWidget {
           bottom: 60,
           child: Center(
             child: _GlassCircleButtonQP(
-              icon: Lucide.Plus,
+              icon: Lucide.plus,
               color: cs.primary,
               onTap: () => _showAddEditSheet(context),
             ),
@@ -682,7 +682,7 @@ class _QuickPhraseEditSheetState extends State<_QuickPhraseEditSheet> {
                           'content': _contentController.text,
                         });
                       },
-                      icon: Lucide.Check,
+                      icon: Lucide.check,
                       filled: true,
                       neutral: false,
                     ),

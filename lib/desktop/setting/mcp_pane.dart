@@ -49,7 +49,7 @@ class DesktopMcpPane extends StatelessWidget {
                       Tooltip(
                         message: l10n.mcpTimeoutSettingsTooltip,
                         child: _SmallIconBtn(
-                          icon: lucide.Lucide.Timer,
+                          icon: lucide.Lucide.timer,
                           onTap: () async {
                             await showDesktopMcpTimeoutDialog(context);
                           },
@@ -57,14 +57,14 @@ class DesktopMcpPane extends StatelessWidget {
                       ),
                       const SizedBox(width: 6),
                       _SmallIconBtn(
-                        icon: lucide.Lucide.Edit,
+                        icon: lucide.Lucide.edit,
                         onTap: () async {
                           await showDesktopMcpJsonEditDialog(context);
                         },
                       ),
                       const SizedBox(width: 6),
                       _SmallIconBtn(
-                        icon: lucide.Lucide.Plus,
+                        icon: lucide.Lucide.plus,
                         onTap: () async {
                           await showDesktopMcpEditDialog(context);
                         },
@@ -291,7 +291,7 @@ class _ServerCardState extends State<_ServerCard> {
                     ),
                     alignment: Alignment.center,
                     child: Icon(
-                      lucide.Lucide.Terminal,
+                      lucide.Lucide.terminal,
                       size: 18,
                       color: cs.primary,
                     ),
@@ -366,7 +366,7 @@ class _ServerCardState extends State<_ServerCard> {
                       Row(
                         children: [
                           Icon(
-                            lucide.Lucide.MessageCircleWarning,
+                            lucide.Lucide.messageCircleWarning,
                             size: 14,
                             color: Colors.red,
                           ),
@@ -394,14 +394,14 @@ class _ServerCardState extends State<_ServerCard> {
                 ),
               ),
               const SizedBox(width: 8),
-              _SmallIconBtn(icon: lucide.Lucide.Settings2, onTap: widget.onTap),
+              _SmallIconBtn(icon: lucide.Lucide.settings2, onTap: widget.onTap),
               const SizedBox(width: 6),
               _SmallIconBtn(
-                icon: lucide.Lucide.RefreshCw,
+                icon: lucide.Lucide.refreshCw,
                 onTap: widget.onReconnect,
               ),
               const SizedBox(width: 6),
-              _SmallIconBtn(icon: lucide.Lucide.Trash2, onTap: widget.onDelete),
+              _SmallIconBtn(icon: lucide.Lucide.trash2, onTap: widget.onDelete),
             ],
           ),
         ),
@@ -497,7 +497,7 @@ Future<void> _showErrorDetails(
                       ),
                     ),
                     _SmallIconBtn(
-                      icon: lucide.Lucide.X,
+                      icon: lucide.Lucide.x,
                       onTap: () => Navigator.of(ctx).maybePop(),
                     ),
                   ],

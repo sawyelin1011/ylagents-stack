@@ -155,7 +155,7 @@ class _ProvidersPageState extends State<ProvidersPage> {
         leading: Tooltip(
           message: l10n.settingsPageBackButton,
           child: _TactileIconButton(
-            icon: Lucide.ArrowLeft,
+            icon: Lucide.arrowLeft,
             color: cs.onSurface,
             size: 22,
             onTap: () => Navigator.of(context).maybePop(),
@@ -168,7 +168,7 @@ class _ProvidersPageState extends State<ProvidersPage> {
                 ? l10n.searchServicesPageDone
                 : l10n.providersPageMultiSelectTooltip,
             child: _TactileIconButton(
-              icon: _selectMode ? Lucide.Check : Lucide.circleDot,
+              icon: _selectMode ? Lucide.check : Lucide.circleDot,
               color: cs.onSurface,
               size: 22,
               onTap: () {
@@ -197,7 +197,7 @@ class _ProvidersPageState extends State<ProvidersPage> {
           Tooltip(
             message: l10n.providersPageAddTooltip,
             child: _TactileIconButton(
-              icon: Lucide.Plus,
+              icon: Lucide.plus,
               color: cs.onSurface,
               size: 22,
               onTap: _handleAddProvider,
@@ -1078,7 +1078,7 @@ class _ProvidersSearchField extends StatelessWidget {
             vertical: 8,
           ),
           prefixIcon: Icon(
-            Lucide.Search,
+            Lucide.search,
             size: 16,
             color: cs.onSurface.withValues(alpha: 0.5),
           ),
@@ -1090,7 +1090,7 @@ class _ProvidersSearchField extends StatelessWidget {
               ? IconButton(
                   onPressed: onClear,
                   icon: Icon(
-                    Lucide.X,
+                    Lucide.x,
                     size: 14,
                     color: cs.onSurface.withValues(alpha: 0.48),
                   ),
@@ -1168,7 +1168,7 @@ class _ProviderGroupHeaderRow extends StatelessWidget {
                 duration: const Duration(milliseconds: 260),
                 curve: Curves.easeOutCubic,
                 child: Icon(
-                  Lucide.ChevronRight,
+                  Lucide.chevronRight,
                   size: 16,
                   color: color.withValues(alpha: 0.75),
                 ),
@@ -1336,7 +1336,7 @@ class _ProviderRow extends StatelessWidget {
                       child: selectMode
                           ? const SizedBox.shrink(key: ValueKey('none'))
                           : Icon(
-                              Lucide.ChevronRight,
+                              Lucide.chevronRight,
                               size: 16,
                               color: color,
                               key: const ValueKey('chev'),
@@ -1411,7 +1411,7 @@ class _SelectionBar extends StatelessWidget {
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     _GlassCircleButton(
-                      icon: Lucide.Trash2,
+                      icon: Lucide.trash2,
                       color: const Color(0xFFFF3B30),
                       semanticLabel: l10n.providersPageDeleteAction,
                       onTap: onDelete,
@@ -1425,14 +1425,14 @@ class _SelectionBar extends StatelessWidget {
                     ),
                     const SizedBox(width: 14),
                     _GlassCircleButton(
-                      icon: Lucide.Folder,
+                      icon: Lucide.folder,
                       color: cs.primary,
                       semanticLabel: l10n.providerGroupsPickerTitle,
                       onTap: onMoveToGroup,
                     ),
                     const SizedBox(width: 14),
                     _GlassCircleButton(
-                      icon: Lucide.Share2,
+                      icon: Lucide.share2,
                       color: cs.primary,
                       semanticLabel: l10n.providersPageExportAction,
                       onTap: onExport,
@@ -1646,7 +1646,7 @@ Future<void> _showMultiExportSheet(
                 children: [
                   Expanded(
                     child: IosTileButton(
-                      icon: Lucide.Copy,
+                      icon: Lucide.copy,
                       label: l10n.providersPageExportCopyButton,
                       onTap: () {
                         Clipboard.setData(ClipboardData(text: text));
@@ -1661,7 +1661,7 @@ Future<void> _showMultiExportSheet(
                   const SizedBox(width: 10),
                   Expanded(
                     child: IosTileButton(
-                      icon: Lucide.Share2,
+                      icon: Lucide.share2,
                       label: l10n.providersPageExportShareButton,
                       onTap: () async {
                         final rect = shareAnchorRect(ctx);

@@ -95,7 +95,7 @@ class McpPage extends StatelessWidget {
                       Expanded(
                         child: OutlinedButton.icon(
                           onPressed: () => Navigator.of(ctx).maybePop(),
-                          icon: Icon(Lucide.X, size: 16, color: cs.primary),
+                          icon: Icon(Lucide.x, size: 16, color: cs.primary),
                           label: Text(
                             l10n.mcpPageClose,
                             style: TextStyle(color: cs.primary),
@@ -125,7 +125,7 @@ class McpPage extends StatelessWidget {
                               Navigator.of(ctx).pop();
                             }
                           },
-                          icon: const Icon(Lucide.RefreshCw, size: 18),
+                          icon: const Icon(Lucide.refreshCw, size: 18),
                           label: Text(l10n.mcpPageReconnect),
                           style: ElevatedButton.styleFrom(
                             minimumSize: const Size.fromHeight(44),
@@ -153,7 +153,7 @@ class McpPage extends StatelessWidget {
         leading: Tooltip(
           message: l10n.mcpPageBackTooltip,
           child: _TactileIconButton(
-            icon: Lucide.ArrowLeft,
+            icon: Lucide.arrowLeft,
             color: cs.onSurface,
             size: 22,
             onTap: () => Navigator.of(context).maybePop(),
@@ -164,7 +164,7 @@ class McpPage extends StatelessWidget {
           Tooltip(
             message: l10n.mcpTimeoutSettingsTooltip,
             child: _TactileIconButton(
-              icon: Lucide.Timer,
+              icon: Lucide.timer,
               color: cs.onSurface,
               size: 22,
               onTap: () async {
@@ -176,7 +176,7 @@ class McpPage extends StatelessWidget {
           Tooltip(
             message: AppLocalizations.of(context)!.mcpJsonEditButtonTooltip,
             child: _TactileIconButton(
-              icon: Lucide.Edit,
+              icon: Lucide.edit,
               color: cs.onSurface,
               size: 22,
               onTap: () async {
@@ -188,7 +188,7 @@ class McpPage extends StatelessWidget {
           Tooltip(
             message: l10n.mcpPageAddMcpTooltip,
             child: _TactileIconButton(
-              icon: Lucide.Plus,
+              icon: Lucide.plus,
               color: cs.onSurface,
               size: 22,
               onTap: () async {
@@ -290,7 +290,7 @@ class McpPage extends StatelessWidget {
                                       ),
                                       alignment: Alignment.center,
                                       child: Icon(
-                                        Lucide.Terminal,
+                                        Lucide.terminal,
                                         size: 20,
                                         color: cs.primary,
                                       ),
@@ -402,7 +402,7 @@ class McpPage extends StatelessWidget {
                                         Row(
                                           children: [
                                             Icon(
-                                              Lucide.MessageCircleWarning,
+                                              Lucide.messageCircleWarning,
                                               size: 14,
                                               color: Colors.red,
                                             ),
@@ -431,7 +431,7 @@ class McpPage extends StatelessWidget {
                                   ),
                                 ),
                                 const SizedBox(width: 8),
-                                Icon(Lucide.ChevronRight, size: 16, color: c),
+                                Icon(Lucide.chevronRight, size: 16, color: c),
                               ],
                             ),
                           ),
@@ -478,7 +478,7 @@ class McpPage extends StatelessWidget {
                                 mainAxisSize: MainAxisSize.min,
                                 children: [
                                   Icon(
-                                    Lucide.Trash2,
+                                    Lucide.trash2,
                                     color: cs.error,
                                     size: 18,
                                   ),

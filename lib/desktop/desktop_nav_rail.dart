@@ -74,56 +74,56 @@ class DesktopNavRail extends StatelessWidget {
           const SizedBox(height: 12),
           _NavButton(
             tooltip: l10n.desktopNavDashboardTooltip,
-            icon: lucide.Lucide.ChartColumnBig,
+            icon: lucide.Lucide.chartColumnBig,
             isActive: activeTab == NavTab.dashboard,
             onTap: onTapDashboard,
           ),
           const SizedBox(height: 8),
           _NavButton(
             tooltip: l10n.desktopNavTasksTooltip,
-            icon: lucide.Lucide.CheckSquare,
+            icon: lucide.Lucide.checkSquare,
             isActive: activeTab == NavTab.tasks,
             onTap: onTapTasks,
           ),
           const SizedBox(height: 8),
           _NavButton(
             tooltip: l10n.desktopNavAgentsTooltip,
-            icon: lucide.Lucide.Bot,
+            icon: lucide.Lucide.bot,
             isActive: activeTab == NavTab.agents,
             onTap: onTapAgents,
           ),
           const SizedBox(height: 8),
           _NavButton(
             tooltip: l10n.desktopNavKnowledgeTooltip,
-            icon: lucide.Lucide.BookOpen,
+            icon: lucide.Lucide.bookOpen,
             isActive: activeTab == NavTab.knowledge,
             onTap: onTapKnowledge,
           ),
           const SizedBox(height: 8),
           _NavButton(
             tooltip: l10n.desktopNavChannelsTooltip,
-            icon: lucide.Lucide.Network,
+            icon: lucide.Lucide.network,
             isActive: activeTab == NavTab.channels,
             onTap: onTapChannels,
           ),
           const SizedBox(height: 8),
           _NavButton(
             tooltip: l10n.desktopNavSyncTooltip,
-            icon: lucide.Lucide.RefreshCw,
+            icon: lucide.Lucide.refreshCw,
             isActive: activeTab == NavTab.sync,
             onTap: onTapSync,
           ),
           const SizedBox(height: 8),
           _NavButton(
             tooltip: l10n.desktopNavRuntimeTooltip,
-            icon: lucide.Lucide.Server,
+            icon: lucide.Lucide.server,
             isActive: activeTab == NavTab.runtime,
             onTap: onTapRuntime,
           ),
           const SizedBox(height: 8),
           _NavButton(
             tooltip: l10n.desktopNavChatTooltip,
-            icon: lucide.Lucide.MessageCircle,
+            icon: lucide.Lucide.messageCircle,
             isActive: activeTab == NavTab.chats,
             onTap: onTapChats,
           ),
@@ -131,7 +131,7 @@ class DesktopNavRail extends StatelessWidget {
           if (onTapMore != null)
             _NavButton(
               tooltip: l10n.desktopNavMoreTooltip,
-              icon: lucide.Lucide.Ellipsis,
+              icon: lucide.Lucide.ellipsis,
               isActive: false,
               onTap: onTapMore!,
             ),
@@ -140,7 +140,7 @@ class DesktopNavRail extends StatelessWidget {
           const SizedBox(height: 8),
           _NavButton(
             tooltip: l10n.desktopNavSettingsTooltip,
-            icon: lucide.Lucide.Settings,
+            icon: lucide.Lucide.settings,
             isActive: activeTab == NavTab.settings,
             onTap: onTapSettings,
           ),
@@ -345,11 +345,11 @@ class _ThemeCycleButtonState extends State<_ThemeCycleButton> {
   IconData _iconFor(ThemeMode mode) {
     switch (mode) {
       case ThemeMode.light:
-        return lucide.Lucide.Sun;
+        return lucide.Lucide.sun;
       case ThemeMode.dark:
-        return lucide.Lucide.Moon;
+        return lucide.Lucide.moon;
       case ThemeMode.system:
-        return lucide.Lucide.Monitor;
+        return lucide.Lucide.monitor;
     }
   }
 

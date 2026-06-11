@@ -832,7 +832,7 @@ class _ModelSelectSheetState extends State<_ModelSelectSheet> {
                           decoration: InputDecoration(
                             hintText: l10n.modelSelectSheetSearchHint,
                             prefixIcon: Icon(
-                              Lucide.Search,
+                              Lucide.search,
                               size: 18,
                               color: cs.onSurface.withValues(
                                 alpha: _isLoading ? 0.35 : 0.6,
@@ -848,7 +848,7 @@ class _ModelSelectSheetState extends State<_ModelSelectSheet> {
                                 ? ExcludeSemantics(
                                     child: IconButton(
                                       icon: Icon(
-                                        Lucide.Bookmark,
+                                        Lucide.bookmark,
                                         size: 18,
                                         color: cs.onSurface.withValues(
                                           alpha: _isLoading ? 0.35 : 0.7,
@@ -1936,7 +1936,7 @@ class _DesktopModelSelectDialogBodyState
                                   ? Colors.white10
                                   : const Color(0xFFF2F3F5),
                               prefixIcon: Icon(
-                                Lucide.Search,
+                                Lucide.search,
                                 size: 16,
                                 color: cs.onSurface.withValues(alpha: 0.7),
                               ),
@@ -1951,7 +1951,7 @@ class _DesktopModelSelectDialogBodyState
                                           l10n.modelSelectSheetFavoritesSection,
                                       child: IconButton(
                                         icon: Icon(
-                                          Lucide.Bookmark,
+                                          Lucide.bookmark,
                                           size: 16,
                                           color: cs.onSurface.withValues(
                                             alpha: 0.7,
@@ -2199,7 +2199,7 @@ class _DesktopModelSelectDialogBodyState
       child: Row(
         children: [
           Icon(
-            Lucide.Bookmark,
+            Lucide.bookmark,
             size: 14,
             color: cs.onSurface.withValues(alpha: 0.6),
           ),
@@ -2253,7 +2253,7 @@ class _DesktopModelSelectDialogBodyState
             Tooltip(
               message: AppLocalizations.of(context)!.settingsPageTitle,
               child: IosIconButton(
-                icon: Lucide.Settings2,
+                icon: Lucide.settings2,
                 size: 16,
                 color: cs.onSurface.withValues(alpha: 0.8),
                 onTap: () async {

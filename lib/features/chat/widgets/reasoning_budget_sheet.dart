@@ -128,7 +128,7 @@ class _ReasoningBudgetSheetState extends State<_ReasoningBudgetSheet> {
               ),
               trailing ??
                   (active
-                      ? Icon(Lucide.Check, size: 18, color: cs.primary)
+                      ? Icon(Lucide.check, size: 18, color: cs.primary)
                       : const SizedBox(width: 18)),
             ],
           ),
@@ -292,7 +292,7 @@ class _ReasoningBudgetSheetState extends State<_ReasoningBudgetSheet> {
                       _tile(
                         l10n.reasoningBudgetSheetCustomLabel,
                         0,
-                        icon: Lucide.Hash,
+                        icon: Lucide.hash,
                         active: customActive,
                         onTap: () => _openCustomBudget(),
                         trailing: customActive
@@ -309,14 +309,14 @@ class _ReasoningBudgetSheetState extends State<_ReasoningBudgetSheet> {
                                   ),
                                   const SizedBox(width: 8),
                                   Icon(
-                                    Lucide.Check,
+                                    Lucide.check,
                                     size: 18,
                                     color: cs.primary,
                                   ),
                                 ],
                               )
                             : Icon(
-                                Lucide.ChevronRight,
+                                Lucide.chevronRight,
                                 size: 18,
                                 color: cs.onSurface.withValues(alpha: 0.45),
                               ),

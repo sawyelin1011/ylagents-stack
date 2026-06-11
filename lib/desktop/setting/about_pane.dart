@@ -151,19 +151,19 @@ class _DesktopAboutPaneState extends State<DesktopAboutPane> {
                 title: l10n.settingsPageAbout,
                 children: [
                   _DeskInfoRow(
-                    icon: lucide.Lucide.Code,
+                    icon: lucide.Lucide.code,
                     label: l10n.aboutPageVersion,
                     detail: versionDetail,
                   ),
                   const _DeskRowDivider(),
                   _DeskInfoRow(
-                    icon: lucide.Lucide.Phone,
+                    icon: lucide.Lucide.phone,
                     label: l10n.aboutPageSystem,
                     detail: systemDetail,
                   ),
                   const _DeskRowDivider(),
                   _DeskNavRow(
-                    icon: lucide.Lucide.Earth,
+                    icon: lucide.Lucide.earth,
                     label: l10n.aboutPageWebsite,
                     onTap: () => _openUrl('https://kelivo.psycheas.top/'),
                   ),
@@ -176,7 +176,7 @@ class _DesktopAboutPaneState extends State<DesktopAboutPane> {
                   ),
                   const _DeskRowDivider(),
                   _DeskNavRow(
-                    icon: lucide.Lucide.FileText,
+                    icon: lucide.Lucide.fileText,
                     label: l10n.aboutPageLicense,
                     onTap: () => _openUrl(
                       'https://github.com/Chevey339/kelivo/blob/master/LICENSE',
@@ -197,7 +197,7 @@ class _DesktopAboutPaneState extends State<DesktopAboutPane> {
                   const _DeskRowDivider(),
                   // Donation item (desktop): mirrors mobile "Sponsor"
                   _DeskNavRow(
-                    icon: lucide.Lucide.Heart,
+                    icon: lucide.Lucide.heart,
                     label: l10n.settingsPageSponsor,
                     onTap: () => _showSponsorDesktopDialog(context),
                   ),
@@ -485,7 +485,7 @@ class _DeskNavRowState extends State<_DeskNavRow> {
                 ),
               ),
               Icon(
-                lucide.Lucide.ChevronRight,
+                lucide.Lucide.chevronRight,
                 size: 16,
                 color: cs.onSurface.withValues(alpha: 0.6),
               ),
@@ -560,7 +560,7 @@ class _DeskNavRowSvgState extends State<_DeskNavRowSvg> {
                 ),
               ),
               Icon(
-                lucide.Lucide.ChevronRight,
+                lucide.Lucide.chevronRight,
                 size: 16,
                 color: cs.onSurface.withValues(alpha: 0.6),
               ),
@@ -623,7 +623,7 @@ Future<void> _showSponsorDesktopDialog(BuildContext context) async {
                     IconButton(
                       tooltip: l10n.mcpPageClose,
                       icon: Icon(
-                        lucide.Lucide.X,
+                        lucide.Lucide.x,
                         size: 18,
                         color: cs.onSurface,
                       ),
@@ -638,13 +638,13 @@ Future<void> _showSponsorDesktopDialog(BuildContext context) async {
                   title: l10n.sponsorPageMethodsSectionTitle,
                   children: [
                     _DeskNavRow(
-                      icon: lucide.Lucide.Heart,
+                      icon: lucide.Lucide.heart,
                       label: l10n.sponsorPageAfdianTitle,
                       onTap: () => open(afdianUrl),
                     ),
                     const _DeskRowDivider(),
                     _DeskNavRow(
-                      icon: lucide.Lucide.Link,
+                      icon: lucide.Lucide.link,
                       label: l10n.sponsorPageWeChatTitle,
                       onTap: () => open(wechatQrUrl),
                     ),
@@ -684,7 +684,7 @@ Future<void> _showSponsorDesktopDialog(BuildContext context) async {
                               color: cs.surface,
                               alignment: Alignment.center,
                               child: Icon(
-                                lucide.Lucide.ImageOff,
+                                lucide.Lucide.imageOff,
                                 color: cs.onSurface.withValues(alpha: 0.5),
                               ),
                             ),

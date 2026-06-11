@@ -46,7 +46,7 @@ class TasksPage extends StatelessWidget {
             // Title row with create button
             Row(
               children: [
-                Icon(lucide.Lucide.CheckSquare, size: 24, color: cs.primary),
+                Icon(lucide.Lucide.checkSquare, size: 24, color: cs.primary),
                 const SizedBox(width: 12),
                 Text(
                   l10n.desktopNavTasksTooltip,
@@ -58,7 +58,7 @@ class TasksPage extends StatelessWidget {
                 ),
                 const Spacer(),
                 FilledButton.icon(
-                  icon: const Icon(lucide.Lucide.Plus, size: 16),
+                  icon: const Icon(lucide.Lucide.plus, size: 16),
                   label: Text(l10n.tasksPageCreateTask),
                   onPressed: () => _showCreateTaskDialog(
                     context,
@@ -97,7 +97,7 @@ class TasksPage extends StatelessWidget {
                         mainAxisSize: MainAxisSize.min,
                         children: [
                           Icon(
-                            lucide.Lucide.CheckSquare,
+                            lucide.Lucide.checkSquare,
                             size: 48,
                             color: cs.onSurface.withValues(alpha: 0.2),
                           ),
@@ -110,7 +110,7 @@ class TasksPage extends StatelessWidget {
                           ),
                           const SizedBox(height: 16),
                           OutlinedButton.icon(
-                            icon: const Icon(lucide.Lucide.Plus, size: 16),
+                            icon: const Icon(lucide.Lucide.plus, size: 16),
                             label: Text(l10n.tasksPageCreateTask),
                             onPressed: () => _showCreateTaskDialog(
                               context,
@@ -246,17 +246,17 @@ class TasksPage extends StatelessWidget {
   IconData _statusIcon(TaskStatus status) {
     switch (status) {
       case TaskStatus.backlog:
-        return lucide.Lucide.List;
+        return lucide.Lucide.list;
       case TaskStatus.todo:
-        return lucide.Lucide.Circle;
+        return lucide.Lucide.circle;
       case TaskStatus.inProgress:
-        return lucide.Lucide.Play;
+        return lucide.Lucide.play;
       case TaskStatus.review:
-        return lucide.Lucide.Search;
+        return lucide.Lucide.search;
       case TaskStatus.completed:
-        return lucide.Lucide.CheckCircle;
+        return lucide.Lucide.checkCircle;
       case TaskStatus.cancelled:
-        return lucide.Lucide.XCircle;
+        return lucide.Lucide.xCircle;
     }
   }
 
@@ -468,7 +468,7 @@ class _TaskCard extends StatelessWidget {
                   // Assignee
                   if (assigneeName != null)
                     _FooterChip(
-                      icon: lucide.Lucide.User,
+                      icon: lucide.Lucide.user,
                       label: assigneeName,
                       cs: cs,
                     ),
@@ -476,7 +476,7 @@ class _TaskCard extends StatelessWidget {
                   // Due date
                   if (task.dueDate != null)
                     _FooterChip(
-                      icon: lucide.Lucide.Calendar,
+                      icon: lucide.Lucide.calendar,
                       label: _formatDate(task.dueDate!),
                       cs: cs,
                     ),
@@ -484,7 +484,7 @@ class _TaskCard extends StatelessWidget {
                   // Move status menu
                   PopupMenuButton<TaskStatus>(
                     icon: Icon(
-                      lucide.Lucide.ChevronDown,
+                      lucide.Lucide.chevronDown,
                       size: 14,
                       color: cs.onSurface.withValues(alpha: 0.4),
                     ),

@@ -53,7 +53,7 @@ class _McpTab extends StatelessWidget {
                 children: [
                   SizedBox(
                     width: 36,
-                    child: Icon(Lucide.Hammer, size: 20, color: cs.primary),
+                    child: Icon(Lucide.hammer, size: 20, color: cs.primary),
                   ),
                   const SizedBox(width: 12),
                   Expanded(
@@ -81,7 +81,7 @@ class _McpTab extends StatelessWidget {
                   ),
                   if (servers.isNotEmpty) ...[
                     IosIconButton(
-                      icon: Lucide.X,
+                      icon: Lucide.x,
                       size: 18,
                       minSize: 34,
                       padding: const EdgeInsets.all(8),
@@ -92,7 +92,7 @@ class _McpTab extends StatelessWidget {
                     ),
                     const SizedBox(width: 2),
                     IosIconButton(
-                      icon: Lucide.Check,
+                      icon: Lucide.check,
                       size: 18,
                       minSize: 34,
                       padding: const EdgeInsets.all(8),
@@ -182,7 +182,7 @@ class _McpServerRow extends StatelessWidget {
                 children: [
                   SizedBox(
                     width: 36,
-                    child: Icon(Lucide.Hammer, size: 20, color: cs.primary),
+                    child: Icon(Lucide.hammer, size: 20, color: cs.primary),
                   ),
                   const SizedBox(width: 12),
                   Expanded(

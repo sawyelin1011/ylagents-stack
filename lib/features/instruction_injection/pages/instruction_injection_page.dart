@@ -195,7 +195,7 @@ class _InstructionInjectionPageState extends State<InstructionInjectionPage> {
         leading: Tooltip(
           message: l10n.instructionInjectionBackTooltip,
           child: _TactileIconButton(
-            icon: Lucide.ArrowLeft,
+            icon: Lucide.arrowLeft,
             color: Theme.of(context).colorScheme.onSurface,
             size: 22,
             onTap: () => Navigator.of(context).maybePop(),
@@ -206,7 +206,7 @@ class _InstructionInjectionPageState extends State<InstructionInjectionPage> {
           Tooltip(
             message: l10n.instructionInjectionImportTooltip,
             child: _TactileIconButton(
-              icon: Lucide.Import,
+              icon: Lucide.import,
               color: Theme.of(context).colorScheme.onSurface,
               size: 22,
               onTap: _importFromFiles,
@@ -215,7 +215,7 @@ class _InstructionInjectionPageState extends State<InstructionInjectionPage> {
           Tooltip(
             message: l10n.instructionInjectionAddTooltip,
             child: _TactileIconButton(
-              icon: Lucide.Plus,
+              icon: Lucide.plus,
               color: Theme.of(context).colorScheme.onSurface,
               size: 22,
               onTap: () => _showAddEditSheet(),
@@ -230,7 +230,7 @@ class _InstructionInjectionPageState extends State<InstructionInjectionPage> {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   Icon(
-                    Lucide.Layers,
+                    Lucide.layers,
                     size: 64,
                     color: cs.onSurface.withValues(alpha: 0.3),
                   ),
@@ -346,7 +346,7 @@ class _InstructionInjectionPageState extends State<InstructionInjectionPage> {
                                                       MainAxisSize.min,
                                                   children: [
                                                     Icon(
-                                                      Lucide.Trash2,
+                                                      Lucide.trash2,
                                                       color: cs.error,
                                                       size: 18,
                                                     ),
@@ -413,7 +413,7 @@ class _InstructionInjectionPageState extends State<InstructionInjectionPage> {
                                                         Row(
                                                           children: [
                                                             Icon(
-                                                              Lucide.Layers,
+                                                              Lucide.layers,
                                                               size: 18,
                                                               color: cs.primary,
                                                             ),
@@ -464,7 +464,7 @@ class _InstructionInjectionPageState extends State<InstructionInjectionPage> {
                                                   ),
                                                   const SizedBox(width: 8),
                                                   Icon(
-                                                    Lucide.ChevronRight,
+                                                    Lucide.chevronRight,
                                                     size: 16,
                                                     color: Theme.of(context)
                                                         .colorScheme
@@ -522,7 +522,7 @@ class _GroupHeader extends StatelessWidget {
                   duration: const Duration(milliseconds: 260),
                   curve: Curves.easeOutCubic,
                   child: Icon(
-                    Lucide.ChevronRight,
+                    Lucide.chevronRight,
                     size: 16,
                     color: textBase.withValues(alpha: 0.7),
                   ),

@@ -33,7 +33,7 @@ class SelectCopyPage extends StatelessWidget {
         actions: [
           TextButton.icon(
             onPressed: () => _copyAll(context),
-            icon: Icon(Lucide.Copy, size: 18, color: cs.primary),
+            icon: Icon(Lucide.copy, size: 18, color: cs.primary),
             label: Text(
               l10n.selectCopyPageCopyAll,
               style: TextStyle(

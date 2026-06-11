@@ -375,7 +375,7 @@ class _ModelEditDialogBodyState extends State<_ModelEditDialogBody>
                           onPressed: () =>
                               Navigator.of(context).maybePop(false),
                           icon: Icon(
-                            lucide.Lucide.X,
+                            lucide.Lucide.x,
                             size: 20,
                             color: cs.onSurface.withValues(alpha: 0.9),
                           ),
@@ -445,8 +445,8 @@ class _ModelEditDialogBodyState extends State<_ModelEditDialogBody>
                       const Spacer(),
                       _PrimaryDeskButton(
                         icon: widget.isNew
-                            ? lucide.Lucide.Plus
-                            : lucide.Lucide.Check,
+                            ? lucide.Lucide.plus
+                            : lucide.Lucide.check,
                         label: widget.isNew
                             ? l10n.modelDetailSheetAddButton
                             : l10n.modelDetailSheetConfirmButton,
@@ -522,7 +522,7 @@ class _ModelEditDialogBodyState extends State<_ModelEditDialogBody>
                             );
                           },
                           tooltip: l10n.shareProviderSheetCopyButton,
-                          icon: lucide.Lucide.Copy,
+                          icon: lucide.Lucide.copy,
                           color: cs.onSurface.withValues(alpha: 0.9),
                           hoverColor: cs.onSurface.withValues(alpha: 0.08),
                           pressedColor: cs.onSurface.withValues(alpha: 0.12),
@@ -1146,7 +1146,7 @@ class _OutlinedAddButtonState extends State<_OutlinedAddButton> {
           child: Row(
             mainAxisSize: MainAxisSize.min,
             children: [
-              Icon(lucide.Lucide.Plus, size: 16, color: cs.primary),
+              Icon(lucide.Lucide.plus, size: 16, color: cs.primary),
               const SizedBox(width: 6),
               Text(widget.label, style: TextStyle(color: cs.primary)),
             ],
@@ -1255,7 +1255,7 @@ class _HeaderRow extends StatelessWidget {
           ),
           IconButton(
             icon: Icon(
-              lucide.Lucide.Trash2,
+              lucide.Lucide.trash2,
               size: 18,
               color: cs.onSurface.withValues(alpha: 0.8),
             ),
@@ -1322,7 +1322,7 @@ class _BodyRow extends StatelessWidget {
               ),
               IconButton(
                 icon: Icon(
-                  lucide.Lucide.Trash2,
+                  lucide.Lucide.trash2,
                   size: 18,
                   color: cs.onSurface.withValues(alpha: 0.8),
                 ),

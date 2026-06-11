@@ -24,14 +24,14 @@ class SelectionToolbar extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       children: [
         GlassCircleButtonSmall(
-          icon: Lucide.X,
+          icon: Lucide.x,
           color: cs.onSurface,
           onTap: onCancel,
           semanticLabel: AppLocalizations.of(context)!.homePageCancel,
         ),
         const SizedBox(width: 14),
         GlassCircleButtonSmall(
-          icon: Lucide.Check,
+          icon: Lucide.check,
           color: cs.primary,
           onTap: onConfirm,
           semanticLabel: AppLocalizations.of(context)!.homePageDone,

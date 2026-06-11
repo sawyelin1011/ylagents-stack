@@ -341,7 +341,7 @@ class _WorldBookPageState extends State<WorldBookPage> {
         leading: Tooltip(
           message: l10n.settingsPageBackButton,
           child: IosIconButton(
-            icon: Lucide.ArrowLeft,
+            icon: Lucide.arrowLeft,
             minSize: 44,
             size: 22,
             onTap: () => Navigator.of(context).maybePop(),
@@ -364,7 +364,7 @@ class _WorldBookPageState extends State<WorldBookPage> {
           Tooltip(
             message: l10n.worldBookAdd,
             child: IosIconButton(
-              icon: Lucide.Plus,
+              icon: Lucide.plus,
               minSize: 44,
               size: 22,
               onTap: () async {
@@ -384,7 +384,7 @@ class _WorldBookPageState extends State<WorldBookPage> {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   Icon(
-                    Lucide.BookOpen,
+                    Lucide.bookOpen,
                     size: 64,
                     color: cs.onSurface.withValues(alpha: 0.3),
                   ),
@@ -628,13 +628,13 @@ class _WorldBookSection extends StatelessWidget {
                   _IosSectionCard(
                     children: [
                       actionRow(
-                        icon: Lucide.Settings2,
+                        icon: Lucide.settings2,
                         label: localL10n.worldBookEditEntry,
                         onTap: () => Navigator.of(ctx).pop(_EntryAction.edit),
                       ),
                       divider(),
                       actionRow(
-                        icon: Lucide.Trash2,
+                        icon: Lucide.trash2,
                         label: localL10n.worldBookDeleteEntry,
                         color: localCs.error,
                         onTap: () => Navigator.of(ctx).pop(_EntryAction.delete),
@@ -645,7 +645,7 @@ class _WorldBookSection extends StatelessWidget {
                   _IosSectionCard(
                     children: [
                       actionRow(
-                        icon: Lucide.X,
+                        icon: Lucide.x,
                         label: localL10n.worldBookCancel,
                         onTap: () => Navigator.of(ctx).pop(_EntryAction.cancel),
                       ),
@@ -701,7 +701,7 @@ class _WorldBookSection extends StatelessWidget {
                         duration: const Duration(milliseconds: 240),
                         curve: Curves.easeOutCubic,
                         child: Icon(
-                          Lucide.ChevronRight,
+                          Lucide.chevronRight,
                           size: 16,
                           color: cs.onSurface.withValues(alpha: 0.62),
                         ),
@@ -755,22 +755,22 @@ class _WorldBookSection extends StatelessWidget {
             ),
           ),
           _HeaderIconButton(
-            icon: Lucide.Plus,
+            icon: Lucide.plus,
             tooltip: l10n.worldBookAddEntry,
             onTap: onAddEntry,
           ),
           _HeaderIconButton(
-            icon: Lucide.Share2,
+            icon: Lucide.share2,
             tooltip: l10n.worldBookExport,
             onTap: onExport,
           ),
           _HeaderIconButton(
-            icon: Lucide.Settings2,
+            icon: Lucide.settings2,
             tooltip: l10n.worldBookConfig,
             onTap: onConfig,
           ),
           _HeaderIconButton(
-            icon: Lucide.Trash2,
+            icon: Lucide.trash2,
             tooltip: l10n.worldBookDelete,
             onTap: onDelete,
             color: cs.error,
@@ -782,7 +782,7 @@ class _WorldBookSection extends StatelessWidget {
     final children = <Widget>[];
     if (entries.isEmpty) {
       children.add(
-        _IosEntryRow(icon: Lucide.ListTree, label: l10n.worldBookNoEntriesHint),
+        _IosEntryRow(icon: Lucide.listTree, label: l10n.worldBookNoEntriesHint),
       );
     } else {
       children.add(
@@ -825,11 +825,11 @@ class _WorldBookSection extends StatelessWidget {
               label: entryTitle,
               detailText: detail,
               enabled: entry.enabled,
-              icon: Lucide.Bookmark,
+              icon: Lucide.bookmark,
               onTap: () => onEditEntry(entry),
               onLongPress: () => showEntryActions(entry),
               leadingBuilder: (color) {
-                final icon = Icon(Lucide.Bookmark, size: 20, color: color);
+                final icon = Icon(Lucide.bookmark, size: 20, color: color);
                 if (!canReorder) return icon;
                 final handle = isDesktop
                     ? ReorderableDragStartListener(index: index, child: icon)
@@ -949,7 +949,7 @@ class _IosEntryRow extends StatelessWidget {
                 ),
               ),
             if (onTap != null)
-              Icon(Lucide.ChevronRight, size: 16, color: baseColor),
+              Icon(Lucide.chevronRight, size: 16, color: baseColor),
           ],
         ),
       ),
@@ -1456,7 +1456,7 @@ class _WorldBookEntryEditSheetState extends State<_WorldBookEntryEditSheet> {
               ),
               const SizedBox(width: 6),
               Icon(
-                Lucide.ChevronRight,
+                Lucide.chevronRight,
                 size: 16,
                 color: cs.onSurface.withValues(alpha: 0.55),
               ),
@@ -1500,7 +1500,7 @@ class _WorldBookEntryEditSheetState extends State<_WorldBookEntryEditSheet> {
               ),
             ),
             IosIconButton(
-              icon: Lucide.X,
+              icon: Lucide.x,
               size: 14,
               padding: const EdgeInsets.all(6),
               color: cs.onSurface.withValues(alpha: 0.65),
@@ -1550,7 +1550,7 @@ class _WorldBookEntryEditSheetState extends State<_WorldBookEntryEditSheet> {
                       ),
                     ),
                     if (selected)
-                      Icon(Lucide.Check, size: 18, color: localCs.primary),
+                      Icon(Lucide.check, size: 18, color: localCs.primary),
                   ],
                 ),
               ),
@@ -1645,7 +1645,7 @@ class _WorldBookEntryEditSheetState extends State<_WorldBookEntryEditSheet> {
                       ),
                     ),
                     if (selected)
-                      Icon(Lucide.Check, size: 18, color: localCs.primary),
+                      Icon(Lucide.check, size: 18, color: localCs.primary),
                   ],
                 ),
               ),
@@ -1881,7 +1881,7 @@ class _WorldBookEntryEditSheetState extends State<_WorldBookEntryEditSheet> {
                                               },
                                         child: Center(
                                           child: Icon(
-                                            Lucide.Plus,
+                                            Lucide.plus,
                                             size: 18,
                                             color: cs.onSurface.withValues(
                                               alpha:

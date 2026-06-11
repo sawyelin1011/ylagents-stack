@@ -100,7 +100,7 @@ class _ChatHistoryDesktopDialogState extends State<_ChatHistoryDesktopDialog> {
                         tooltip: l10n.chatHistoryPageSearchTooltip,
                         icon: AnimatedIconSwap(
                           child: Icon(
-                            _searching ? Lucide.X : Lucide.Search,
+                            _searching ? Lucide.x : Lucide.search,
                             key: ValueKey(_searching ? 'x' : 'search'),
                           ),
                         ),
@@ -113,7 +113,7 @@ class _ChatHistoryDesktopDialogState extends State<_ChatHistoryDesktopDialog> {
                       ),
                       IconButton(
                         tooltip: l10n.chatHistoryPageDeleteAllTooltip,
-                        icon: const Icon(Lucide.Trash2),
+                        icon: const Icon(Lucide.trash2),
                         onPressed: () async {
                           final svc = context.read<ChatService>();
                           final confirm = await showDialog<bool>(
@@ -165,7 +165,7 @@ class _ChatHistoryDesktopDialogState extends State<_ChatHistoryDesktopDialog> {
                       ),
                       IconButton(
                         tooltip: l10n.sideDrawerCancel,
-                        icon: const Icon(Lucide.X),
+                        icon: const Icon(Lucide.x),
                         onPressed: () => Navigator.of(context).maybePop(),
                       ),
                     ],
@@ -216,14 +216,14 @@ class _ChatHistoryDesktopDialogState extends State<_ChatHistoryDesktopDialog> {
                                 ),
                               ),
                               prefixIcon: Icon(
-                                Lucide.Search,
+                                Lucide.search,
                                 color: cs.onSurface.withValues(alpha: 0.7),
                                 size: 18,
                               ),
                               suffixIcon: (q.isNotEmpty)
                                   ? IconButton(
                                       icon: Icon(
-                                        Lucide.X,
+                                        Lucide.x,
                                         size: 16,
                                         color: cs.onSurface.withValues(
                                           alpha: 0.7,
@@ -353,7 +353,7 @@ class _ConversationTileDesktopState extends State<_ConversationTileDesktop> {
                       shape: BoxShape.circle,
                     ),
                     child: Icon(
-                      Lucide.MessageSquare,
+                      Lucide.messageSquare,
                       size: 16,
                       color: cs.primary.withValues(alpha: 0.9),
                     ),
@@ -377,7 +377,7 @@ class _ConversationTileDesktopState extends State<_ConversationTileDesktop> {
                         Row(
                           children: [
                             Icon(
-                              Lucide.History,
+                              Lucide.history,
                               size: 14,
                               color: cs.onSurface.withValues(alpha: 0.6),
                             ),
@@ -443,7 +443,7 @@ class _PinButtonDesktop extends StatelessWidget {
           children: [
             AnimatedIconSwap(
               child: Icon(
-                pinned ? Lucide.PinOff : Lucide.Pin,
+                pinned ? Lucide.pinOff : Lucide.pin,
                 key: ValueKey(pinned ? 'pinOff' : 'pin'),
                 size: 16,
                 color: pinned

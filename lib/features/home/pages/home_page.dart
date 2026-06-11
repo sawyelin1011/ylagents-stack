@@ -99,7 +99,7 @@ class _TemporaryConversationEmptyState extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             children: [
               Icon(
-                Lucide.HatGlasses,
+                Lucide.hatGlasses,
                 size: 72,
                 color: cs.onSurface.withValues(alpha: 0.42),
               ),

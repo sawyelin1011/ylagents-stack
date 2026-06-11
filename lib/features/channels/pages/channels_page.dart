@@ -6,6 +6,7 @@ import '../../../core/models/agent_channel.dart';
 import '../../../core/providers/channel_provider.dart';
 import '../../../core/providers/agent_provider.dart';
 import '../../../core/providers/workspace_provider.dart';
+import '../../../core/services/channels/channel_adapter.dart';
 import '../../../core/services/channels/channel_registry.dart';
 import '../../../icons/lucide_adapter.dart' as lucide;
 import '../../../l10n/app_localizations.dart';
@@ -36,7 +37,7 @@ class _ChannelsPageState extends State<ChannelsPage> {
       appBar: AppBar(
         title: Row(
           children: [
-            Icon(lucide.Lucide.Cable, size: 18, color: cs.primary),
+            Icon(lucide.Lucide.cable, size: 18, color: cs.primary),
             const SizedBox(width: 8),
             Text(l10n.channelsPageTitle),
           ],
@@ -45,7 +46,7 @@ class _ChannelsPageState extends State<ChannelsPage> {
           Padding(
             padding: const EdgeInsets.only(right: 8),
             child: FilledButton.icon(
-              icon: const Icon(lucide.Lucide.Plus, size: 14),
+              icon: const Icon(lucide.Lucide.plus, size: 14),
               label: Text(l10n.channelsPageAddChannel),
               onPressed: () => _showCreateDialog(context, l10n, cs),
               style: FilledButton.styleFrom(
@@ -72,7 +73,7 @@ class _ChannelsPageState extends State<ChannelsPage> {
         mainAxisSize: MainAxisSize.min,
         children: [
           Icon(
-            lucide.Lucide.Cable,
+            lucide.Lucide.cable,
             size: 56,
             color: cs.onSurface.withValues(alpha: 0.15),
           ),
@@ -349,19 +350,19 @@ class _ChannelsPageState extends State<ChannelsPage> {
   IconData _iconForName(String name) {
     switch (name) {
       case 'Send':
-        return lucide.Lucide.Send;
+        return lucide.Lucide.send;
       case 'MessageCircle':
-        return lucide.Lucide.MessageCircle;
+        return lucide.Lucide.messageCircle;
       case 'MessageSquare':
-        return lucide.Lucide.MessageSquare;
+        return lucide.Lucide.messageSquare;
       case 'Mail':
-        return lucide.Lucide.Mail;
+        return lucide.Lucide.mail;
       case 'Webhook':
-        return lucide.Lucide.Webhook;
+        return lucide.Lucide.webhook;
       case 'Globe':
-        return lucide.Lucide.Globe;
+        return lucide.Lucide.globe;
       default:
-        return lucide.Lucide.Plug;
+        return lucide.Lucide.plug;
     }
   }
 }
@@ -455,7 +456,7 @@ class _ChannelCard extends StatelessWidget {
                 const SizedBox(width: 8),
                 PopupMenuButton<String>(
                   icon: Icon(
-                    lucide.Lucide.MoreVertical,
+                    lucide.Lucide.moreVertical,
                     size: 16,
                     color: cs.onSurface.withValues(alpha: 0.6),
                   ),
@@ -499,8 +500,8 @@ class _ChannelCard extends StatelessWidget {
                         children: [
                           Icon(
                             channel.enabled
-                                ? lucide.Lucide.ToggleLeft
-                                : lucide.Lucide.ToggleRight,
+                                ? lucide.Lucide.toggleLeft
+                                : lucide.Lucide.toggleRight,
                             size: 14,
                           ),
                           const SizedBox(width: 8),
@@ -516,7 +517,7 @@ class _ChannelCard extends StatelessWidget {
                       value: 'delete',
                       child: Row(
                         children: [
-                          Icon(lucide.Lucide.Trash, size: 14, color: cs.error),
+                          Icon(lucide.Lucide.trash, size: 14, color: cs.error),
                           const SizedBox(width: 8),
                           Text(
                             l10n.channelsPageDelete,
@@ -534,7 +535,7 @@ class _ChannelCard extends StatelessWidget {
               Row(
                 children: [
                   Icon(
-                    lucide.Lucide.Bot,
+                    lucide.Lucide.bot,
                     size: 12,
                     color: cs.onSurface.withValues(alpha: 0.4),
                   ),
@@ -558,19 +559,19 @@ class _ChannelCard extends StatelessWidget {
     final iconName = ChannelRegistry.iconNameFor(type);
     switch (iconName) {
       case 'Send':
-        return lucide.Lucide.Send;
+        return lucide.Lucide.send;
       case 'MessageCircle':
-        return lucide.Lucide.MessageCircle;
+        return lucide.Lucide.messageCircle;
       case 'MessageSquare':
-        return lucide.Lucide.MessageSquare;
+        return lucide.Lucide.messageSquare;
       case 'Mail':
-        return lucide.Lucide.Mail;
+        return lucide.Lucide.mail;
       case 'Webhook':
-        return lucide.Lucide.Webhook;
+        return lucide.Lucide.webhook;
       case 'Globe':
-        return lucide.Lucide.Globe;
+        return lucide.Lucide.globe;
       default:
-        return lucide.Lucide.Plug;
+        return lucide.Lucide.plug;
     }
   }
 }

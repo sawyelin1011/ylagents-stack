@@ -2152,7 +2152,7 @@ class _CollapsibleCodeBlockState extends State<_CollapsibleCodeBlock> {
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     _CodeBlockIconAction(
-                      icon: Lucide.Download,
+                      icon: Lucide.download,
                       label: AppLocalizations.of(
                         context,
                       )!.codeBlockSaveAsButton,
@@ -2160,7 +2160,7 @@ class _CollapsibleCodeBlockState extends State<_CollapsibleCodeBlock> {
                     ),
                     const SizedBox(width: 16),
                     _CodeBlockIconAction(
-                      icon: Lucide.Copy,
+                      icon: Lucide.copy,
                       label: AppLocalizations.of(
                         context,
                       )!.shareProviderSheetCopyButton,
@@ -2169,7 +2169,7 @@ class _CollapsibleCodeBlockState extends State<_CollapsibleCodeBlock> {
                     if (_isHtml(widget.language)) ...[
                       const SizedBox(width: 16),
                       _CodeBlockIconAction(
-                        icon: Lucide.Eye,
+                        icon: Lucide.eye,
                         label: AppLocalizations.of(
                           context,
                         )!.codeBlockPreviewButton,
@@ -2567,7 +2567,7 @@ class _CodeBlockCollapseIcon extends StatelessWidget {
               children: [
                 const SizedBox(width: 4),
                 Icon(
-                  Lucide.ChevronRight,
+                  Lucide.chevronRight,
                   size: 14,
                   color: cs.onSurfaceVariant.withValues(alpha: 0.56),
                 ),
@@ -3308,7 +3308,7 @@ class _MarkdownTableToolbar extends StatelessWidget {
           Tooltip(
             message: copyLabel,
             child: IosIconButton(
-              icon: Lucide.Copy,
+              icon: Lucide.copy,
               semanticLabel: copyLabel,
               onTap: onCopy,
               onLongPress: onCopyImage,
@@ -3321,7 +3321,7 @@ class _MarkdownTableToolbar extends StatelessWidget {
           Tooltip(
             message: imageActionLabel,
             child: IosIconButton(
-              icon: Lucide.ImageDown,
+              icon: Lucide.imageDown,
               semanticLabel: imageActionLabel,
               onTap: onImageAction,
               onLongPress: onExportImage,
@@ -3334,7 +3334,7 @@ class _MarkdownTableToolbar extends StatelessWidget {
           Tooltip(
             message: exportLabel,
             child: IosIconButton(
-              icon: Lucide.Download,
+              icon: Lucide.download,
               semanticLabel: exportLabel,
               onTap: onExport,
               size: 15,
@@ -3687,14 +3687,14 @@ class _MermaidBlockState extends State<_MermaidBlock> {
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         _MermaidTextAction(
-                          icon: Lucide.Copy,
+                          icon: Lucide.copy,
                           label: l10n.shareProviderSheetCopyButton,
                           colors: mermaidColors,
                           onTap: () => _copyMermaidCode(context),
                         ),
                         const SizedBox(width: 4),
                         _MermaidTextAction(
-                          icon: Lucide.Download,
+                          icon: Lucide.download,
                           label: l10n.mermaidExportPng,
                           colors: mermaidColors,
                           enabled:
@@ -3705,7 +3705,7 @@ class _MermaidBlockState extends State<_MermaidBlock> {
                         ),
                         const SizedBox(width: 4),
                         _MermaidTextAction(
-                          icon: Lucide.Maximize2,
+                          icon: Lucide.maximize2,
                           label: l10n.mermaidFullScreen,
                           colors: mermaidColors,
                           enabled:
@@ -4337,7 +4337,7 @@ class _MermaidLoadingViewState extends State<_MermaidLoadingView>
           RotationTransition(
             turns: _controller,
             child: Icon(
-              Lucide.Loader,
+              Lucide.loader,
               size: 24,
               color: widget.colors.textSecondary,
             ),
@@ -4369,7 +4369,7 @@ class _MermaidErrorView extends StatelessWidget {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Icon(Lucide.ImageOff, size: 48, color: colors.textTertiary),
+          Icon(Lucide.imageOff, size: 48, color: colors.textTertiary),
           const SizedBox(height: 8),
           Text(
             l10n.mermaidGenerationFailedHint,
@@ -5355,7 +5355,7 @@ class _DetailsHtmlBlockState extends State<_DetailsHtmlBlock> {
                   duration: const Duration(milliseconds: 160),
                   curve: Curves.easeOutCubic,
                   child: Icon(
-                    Lucide.ChevronRight,
+                    Lucide.chevronRight,
                     size: 15,
                     color: cs.onSurfaceVariant.withValues(alpha: 0.78),
                   ),

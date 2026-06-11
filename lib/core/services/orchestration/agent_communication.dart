@@ -14,7 +14,7 @@ class AgentMessage {
   final Map<String, dynamic>? metadata;
   final DateTime timestamp;
 
-  const AgentMessage({
+  AgentMessage({
     required this.fromAgentId,
     required this.fromAgentName,
     required this.toAgentId,

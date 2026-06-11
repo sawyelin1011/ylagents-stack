@@ -34,7 +34,7 @@ class SyncRecord {
   final DateTime startedAt;
   final DateTime completedAt;
 
-  const SyncRecord({
+  SyncRecord({
     required this.id,
     required this.deviceId,
     this.workspaceId = '',

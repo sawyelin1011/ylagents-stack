@@ -105,13 +105,13 @@ class _DesktopInstructionInjectionPaneState
                         ),
                       ),
                       _SmallIconBtn(
-                        icon: lucide.Lucide.Import,
+                        icon: lucide.Lucide.import,
                         onTap: _importFromFiles,
                         tooltip: l10n.instructionInjectionImportTooltip,
                       ),
                       const SizedBox(width: 6),
                       _SmallIconBtn(
-                        icon: lucide.Lucide.Plus,
+                        icon: lucide.Lucide.plus,
                         onTap: () => _showAddEditDialog(context),
                         tooltip: l10n.instructionInjectionAddTooltip,
                       ),
@@ -129,7 +129,7 @@ class _DesktopInstructionInjectionPaneState
                         mainAxisSize: MainAxisSize.min,
                         children: [
                           Icon(
-                            lucide.Lucide.Layers,
+                            lucide.Lucide.layers,
                             size: 56,
                             color: cs.onSurface.withValues(alpha: 0.28),
                           ),
@@ -368,7 +368,7 @@ class _InstructionInjectionCardState extends State<_InstructionInjectionCard> {
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Icon(lucide.Lucide.Layers, size: 20, color: cs.primary),
+              Icon(lucide.Lucide.layers, size: 20, color: cs.primary),
               const SizedBox(width: 10),
               Expanded(
                 child: Column(
@@ -399,11 +399,11 @@ class _InstructionInjectionCardState extends State<_InstructionInjectionCard> {
               ),
               const SizedBox(width: 8),
               _SmallIconBtn(
-                icon: lucide.Lucide.Settings2,
+                icon: lucide.Lucide.settings2,
                 onTap: widget.onEdit,
               ),
               const SizedBox(width: 6),
-              _SmallIconBtn(icon: lucide.Lucide.Trash2, onTap: widget.onDelete),
+              _SmallIconBtn(icon: lucide.Lucide.trash2, onTap: widget.onDelete),
             ],
           ),
         ),
@@ -481,7 +481,7 @@ class _InstructionInjectionEditDialogState
                         ),
                       ),
                       _SmallIconBtn(
-                        icon: lucide.Lucide.X,
+                        icon: lucide.Lucide.x,
                         onTap: () => Navigator.of(context).maybePop(),
                       ),
                     ],
@@ -742,7 +742,7 @@ class _GroupHeaderState extends State<_GroupHeader> {
                       duration: const Duration(milliseconds: 220),
                       curve: Curves.easeOutCubic,
                       child: Icon(
-                        lucide.Lucide.ChevronRight,
+                        lucide.Lucide.chevronRight,
                         size: 16,
                         color: cs.onSurface.withValues(alpha: 0.7),
                       ),

@@ -48,7 +48,7 @@ class _LocalToolsTab extends StatelessWidget {
             ),
             _iosDivider(context),
             _LocalToolRow(
-              icon: Lucide.Clipboard,
+              icon: Lucide.clipboard,
               title: l10n.assistantEditLocalToolClipboardTitle,
               subtitle: l10n.assistantEditLocalToolClipboardSubtitle,
               enabled: clipboardEnabled,
@@ -56,7 +56,7 @@ class _LocalToolsTab extends StatelessWidget {
             ),
             _iosDivider(context),
             _LocalToolRow(
-              icon: Lucide.Volume2,
+              icon: Lucide.volume2,
               title: l10n.assistantEditLocalToolTextToSpeechTitle,
               subtitle: l10n.assistantEditLocalToolTextToSpeechSubtitle,
               enabled: textToSpeechEnabled,
@@ -65,7 +65,7 @@ class _LocalToolsTab extends StatelessWidget {
             ),
             _iosDivider(context),
             _LocalToolRow(
-              icon: Lucide.MessageCircleQuestionMark,
+              icon: Lucide.messageCircleQuestionMark,
               title: l10n.assistantEditLocalToolAskUserTitle,
               subtitle: l10n.assistantEditLocalToolAskUserSubtitle,
               enabled: askUserEnabled,

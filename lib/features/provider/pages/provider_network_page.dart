@@ -59,7 +59,7 @@ class _ProviderNetworkPageState extends State<ProviderNetworkPage> {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-          icon: Icon(Lucide.ArrowLeft, size: 22),
+          icon: Icon(Lucide.arrowLeft, size: 22),
           onPressed: () => Navigator.of(context).maybePop(),
         ),
         title: Text(l10n.providerDetailPageNetworkTab),

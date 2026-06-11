@@ -360,7 +360,7 @@ class HomeDesktopScaffold extends StatelessWidget {
                       key: ValueKey('brand:$brandAsset'),
                     ))
             : Icon(
-                Lucide.Boxes,
+                Lucide.boxes,
                 size: 16,
                 color: cs.onSurface.withValues(alpha: 0.7),
                 key: const ValueKey('brand:default'),
@@ -559,8 +559,8 @@ class HomeDesktopScaffold extends StatelessWidget {
             ? AppLocalizations.of(context)!.temporaryChatToggleTooltip
             : AppLocalizations.of(context)!.titleForLocale,
         icon: canToggleTemporaryConversation && !temporaryConversationEnabled
-            ? Lucide.MessageCircleDashed
-            : Lucide.MessageCirclePlus,
+            ? Lucide.messageCircleDashed
+            : Lucide.messageCirclePlus,
         builder: canToggleTemporaryConversation && temporaryConversationEnabled
             ? (color) => SvgPicture.asset(
                 'assets/icons/temporary_chat_checked.svg',
@@ -732,7 +732,7 @@ class DesktopScrollNavigationButtons extends StatelessWidget {
                     padding: EdgeInsets.only(right: 16, bottom: bottomOffset),
                     child: _DesktopScrollButton(
                       isDark: isDark,
-                      icon: Lucide.ChevronDown,
+                      icon: Lucide.chevronDown,
                       onTap: onScrollToBottom,
                     ),
                   ),
@@ -764,7 +764,7 @@ class DesktopScrollNavigationButtons extends StatelessWidget {
                     ),
                     child: _DesktopScrollButton(
                       isDark: isDark,
-                      icon: Lucide.ChevronUp,
+                      icon: Lucide.chevronUp,
                       onTap: onScrollToPreviousQuestion,
                     ),
                   ),
@@ -869,14 +869,14 @@ class DesktopSelectionToolbarOverlay extends StatelessWidget {
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     _DesktopGlassCircleButton(
-                      icon: Lucide.X,
+                      icon: Lucide.x,
                       color: cs.onSurface,
                       onTap: onCancel,
                       semanticLabel: l10n.homePageCancel,
                     ),
                     const SizedBox(width: 14),
                     _DesktopGlassCircleButton(
-                      icon: Lucide.Check,
+                      icon: Lucide.check,
                       color: cs.primary,
                       onTap: onConfirm,
                       semanticLabel: l10n.homePageDone,

@@ -143,14 +143,14 @@ class _PlantUMLBlockState extends State<PlantUMLBlock> {
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         _PlantUMLTextAction(
-                          icon: Lucide.Copy,
+                          icon: Lucide.copy,
                           label: l10n.shareProviderSheetCopyButton,
                           colors: colors,
                           onTap: () => _copyPlantUMLCode(context),
                         ),
                         const SizedBox(width: 4),
                         _PlantUMLTextAction(
-                          icon: Lucide.Link,
+                          icon: Lucide.link,
                           label: l10n.mermaidPreviewOpen,
                           colors: colors,
                           onTap: () => _openPlantUMLPreview(context),
@@ -458,7 +458,7 @@ class _PlantUMLErrorView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: Icon(Lucide.ImageOff, size: 48, color: colors.textTertiary),
+      child: Icon(Lucide.imageOff, size: 48, color: colors.textTertiary),
     );
   }
 }

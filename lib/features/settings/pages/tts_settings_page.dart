@@ -23,7 +23,7 @@ class TtsSettingsPage extends StatelessWidget {
         leading: Tooltip(
           message: l10n.ttsServicesPageBackButton,
           child: IosIconButton(
-            icon: Lucide.ArrowLeft,
+            icon: Lucide.arrowLeft,
             color: cs.onSurface,
             size: 22,
             minSize: 44,
@@ -219,7 +219,7 @@ class _TextSelectionRow extends StatelessWidget {
             AnimatedOpacity(
               opacity: selected ? 1 : 0,
               duration: const Duration(milliseconds: 160),
-              child: Icon(Lucide.Check, size: 18, color: cs.primary),
+              child: Icon(Lucide.check, size: 18, color: cs.primary),
             ),
           ],
         ),

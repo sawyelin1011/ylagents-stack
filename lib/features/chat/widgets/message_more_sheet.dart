@@ -63,7 +63,7 @@ Future<MessageMoreAction?> showMessageMoreSheet(
     globalPosition: DesktopMenuAnchor.positionOrCenter(context),
     items: [
       DesktopContextMenuItem(
-        icon: Lucide.TextSelect,
+        icon: Lucide.textSelect,
         label: l10n.messageMoreSheetSelectCopy,
         onTap: () {
           afterClose = () async {
@@ -73,7 +73,7 @@ Future<MessageMoreAction?> showMessageMoreSheet(
         },
       ),
       DesktopContextMenuItem(
-        icon: Lucide.BookOpenText,
+        icon: Lucide.bookOpenText,
         label: l10n.messageMoreSheetRenderWebView,
         onTap: () {
           afterClose = () async {
@@ -103,35 +103,35 @@ Future<MessageMoreAction?> showMessageMoreSheet(
       ),
       if (message.role != 'user')
         DesktopContextMenuItem(
-          icon: Lucide.Pencil,
+          icon: Lucide.pencil,
           label: l10n.messageMoreSheetEdit,
           onTap: () {
             selected = MessageMoreAction.edit;
           },
         ),
       DesktopContextMenuItem(
-        icon: Lucide.Share,
+        icon: Lucide.share,
         label: l10n.messageMoreSheetShare,
         onTap: () {
           selected = MessageMoreAction.share;
         },
       ),
       DesktopContextMenuItem(
-        icon: Lucide.CheckSquare,
+        icon: Lucide.checkSquare,
         label: l10n.messageMoreSheetSelectMessages,
         onTap: () {
           selected = MessageMoreAction.selectMessages;
         },
       ),
       DesktopContextMenuItem(
-        icon: Lucide.GitFork,
+        icon: Lucide.gitFork,
         label: l10n.messageMoreSheetCreateBranch,
         onTap: () {
           selected = MessageMoreAction.fork;
         },
       ),
       DesktopContextMenuItem(
-        icon: Lucide.Trash2,
+        icon: Lucide.trash2,
         label: l10n.messageMoreSheetDelete,
         danger: true,
         onTap: () {
@@ -140,7 +140,7 @@ Future<MessageMoreAction?> showMessageMoreSheet(
       ),
       if (canDeleteAllVersions)
         DesktopContextMenuItem(
-          icon: Lucide.Trash,
+          icon: Lucide.trash,
           label: l10n.messageMoreSheetDeleteAllVersions,
           danger: true,
           onTap: () {
@@ -255,7 +255,7 @@ class _MessageMoreSheetState extends State<_MessageMoreSheet> {
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     _actionItem(
-                      icon: Lucide.TextSelect,
+                      icon: Lucide.textSelect,
                       label: l10n.messageMoreSheetSelectCopy,
                       onTap: () {
                         // Close current sheet, then open iOS-style select-copy sheet
@@ -272,7 +272,7 @@ class _MessageMoreSheetState extends State<_MessageMoreSheet> {
                       },
                     ),
                     _actionItem(
-                      icon: Lucide.BookOpenText,
+                      icon: Lucide.bookOpenText,
                       label: l10n.messageMoreSheetRenderWebView,
                       onTap: () async {
                         final parentCtx = widget.parentContext;
@@ -310,21 +310,21 @@ class _MessageMoreSheetState extends State<_MessageMoreSheet> {
                     ),
                     if (widget.message.role != 'user')
                       _actionItem(
-                        icon: Lucide.Pencil,
+                        icon: Lucide.pencil,
                         label: l10n.messageMoreSheetEdit,
                         onTap: () {
                           Navigator.of(context).pop(MessageMoreAction.edit);
                         },
                       ),
                     _actionItem(
-                      icon: Lucide.Share,
+                      icon: Lucide.share,
                       label: l10n.messageMoreSheetShare,
                       onTap: () {
                         Navigator.of(context).pop(MessageMoreAction.share);
                       },
                     ),
                     _actionItem(
-                      icon: Lucide.CheckSquare,
+                      icon: Lucide.checkSquare,
                       label: l10n.messageMoreSheetSelectMessages,
                       onTap: () {
                         Navigator.of(
@@ -333,14 +333,14 @@ class _MessageMoreSheetState extends State<_MessageMoreSheet> {
                       },
                     ),
                     _actionItem(
-                      icon: Lucide.GitFork,
+                      icon: Lucide.gitFork,
                       label: l10n.messageMoreSheetCreateBranch,
                       onTap: () {
                         Navigator.of(context).pop(MessageMoreAction.fork);
                       },
                     ),
                     _actionItem(
-                      icon: Lucide.Trash2,
+                      icon: Lucide.trash2,
                       label: l10n.messageMoreSheetDelete,
                       danger: true,
                       onTap: () {
@@ -351,7 +351,7 @@ class _MessageMoreSheetState extends State<_MessageMoreSheet> {
                     ),
                     if (widget.canDeleteAllVersions)
                       _actionItem(
-                        icon: Lucide.Trash,
+                        icon: Lucide.trash,
                         label: l10n.messageMoreSheetDeleteAllVersions,
                         danger: true,
                         onTap: () {

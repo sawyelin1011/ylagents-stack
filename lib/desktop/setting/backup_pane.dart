@@ -1291,7 +1291,7 @@ class _RemoteItemCardState extends State<_RemoteItemCard> {
         padding: const EdgeInsets.all(14),
         child: Row(
           children: [
-            Icon(lucide.Lucide.HardDrive, size: 20, color: cs.primary),
+            Icon(lucide.Lucide.hardDrive, size: 20, color: cs.primary),
             const SizedBox(width: 10),
             Expanded(
               child: Column(
@@ -1322,7 +1322,7 @@ class _RemoteItemCardState extends State<_RemoteItemCard> {
             Tooltip(
               message: l10n.backupPageRestoreTooltip,
               child: _SmallIconBtn(
-                icon: lucide.Lucide.Import,
+                icon: lucide.Lucide.import,
                 onTap: widget.onRestore,
               ),
             ),
@@ -1330,7 +1330,7 @@ class _RemoteItemCardState extends State<_RemoteItemCard> {
             Tooltip(
               message: l10n.backupPageDeleteTooltip,
               child: _SmallIconBtn(
-                icon: lucide.Lucide.Trash2,
+                icon: lucide.Lucide.trash2,
                 onTap: widget.onDelete,
               ),
             ),
@@ -1484,12 +1484,12 @@ class _RemoteBackupsDialogState extends State<_RemoteBackupsDialog> {
                     ),
                   ),
                   _SmallIconBtn(
-                    icon: lucide.Lucide.RefreshCw,
+                    icon: lucide.Lucide.refreshCw,
                     onTap: _loading ? () {} : _load,
                   ),
                   const SizedBox(width: 6),
                   _SmallIconBtn(
-                    icon: lucide.Lucide.X,
+                    icon: lucide.Lucide.x,
                     onTap: () => Navigator.of(context).maybePop(),
                   ),
                 ],

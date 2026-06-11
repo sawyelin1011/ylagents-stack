@@ -293,9 +293,9 @@ class _ThemeModeSegmentedState extends State<_ThemeModeSegmented> {
     final isDark = Theme.of(context).brightness == Brightness.dark;
 
     final items = [
-      (ThemeMode.light, l10n.settingsPageLightMode, lucide.Lucide.Sun),
-      (ThemeMode.dark, l10n.settingsPageDarkMode, lucide.Lucide.Moon),
-      (ThemeMode.system, l10n.settingsPageSystemMode, lucide.Lucide.Monitor),
+      (ThemeMode.light, l10n.settingsPageLightMode, lucide.Lucide.sun),
+      (ThemeMode.dark, l10n.settingsPageDarkMode, lucide.Lucide.moon),
+      (ThemeMode.system, l10n.settingsPageSystemMode, lucide.Lucide.monitor),
     ];
 
     final trackBg = isDark
@@ -678,7 +678,7 @@ class _SimpleOptionTileState extends State<_SimpleOptionTile> {
                 const SizedBox(width: 8),
                 Opacity(
                   opacity: widget.selected ? 1 : 0,
-                  child: Icon(lucide.Lucide.Check, size: 14, color: cs.primary),
+                  child: Icon(lucide.Lucide.check, size: 14, color: cs.primary),
                 ),
               ],
             ),
@@ -891,7 +891,7 @@ class _HoverDropdownButton extends StatelessWidget {
                       duration: const Duration(milliseconds: 180),
                       curve: Curves.easeOutCubic,
                       child: Icon(
-                        lucide.Lucide.ChevronDown,
+                        lucide.Lucide.chevronDown,
                         size: 16,
                         color: cs.onSurface.withValues(alpha: 0.8),
                       ),
@@ -915,7 +915,7 @@ class _HoverDropdownButton extends StatelessWidget {
                       duration: const Duration(milliseconds: 180),
                       curve: Curves.easeOutCubic,
                       child: Icon(
-                        lucide.Lucide.ChevronDown,
+                        lucide.Lucide.chevronDown,
                         size: 16,
                         color: cs.onSurface.withValues(alpha: 0.8),
                       ),
@@ -979,7 +979,7 @@ class _OverlayMenuItemState extends State<_OverlayMenuItem> {
                 ),
               ),
               if (widget.selected)
-                Icon(lucide.Lucide.Check, size: 16, color: cs.primary),
+                Icon(lucide.Lucide.check, size: 16, color: cs.primary),
             ],
           ),
         ),
@@ -1054,7 +1054,7 @@ class _OverlayItemState extends State<_OverlayItem> {
                 ),
               ),
               if (widget.selected)
-                Icon(lucide.Lucide.Check, size: 16, color: cs.primary),
+                Icon(lucide.Lucide.check, size: 16, color: cs.primary),
             ],
           ),
         ),
@@ -1278,7 +1278,7 @@ class _LanguageDropdownItemState extends State<_LanguageDropdownItem> {
               ),
               if (widget.checked) ...[
                 const SizedBox(width: 10),
-                Icon(lucide.Lucide.Check, size: 16, color: cs.primary),
+                Icon(lucide.Lucide.check, size: 16, color: cs.primary),
               ],
             ],
           ),
@@ -1477,7 +1477,7 @@ class _DesktopAppFontRow extends StatelessWidget {
           Tooltip(
             message: l10n.displaySettingsPageFontResetLabel,
             child: _IconBtn(
-              icon: lucide.Lucide.RotateCcw,
+              icon: lucide.Lucide.rotateCcw,
               onTap: () async => settingsProvider.clearAppFont(),
             ),
           ),
@@ -1524,7 +1524,7 @@ class _DesktopCodeFontRow extends StatelessWidget {
           Tooltip(
             message: l10n.displaySettingsPageFontResetLabel,
             child: _IconBtn(
-              icon: lucide.Lucide.RotateCcw,
+              icon: lucide.Lucide.rotateCcw,
               onTap: () async => settingsProvider.clearCodeFont(),
             ),
           ),
@@ -1592,7 +1592,7 @@ class _DesktopFontDropdownButtonState
               ),
               const SizedBox(width: 8),
               Icon(
-                lucide.Lucide.ChevronDown,
+                lucide.Lucide.chevronDown,
                 size: 16,
                 color: cs.onSurface.withValues(alpha: 0.7),
               ),
@@ -1736,7 +1736,7 @@ Future<String?> _showDesktopFontChooserDialog(
                           ),
                         ),
                         _IconBtn(
-                          icon: lucide.Lucide.X,
+                          icon: lucide.Lucide.x,
                           onTap: () => Navigator.of(ctx).maybePop(),
                         ),
                       ],
@@ -1917,7 +1917,7 @@ class _FontRowItemState extends State<_FontRowItem> {
               ),
               if (widget.selected) ...[
                 const SizedBox(width: 10),
-                Icon(lucide.Lucide.Check, size: 16, color: cs.primary),
+                Icon(lucide.Lucide.check, size: 16, color: cs.primary),
               ],
             ],
           ),
@@ -2307,7 +2307,7 @@ class _ToggleRowRequestLogging extends StatelessWidget {
               child: Padding(
                 padding: const EdgeInsets.all(6),
                 child: Icon(
-                  lucide.Lucide.FolderOpen,
+                  lucide.Lucide.folderOpen,
                   size: 18,
                   color: cs.primary,
                 ),
@@ -2364,7 +2364,7 @@ class _ToggleRowFlutterLogging extends StatelessWidget {
               child: Padding(
                 padding: const EdgeInsets.all(6),
                 child: Icon(
-                  lucide.Lucide.FolderOpen,
+                  lucide.Lucide.folderOpen,
                   size: 18,
                   color: cs.primary,
                 ),
@@ -3070,7 +3070,7 @@ class _SendShortcutDropdownState extends State<_SendShortcutDropdown> {
                   duration: const Duration(milliseconds: 200),
                   curve: Curves.easeOutCubic,
                   child: Icon(
-                    lucide.Lucide.ChevronDown,
+                    lucide.Lucide.chevronDown,
                     size: 14,
                     color: cs.onSurface.withValues(alpha: 0.5),
                   ),

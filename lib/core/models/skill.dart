@@ -16,7 +16,7 @@ class Skill {
   final SkillContent content;
   final DateTime installedAt;
 
-  const Skill({
+  Skill({
     required this.id,
     required this.name,
     required this.description,

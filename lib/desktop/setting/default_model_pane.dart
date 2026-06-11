@@ -46,7 +46,7 @@ class DesktopDefaultModelPane extends StatelessWidget {
                   const SizedBox(height: 8),
 
                   _ModelCard(
-                    icon: lucide.Lucide.MessageCircle,
+                    icon: lucide.Lucide.messageCircle,
                     title: l10n.defaultModelPageChatModelTitle,
                     subtitle: l10n.defaultModelPageChatModelSubtitle,
                     modelProvider: settings.currentModelProvider,
@@ -70,7 +70,7 @@ class DesktopDefaultModelPane extends StatelessWidget {
 
                   const SizedBox(height: 16),
                   _ModelCard(
-                    icon: lucide.Lucide.NotebookTabs,
+                    icon: lucide.Lucide.notebookTabs,
                     title: l10n.defaultModelPageTitleModelTitle,
                     subtitle: l10n.defaultModelPageTitleModelSubtitle,
                     modelProvider: settings.titleModelProvider,
@@ -95,7 +95,7 @@ class DesktopDefaultModelPane extends StatelessWidget {
 
                   const SizedBox(height: 16),
                   _ModelCard(
-                    icon: lucide.Lucide.FileText,
+                    icon: lucide.Lucide.fileText,
                     title: l10n.defaultModelPageSummaryModelTitle,
                     subtitle: l10n.defaultModelPageSummaryModelSubtitle,
                     modelProvider: settings.summaryModelProvider,
@@ -125,7 +125,7 @@ class DesktopDefaultModelPane extends StatelessWidget {
 
                   const SizedBox(height: 16),
                   _ModelCard(
-                    icon: lucide.Lucide.MessagesSquare,
+                    icon: lucide.Lucide.messagesSquare,
                     title: l10n.defaultModelPageSuggestionModelTitle,
                     subtitle: l10n.defaultModelPageSuggestionModelSubtitle,
                     modelProvider: settings.suggestionModelProvider,
@@ -184,7 +184,7 @@ class DesktopDefaultModelPane extends StatelessWidget {
 
                   const SizedBox(height: 16),
                   _ModelCard(
-                    icon: lucide.Lucide.Languages,
+                    icon: lucide.Lucide.languages,
                     title: l10n.defaultModelPageTranslateModelTitle,
                     subtitle: l10n.defaultModelPageTranslateModelSubtitle,
                     modelProvider: settings.translateModelProvider,
@@ -210,7 +210,7 @@ class DesktopDefaultModelPane extends StatelessWidget {
                   ),
                   const SizedBox(height: 16),
                   _ModelCard(
-                    icon: lucide.Lucide.Eye,
+                    icon: lucide.Lucide.eye,
                     title: l10n.defaultModelPageOcrModelTitle,
                     subtitle: l10n.defaultModelPageOcrModelSubtitle,
                     modelProvider: settings.ocrModelProvider,
@@ -292,7 +292,7 @@ class DesktopDefaultModelPane extends StatelessWidget {
                         ),
                       ),
                       _SmallIconBtn(
-                        icon: lucide.Lucide.X,
+                        icon: lucide.Lucide.x,
                         onTap: () => Navigator.of(ctx).maybePop(),
                       ),
                     ],
@@ -382,7 +382,7 @@ class DesktopDefaultModelPane extends StatelessWidget {
                         ),
                       ),
                       _SmallIconBtn(
-                        icon: lucide.Lucide.X,
+                        icon: lucide.Lucide.x,
                         onTap: () => Navigator.of(ctx).maybePop(),
                       ),
                     ],
@@ -475,7 +475,7 @@ class DesktopDefaultModelPane extends StatelessWidget {
                         ),
                       ),
                       _SmallIconBtn(
-                        icon: lucide.Lucide.X,
+                        icon: lucide.Lucide.x,
                         onTap: () => Navigator.of(ctx).maybePop(),
                       ),
                     ],
@@ -557,7 +557,7 @@ class DesktopDefaultModelPane extends StatelessWidget {
                         ),
                       ),
                       _SmallIconBtn(
-                        icon: lucide.Lucide.X,
+                        icon: lucide.Lucide.x,
                         onTap: () => Navigator.of(ctx).maybePop(),
                       ),
                     ],
@@ -650,7 +650,7 @@ class DesktopDefaultModelPane extends StatelessWidget {
                         ),
                       ),
                       _SmallIconBtn(
-                        icon: lucide.Lucide.X,
+                        icon: lucide.Lucide.x,
                         onTap: () => Navigator.of(ctx).maybePop(),
                       ),
                     ],
@@ -740,7 +740,7 @@ class DesktopDefaultModelPane extends StatelessWidget {
                         ),
                       ),
                       _SmallIconBtn(
-                        icon: lucide.Lucide.X,
+                        icon: lucide.Lucide.x,
                         onTap: () => Navigator.of(ctx).maybePop(),
                       ),
                     ],
@@ -910,13 +910,13 @@ class _ModelCardState extends State<_ModelCard> {
                   Tooltip(
                     message: l10n.defaultModelPageResetDefault,
                     child: _SmallIconBtn(
-                      icon: lucide.Lucide.RotateCcw,
+                      icon: lucide.Lucide.rotateCcw,
                       onTap: widget.onReset!,
                     ),
                   ),
                 if (widget.configAction != null)
                   _SmallIconBtn(
-                    icon: lucide.Lucide.Settings,
+                    icon: lucide.Lucide.settings,
                     onTap: widget.configAction!,
                   ),
               ],

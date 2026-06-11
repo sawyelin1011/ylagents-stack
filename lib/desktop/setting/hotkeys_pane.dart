@@ -50,7 +50,7 @@ class _DesktopHotkeysPaneState extends State<DesktopHotkeysPane> {
                       Tooltip(
                         message: l10n.hotkeysResetAll,
                         child: _SmallIconBtn(
-                          icon: lucide.Lucide.RefreshCw,
+                          icon: lucide.Lucide.refreshCw,
                           onTap: () async {
                             await context
                                 .read<HotkeyProvider>()
@@ -212,7 +212,7 @@ class _HotkeyRowState extends State<_HotkeyRow> {
           Tooltip(
             message: l10n.hotkeysResetDefault,
             child: _SmallIconBtn(
-              icon: lucide.Lucide.RotateCcw,
+              icon: lucide.Lucide.rotateCcw,
               onTap: () async =>
                   context.read<HotkeyProvider>().resetToDefault(item.id),
             ),
@@ -221,7 +221,7 @@ class _HotkeyRowState extends State<_HotkeyRow> {
           Tooltip(
             message: l10n.hotkeysClearShortcut,
             child: _SmallIconBtn(
-              icon: lucide.Lucide.Eraser,
+              icon: lucide.Lucide.eraser,
               onTap: () async =>
                   context.read<HotkeyProvider>().clearCommand(item.id),
             ),
