@@ -2179,5 +2179,31 @@
       "pulled": { "type": "String" },
       "conflicts": { "type": "String" }
     }
-  }
+  },
+  "runtimePageTitle": "运行时主机",
+  "desktopNavRuntimeTooltip": "运行时",
+  "runtimePageHostSection": "主机状态",
+  "runtimePageUptime": "运行时间",
+  "runtimePageSuccessCount": "成功次数",
+  "runtimePageFailedCount": "失败次数",
+  "runtimePageStart": "启动主机",
+  "runtimePageStop": "停止主机",
+  "runtimeStatusRunning": "运行中",
+  "runtimeStatusStopped": "已停止",
+  "runtimeStatusCompleted": "已完成",
+  "runtimeStatusFailed": "失败",
+  "runtimeStatusCancelled": "已取消",
+  "runtimeStatusPending": "等待中",
+  "runtimePageActiveSection": "活跃执行",
+  "runtimePageNoActive": "暂无活跃执行",
+  "runtimePageSimulate": "模拟执行",
+  "runtimePageScheduleSection": "调度计划",
+  "runtimePageNoSchedules": "暂无调度计划",
+  "runtimePageHistorySection": "执行历史",
+  "runtimePageNoHistory": "暂无执行历史",
+  "scheduleIntervalOnce": "一次",
+  "scheduleIntervalHourly": "每小时",
+  "scheduleIntervalDaily": "每天",
+  "scheduleIntervalWeekly": "每周",
+  "scheduleIntervalMonthly": "每月"
 }

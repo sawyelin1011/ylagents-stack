@@ -22,10 +22,11 @@ import '../features/agents/pages/agents_page.dart';
 import '../features/knowledge/pages/knowledge_page.dart';
 import '../features/channels/pages/channels_page.dart';
 import '../features/sync/pages/sync_page.dart';
+import '../features/runtime/pages/runtime_page.dart';
 
 /// Desktop home screen: left compact rail + main content.
 ///
-/// Tabs: Dashboard (0), Tasks (1), Agents (2), Knowledge (3), Channels (4), Sync (5), Chats (6), Settings (7)
+/// Tabs: Dashboard (0), Tasks (1), Agents (2), Knowledge (3), Channels (4), Sync (5), Runtime (6), Chats (7), Settings (8)
 class DesktopHomePage extends StatefulWidget {
   const DesktopHomePage({
     super.key,
@@ -51,7 +52,7 @@ class _DesktopHomePageState extends State<DesktopHomePage> {
   void initState() {
     super.initState();
     if (widget.initialTabIndex != null) {
-      _activeTab = NavTab.values[widget.initialTabIndex!.clamp(0, 7)];
+      _activeTab = NavTab.values[widget.initialTabIndex!.clamp(0, 8)];
     }
     _storageVisited = _activeTab == NavTab.settings;
     // Focus chat input on chat tab
@@ -240,6 +241,7 @@ class _DesktopHomePageState extends State<DesktopHomePage> {
               onTapKnowledge: () => _switchTab(NavTab.knowledge),
               onTapChannels: () => _switchTab(NavTab.channels),
               onTapSync: () => _switchTab(NavTab.sync),
+              onTapRuntime: () => _switchTab(NavTab.runtime),
               onTapChats: () => _switchTab(NavTab.chats),
               onTapSettings: () => _switchTab(NavTab.settings),
               onTapMore: () => _showMoreMenu(context),
@@ -254,6 +256,7 @@ class _DesktopHomePageState extends State<DesktopHomePage> {
                   const KnowledgePage(),
                   const ChannelsPage(),
                   const SyncPage(),
+                  const RuntimePage(),
                   const DesktopChatPage(),
                   DesktopSettingsPage(
                     key: const ValueKey('settings_page'),

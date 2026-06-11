@@ -2602,5 +2602,31 @@
       "pulled": { "type": "String" },
       "conflicts": { "type": "String" }
     }
-  }
+  },
+  "runtimePageTitle": "Runtime Host",
+  "desktopNavRuntimeTooltip": "Runtime",
+  "runtimePageHostSection": "Host Status",
+  "runtimePageUptime": "Uptime",
+  "runtimePageSuccessCount": "Successes",
+  "runtimePageFailedCount": "Failures",
+  "runtimePageStart": "Start Host",
+  "runtimePageStop": "Stop Host",
+  "runtimeStatusRunning": "Running",
+  "runtimeStatusStopped": "Stopped",
+  "runtimeStatusCompleted": "Completed",
+  "runtimeStatusFailed": "Failed",
+  "runtimeStatusCancelled": "Cancelled",
+  "runtimeStatusPending": "Pending",
+  "runtimePageActiveSection": "Active Executions",
+  "runtimePageNoActive": "No active executions",
+  "runtimePageSimulate": "Simulate Execution",
+  "runtimePageScheduleSection": "Schedules",
+  "runtimePageNoSchedules": "No scheduled runs",
+  "runtimePageHistorySection": "Execution History",
+  "runtimePageNoHistory": "No execution history yet",
+  "scheduleIntervalOnce": "Once",
+  "scheduleIntervalHourly": "Hourly",
+  "scheduleIntervalDaily": "Daily",
+  "scheduleIntervalWeekly": "Weekly",
+  "scheduleIntervalMonthly": "Monthly"
 }

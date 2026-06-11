@@ -11,7 +11,17 @@ import '../utils/sandbox_path_resolver.dart';
 import '../theme/app_font_weights.dart';
 
 /// Workspace-first desktop nav tabs.
-enum NavTab { dashboard, tasks, agents, knowledge, channels, sync, chats, settings }
+enum NavTab {
+  dashboard,
+  tasks,
+  agents,
+  knowledge,
+  channels,
+  sync,
+  runtime,
+  chats,
+  settings,
+}
 
 /// A compact left rail for desktop with workspace-first navigation.
 ///
@@ -27,6 +37,7 @@ class DesktopNavRail extends StatelessWidget {
     required this.onTapKnowledge,
     required this.onTapChannels,
     required this.onTapSync,
+    required this.onTapRuntime,
     required this.onTapChats,
     required this.onTapSettings,
     this.onTapMore,
@@ -39,6 +50,7 @@ class DesktopNavRail extends StatelessWidget {
   final VoidCallback onTapKnowledge;
   final VoidCallback onTapChannels;
   final VoidCallback onTapSync;
+  final VoidCallback onTapRuntime;
   final VoidCallback onTapChats;
   final VoidCallback onTapSettings;
   final VoidCallback? onTapMore;
@@ -100,6 +112,13 @@ class DesktopNavRail extends StatelessWidget {
             icon: lucide.Lucide.RefreshCw,
             isActive: activeTab == NavTab.sync,
             onTap: onTapSync,
+          ),
+          const SizedBox(height: 8),
+          _NavButton(
+            tooltip: l10n.desktopNavRuntimeTooltip,
+            icon: lucide.Lucide.Server,
+            isActive: activeTab == NavTab.runtime,
+            onTap: onTapRuntime,
           ),
           const SizedBox(height: 8),
           _NavButton(

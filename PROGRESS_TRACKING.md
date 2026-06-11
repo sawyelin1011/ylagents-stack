@@ -1,6 +1,6 @@
 # YLAgents — Progress Tracking
 
-Last Updated: 2026-06-11 (Phase 9 added)
+Last Updated: 2026-06-11 (Phase 10 added)
 
 ---
 
@@ -19,7 +19,7 @@ Last Updated: 2026-06-11 (Phase 9 added)
 | **7** — Skills System | ✅ Complete | 2026-06-11 | 2026-06-11 | Skill model, SkillProvider, import/export service, marketplace with 4 built-in skills, Skills UI page (installed + marketplace tabs), entry from Knowledge page, 18+ ARB keys, 20+ tests |
 | **8** — Channels | ✅ Complete | 2026-06-11 | 2026-06-11 | AgentChannel model, ChannelProvider, 6 channel adapters (Telegram, Discord, Slack, Email, Webhook, Widget), Channels UI with create/configure/test/delete, NavRail entry, 21+ ARB keys, 30+ tests |
 | **9** — Sync Server | ✅ Complete | 2026-06-11 | 2026-06-11 | SyncDevice model, SyncRecord model, SyncStatus enum, AuthProvider (device identity + registration), SyncProvider (sync engine + config), SyncConfig model, Sync UI page with device/config/history sections, NavTab.sync in desktop nav rail, 30+ ARB keys, 50+ tests |
-| **10** — Runtime Host | ⏳ Pending | — | — | |
+| **10** — Runtime Host | ✅ Complete | 2026-06-11 | 2026-06-11 | RuntimeExecution model, SchedulerService, RuntimeProvider, Runtime UI page with host status/active executions/schedules/history, 26+ ARB keys, 50+ tests |
 
 ---
 
@@ -1146,7 +1146,118 @@ Last Updated: 2026-06-11 (Phase 9 added)
 
 ---
 
-## Known Issues & Decisions Log
+## Phase 10 — Runtime Host
+
+### 10.1: Create RuntimeExecution model + RuntimeExecutionStatus enum
+| Field | Value |
+|---|---|
+| **Status** | ✅ Complete |
+| **Classification** | [REPLACE] |
+| **Priority** | Critical |
+| **Effort** | Small |
+
+**Deliverable:**
+- `lib/core/models/runtime_execution.dart` — RuntimeExecution model with id, agentId, agentName, workspaceId, taskId, taskTitle, status (RuntimeExecutionStatus enum: pending/running/completed/failed/cancelled), resultSummary, errorMessage, startedAt, completedAt. Duration getter (null when not completed). JSON serialization with optional field omission for empty strings. copyWith with clearResult/clearError flags. encodeList/decodeList for SharedPrefs persistence.
+
+**Known Issues:** N/A — new model, no legacy data
+
+### 10.2: Create ScheduleInterval enum + ScheduledRun model
+| Field | Value |
+|---|---|
+| **Status** | ✅ Complete |
+| **Classification** | [REPLACE] |
+| **Priority** | Critical |
+| **Effort** | Small |
+
+**Deliverable:**
+- `lib/core/services/scheduler_service.dart` — ScheduleInterval enum (once/hourly/daily/weekly/monthly) with Duration getter (zero/1h/1d/7d/30d). ScheduledRun model with id, agentId, agentName, workspaceId, taskTitle, interval, enabled, timestamps. JSON serialization. copyWith with clearLastRun/clearNextRun flags. encodeList/decodeList.
+
+**Known Issues:** ScheduleInterval.once.nextRunAt is set to `now` on creation, so it fires immediately. Monthly interval approximated as 30 days.
+
+### 10.3: Create SchedulerService
+| Field | Value |
+|---|---|
+| **Status** | ✅ Complete |
+| **Classification** | [REPLACE] |
+| **Priority** | Critical |
+| **Effort** | Medium |
+
+**Deliverable:**
+- `lib/core/services/scheduler_service.dart` — SchedulerService (ChangeNotifier) with SharedPreferences persistence (scheduled_runs_v1). 60-second periodic tick timer. onScheduleDue callback. CRUD: createSchedule, updateSchedule, toggleEnabled, deleteSchedule. Workspace-aware queries: getSchedulesForWorkspace, getSchedulesForAgent. Batch delete: deleteSchedulesForWorkspace. Auto-advances schedule on due: updates lastRunAt/nextRunAt.
+
+**Known Issues:** Timer-based polling (60s granularity). Real cron-like scheduling would need more sophisticated engine.
+
+### 10.4: Create RuntimeProvider (host status + execution management)
+| Field | Value |
+|---|---|
+| **Status** | ✅ Complete |
+| **Classification** | [REPLACE] |
+| **Priority** | Critical |
+| **Effort** | Medium |
+
+**Deliverable:**
+- `lib/core/providers/runtime_provider.dart` — RuntimeProvider (ChangeNotifier) with RuntimeHostStatus enum (stopped/running/error). Host lifecycle: startHost, stopHost. Execution lifecycle: startExecution, completeExecution, failExecution, cancelExecution. Analytics: uptime, successCount, failedCount, activeExecutions, lastExecution. Workspace-aware: getExecutionsForWorkspace. Agent-aware: getExecutionsForAgent. History management: clearHistory, pruneHistoryOlderThan. Scheduler integration: attachScheduler (auto start/stop with host). Placeholder: simulateExecution (3-second delay). SharedPreferences persistence (runtime_executions_v1, runtime_host_status_v1).
+
+**Known Issues:** simulateExecution is a placeholder with hardcoded delay. Real LLM execution integration requires LeadAgentService wiring.
+
+### 10.5: Runtime Host UI page
+| Field | Value |
+|---|---|
+| **Status** | ✅ Complete |
+| **Classification** | [REPLACE] |
+| **Priority** | High |
+| **Effort** | Medium |
+
+**Deliverable:**
+- `lib/features/runtime/pages/runtime_page.dart` — Four-section card-based layout:
+  - _HostStatusSection: status badge (green dot when running), start/stop buttons, uptime display, success/failed counts
+  - _ActiveExecutionsSection: currently running executions with status icons (spinner/completed/failed/cancelled/dot), duration display, "Simulate Execution" button (host must be running)
+  - _ScheduleSection: schedule list with agent name, interval text (once/hourly/daily/weekly/monthly), enable/disable toggle
+  - _HistorySection: past execution records (most recent 20, reversed), same _ExecutionRow component
+- Workspace-scoped: reads current workspace from WorkspaceProvider
+- Agent-aware: simulate button uses first available agent from AgentProvider
+
+**Known Issues:** No drag-to-reorder for schedules. Simulate execution always picks first available agent.
+
+### 10.6: NavRail + Provider registration + Localization
+| Field | Value |
+|---|---|
+| **Status** | ✅ Complete |
+| **Classification** | [ENHANCE] |
+| **Priority** | High |
+| **Effort** | Small |
+
+**Changes:**
+- `NavTab` enum now includes `runtime` (9 values total: dashboard/tasks/agents/knowledge/channels/sync/runtime/chats/settings)
+- `DesktopNavRail`: added Runtime button (Server icon) between Sync and Chats
+- `DesktopHomePage`: updated tab clamping (0→8), added onTapRuntime callback, RuntimePage in IndexedStack at index 6
+- `main.dart`: registered SchedulerService and RuntimeProvider as ChangeNotifierProviders
+- 26 new keys across all 4 ARB files:
+  - runtimePageTitle, desktopNavRuntimeTooltip
+  - runtimePageHostSection, runtimePageUptime, runtimePageStart, runtimePageStop
+  - runtimePageSuccessCount, runtimePageFailedCount
+  - runtimeStatusRunning, runtimeStatusStopped, runtimeStatusPending, runtimeStatusCompleted, runtimeStatusFailed, runtimeStatusCancelled
+  - runtimePageActiveSection, runtimePageNoActive, runtimePageSimulate
+  - runtimePageScheduleSection, runtimePageNoSchedules
+  - runtimePageHistorySection, runtimePageNoHistory
+  - scheduleIntervalOnce, scheduleIntervalHourly, scheduleIntervalDaily, scheduleIntervalWeekly, scheduleIntervalMonthly
+
+**Known Issues:** Must run `flutter gen-l10n` to regenerate localizations.
+
+### 10.7: Unit tests
+| Field | Value |
+|---|---|
+| **Status** | ✅ Complete |
+| **Classification** | [KEEP] |
+| **Priority** | High |
+| **Effort** | Small |
+
+**Deliverable:**
+- `test/core/models/runtime_execution_test.dart` — 20+ test cases: RuntimeExecutionStatus values/fromJson/toJson/unknown default round-trip, RuntimeExecution constructor defaults/all fields, copyWith preserve + clearResult/clearError, JSON field omission, toJson/fromJson round-trip (full + minimal), missing field handling, encodeList/decodeList round-trip, invalid JSON handling, duration calculation (completed vs pending)
+- `test/core/models/scheduled_run_test.dart` — 20+ test cases: ScheduleInterval values/fromJson/toJson/unknown default/duration values round-trip, ScheduledRun constructor defaults/all fields, copyWith preserve + clearLastRun/clearNextRun, toJson/fromJson round-trip (full + minimal), missing field handling, encodeList/decodeList round-trip, invalid JSON handling
+- `test/core/providers/runtime_host_status_test.dart` — 8+ test cases: RuntimeHostStatus values, fromJson/toJson/unknown default round-trip
+
+**Known Issues:** Provider integration tests not yet written (require SharedPreferences mocking). Model-only tests pass independently.
 
 | # | Date | Issue | Decision | Status |
 |---|---|---|---|---|
@@ -1177,6 +1288,8 @@ Last Updated: 2026-06-11 (Phase 9 added)
 | 25 | 2026-06-11 | Channel agent binding is text-based (no agent picker) | Agent ID field is a free-text input. A proper agent picker/search component would improve UX. | ⏳ Deferred |
 | 26 | 2026-06-11 | Sync engine operates in simulation mode | SyncProvider simulates a 2-second delay instead of real HTTP relay sync. Real sync server implementation is Phase 9+ enhancement. | ⏳ Deferred |
 | 27 | 2026-06-11 | AuthProvider stores tokens without validation | Auth tokens are stored as-is without JWT validation. Real JWT validation and relay server integration deferred. | ⏳ Deferred |
+| 28 | 2026-06-11 | simulateExecution uses hardcoded 3-second delay | Placeholder for real LLM execution. Real execution requires LeadAgentService wiring. | ⏳ Deferred |
+| 29 | 2026-06-11 | SchedulerService uses 60-second periodic polling | Timer-based polling instead of real cron. 60s granularity acceptable for Phase 10. | ⏳ Deferred |
 
 ---
 
@@ -1269,6 +1382,17 @@ Last Updated: 2026-06-11 (Phase 9 added)
 | `test/core/models/sync_device_test.dart` | 9.8 | ✅ Complete | SyncDevice unit tests |
 | `test/core/models/sync_record_test.dart` | 9.8 | ✅ Complete | SyncRecord + SyncStatus unit tests |
 | `test/core/providers/sync_config_test.dart` | 9.8 | ✅ Complete | SyncConfig unit tests |
+| `lib/core/models/runtime_execution.dart` | 10.1 | ✅ Complete | RuntimeExecution model + RuntimeExecutionStatus enum |
+| `lib/core/services/scheduler_service.dart` | 10.2/10.3 | ✅ Complete | ScheduleInterval enum + ScheduledRun model + SchedulerService |
+| `lib/core/providers/runtime_provider.dart` | 10.4 | ✅ Complete | RuntimeProvider: host lifecycle, execution management, scheduler integration |
+| `lib/features/runtime/pages/runtime_page.dart` | 10.5 | ✅ Complete | Runtime UI page: host status, active executions, schedules, history |
+| `lib/main.dart` | 10.6 | ✅ Complete | SchedulerService + RuntimeProvider registration |
+| `lib/desktop/desktop_nav_rail.dart` | 10.6 | ✅ Complete | NavTab.runtime + Runtime button (Server icon) |
+| `lib/desktop/desktop_home_page.dart` | 10.6 | ✅ Complete | Runtime tab in IndexedStack |
+| `lib/l10n/app_*.arb` (4 files) | 10.6 | ✅ Complete | 26 new runtime keys |
+| `test/core/models/runtime_execution_test.dart` | 10.7 | ✅ Complete | RuntimeExecution + RuntimeExecutionStatus unit tests |
+| `test/core/models/scheduled_run_test.dart` | 10.7 | ✅ Complete | ScheduleInterval + ScheduledRun unit tests |
+| `test/core/providers/runtime_host_status_test.dart` | 10.7 | ✅ Complete | RuntimeHostStatus enum unit tests |
 
 ---
 

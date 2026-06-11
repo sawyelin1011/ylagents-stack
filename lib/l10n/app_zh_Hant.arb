@@ -2179,5 +2179,31 @@
       "pulled": { "type": "String" },
       "conflicts": { "type": "String" }
     }
-  }
+  },
+  "runtimePageTitle": "執行時主機",
+  "desktopNavRuntimeTooltip": "執行時",
+  "runtimePageHostSection": "主機狀態",
+  "runtimePageUptime": "運行時間",
+  "runtimePageSuccessCount": "成功次數",
+  "runtimePageFailedCount": "失敗次數",
+  "runtimePageStart": "啟動主機",
+  "runtimePageStop": "停止主機",
+  "runtimeStatusRunning": "運行中",
+  "runtimeStatusStopped": "已停止",
+  "runtimeStatusCompleted": "已完成",
+  "runtimeStatusFailed": "失敗",
+  "runtimeStatusCancelled": "已取消",
+  "runtimeStatusPending": "等待中",
+  "runtimePageActiveSection": "活躍執行",
+  "runtimePageNoActive": "暫無活躍執行",
+  "runtimePageSimulate": "模擬執行",
+  "runtimePageScheduleSection": "排程計劃",
+  "runtimePageNoSchedules": "暫無排程計劃",
+  "runtimePageHistorySection": "執行歷史",
+  "runtimePageNoHistory": "暫無執行歷史",
+  "scheduleIntervalOnce": "一次",
+  "scheduleIntervalHourly": "每小時",
+  "scheduleIntervalDaily": "每天",
+  "scheduleIntervalWeekly": "每週",
+  "scheduleIntervalMonthly": "每月"
 }
