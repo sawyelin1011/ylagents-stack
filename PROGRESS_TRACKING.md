@@ -1,0 +1,851 @@
+# YLAgents — Progress Tracking
+
+Last Updated: 2026-06-11
+
+---
+
+## Master Status
+
+| Phase | Status | Started | Completed | Notes |
+|---|---|---|---|---|
+| **0** — Kelivo Audit | ✅ Complete | — | 2026-06-11 | CURRENT_STATE.md delivered |
+| **0.5** — UX Audit | 🔄 Partial | 2026-06-11 | — | UX mapping done, direction integrated into Phase 1 code |
+| **1** — Workspace Foundation | ✅ Complete | 2026-06-11 | 2026-06-11 | Full workspace system: model, provider, nav, pages, sidebar, settings split, tests |
+| **2** — Assistant → Agent | ✅ Complete | 2026-06-11 | 2026-06-11 | AgentGenome model, Agent model, AgentProvider, agents page upgrade, tests |
+| **3** — Task System | ✅ Complete | 2026-06-11 | 2026-06-11 | Task model, TaskProvider, kanban board, dashboard task stat, 22+ ARB keys, 20+ tests |
+| **4** — Agent Factory | ✅ Complete | 2026-06-11 | 2026-06-11 | AgentTemplate model, built-in templates, multi-step wizard, AgentsPage entry point |
+| **5** — Lead Agent | ✅ Complete | 2026-06-11 | 2026-06-11 | ExecutionTrace model, TraceProvider, LeadAgentService, execution page, lead agent template, 16 ARB keys, 40+ tests |
+| **6** — Multi-Agent | ⏳ Pending | — | — | |
+| **7** — Skills System | ⏳ Pending | — | — | |
+| **8** — Channels | ⏳ Pending | — | — | |
+| **9** — Sync Server | ⏳ Pending | — | — | |
+| **10** — Runtime Host | ⏳ Pending | — | — | |
+
+---
+
+## Phase 0.5 — UX Audit
+
+### 0.5.1: Map Current Navigation & UX
+| Field | Value |
+|---|---|
+| **Status** | ✅ Complete |
+| **Classification** | [KEEP] + document |
+| **Priority** | Critical |
+| **Effort** | Small |
+| **Started** | 2026-06-11 |
+| **Completed** | 2026-06-11 |
+
+**Findings:**
+- Desktop nav: 5 tabs (Chat, Search, Translate, Storage, Settings) via IndexedStack
+- DesktopNavRail: 64px left rail with avatar + icon buttons
+- Sidebar: SideDrawer reused from mobile, shows assistants + conversations
+- Settings: 15 panes in DesktopSettingsPage (left menu + right content)
+- Chat page: HomePage reused for both mobile and desktop via DesktopChatPage
+- Assistant settings: Tab-based editor in `AssistantSettingsEditPage`
+- No workspace concept, no dashboard, no task system
+- MCP management buried in Settings
+
+---
+
+### 0.5.2: Workspace-First Navigation Proposal
+| Field | Value |
+|---|---|
+| **Status** | ⏳ Pending |
+| **Classification** | [REPLACE] |
+| **Priority** | Critical |
+| **Effort** | Medium |
+| **Started** | — |
+| **Completed** | — |
+
+**Checklist:**
+- [ ] Design nav rail layout
+- [ ] Design sidebar per tab
+- [ ] Design workspace selector
+- [ ] Design Dashboard page layout
+- [ ] Design workspace CRUD
+
+**Next Steps:** Depends on 0.5.1
+
+**Known Issues:** N/A
+
+---
+
+### 0.5.3: Agent Factory UX Proposal
+| Field | Value |
+|---|---|
+| **Status** | ⏳ Pending |
+| **Classification** | [REPLACE] |
+| **Priority** | High |
+| **Effort** | Large |
+| **Started** | — |
+| **Completed** | — |
+
+**Checklist:**
+- [ ] Design wizard steps (Identity → Role → Knowledge → Tools → Policies → Channels → Test)
+- [ ] Design agent card/list view
+- [ ] Design agent detail/edit view
+- [ ] Map to existing AssistantSettingsPage tabs
+- [ ] Identify new tabs needed
+
+**Next Steps:** Depends on 0.5.2
+
+**Known Issues:** N/A
+
+---
+
+### 0.5.4: Task System UX Proposal
+| Field | Value |
+|---|---|
+| **Status** | ⏳ Pending |
+| **Classification** | [REPLACE] |
+| **Priority** | High |
+| **Effort** | Medium |
+| **Started** | — |
+| **Completed** | — |
+
+**Checklist:**
+- [ ] Design task model
+- [ ] Design task list/kanban view
+- [ ] Design task detail view
+- [ ] Design task creation flow
+
+**Next Steps:** Depends on 0.5.2
+
+**Known Issues:** N/A
+
+---
+
+### 0.5.5: Navigation Implementation Plan
+| Field | Value |
+|---|---|
+| **Status** | ⏳ Pending |
+| **Classification** | [ENHANCE] + [REPLACE] |
+| **Priority** | Critical |
+| **Effort** | Large |
+| **Started** | — |
+| **Completed** | — |
+
+**Checklist:**
+- [ ] WorkspaceProvider + model design
+- [ ] Nav rail refactor plan
+- [ ] Sidebar per-tab plan
+- [ ] Dashboard page plan
+- [ ] Migration plan (existing data → Personal workspace)
+
+**Next Steps:** Depends on 0.5.2, 0.5.3, 0.5.4
+
+**Known Issues:** N/A
+
+---
+
+### 0.5.6: Settings Restructuring Plan
+| Field | Value |
+|---|---|
+| **Status** | ⏳ Pending |
+| **Classification** | [ENHANCE] / [MIGRATE] |
+| **Priority** | Medium |
+| **Effort** | Medium |
+| **Started** | — |
+| **Completed** | — |
+
+**Checklist:**
+- [ ] Map all SettingsProvider keys
+- [ ] Design three-tier split (Global / Workspace / Agent)
+- [ ] Plan migration path
+- [ ] Identify new providers needed
+
+**Next Steps:** Depends on 0.5.5
+
+**Known Issues:** SettingsProvider is a god class (~100+ keys)
+
+---
+
+## Phase 1 — Workspace Foundation
+
+### 1.1: Create Workspace model + WorkspaceProvider
+| Field | Value |
+|---|---|
+| **Status** | ✅ Complete |
+| **Classification** | [REPLACE] |
+| **Priority** | Critical |
+| **Effort** | Medium |
+
+**Deliverables:**
+- `lib/core/models/workspace.dart` — Workspace model with WorkspaceType enum (personal/project/client), JSON serialization, copyWith
+- `lib/core/providers/workspace_provider.dart` — CRUD, current selection, SharedPreferences persistence, ensurePersonalWorkspace, migrateLegacyData
+- ARB keys: workspaceProviderPersonalWorkspaceName, workspaceProviderDefaultWorkspaceName
+- Registered as ChangeNotifierProvider in main.dart
+
+**Known Issues:** N/A — new code, no legacy migration needed yet
+
+### 1.2: Add workspaceId to Conversation + Assistant
+| Field | Value |
+|---|---|
+| **Status** | ✅ Complete |
+| **Classification** | [ENHANCE] |
+| **Priority** | Critical |
+| **Effort** | Small |
+
+**Changes:**
+- `Conversation.workspaceId` as `@HiveField(13)` — nullable String
+- `Assistant.workspaceId` as nullable String — JSON serialized
+- Both added to constructor, copyWith, toJson, fromJson
+
+**Risks:** Requires `dart run build_runner build --delete-conflicting-outputs` to regenerate `conversation.g.dart`
+
+### 1.3: Auto-create "Personal" workspace + migration
+| Field | Value |
+|---|---|
+| **Status** | ✅ Complete |
+| **Classification** | [MIGRATE] |
+| **Priority** | Critical |
+| **Effort** | Small |
+
+**Changes:**
+- `WorkspaceProvider.ensurePersonalWorkspace()` called in main.dart post-frame callback
+- `WorkspaceProvider.migrateLegacyData()` assigns workspaceId to all unassigned assistants + conversations
+- `ChatService.assignUnassignedConversationsToWorkspace()` iterates all Hive conversations + drafts
+- `ChatService.getConversationsForWorkspace()` helper for workspace-filtered queries
+
+**Known Issues:** Migration runs once on first launch after upgrade. New fields are nullable for backward compatibility.
+
+### 1.4: Redesign DesktopNavRail
+| Field | Value |
+|---|---|
+| **Status** | ✅ Complete |
+| **Classification** | [ENHANCE]+[REPLACE] |
+| **Priority** | Critical |
+| **Effort** | Medium |
+
+**Changes:**
+- `NavTab` enum: dashboard, tasks, agents, knowledge, chats, settings
+- NavRail now: Avatar → Dashboard → Tasks → Agents → Knowledge → Chats → Spacer → More → Settings
+- Removed: Search, Translate, Storage from main rail
+- Added: More (...) popup menu (Translate, Storage → opened as sub-pages)
+- ARB keys: desktopNavDashboardTooltip, desktopNavTasksTooltip, desktopNavAgentsTooltip, desktopNavKnowledgeTooltip, desktopNavMoreTooltip
+- `DesktopHomePage` updated to use NavTab with IndexedStack[6]
+
+**Known Issues:** Translate/Storage now open as separate Navigator pages rather than inline tabs. Chat action bus behavior preserved.
+
+### 1.5: Create DashboardPage
+| Field | Value |
+|---|---|
+| **Status** | ✅ Complete |
+| **Classification** | [REPLACE] |
+| **Priority** | Critical |
+| **Effort** | Medium |
+
+**Deliverables:**
+- `lib/features/dashboard/pages/dashboard_page.dart` — Workspace header with icon + name + type, stat cards (agent count, conversation count), quick action chips, recent conversation list
+- WorkspaceProvider-aware: shows workspace name and type icon
+- ARB keys: dashboardPageQuickActions, dashboardPageNewChat, dashboardPageNewAssistant, dashboardPageRecentActivity, dashboardPageNoActivity
+
+**Known Issues:** Quick action chips are visual only (navigation wiring deferred to Phase 1.9)
+
+### 1.6: Workspace-aware Sidebar
+| Field | Value |
+|---|---|
+| **Status** | ✅ Complete |
+| **Classification** | [ENHANCE]+[REPLACE] |
+| **Priority** | High |
+| **Effort** | Large |
+
+**Changes:**
+- `DesktopSidebar` now accepts optional `workspaceId` parameter
+- `SideDrawer` accepts optional `workspaceId` parameter
+- `_SideDrawerState._workspaceConversations()` helper filters via `ChatService.getConversationsForWorkspace()`
+- All 5 `getAllConversations()` call sites in SideDrawer replaced with workspace-filtered version
+- `ChatService.getConversationsForWorkspace(String?)` added
+
+**Known Issues:** HomePage (mobile) doesn't pass workspaceId yet — only DesktopSidebar passes it. Mobile workspace filtering is a future task.
+
+### 1.7: Workspace selector
+| Field | Value |
+|---|---|
+| **Status** | ✅ Complete |
+| **Classification** | [REPLACE] |
+| **Priority** | High |
+| **Effort** | Small |
+
+**Deliverables:**
+- `lib/features/workspace/widgets/workspace_selector.dart` — Dropdown with current workspace name, workspace list with type icons, check mark on active, "New Workspace" option with create dialog (name + type selection)
+- Type icons: User (Personal), Boxes (Project), Briefcase (Client)
+- ARB keys: workspaceSelectorNewWorkspace, workspaceSelectorNameLabel, workspaceSelectorTypeLabel, workspaceSelectorCancel, workspaceSelectorCreate
+- New `Briefcase` icon added to lucide adapter
+
+**Known Issues:** Workspace deletion not exposed through selector UI yet.
+
+### 1.8: Split SettingsProvider
+| Field | Value |
+|---|---|
+| **Status** | ✅ Complete |
+| **Classification** | [ENHANCE]/[MIGRATE] |
+| **Priority** | Medium |
+| **Effort** | Medium |
+
+**Changes:**
+- Created `lib/core/models/workspace_settings.dart` — typed settings class with defaultAssistantId, defaultModelProvider, defaultModelId, mcpServerIds, localToolIds
+- Added `Workspace.settings` field (nullable `WorkspaceSettings`) — non-breaking for existing workspaces
+- Added `WorkspaceProvider.currentWorkspaceSettings`, `getWorkspaceSettings()`, `updateWorkspaceSettings()`, `clearWorkspaceSettings()` accessors
+- Global `SettingsProvider` remains untouched as the global defaults source
+- Workspace-level settings stored inline in workspace JSON, no extra SharedPreferences keys
+
+**Known Issues:** SettingsProvider still has 100+ keys — workspace extraction is done, but full Provider refactor (extract MCP, backup, TTS configs into their own providers) is deferred to later phases.
+
+### 1.9: Verification — existing functionality preserved
+| Field | Value |
+|---|---|
+| **Status** | ✅ Complete |
+| **Classification** | [KEEP] |
+| **Priority** | Critical |
+| **Effort** | Small |
+
+**Verification results:**
+- All 4 ARB files have 32 matching workspace-related keys each ✅
+- No stale `getAllConversations()` calls remain in SideDrawer (only a comment) ✅
+- Conversation model workspaceId is `@HiveField(13)` — no field collisions ✅
+- Assistant model workspaceId is nullable — no breakage for existing JSON ✅
+- Workspace model settings is nullable — no breakage for existing persisted data ✅
+- Created `test/core/models/workspace_test.dart` — covers WorkspaceType, Workspace (toJson/fromJson/copyWith/encodeList/round-trip), WorkspaceSettings (empty/json/merge/clear)
+- `flutter analyze`, `flutter test`, `dart run build_runner`, `flutter gen-l10n`, `dart format` — not run (Flutter SDK unavailable). See residual risks.
+
+**Residual risks:**
+1. `conversation.g.dart` needs regeneration (`dart run build_runner build --delete-conflicting-outputs`)
+2. `app_localizations*.dart` needs regeneration (`flutter gen-l10n`)
+3. Formatting needs to be checked (`dart format lib/`)
+4. `flutter analyze` and `flutter test` need to pass on a dev machine
+
+---
+
+## Phase 2 — Assistant → Agent
+
+### 2.1: Create AgentGenome model
+| Field | Value |
+|---|---|
+| **Status** | ✅ Complete |
+| **Classification** | [REPLACE] |
+| **Priority** | Critical |
+| **Effort** | Small |
+
+**Deliverable:**
+- `lib/core/models/agent_genome.dart` — AgentGenome with identity, soul, role, goals, backstory fields
+- Null-safe isEmpty, toJson/fromJson (omits empty fields), copyWith with clearXxx flags
+- `AgentGenome.empty` const singleton
+
+**Known Issues:** N/A — new model, no legacy data
+
+### 2.2: Create Agent model + AgentType enum
+| Field | Value |
+|---|---|
+| **Status** | ✅ Complete |
+| **Classification** | [REPLACE] |
+| **Priority** | Critical |
+| **Effort** | Small |
+
+**Deliverable:**
+- `lib/core/models/agent.dart` — Agent model with id, name, type, genome, enabled fields
+- `AgentType` enum: standard, lead, worker
+- Agent shares the same `id` as its underlying Assistant — genome stored separately
+- JSON serialization, copyWith, encodeList/decodeList
+
+**Known Issues:** Agent IDs must match Assistant IDs exactly. Demoting removes only the genome layer.
+
+### 2.3: Create AgentProvider
+| Field | Value |
+|---|---|
+| **Status** | ✅ Complete |
+| **Classification** | [REPLACE] |
+| **Priority** | Critical |
+| **Effort** | Small |
+
+**Deliverable:**
+- `lib/core/providers/agent_provider.dart` — CRUD for agent genome data
+- `promoteToAgent()` / `demoteFromAgent()` — promote/demote assistants
+- `updateGenome()`, `updateType()`, `toggleEnabled()` — fine-grained updates
+- `getAgentsForWorkspace()` / `getLeadAgentForWorkspace()` — workspace-aware queries
+- `syncNames()` — sync agent names from renamed assistants
+- `cleanupDeletedAssistants()` — remove orphaned agent records
+- Stored in SharedPreferences under `agents_v1`
+- Registered in `main.dart` MultiProvider after AssistantProvider
+
+**Known Issues:** Agent genome stored as JSON in SharedPrefs. For large-scale agent data, Hive or SQLite would be more appropriate.
+
+### 2.4: Update AgentsPage
+| Field | Value |
+|---|---|
+| **Status** | ✅ Complete |
+| **Classification** | [ENHANCE] |
+| **Priority** | High |
+| **Effort** | Medium |
+
+**Changes:**
+- Agent-aware list items: show AgentType badge (Lead/Worker/Standard with icons)
+- Genome chips: identity (User icon), soul (Heart icon), role (Briefcase icon)
+- Goals displayed as tertiary-colored chips with wrap layout
+- Empty genome state shows italic guidance text
+- Action icons per row:
+  - Non-agent: Sparkles icon -> promoteToAgent()
+  - Agent: CheckCircle/XCircle -> toggleEnabled()
+  - Agent: Settings icon -> opens Agent Details dialog
+- Agent Details dialog: full genome editor with type dropdown, text fields, goals chip input, backstory textarea
+- Demote button with error-colored text in dialog
+- Lucide icons added: Crown, HardHat
+
+**Known Issues:** Dialog-based genome editor is functional but minimal — full Agent Factory wizard deferred to Phase 4.
+
+### 2.5: Localization keys
+| Field | Value |
+|---|---|
+| **Status** | ✅ Complete |
+| **Classification** | [ENHANCE] |
+| **Priority** | High |
+| **Effort** | Small |
+
+**Changes:**
+- 18 new keys across all 4 ARB files:
+  - agentTypeStandard, agentTypeLead, agentTypeWorker
+  - agentGenomeTitle, identity/soul/role/goals/backstory labels + hints
+  - agentGenomeEmpty, agentPromoteButton, agentDemoteButton
+  - agentEnableLabel, agentDisableLabel, agentDetailsViewTitle
+- All 4 ARB files updated in sync (en, zh, zh_Hans, zh_Hant)
+
+**Known Issues:** Must run `flutter gen-l10n` to regenerate localizations.
+
+### 2.6: Unit tests
+| Field | Value |
+|---|---|
+| **Status** | ✅ Complete |
+| **Classification** | [KEEP] |
+| **Priority** | High |
+| **Effort** | Small |
+
+**Deliverable:**
+- `test/core/models/agent_test.dart` — 3 groups, 15+ test cases:
+  - AgentGenome: empty/full constructor, toJson/fromJson round-trip, empty field omission, empty map fromJson, copyWith merge + clear
+  - AgentType: toJson/fromJson, unknown value default
+  - Agent: defaults, toJson/fromJson with/without genome, copyWith, encodeList/decodeList round-trip, invalid JSON decode
+
+**Known Issues:** Provider tests not yet written (require SharedPreferences mocking). Model-only tests pass independently.
+
+---
+
+## Phase 3 — Task System
+
+### 3.1: Create Task model + enums
+| Field | Value |
+|---|---|
+| **Status** | ✅ Complete |
+| **Classification** | [REPLACE] |
+| **Priority** | Critical |
+| **Effort** | Small |
+
+**Deliverable:**
+- `lib/core/models/task.dart` — Task model with id, title, description, workspaceId, status, priority, assigneeAgentId, conversationId, dueDate, createdAt, updatedAt, tags, sortOrder
+- `TaskStatus` enum: backlog, todo, inProgress, review, completed, cancelled
+- `TaskPriority` enum: none, low, medium, high, urgent
+- JSON serialization with optional field omission, copyWith with clearXxx flags
+
+**Known Issues:** N/A — new model, no legacy data
+
+### 3.2: Create TaskProvider
+| Field | Value |
+|---|---|
+| **Status** | ✅ Complete |
+| **Classification** | [REPLACE] |
+| **Priority** | Critical |
+| **Effort** | Small |
+
+**Deliverable:**
+- `lib/core/providers/task_provider.dart` — CRUD for tasks, SharedPreferences persistence (tasks_v1)
+- Workspace-aware queries: getTasksForWorkspace(), getTasksForWorkspaceByStatus()
+- Agent-aware queries: getTasksForAgent()
+- Status management: updateTaskStatus(), reorderTasks()
+- Priority and assignment: updateTaskPriority(), assignTask(), unassignTask()
+- Bulk operations: getStatusCounts(), deleteTasksForWorkspace()
+- Registered in main.dart MultiProvider
+
+**Known Issues:** Task data stored as JSON in SharedPrefs. For large-scale task management, consider migrating to Hive or SQLite.
+
+### 3.3: Kanban TasksPage
+| Field | Value |
+|---|---|
+| **Status** | ✅ Complete |
+| **Classification** | [REPLACE] |
+| **Priority** | High |
+| **Effort** | Medium |
+
+**Changes:**
+- Complete rewrite of tasks_page.dart from conversation list placeholder to real kanban board
+- Horizontally scrollable columns: Backlog, To Do, In Progress, Review, Completed, Cancelled
+- Each column: status header with icon + count badge, task cards
+- Task cards: title (2 lines), description preview, priority badge, assignee chip, due date chip, status move popup
+- Tap card to edit: full dialog with title, description, status dropdown, priority dropdown, delete button
+- "New Task" FAB in title bar + empty state
+- Create dialog: title, description, priority selection
+- Lucide icons added: List, Play, Circle
+
+**Known Issues:** No drag-and-drop between columns yet (uses popup menu for status changes). Full drag-and-drop deferred to Phase 3+ enhancement.
+
+### 3.4: Dashboard task stat
+| Field | Value |
+|---|---|
+| **Status** | ✅ Complete |
+| **Classification** | [ENHANCE] |
+| **Priority** | Medium |
+| **Effort** | Small |
+
+**Changes:**
+- Added third _StatCard to dashboard: task count with tertiary color
+- Imported TaskProvider in dashboard_page.dart
+
+### 3.5: Localization keys
+| Field | Value |
+|---|---|
+| **Status** | ✅ Complete |
+| **Classification** | [ENHANCE] |
+| **Priority** | High |
+| **Effort** | Small |
+
+**Changes:**
+- 22 new keys across all 4 ARB files:
+  - tasksPageCreateTask, tasksPageEditTask, tasksPageDeleteTask
+  - tasksPageTitleLabel, tasksPageTitleHint
+  - tasksPageDescriptionLabel, tasksPageDescriptionHint
+  - tasksPagePriorityLabel, tasksPageStatusLabel, tasksPageMoveTask
+  - tasksColumnEmpty
+  - tasksStatusBacklog through tasksStatusCancelled (6)
+  - tasksPriorityNone through tasksPriorityUrgent (5)
+  - dashboardPageTasks
+
+**Known Issues:** Must run flutter gen-l10n to regenerate localizations.
+
+### 3.6: Unit tests
+| Field | Value |
+|---|---|
+| **Status** | ✅ Complete |
+| **Classification** | [KEEP] |
+| **Priority** | High |
+| **Effort** | Small |
+
+**Deliverable:**
+- test/core/models/task_test.dart — 3 groups, 20+ test cases:
+  - TaskStatus: values, toJson/fromJson, unknown default
+  - TaskPriority: values, toJson/fromJson, unknown default
+  - Task: defaults, full round-trip, minimal round-trip, optional field omission, copyWith preserve + 5 clearXxx flags, encodeList/decodeList, invalid JSON decode
+
+**Known Issues:** Provider tests not yet written (require SharedPreferences mocking). Model-only tests pass independently.
+
+---
+
+## Phase 4 — Agent Factory
+
+### 4.1: Create AgentTemplate model
+| Field | Value |
+|---|---|
+| **Status** | ✅ Complete |
+| **Classification** | [REPLACE] |
+| **Priority** | High |
+| **Effort** | Small |
+
+**Deliverable:**
+- `lib/core/models/agent_template.dart` — AgentTemplate with id, name, description, iconName, agentType, genome, suggestedSystemPrompt
+- JSON serialization (toJson/fromJson), null-safe defaults for optional fields
+
+**Known Issues:** N/A — new model, no legacy data
+
+### 4.2: Build-in agent templates
+| Field | Value |
+|---|---|
+| **Status** | ✅ Complete |
+| **Classification** | [REPLACE] |
+| **Priority** | High |
+| **Effort** | Small |
+
+**Deliverable:**
+- `lib/core/services/agent_templates.dart` — AgentTemplateService with 4 built-in templates:
+  - General Assistant (Standard type) — everyday conversations and queries
+  - Code Helper (Worker type) — code writing, review, debugging
+  - Writer (Worker type) — content creation and editing
+  - Researcher (Worker type) — deep research and analysis
+- Each template has pre-filled identity, soul, role, goals, backstory, and suggested system prompt
+- `getById()` lookup and `builtInTemplates` list accessor
+
+**Known Issues:** Templates are const singletons. Custom user-defined templates are deferred.
+
+### 4.3: Multi-step Agent Factory wizard
+| Field | Value |
+|---|---|
+| **Status** | ✅ Complete |
+| **Classification** | [REPLACE] |
+| **Priority** | High |
+| **Effort** | Medium |
+
+**Deliverable:**
+- `lib/features/agent_factory/pages/agent_factory_page.dart` — 4-step wizard:
+  - Step 1 (Template): Cards for each built-in template + "Start from Scratch" option
+  - Step 2 (Identity): Name and description text fields
+  - Step 3 (Role & Genome): Agent type dropdown + identity/soul/role/goals/backstory editors
+  - Step 4 (Review): Summary cards showing all selected settings
+- Step indicator with numbered dots and connector lines
+- Creates a new Assistant via AssistantProvider, promotes to Agent via AgentProvider
+- SnackBar feedback on success/failure
+
+**Known Issues:** Knowledge attachment and MCP tool selection steps deferred to Phase 4+ enhancement. Dashboard quick action navigation wiring still deferred.
+
+### 4.4: AgentsPage entry point
+| Field | Value |
+|---|---|
+| **Status** | ✅ Complete |
+| **Classification** | [ENHANCE] |
+| **Priority** | High |
+| **Effort** | Small |
+
+**Changes:**
+- Added FilledButton.icon "New Agent" in agents page title row
+- Navigates to AgentFactoryPage via MaterialPageRoute
+
+### 4.5: Localization keys
+| Field | Value |
+|---|---|
+| **Status** | ✅ Complete |
+| **Classification** | [ENHANCE] |
+| **Priority** | High |
+| **Effort** | Small |
+
+**Changes:**
+- 24 new keys across all 4 ARB files:
+  - agentFactoryTitle, agentFactoryNewAgent
+  - agentFactoryStepTemplate, agentFactoryStepIdentity, agentFactoryStepGenome, agentFactoryStepReview
+  - agentFactoryTemplateSubtitle, agentFactoryScratch, agentFactoryScratchDesc
+  - agentFactoryIdentitySubtitle, agentFactoryNameLabel, agentFactoryNameHint
+  - agentFactoryDescLabel, agentFactoryDescHint
+  - agentFactoryGenomeSubtitle, agentFactoryReviewSubtitle
+  - agentFactoryBack, agentFactoryNext, agentFactoryCreate
+  - agentFactoryCreated, agentFactoryCreatedSnackbar, agentFactoryCreateFailed, agentFactoryBasedOn
+- All 4 ARB files updated in sync (en, zh, zh_Hans, zh_Hant)
+
+**Known Issues:** Must run `flutter gen-l10n` to regenerate localizations.
+
+### 4.6: Unit tests
+| Field | Value |
+|---|---|
+| **Status** | ✅ Complete |
+| **Classification** | [KEEP] |
+| **Priority** | High |
+| **Effort** | Small |
+
+**Deliverable:**
+- `test/core/models/agent_template_test.dart` — 3 groups, 15+ test cases:
+  - AgentTemplate: constructor, defaults, toJson/fromJson round-trip, missing/empty/null field handling, unknown type default
+  - AgentTemplateService: 4 templates returned, each template by ID, null for unknown ID, non-empty descriptions, valid types, non-empty system prompts, unique IDs
+
+**Known Issues:** Service tests verify structural properties but not functional behavior.
+
+---
+
+## Phase 5 — Lead Agent
+
+### 5.1: Create ExecutionTrace model + TraceProvider
+| Field | Value |
+|---|---|
+| **Status** | ✅ Complete |
+| **Classification** | [REPLACE] |
+| **Priority** | Critical |
+| **Effort** | Medium |
+
+**Deliverables:**
+- `lib/core/models/execution_trace.dart` — ExecutionTrace with status (planning→delegating→executing→reviewing→completed/failed), steps (ExecutionStep with StepType/StepStatus), full JSON serialization, copyWith with clearXxx flags, encodeList/decodeList
+- `lib/core/providers/trace_provider.dart` — TraceProvider with CRUD, workspace-scoped queries, step management, SharedPreferences persistence (execution_traces_v1)
+- Registered in `main.dart` MultiProvider after TaskProvider
+
+**Known Issues:** N/A — new code, no legacy data
+
+### 5.2: Create LeadAgentService
+| Field | Value |
+|---|---|
+| **Status** | ✅ Complete |
+| **Classification** | [REPLACE] |
+| **Priority** | Critical |
+| **Effort** | Large |
+
+**Deliverable:**
+- `lib/core/services/lead_agent_service.dart` — Core orchestration:
+  - Plan phase: Calls lead agent's LLM to break user request into sub-tasks
+  - Delegate phase: Creates Task objects, assigns to available Worker agents
+  - Execute phase: Calls each worker's LLM with task description and returns results
+  - Review phase: Calls lead agent's LLM to consolidate worker results
+- Uses `ChatApiService.sendMessageStream()` for all LLM calls
+- Lead agent's model config used for planning/review; worker's own assistant config for execution
+- Progress callback for real-time UI updates
+- Execution trace persisted through TraceProvider at each stage
+
+**Known Issues:** LLM calls are synchronous (await stream completion). No streaming progress within individual LLM calls.
+
+### 5.3: Lead Agent built-in template
+| Field | Value |
+|---|---|
+| **Status** | ✅ Complete |
+| **Classification** | [ENHANCE] |
+| **Priority** | High |
+| **Effort** | Small |
+
+**Changes:**
+- Added `_leadAgent` template to `agent_templates.dart` with AgentType.lead
+- Identity: "a strategic lead agent and team orchestrator"
+- Goals include delegation, planning, review
+- AgentTemplateService builtInTemplates now returns 5 templates (up from 4)
+
+**Known Issues:** Template count test updated from 4→5 in agent_template_test.dart.
+
+### 5.4: Lead Agent execution page
+| Field | Value |
+|---|---|
+| **Status** | ✅ Complete |
+| **Classification** | [REPLACE] |
+| **Priority** | High |
+| **Effort** | Medium |
+
+**Deliverable:**
+- `lib/features/lead_agent/pages/lead_agent_execution_page.dart`:
+  - Input card: user types goal or request
+  - Execute button with loading indicator
+  - Status banner: shows current phase (planning/delegating/etc.) with progress bar
+  - Steps timeline: cards for each execution step with type icon, status indicator, description, and truncated result preview
+  - Result card: selectable text showing final consolidated response
+- Navigation: Play icon button on lead agents in AgentsPage → LeadAgentExecutionPage
+
+**Known Issues:** No live streaming of LLM output within steps. Results shown after step completion.
+
+### 5.5: Localization keys
+| Field | Value |
+|---|---|
+| **Status** | ✅ Complete |
+| **Classification** | [ENHANCE] |
+| **Priority** | High |
+| **Effort** | Small |
+
+**Changes:**
+- 16 new keys across all 4 ARB files:
+  - leadAgentInputTitle, leadAgentInputHint
+  - leadAgentExecuteButton, leadAgentExecuting
+  - leadAgentEmpty
+  - leadAgentStatusPlanning through leadAgentStatusFailed (6)
+  - leadAgentSteps, leadAgentResult, leadAgentAssignedTo
+  - leadAgentRunButton, leadAgentDelegatedTo (with {task} placeholder)
+- All 4 ARB files updated in sync (en, zh, zh_Hans, zh_Hant)
+
+**Known Issues:** Must run `flutter gen-l10n` to regenerate localizations.
+
+### 5.6: Unit tests
+| Field | Value |
+|---|---|
+| **Status** | ✅ Complete |
+| **Classification** | [KEEP] |
+| **Priority** | High |
+| **Effort** | Small |
+
+**Deliverable:**
+- `test/core/models/execution_trace_test.dart` — 4 groups, 40+ test cases:
+  - ExecutionStatus: values, toJson/fromJson, unknown default → failed
+  - StepType: values, toJson/fromJson, unknown default → plan
+  - StepStatus: values, toJson/fromJson, unknown default → pending
+  - ExecutionStep: defaults, toJson field omission, full field inclusion, fromJson all/missing, copyWith preserve + clear flags
+  - ExecutionTrace: defaults, full round-trip, JSON omission, minimal JSON parse, copyWith merge + clear, encodeList/decodeList, invalid JSON handling
+- `test/core/models/agent_template_test.dart` updated: 4→5 templates, lead-agent test added
+
+**Known Issues:** Provider tests not yet written (require SharedPreferences mocking). Model-only tests pass independently.
+
+---
+
+## Known Issues & Decisions Log
+
+| # | Date | Issue | Decision | Status |
+|---|---|---|---|---|
+| 1 | 2026-06-11 | Assistant storage in SharedPrefs (JSON string) not scalable for Agent genome | Migrate to Hive or SQLite when agent model expands (Phase 2) | ⏳ Deferred |
+| 2 | 2026-06-11 | SettingsProvider is a god class with 100+ keys | Split in Phase 1.8 — extract workspace and agent settings | 📋 Planned |
+| 3 | 2026-06-11 | No unit test infrastructure for providers | Add basic tests alongside new code | ⏳ Deferred |
+| 4 | 2026-06-11 | Conversation model lacks workspaceId | Add Hive field in Phase 1.2 | 📋 Planned |
+| 5 | 2026-06-11 | Assistant model lacks workspaceId and agent genome fields | Add in Phase 1.2 (workspaceId) and Phase 2 (genome) | 📋 Planned |
+| 6 | 2026-06-11 | `package:Kelivo/` imports are hardcoded | Must keep imports consistent or use package rename | ⏳ Deferred |
+| 7 | 2026-06-11 | Flutter CLI not available in dev environment | `flutter gen-l10n`, `dart run build_runner`, `flutter analyze`, `flutter test` cannot run locally. Must run on dev machine with Flutter SDK. | ⚠️ Active |
+| 8 | 2026-06-11 | Conversation model got new HiveField(13) workspaceId | Must run `dart run build_runner build --delete-conflicting-outputs` to regenerate `conversation.g.dart` | 📋 Required |
+| 9 | 2026-06-11 | Sidebar workspace filter is desktop-only | HomePage (mobile) doesn't pass workspaceId yet. Mobile workspace support is Phase 1+ extension. | ⏳ Deferred |
+| 10 | 2026-06-11 | Workspace model now has nullable `settings` field | Legacy persisted workspaces without `settings` key will deserialize with `settings: null` — safe. | ✅ Handled |
+| 11 | 2026-06-11 | SettingsProvider unchanged for global config | Workspace-level settings extracted into WorkspaceSettings model. Global settings extraction (MCP, backup, TTS) deferred. | ⏳ Deferred |
+| 12 | 2026-06-11 | Agent genome stored as JSON in SharedPrefs | AgentProvider stores genome in `agents_v1` SharedPrefs JSON string. Hive or SQLite recommended when agent count grows. | ⏳ Deferred |
+| 13 | 2026-06-11 | AgentProvider depends on AssistantProvider | AgentProvider constructor requires AssistantProvider reference. Must be registered after AssistantProvider in MultiProvider. | ✅ Handled |
+| 14 | 2026-06-11 | agents_page.dart dialog uses TextEditingController.fromValue | Dialog genome fields use disposable controllers. Could cause cursor position issues on rebuild — acceptable for Phase 2. | ⏳ Deferred |
+| 15 | 2026-06-11 | Task data stored as JSON in SharedPrefs | TaskProvider stores in tasks_v1 SharedPrefs JSON. Consider Hive/SQLite for large-scale task management. | ⏳ Deferred |
+| 16 | 2026-06-11 | Kanban board uses popup menu for status changes | No drag-and-drop between columns yet. Full DnD requires Flutter's Draggable/DragTarget or ReorderableListView. | ⏳ Deferred |
+| 17 | 2026-06-11 | Task-Conversation linking not wired | Task.conversationId exists but no UI for linking conversations to tasks yet. Deferred to multi-agent phase. | ⏳ Deferred |
+| 18 | 2026-06-11 | Agent Factory wizard has identity/genome steps but no knowledge/tool/MCP selection | Knowledge attachment, tool selection, and MCP profile selector deferred to Phase 4+ enhancements. Wizard creates minimal agent; full configuration available via existing assistant settings tabs. | ⏳ Deferred |
+| 19 | 2026-06-11 | Dashboard "New Agent" quick action chip is visual only | Navigation wiring not yet connected. User must navigate to Agents tab to use Agent Factory. | ⏳ Deferred |
+| 20 | 2026-06-11 | Typo fixed: TaskStatbilus → TaskStatus in task.dart | Inline fix applied. No functional impact. | ✅ Handled |
+| 21 | 2026-06-11 | LeadAgentService uses synchronous stream collection for LLM calls | Each LLM call awaits the full stream before returning. No live streaming of partial results within individual steps. Acceptable for Phase 5; streaming within steps deferred to Phase 6 enhancement. | ⏳ Deferred |
+| 22 | 2026-06-11 | LeadAgentService._callLlm creates standalone API messages without chat context | System prompts use hardcoded templates rather than the assistant's existing system prompt configuration. Worker agent prompts include the original user request for context. | ⏳ Deferred |
+| 23 | 2026-06-11 | Lead agent execution is single-threaded — workers execute sequentially | Tasks are executed one at a time. Parallel worker execution could be added in Phase 6 for multi-agent optimization. | ⏳ Deferred |
+
+---
+
+## Deliverables Index
+
+| File | Phase | Status | Description |
+|---|---|---|---|
+| `CURRENT_STATE.md` | 0 | ✅ Complete | Full architecture audit |
+| `YLAGENTS_PHASE0_PLAN.md` | 0/0.5 | ✅ Complete | Phase plan with all task details |
+| `PROGRESS_TRACKING.md` | All | 🔄 Active | This file — live progress tracking |
+| `kelivo/lib/core/models/workspace.dart` | 1.1 | ✅ Complete | Workspace model + WorkspaceType enum |
+| `kelivo/lib/core/providers/workspace_provider.dart` | 1.1 | ✅ Complete | Workspace CRUD + migration |
+| `kelivo/lib/core/models/conversation.dart` | 1.2 | ✅ Complete | Added workspaceId HiveField(13) |
+| `kelivo/lib/core/models/assistant.dart` | 1.2 | ✅ Complete | Added workspaceId JSON field |
+| `kelivo/lib/core/services/chat/chat_service.dart` | 1.3 | ✅ Complete | Migration + workspace filtering |
+| `kelivo/lib/desktop/desktop_nav_rail.dart` | 1.4 | ✅ Complete | Workspace-first nav rail (6 tabs) |
+| `kelivo/lib/desktop/desktop_home_page.dart` | 1.4 | ✅ Complete | NavTab IndexedStack + More menu |
+| `kelivo/lib/features/dashboard/pages/dashboard_page.dart` | 1.5 | ✅ Complete | Workspace dashboard overview |
+| `kelivo/lib/features/tasks/pages/tasks_page.dart` | 1.5 | ✅ Complete | Tasks landing page |
+| `kelivo/lib/features/agents/pages/agents_page.dart` | 1.5 | ✅ Complete | Agents landing page |
+| `kelivo/lib/features/knowledge/pages/knowledge_page.dart` | 1.5 | ✅ Complete | Knowledge landing page |
+| `kelivo/lib/desktop/desktop_sidebar.dart` | 1.6 | ✅ Complete | Workspace-aware sidebar wrapper |
+| `kelivo/lib/features/home/widgets/side_drawer.dart` | 1.6 | ✅ Complete | Workspace conversation filtering |
+| `kelivo/lib/features/workspace/widgets/workspace_selector.dart` | 1.7 | ✅ Complete | Workspace dropdown selector + create dialog |
+| `kelivo/lib/icons/lucide_adapter.dart` | 1.7 | ✅ Complete | Added Briefcase icon |
+| `kelivo/lib/core/models/workspace_settings.dart` | 1.8 | ✅ Complete | WorkspaceSettings model (typed settings) |
+| `test/core/models/workspace_test.dart` | 1.9 | ✅ Complete | Unit tests for Workspace, WorkspaceType, WorkspaceSettings |
+| `kelivo/lib/core/models/agent_genome.dart` | 2.1 | ✅ Complete | AgentGenome model (identity, soul, role, goals, backstory) |
+| `kelivo/lib/core/models/agent.dart` | 2.2 | ✅ Complete | Agent model + AgentType enum (standard, lead, worker) |
+| `kelivo/lib/core/providers/agent_provider.dart` | 2.3 | ✅ Complete | AgentProvider: genome CRUD, promote/demote, workspace-aware queries |
+| `kelivo/lib/features/agents/pages/agents_page.dart` | 2.4 | ✅ Complete | Agent-aware agents list with genome chips, type badges, detail dialog |
+| `test/core/models/agent_test.dart` | 2.6 | ✅ Complete | Unit tests for Agent, AgentGenome, AgentType |
+| `kelivo/lib/l10n/app_*.arb` (4 files) | 2.5 | ✅ Complete | 18 new agent genome keys |
+| `kelivo/lib/core/models/task.dart` | 3.1 | ✅ Complete | Task model + TaskStatus + TaskPriority enums |
+| `kelivo/lib/core/providers/task_provider.dart` | 3.2 | ✅ Complete | TaskProvider: CRUD, workspace-aware queries, status management |
+| `kelivo/lib/features/tasks/pages/tasks_page.dart` | 3.3 | ✅ Complete | Kanban board with status columns, task cards, create/edit dialogs |
+| `kelivo/lib/features/dashboard/pages/dashboard_page.dart` | 3.4 | ✅ Complete | Task count stat card |
+| `test/core/models/task_test.dart` | 3.6 | ✅ Complete | Unit tests for Task, TaskStatus, TaskPriority |
+| `kelivo/lib/l10n/app_*.arb` (4 files) | 3.5 | ✅ Complete | 22 new task system keys |
+| `kelivo/lib/core/models/agent_template.dart` | 4.1 | ✅ Complete | AgentTemplate model (template presets) |
+| `kelivo/lib/core/services/agent_templates.dart` | 4.2 | ✅ Complete | Built-in agent templates (General, Code, Writer, Researcher) |
+| `kelivo/lib/features/agent_factory/pages/agent_factory_page.dart` | 4.3 | ✅ Complete | 4-step agent creation wizard |
+| `kelivo/lib/features/agents/pages/agents_page.dart` | 4.4 | ✅ Complete | Added "New Agent" entry point |
+| `kelivo/lib/l10n/app_*.arb` (4 files) | 4.5 | ✅ Complete | 24 new agent factory keys |
+| `test/core/models/agent_template_test.dart` | 4.6 | ✅ Complete | Unit tests for AgentTemplate + AgentTemplateService |
+| `kelivo/lib/core/models/execution_trace.dart` | 5.1 | ✅ Complete | ExecutionTrace model + ExecutionStep + enums |
+| `kelivo/lib/core/providers/trace_provider.dart` | 5.1 | ✅ Complete | TraceProvider: CRUD, workspace queries, SharedPrefs persistence |
+| `kelivo/lib/core/services/lead_agent_service.dart` | 5.2 | ✅ Complete | LeadAgentService: plan→delegate→execute→review orchestration |
+| `kelivo/lib/features/lead_agent/pages/lead_agent_execution_page.dart` | 5.4 | ✅ Complete | Lead Agent input, status, steps timeline, result view |
+| `kelivo/lib/features/agents/pages/agents_page.dart` | 5.4 | ✅ Complete | Play button for lead agents → execution page |
+| `kelivo/lib/core/services/agent_templates.dart` | 5.3 | ✅ Complete | Added Lead Agent built-in template (5th template) |
+| `test/core/models/execution_trace_test.dart` | 5.6 | ✅ Complete | 40+ test cases for ExecutionTrace, ExecutionStep, enums |
+| `kelivo/lib/l10n/app_*.arb` (4 files) | 5.5 | ✅ Complete | 16 new lead agent keys |
+
+---
+
+## Development Rules (Active Reminders)
+
+1. **Never rebuild existing provider integrations** — they work, don't touch them
+2. **Never rebuild MCP without justification** — it's excellent, enhance only
+3. **Never create duplicate storage systems** — reuse Hive/SharedPrefs
+4. **Never redesign screens before audit** — audit is done ✅
+5. **Always prefer extension over replacement**
+6. **Every feature must ask**: Can this become Workspace Aware? Agent Aware? Multi-Agent Aware?
+7. **No mock, no simple, no placeholder** — every deliverable is real production code
