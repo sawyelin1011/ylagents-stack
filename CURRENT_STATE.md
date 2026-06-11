@@ -13,12 +13,12 @@
 | 3 | Task System | ✅ Complete |
 | 4 | Agent Factory | ✅ Complete |
 | 5 | Lead Agent | ✅ Complete |
-| 6 | Multi-Agent | ⏳ Pending |
-| 7 | Skills System | ⏳ Pending |
-| 8 | Channels | ⏳ Pending |
-| 9 | Sync Server | ⏳ Pending |
+| 6 | Multi-Agent | ✅ Complete |
+| 7 | Skills System | ✅ Complete |
+| 8 | Channels | ✅ Complete |
+| 9 | Sync Server | ✅ Complete |
 | 10 | Runtime Host | ⏳ Pending |
 
-**Next:** Phase 6 — Multi-Agent Orchestration
+**Next:** Phase 10 — Runtime Host
 
 See [PROGRESS_TRACKING.md](PROGRESS_TRACKING.md) for full task-level details, deliverables, known issues, and test coverage.

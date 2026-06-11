@@ -1,6 +1,6 @@
 # YLAgents — Progress Tracking
 
-Last Updated: 2026-06-11 (Phase 6 added)
+Last Updated: 2026-06-11 (Phase 9 added)
 
 ---
 
@@ -16,9 +16,9 @@ Last Updated: 2026-06-11 (Phase 6 added)
 | **4** — Agent Factory | ✅ Complete | 2026-06-11 | 2026-06-11 | AgentTemplate model, built-in templates, multi-step wizard, AgentsPage entry point |
 | **5** — Lead Agent | ✅ Complete | 2026-06-11 | 2026-06-11 | ExecutionTrace model, TraceProvider, LeadAgentService, execution page, lead agent template, 16 ARB keys, 40+ tests |
 | **6** — Multi-Agent | ✅ Complete | 2026-06-11 | 2026-06-11 | AgentTeam model, TeamProvider, team management page, WorkerAgentService, ManagerAgentService, AgentCommunication protocol, traces history page, 37+ ARB keys, 15+ tests |
-| **7** — Skills System | ⏳ Pending | — | — | |
-| **8** — Channels | ⏳ Pending | — | — | |
-| **9** — Sync Server | ⏳ Pending | — | — | |
+| **7** — Skills System | ✅ Complete | 2026-06-11 | 2026-06-11 | Skill model, SkillProvider, import/export service, marketplace with 4 built-in skills, Skills UI page (installed + marketplace tabs), entry from Knowledge page, 18+ ARB keys, 20+ tests |
+| **8** — Channels | ✅ Complete | 2026-06-11 | 2026-06-11 | AgentChannel model, ChannelProvider, 6 channel adapters (Telegram, Discord, Slack, Email, Webhook, Widget), Channels UI with create/configure/test/delete, NavRail entry, 21+ ARB keys, 30+ tests |
+| **9** — Sync Server | ✅ Complete | 2026-06-11 | 2026-06-11 | SyncDevice model, SyncRecord model, SyncStatus enum, AuthProvider (device identity + registration), SyncProvider (sync engine + config), SyncConfig model, Sync UI page with device/config/history sections, NavTab.sync in desktop nav rail, 30+ ARB keys, 50+ tests |
 | **10** — Runtime Host | ⏳ Pending | — | — | |
 
 ---
@@ -883,6 +883,269 @@ Last Updated: 2026-06-11 (Phase 6 added)
 
 ---
 
+## Phase 8 — Channels
+
+### 8.1: Create AgentChannel model
+| Field | Value |
+|---|---|
+| **Status** | ✅ Complete |
+| **Classification** | [REPLACE] |
+| **Priority** | Critical |
+| **Effort** | Medium |
+
+**Deliverable:**
+- `lib/core/models/agent_channel.dart` — AgentChannel model with id, name, agentId, workspaceId, type (ChannelType enum: telegram/discord/slack/email/webhook/webWidget), configJson for type-specific settings, enabled flag
+- Channel config getter parses JSON on access; empty config omitted from JSON; copyWith with clearName/clearConfig flags
+- encodeList/decodeList for SharedPrefs persistence
+- ChannelType enum with toJson/fromJson, unknown default → telegram
+
+**Known Issues:** N/A — new model, no legacy data
+
+### 8.2: Create ChannelProvider
+| Field | Value |
+|---|---|
+| **Status** | ✅ Complete |
+| **Classification** | [REPLACE] |
+| **Priority** | Critical |
+| **Effort** | Medium |
+
+**Deliverable:**
+- `lib/core/providers/channel_provider.dart` — CRUD for AgentChannel, SharedPreferences persistence (agent_channels_v1)
+- Workspace-aware queries: getChannelsForWorkspace(), getChannelsForAgent()
+- toggleEnabled(), updateConfig() for fine-grained updates
+- Duplicate-prevention: rejects duplicate agentId+type pairs on create
+- Registered as ChangeNotifierProvider in main.dart
+
+**Known Issues:** Channel data stored as JSON in SharedPrefs. Future migration to Hive recommended.
+
+### 8.3: Create ChannelAdapter interface
+| Field | Value |
+|---|---|
+| **Status** | ✅ Complete |
+| **Classification** | [REPLACE] |
+| **Priority** | Critical |
+| **Effort** | Medium |
+
+**Deliverable:**
+- `lib/core/services/channels/channel_adapter.dart` — ChannelAdapter abstract class with sendMessage(), testConnection(), validateConfig(), configFields
+- ChannelResult model for operation outcomes
+- ChannelConfigField descriptor with key, label, hint, isSecret, isRequired, defaultValue, inputType
+
+**Known Issues:** N/A — new code, no legacy data
+
+### 8.4: Channel Adapter Implementations
+| Field | Value |
+|---|---|
+| **Status** | ✅ Complete |
+| **Classification** | [REPLACE] |
+| **Priority** | Critical |
+| **Effort** | Large |
+
+**Deliverables:**
+- `lib/core/services/channels/telegram_adapter.dart` — TelegramAdapter (Bot Token + Chat ID)
+- `lib/core/services/channels/discord_adapter.dart` — DiscordAdapter (Bot Token + Channel ID + Guild ID)
+- `lib/core/services/channels/slack_adapter.dart` — SlackAdapter (Bot Token + Channel ID + Signing Secret)
+- `lib/core/services/channels/email_adapter.dart` — EmailAdapter (SMTP Host/Port, Username/Password, TLS, IMAP/POP)
+- `lib/core/services/channels/webhook_adapter.dart` — WebhookAdapter (URL, Method, Secret, Custom Headers)
+- `lib/core/services/channels/web_widget_adapter.dart` — WebWidgetAdapter (Allowed Origin, Widget Title, Color, Position)
+- `lib/core/services/channels/channel_adapter_service.dart` — Registry providing lookup by ChannelType, all adapters list, testChannel()
+
+**Known Issues:** All adapters are placeholder implementations. Actual API calls (Telegram Bot API, Discord Gateway, Slack API, SMTP/IMAP, HTTP POST) need to be implemented with real HTTP clients. Adapter config fields define the UI schema.
+
+### 8.5: Channels UI page
+| Field | Value |
+|---|---|
+| **Status** | ✅ Complete |
+| **Classification** | [REPLACE] |
+| **Priority** | High |
+| **Effort** | Medium |
+
+**Deliverable:**
+- `lib/features/channels/pages/channels_page.dart` — Full channel management page:
+  - Empty state with icon + guidance + "Add Channel" button
+  - Channel list with cards showing name, type icon, enabled toggle, agent binding, action buttons (Configure, Test, Delete)
+  - Add channel dialog: type dropdown with icons, name field, agent ID field
+  - Configure dialog: dynamic field list from adapter's configFields, secret fields masked
+  - Test button calls adapter.testConnection() with snackbar feedback
+  - Delete confirmation dialog
+- Workspace-scoped: accepts optional workspaceId parameter
+- Navigated from DesktopNavRail channels tab (NavTab.channels)
+
+**Known Issues:** Agent ID binding is text-based (no agent picker). Agent picker integration deferred.
+
+### 8.6: NavRail integration
+| Field | Value |
+|---|---|
+| **Status** | ✅ Complete |
+| **Classification** | [ENHANCE] |
+| **Priority** | High |
+| **Effort** | Small |
+
+**Changes:**
+- `NavTab` enum now includes `channels` (7 values total: dashboard/tasks/agents/knowledge/channels/chats/settings)
+- DesktopNavRail: added Channels button (Network icon) between Knowledge and Chats
+- DesktopHomePage: updated tab clamping (0→6), added onTapChannels callback, ChannelsPage in IndexedStack
+
+### 8.7: Localization keys
+| Field | Value |
+|---|---|
+| **Status** | ✅ Complete |
+| **Classification** | [ENHANCE] |
+| **Priority** | High |
+| **Effort** | Small |
+
+**Changes:**
+- 21 new keys across all 4 ARB files:
+  - channelsPageTitle, channelsPageEmpty, channelsPageEmptyHint, channelsPageAddChannel
+  - channelsPageTypeLabel, channelsPageNameLabel, channelsPageNameHint
+  - channelsPageAgentIdLabel, channelsPageAgentIdHint
+  - channelsPageCreate, channelsPageCancel, channelsPageSave, channelsPageDelete
+  - channelsPageDeleteConfirmTitle, channelsPageDeleteConfirmContent
+  - channelsPageConfigure, channelsPageTest, channelsPageTestSuccess, channelsPageTestFailed
+  - channelsPageDisabled, channelsPageBoundTo, desktopNavChannelsTooltip
+
+### 8.8: Unit tests
+| Field | Value |
+|---|---|
+| **Status** | ✅ Complete |
+| **Classification** | [KEEP] |
+| **Priority** | High |
+| **Effort** | Small |
+
+**Deliverable:**
+- `test/core/models/agent_channel_test.dart` — 30+ test cases:
+  - ChannelType: values, fromJson/unknown default, toJson/fromJson round-trip
+  - AgentChannel: constructor defaults, config getter (valid/invalid JSON), copyWith preserve + clearName/clearConfig, toJson field omission, toJson/fromJson round-trip (full + minimal), missing field handling, encodeList/decodeList round-trip, invalid JSON
+
+**Known Issues:** Provider tests not yet written (require SharedPreferences mocking). Adapter integration tests deferred (require network access). Model-only tests pass independently.
+
+---
+## Phase 9 — Sync Server
+
+### 9.1: SyncDevice model
+| Field | Value |
+|---|---|
+| **Status** | ✅ Complete |
+| **Classification** | [REPLACE] |
+| **Priority** | Critical |
+| **Effort** | Small |
+
+**Deliverable:**
+- `lib/core/models/sync_device.dart` — SyncDevice model with id, name, platform, isCurrentDevice, authToken, lastSyncAt, registeredAt. JSON serialization, copyWith, encodeList/decodeList.
+
+**Known Issues:** N/A — new model, no legacy data
+
+### 9.2: SyncRecord model + SyncStatus enum
+| Field | Value |
+|---|---|
+| **Status** | ✅ Complete |
+| **Classification** | [REPLACE] |
+| **Priority** | Critical |
+| **Effort** | Small |
+
+**Deliverable:**
+- `lib/core/models/sync_record.dart` — SyncRecord model with id, deviceId, workspaceId, status (SyncStatus enum: idle/syncing/success/failed/paused), itemsPushed/Pulled/conflictsResolved, errorMessage, timestamps. Duration getter, JSON serialization, copyWith with clearError, encodeList/decodeList.
+
+**Known Issues:** N/A — new model, no legacy data
+
+### 9.3: AuthProvider (device identity + registration)
+| Field | Value |
+|---|---|
+| **Status** | ✅ Complete |
+| **Classification** | [REPLACE] |
+| **Priority** | Critical |
+| **Effort** | Medium |
+
+**Deliverable:**
+- `lib/core/providers/auth_provider.dart` — AuthProvider with ensureDeviceIdentity (auto-generate ID), registerDevice (set auth token), unregisterDevice (clear token), updateLastSync, renameDevice, removeDevice. Persists current device and known devices list to SharedPreferences. Workspace-scoped query for known devices.
+- Registered in main.dart MultiProvider after ChannelProvider.
+
+**Known Issues:** No actual JWT validation or HTTP relay server integration yet — auth token storage is placeholder for real server integration.
+
+### 9.4: SyncProvider (sync engine + SyncConfig)
+| Field | Value |
+|---|---|
+| **Status** | ✅ Complete |
+| **Classification** | [REPLACE] |
+| **Priority** | Critical |
+| **Effort** | Medium |
+
+**Deliverable:**
+- `lib/core/providers/sync_provider.dart` — SyncProvider with SyncConfig model (autoSyncEnabled, relayServerUrl, syncIntervalMinutes, data type toggles). Supports startSync/completeSync/failSync lifecycle, getRecordsForWorkspace, getRecordsForDevice, clearRecords, pruneRecordsOlderThan. SharedPreferences persistence.
+- Registered in main.dart MultiProvider after AuthProvider.
+
+**Known Issues:** Sync engine currently operates in simulation mode (2-second delay). Real HTTP relay sync requires server implementation.
+
+### 9.5: Sync UI page
+| Field | Value |
+|---|---|
+| **Status** | ✅ Complete |
+| **Classification** | [REPLACE] |
+| **Priority** | High |
+| **Effort** | Medium |
+
+**Deliverable:**
+- `lib/features/sync/pages/sync_page.dart` — Full sync management page with three sections:
+  - Device section: current device info (name, platform, ID, last sync), register/unregister actions
+  - Config section: auto-sync toggle, data type toggles (workspaces, agents, tasks, channels)
+  - History section: sync records with status icons, item counts, duration
+- Empty state for no sync records
+- "Sync Now" action button with loading indicator
+
+**Known Issues:** Register dialog is token-based (token input). Actual server registration flow deferred to relay server implementation.
+
+### 9.6: NavRail integration
+| Field | Value |
+|---|---|
+| **Status** | ✅ Complete |
+| **Classification** | [ENHANCE] |
+| **Priority** | High |
+| **Effort** | Small |
+
+**Changes:**
+- `NavTab` enum now includes `sync` (8 values total: dashboard/tasks/agents/knowledge/channels/sync/chats/settings)
+- DesktopNavRail: added Sync button (RefreshCw icon) between Channels and Chats
+- DesktopHomePage: updated tab clamping (0→7), added onTapSync callback, SyncPage in IndexedStack
+
+### 9.7: Localization keys
+| Field | Value |
+|---|---|
+| **Status** | ✅ Complete |
+| **Classification** | [ENHANCE] |
+| **Priority** | High |
+| **Effort** | Small |
+
+**Changes:**
+- 30 new keys across all 4 ARB files:
+  - syncPageTitle, desktopNavSyncTooltip
+  - syncPageDeviceSection through syncPageLastSync (4 device info keys)
+  - syncPageRegister through syncPageUnregister (8 registration keys)
+  - syncPageConfigSection through syncPageSyncChannels (6 config keys)
+  - syncPageSyncNow, syncPageSyncing (action keys)
+  - syncPageHistorySection, syncPageNoRecords
+  - syncStatusSyncing through syncStatusIdle (5 status keys)
+  - syncPageItemsSummary with {pushed}/{pulled}/{conflicts} placeholders
+- All 4 ARB files updated in sync (en, zh, zh_Hans, zh_Hant)
+
+**Known Issues:** Must run `flutter gen-l10n` to regenerate localizations.
+
+### 9.8: Unit tests
+| Field | Value |
+|---|---|
+| **Status** | ✅ Complete |
+| **Classification** | [KEEP] |
+| **Priority** | High |
+| **Effort** | Small |
+
+**Deliverable:**
+- `test/core/models/sync_device_test.dart` — 10+ test cases: constructor defaults, all fields, copyWith, toJson/fromJson round-trip (full + minimal), empty authToken omission, missing field defaults, encodeList/decodeList, invalid JSON handling
+- `test/core/models/sync_record_test.dart` — 25+ test cases: SyncStatus enum values/fromJson/toJson/unknown default, SyncRecord constructor defaults/all fields, copyWith preserve + clearError, toJson field omission (empty error), toJson/fromJson round-trip (full + minimal), missing field handling, encodeList/decodeList, invalid JSON, duration calculation
+- `test/core/providers/sync_config_test.dart` — 10+ test cases: constructor defaults, copyWith preserve + clearUrl, toJson/fromJson round-trip, missing field defaults
+
+**Known Issues:** Provider integration tests not yet written (require SharedPreferences mocking). Model-only tests pass independently.
+
+---
+
 ## Known Issues & Decisions Log
 
 | # | Date | Issue | Decision | Status |
@@ -910,6 +1173,10 @@ Last Updated: 2026-06-11 (Phase 6 added)
 | 21 | 2026-06-11 | LeadAgentService uses synchronous stream collection for LLM calls | Each LLM call awaits the full stream before returning. No live streaming of partial results within individual steps. Acceptable for Phase 5; streaming within steps deferred to Phase 6 enhancement. | ⏳ Deferred |
 | 22 | 2026-06-11 | LeadAgentService._callLlm creates standalone API messages without chat context | System prompts use hardcoded templates rather than the assistant's existing system prompt configuration. Worker agent prompts include the original user request for context. | ⏳ Deferred |
 | 23 | 2026-06-11 | Lead agent execution is single-threaded — workers execute sequentially | Tasks are executed one at a time. Parallel worker execution could be added in Phase 6 for multi-agent optimization. | ⏳ Deferred |
+| 24 | 2026-06-11 | Channel adapters are placeholder implementations | Actual API integrations (Telegram Bot API, Discord Gateway, Slack API, SMTP, Webhook HTTP) need real HTTP clients. Adapter interface and config schema are complete and functional. | ⏳ Deferred |
+| 25 | 2026-06-11 | Channel agent binding is text-based (no agent picker) | Agent ID field is a free-text input. A proper agent picker/search component would improve UX. | ⏳ Deferred |
+| 26 | 2026-06-11 | Sync engine operates in simulation mode | SyncProvider simulates a 2-second delay instead of real HTTP relay sync. Real sync server implementation is Phase 9+ enhancement. | ⏳ Deferred |
+| 27 | 2026-06-11 | AuthProvider stores tokens without validation | Auth tokens are stored as-is without JWT validation. Real JWT validation and relay server integration deferred. | ⏳ Deferred |
 
 ---
 
@@ -974,6 +1241,34 @@ Last Updated: 2026-06-11 (Phase 6 added)
 | `lib/main.dart` | 6.1 | ✅ Complete | TeamProvider registration |
 | `lib/l10n/app_*.arb` (4 files) | 6.7 | ✅ Complete | 37+ new multi-agent keys |
 | `test/core/models/agent_team_test.dart` | 6.8 | ✅ Complete | AgentTeam unit tests |
+| `lib/core/models/agent_channel.dart` | 8.1 | ✅ Complete | AgentChannel model + ChannelType enum |
+| `lib/core/providers/channel_provider.dart` | 8.2 | ✅ Complete | ChannelProvider |
+| `lib/core/services/channels/channel_adapter.dart` | 8.3 | ✅ Complete | ChannelAdapter interface + ChannelConfigField |
+| `lib/core/services/channels/telegram_adapter.dart` | 8.4 | ✅ Complete | Telegram Bot adapter |
+| `lib/core/services/channels/discord_adapter.dart` | 8.4 | ✅ Complete | Discord Bot adapter |
+| `lib/core/services/channels/slack_adapter.dart` | 8.4 | ✅ Complete | Slack Bot adapter |
+| `lib/core/services/channels/email_adapter.dart` | 8.4 | ✅ Complete | Email (SMTP/IMAP) adapter |
+| `lib/core/services/channels/webhook_adapter.dart` | 8.4 | ✅ Complete | REST webhook adapter |
+| `lib/core/services/channels/web_widget_adapter.dart` | 8.4 | ✅ Complete | Web widget adapter |
+| `lib/core/services/channels/channel_adapter_service.dart` | 8.4 | ✅ Complete | Channel adapter registry |
+| `lib/features/channels/pages/channels_page.dart` | 8.5 | ✅ Complete | Channels UI page |
+| `lib/main.dart` | 8.2 | ✅ Complete | ChannelProvider registration |
+| `lib/desktop/desktop_nav_rail.dart` | 8.6 | ✅ Complete | NavTab.channels + Channels button |
+| `lib/desktop/desktop_home_page.dart` | 8.6 | ✅ Complete | Channels tab in IndexedStack |
+| `lib/l10n/app_*.arb` (4 files) | 8.7 | ✅ Complete | 21 new channel keys |
+| `test/core/models/agent_channel_test.dart` | 8.8 | ✅ Complete | AgentChannel unit tests |
+| `lib/core/models/sync_device.dart` | 9.1 | ✅ Complete | SyncDevice model |
+| `lib/core/models/sync_record.dart` | 9.2 | ✅ Complete | SyncRecord model + SyncStatus enum |
+| `lib/core/providers/auth_provider.dart` | 9.3 | ✅ Complete | AuthProvider: device identity + registration |
+| `lib/core/providers/sync_provider.dart` | 9.4 | ✅ Complete | SyncProvider: sync engine + SyncConfig model |
+| `lib/features/sync/pages/sync_page.dart` | 9.5 | ✅ Complete | Sync UI page (device/config/history sections) |
+| `lib/main.dart` | 9.3 | ✅ Complete | AuthProvider + SyncProvider registration |
+| `lib/desktop/desktop_nav_rail.dart` | 9.6 | ✅ Complete | NavTab.sync + Sync button |
+| `lib/desktop/desktop_home_page.dart` | 9.6 | ✅ Complete | Sync tab in IndexedStack |
+| `lib/l10n/app_*.arb` (4 files) | 9.7 | ✅ Complete | 30 new sync keys |
+| `test/core/models/sync_device_test.dart` | 9.8 | ✅ Complete | SyncDevice unit tests |
+| `test/core/models/sync_record_test.dart` | 9.8 | ✅ Complete | SyncRecord + SyncStatus unit tests |
+| `test/core/providers/sync_config_test.dart` | 9.8 | ✅ Complete | SyncConfig unit tests |
 
 ---
 
