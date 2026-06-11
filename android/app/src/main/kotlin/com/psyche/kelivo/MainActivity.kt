@@ -1,9 +1,13 @@
 package com.psyche.kelivo
 
 import android.app.Activity
+import android.app.NotificationChannel
+import android.app.NotificationManager
 import android.content.ActivityNotFoundException
 import android.net.Uri
 import android.content.Intent
+import android.os.Build
+import androidx.core.app.NotificationCompat
 import io.flutter.embedding.android.FlutterActivity
 import io.flutter.embedding.engine.FlutterEngine
 import io.flutter.plugin.common.MethodChannel
@@ -13,12 +17,15 @@ import java.io.FileInputStream
 class MainActivity : FlutterActivity() {
     private companion object {
         const val CREATE_DOCUMENT_REQUEST_CODE = 4107
+        const val NOTIFICATION_CHANNEL_ID = "kelivo_bg_chat_v2"
     }
 
     private val processTextChannelName = "app.process_text"
     private val fileSaveChannelName = "app.file_save"
+    private val notificationsChannelName = "app.notifications"
     private var processTextChannel: MethodChannel? = null
     private var fileSaveChannel: MethodChannel? = null
+    private var notificationsChannel: MethodChannel? = null
     private var pendingProcessText: String? = null
     private var pendingSaveResult: MethodChannel.Result? = null
     private var pendingSaveSourcePath: String? = null
@@ -40,6 +47,32 @@ class MainActivity : FlutterActivity() {
         fileSaveChannel?.setMethodCallHandler { call, result ->
             when (call.method) {
                 "saveFileFromPath" -> handleSaveFileFromPath(call.arguments, result)
+                else -> result.notImplemented()
+            }
+        }
+        notificationsChannel = MethodChannel(flutterEngine.dartExecutor.binaryMessenger, notificationsChannelName)
+        notificationsChannel?.setMethodCallHandler { call, result ->
+            when (call.method) {
+                "init" -> {
+                    createNotificationChannel()
+                    result.success(true)
+                }
+                "showNotification" -> {
+                    val args = call.arguments as? Map<*, *>
+                    val title = args?.get("title")?.toString() ?: ""
+                    val body = args?.get("body")?.toString() ?: ""
+                    val id = (args?.get("id") as? Int) ?: System.currentTimeMillis().toInt()
+                    showNotification(id, title, body)
+                    result.success(true)
+                }
+                "show" -> {
+                    val args = call.arguments as? Map<*, *>
+                    val title = args?.get("title")?.toString() ?: ""
+                    val body = args?.get("body")?.toString() ?: ""
+                    val id = (System.currentTimeMillis() % Int.MAX_VALUE).toInt()
+                    showNotification(id, title, body)
+                    result.success(true)
+                }
                 else -> result.notImplemented()
             }
         }
@@ -145,5 +178,34 @@ class MainActivity : FlutterActivity() {
                 }
             }
         }.start()
+    }
+
+    private fun createNotificationChannel() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            val channel = NotificationChannel(
+                NOTIFICATION_CHANNEL_ID,
+                "Chat Background",
+                NotificationManager.IMPORTANCE_HIGH
+            ).apply {
+                description = "Notifications for chat generation status"
+                enableVibration(true)
+                setShowBadge(true)
+            }
+            val manager = getSystemService(NotificationManager::class.java)
+            manager.createNotificationChannel(channel)
+        }
+    }
+
+    private fun showNotification(id: Int, title: String, body: String) {
+        val notification = NotificationCompat.Builder(this, NOTIFICATION_CHANNEL_ID)
+            .setSmallIcon(android.R.drawable.ic_dialog_info)
+            .setContentTitle(title)
+            .setContentText(body)
+            .setPriority(NotificationCompat.PRIORITY_HIGH)
+            .setAutoCancel(true)
+            .build()
+
+        val manager = getSystemService(NotificationManager::class.java)
+        manager.notify(id, notification)
     }
 }

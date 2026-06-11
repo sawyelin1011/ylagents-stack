@@ -9,7 +9,8 @@ import 'package:flutter/services.dart';
 import 'package:window_manager/window_manager.dart';
 import 'desktop/desktop_window_controller.dart';
 import 'desktop/desktop_tray_controller.dart';
-// import 'package:logging/logging.dart' as logging;
+// Import LeadAgentService for RuntimeProvider wiring
+import 'core/services/lead_agent_service.dart' show LeadAgentService;
 // Theme is now managed in SettingsProvider
 import 'theme/theme_factory.dart';
 import 'theme/palettes.dart';
@@ -168,7 +169,13 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (_) => AuthProvider()),
         ChangeNotifierProvider(create: (_) => SyncProvider()),
         ChangeNotifierProvider(create: (_) => SchedulerService()),
-        ChangeNotifierProvider(create: (_) => RuntimeProvider()),
+        ChangeNotifierProvider(
+          create: (_) {
+            final runtime = RuntimeProvider();
+            // LeadAgentService will be attached post-frame when all providers are ready
+            return runtime;
+          },
+        ),
         ChangeNotifierProvider(create: (_) => BackupReminderProvider()),
         // Desktop hotkeys provider
         ChangeNotifierProvider(create: (_) => HotkeyProvider()),
@@ -302,6 +309,24 @@ class MyApp extends StatelessWidget {
                       }
                     }
                   }
+                } catch (_) {}
+              });
+
+              // Wire RuntimeProvider with SchedulerService and LeadAgentService
+              WidgetsBinding.instance.addPostFrameCallback((_) async {
+                try {
+                  final runtime = context.read<RuntimeProvider>();
+                  final scheduler = context.read<SchedulerService>();
+                  runtime.attachScheduler(scheduler);
+
+                  final leadService = LeadAgentService(
+                    agentProvider: context.read<AgentProvider>(),
+                    assistantProvider: context.read<AssistantProvider>(),
+                    settingsProvider: context.read<SettingsProvider>(),
+                    taskProvider: context.read<TaskProvider>(),
+                    traceProvider: context.read<TraceProvider>(),
+                  );
+                  runtime.attachLeadAgentService(leadService);
                 } catch (_) {}
               });
 

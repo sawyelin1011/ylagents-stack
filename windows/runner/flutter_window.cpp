@@ -1,4 +1,5 @@
 #include "flutter_window.h"
+#include "notification_bridge.h"
 
 #include <optional>
 #include <fstream>
@@ -7,6 +8,7 @@
 #include <wincodec.h>
 #include <objbase.h>  // CoInitializeEx / CoUninitialize
 #include <shellapi.h>  // CF_HDROP / DragQueryFile
+#include <shobjidl.h>  // IFileSaveDialog / IFileDialog
 
 #include <flutter/method_channel.h>
 #include <flutter/standard_method_codec.h>
@@ -14,9 +16,13 @@
 #include "flutter/generated_plugin_registrant.h"
 
 FlutterWindow::FlutterWindow(const flutter::DartProject& project)
-    : project_(project) {}
+    : project_(project), notification_bridge_(std::make_shared<NotificationBridge>()) {}
 
-FlutterWindow::~FlutterWindow() {}
+FlutterWindow::~FlutterWindow() {
+  if (notification_bridge_) {
+    notification_bridge_->Cleanup();
+  }
+}
 
 bool FlutterWindow::OnCreate() {
   if (!Win32Window::OnCreate()) {
@@ -34,6 +40,9 @@ bool FlutterWindow::OnCreate() {
   }
   RegisterPlugins(flutter_controller_->engine());
   SetChildContent(flutter_controller_->view()->GetNativeWindow());
+
+  // Initialize notification bridge with the window handle.
+  notification_bridge_->Initialize(flutter_controller_->view()->GetNativeWindow());
 
   // Method channel for clipboard images.
   auto channel = std::make_shared<flutter::MethodChannel<flutter::EncodableValue>>(
@@ -273,6 +282,102 @@ bool FlutterWindow::OnCreate() {
         result->NotImplemented();
       });
 
+  // Method channel for Windows notifications (uses NotificationBridge).
+  auto notifyChannel = std::make_shared<flutter::MethodChannel<flutter::EncodableValue>>(
+      flutter_controller_->engine()->messenger(),
+      "app.notifications",
+      &flutter::StandardMethodCodec::GetInstance());
+
+  notifyChannel->SetMethodCallHandler(
+      [this,
+       bridge = notification_bridge_](
+          const flutter::MethodCall<flutter::EncodableValue>& call,
+          std::unique_ptr<flutter::MethodResult<flutter::EncodableValue>> result) {
+        if (call.method_name() == "init") {
+          result->Success(flutter::EncodableValue(true));
+        } else if (call.method_name() == "show" ||
+                   call.method_name() == "showNotification") {
+          std::string title, body;
+          if (call.arguments() && std::holds_alternative<flutter::EncodableMap>(*call.arguments())) {
+            const auto& args = std::get<flutter::EncodableMap>(*call.arguments());
+            auto tit = args.find(flutter::EncodableValue("title"));
+            if (tit != args.end() && std::holds_alternative<std::string>(tit->second))
+              title = std::get<std::string>(tit->second);
+            auto bod = args.find(flutter::EncodableValue("body"));
+            if (bod != args.end() && std::holds_alternative<std::string>(bod->second))
+              body = std::get<std::string>(bod->second);
+          }
+          bool ok = bridge->Show(title, body);
+          result->Success(flutter::EncodableValue(ok));
+        } else {
+          result->NotImplemented();
+        }
+      });
+
+  // Method channel for Windows file save
+  auto fileSaveChannel = std::make_shared<flutter::MethodChannel<flutter::EncodableValue>>(
+      flutter_controller_->engine()->messenger(),
+      "app.file_save",
+      &flutter::StandardMethodCodec::GetInstance());
+
+  fileSaveChannel->SetMethodCallHandler(
+      [](const flutter::MethodCall<flutter::EncodableValue>& call,
+         std::unique_ptr<flutter::MethodResult<flutter::EncodableValue>> result) {
+        if (call.method_name() == "saveFileFromPath") {
+          std::string sourcePath, fileName;
+          if (call.arguments() && std::holds_alternative<flutter::EncodableMap>(*call.arguments())) {
+            const auto& args = std::get<flutter::EncodableMap>(*call.arguments());
+            auto src = args.find(flutter::EncodableValue("sourcePath"));
+            if (src != args.end() && std::holds_alternative<std::string>(src->second))
+              sourcePath = std::get<std::string>(src->second);
+            auto fn = args.find(flutter::EncodableValue("fileName"));
+            if (fn != args.end() && std::holds_alternative<std::string>(fn->second))
+              fileName = std::get<std::string>(fn->second);
+          }
+
+          // On Windows, copy file to a user-selected location using IFileDialog
+          std::wstring widePath(sourcePath.begin(), sourcePath.end());
+          std::wstring wideFileName(fileName.begin(), fileName.end());
+
+          if (wideFileName.empty()) {
+            // Extract from source path
+            size_t pos = widePath.find_last_of(L"\\/");
+            wideFileName = (pos != std::wstring::npos) ? widePath.substr(pos + 1) : widePath;
+          }
+
+          IFileSaveDialog* pSave = nullptr;
+          bool success = false;
+
+          HRESULT hr = CoCreateInstance(CLSID_FileSaveDialog, nullptr, CLSCTX_INPROC_SERVER,
+                                        IID_PPV_ARGS(&pSave));
+          if (SUCCEEDED(hr) && pSave) {
+            pSave->SetFileName(wideFileName.c_str());
+            pSave->SetTitle(L"Save File");
+
+            hr = pSave->Show(nullptr);
+            if (SUCCEEDED(hr)) {
+              IShellItem* pItem = nullptr;
+              hr = pSave->GetResult(&pItem);
+              if (SUCCEEDED(hr) && pItem) {
+                PWSTR pszFilePath = nullptr;
+                hr = pItem->GetDisplayName(SIGDN_FILESYSPATH, &pszFilePath);
+                if (SUCCEEDED(hr) && pszFilePath) {
+                  if (CopyFileW(widePath.c_str(), pszFilePath, FALSE)) {
+                    success = true;
+                  }
+                  CoTaskMemFree(pszFilePath);
+                }
+                pItem->Release();
+              }
+            }
+            pSave->Release();
+          }
+          result->Success(flutter::EncodableValue(success));
+        } else {
+          result->NotImplemented();
+        }
+      });
+
   flutter_controller_->engine()->SetNextFrameCallback([&]() {
     this->Show();
   });
@@ -284,6 +389,10 @@ bool FlutterWindow::OnCreate() {
 }
 
 void FlutterWindow::OnDestroy() {
+  if (notification_bridge_) {
+    notification_bridge_->Cleanup();
+    notification_bridge_.reset();
+  }
   if (flutter_controller_) {
     flutter_controller_ = nullptr;
   }

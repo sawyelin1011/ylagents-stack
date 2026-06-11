@@ -5487,6 +5487,554 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get tasksPageSaveAction => '保存';
+
+  @override
+  String get agentFactoryTitle => '智能体工厂';
+
+  @override
+  String get agentFactoryNewAgent => '新建智能体';
+
+  @override
+  String get agentFactoryStepTemplate => '模板';
+
+  @override
+  String get agentFactoryStepIdentity => '身份';
+
+  @override
+  String get agentFactoryStepGenome => '角色与基因';
+
+  @override
+  String get agentFactoryStepReview => '确认';
+
+  @override
+  String get agentFactoryTemplateSubtitle => '选择模板或从零开始';
+
+  @override
+  String get agentFactoryScratch => '从零开始';
+
+  @override
+  String get agentFactoryScratchDesc => '白板构建智能体';
+
+  @override
+  String get agentFactoryIdentitySubtitle => '为智能体设置名称和描述';
+
+  @override
+  String get agentFactoryNameLabel => '名称';
+
+  @override
+  String get agentFactoryNameHint => '输入智能体名称';
+
+  @override
+  String get agentFactoryDescLabel => '描述';
+
+  @override
+  String get agentFactoryDescHint => '描述智能体的功能';
+
+  @override
+  String get agentFactoryGenomeSubtitle => '配置角色、个性和目标';
+
+  @override
+  String get agentFactoryReviewSubtitle => '创建前确认智能体配置';
+
+  @override
+  String get agentFactoryBack => '返回';
+
+  @override
+  String get agentFactoryNext => '下一步';
+
+  @override
+  String get agentFactoryCreate => '创建智能体';
+
+  @override
+  String get agentFactoryCreated => '已创建';
+
+  @override
+  String get agentFactoryCreatedSnackbar => '智能体';
+
+  @override
+  String get agentFactoryCreateFailed => '创建智能体失败';
+
+  @override
+  String get agentFactoryBasedOn => '基于';
+
+  @override
+  String get leadAgentInputTitle => '你想完成什么任务？';
+
+  @override
+  String get leadAgentInputHint => '输入一个目标或任务，让主导智能体进行分解和委派';
+
+  @override
+  String get leadAgentExecuteButton => '执行';
+
+  @override
+  String get leadAgentExecuting => '执行中…';
+
+  @override
+  String get leadAgentEmpty => '在上方输入目标以启动主导智能体';
+
+  @override
+  String get leadAgentStatusPlanning => '规划中…';
+
+  @override
+  String get leadAgentStatusDelegating => '委派任务中…';
+
+  @override
+  String get leadAgentStatusExecuting => '执行任务中…';
+
+  @override
+  String get leadAgentStatusReviewing => '审核结果中…';
+
+  @override
+  String get leadAgentStatusCompleted => '已完成';
+
+  @override
+  String get leadAgentStatusFailed => '失败';
+
+  @override
+  String get leadAgentSteps => '执行步骤';
+
+  @override
+  String get leadAgentResult => '最终结果';
+
+  @override
+  String get leadAgentAssignedTo => '分配给';
+
+  @override
+  String get leadAgentRunButton => '运行';
+
+  @override
+  String leadAgentDelegatedTo(String task) {
+    return '已委派：$task';
+  }
+
+  @override
+  String get agentsPageTeams => '团队';
+
+  @override
+  String get agentsPageTraces => '执行追踪';
+
+  @override
+  String get teamPageTitle => 'Agent 团队';
+
+  @override
+  String get teamPageCreateTeam => '创建团队';
+
+  @override
+  String get teamPageEmpty => '暂无团队。创建团队来组织你的 Agent。';
+
+  @override
+  String get teamPageTeamName => '团队名称';
+
+  @override
+  String get teamPageTeamDescription => '描述（可选）';
+
+  @override
+  String get teamPageSelectLead => '主导 Agent';
+
+  @override
+  String get teamPageNoLeadAgents => '暂无可用主导 Agent。请先创建一个主导 Agent。';
+
+  @override
+  String get teamPageCreate => '创建';
+
+  @override
+  String get teamPageCancel => '取消';
+
+  @override
+  String get teamPageDelete => '删除';
+
+  @override
+  String get teamPageDeleteConfirmTitle => '删除团队';
+
+  @override
+  String get teamPageDeleteConfirmContent => '确定要删除此团队吗？此操作不可撤销。';
+
+  @override
+  String get teamPageLeadAgent => '主导：';
+
+  @override
+  String get teamPageNoMembers => '未分配工作者 Agent';
+
+  @override
+  String get teamPageMembers => '成员';
+
+  @override
+  String get teamPageAddWorker => '添加工作者';
+
+  @override
+  String get teamPageManageMembers => '管理成员';
+
+  @override
+  String get teamPageNoAvailableWorkers => '没有可用工作者 Agent';
+
+  @override
+  String get teamPageClose => '关闭';
+
+  @override
+  String get tracesPageTitle => '执行追踪';
+
+  @override
+  String get tracesPageEmpty => '暂无执行记录。运行主导 Agent 后可查看追踪。';
+
+  @override
+  String get tracesPageSteps => '步骤';
+
+  @override
+  String get tracesPageDetailTitle => '执行详情';
+
+  @override
+  String get tracesPageRequest => '请求';
+
+  @override
+  String get tracesPageStatus => '状态';
+
+  @override
+  String get tracesPageResult => '结果';
+
+  @override
+  String get tracesPageCreated => '创建时间';
+
+  @override
+  String get tracesPageUpdated => '更新时间';
+
+  @override
+  String get tracesPageClose => '关闭';
+
+  @override
+  String get knowledgePageSkills => '技能';
+
+  @override
+  String get skillsPageTitle => '技能';
+
+  @override
+  String get skillsPageInstalled => '已安装';
+
+  @override
+  String get skillsPageMarketplace => '市场';
+
+  @override
+  String get skillsPageEmpty => '暂未安装技能';
+
+  @override
+  String get skillsPageEmptyHint => '浏览市场选项卡以安装技能。';
+
+  @override
+  String get skillsPageInstall => '安装';
+
+  @override
+  String get skillsPageUninstall => '卸载';
+
+  @override
+  String get skillsPageUninstallConfirmTitle => '卸载技能';
+
+  @override
+  String skillsPageUninstallConfirmContent(Object name) {
+    return '确定要卸载\"$name\"吗？这将从所有工作区中移除。';
+  }
+
+  @override
+  String get skillsPageImport => '导入';
+
+  @override
+  String get skillsPageImportTitle => '导入技能';
+
+  @override
+  String get skillsPageImportHint => '在此粘贴技能 JSON 清单';
+
+  @override
+  String get skillsPageImportAction => '导入';
+
+  @override
+  String get skillsPageImportInvalid => '无效的技能清单格式';
+
+  @override
+  String skillsPageImported(Object count) {
+    return '已导入 $count 个技能';
+  }
+
+  @override
+  String get skillsPageCancel => '取消';
+
+  @override
+  String get skillsPageSearchHint => '搜索技能...';
+
+  @override
+  String get skillsPageNoResults => '没有匹配的技能。';
+
+  @override
+  String get channelsPageTitle => '渠道';
+
+  @override
+  String get channelsPageEmpty => '暂未配置渠道';
+
+  @override
+  String get channelsPageEmptyHint => '添加渠道以将代理连接到外部服务。';
+
+  @override
+  String get channelsPageAddChannel => '添加渠道';
+
+  @override
+  String get channelsPageTypeLabel => '渠道类型';
+
+  @override
+  String get channelsPageNameLabel => '名称';
+
+  @override
+  String get channelsPageNameHint => '输入渠道名称';
+
+  @override
+  String get channelsPageAgentIdLabel => '代理 ID';
+
+  @override
+  String get channelsPageAgentIdHint => '输入要绑定的代理 ID';
+
+  @override
+  String get channelsPageCreate => '创建';
+
+  @override
+  String get channelsPageCancel => '取消';
+
+  @override
+  String get channelsPageSave => '保存';
+
+  @override
+  String get channelsPageDelete => '删除';
+
+  @override
+  String get channelsPageDeleteConfirmTitle => '删除渠道';
+
+  @override
+  String get channelsPageDeleteConfirmContent => '确定要删除此渠道吗？此操作无法撤销。';
+
+  @override
+  String get channelsPageConfigure => '配置';
+
+  @override
+  String get channelsPageTest => '测试';
+
+  @override
+  String get channelsPageTestSuccess => '连接测试成功';
+
+  @override
+  String get channelsPageTestFailed => '连接测试失败';
+
+  @override
+  String get channelsPageDisabled => '已禁用';
+
+  @override
+  String get channelsPageBoundTo => '绑定到';
+
+  @override
+  String get desktopNavChannelsTooltip => '渠道';
+
+  @override
+  String get channelsPageSelectType => '选择渠道类型';
+
+  @override
+  String get channelsPageBindAgent => '绑定到智能体';
+
+  @override
+  String get channelsStatusEnabled => '已启用';
+
+  @override
+  String get channelsEnable => '启用';
+
+  @override
+  String get channelsDisable => '禁用';
+
+  @override
+  String get channelsTypeTelegramDesc => 'Telegram 群组和频道的聊天机器人';
+
+  @override
+  String get channelsTypeDiscordDesc => 'Discord 服务器的机器人';
+
+  @override
+  String get channelsTypeSlackDesc => 'Slack 工作区的机器人';
+
+  @override
+  String get channelsTypeEmailDesc => '通过 SMTP/IMAP 收发电子邮件';
+
+  @override
+  String get channelsTypeWebhookDesc => '触发 REST Webhook';
+
+  @override
+  String get channelsTypeWebWidgetDesc => '可嵌入网站的聊天小部件';
+
+  @override
+  String get syncPageTitle => '同步';
+
+  @override
+  String get desktopNavSyncTooltip => '同步';
+
+  @override
+  String get syncPageDeviceSection => '设备';
+
+  @override
+  String get syncPageDeviceName => '名称';
+
+  @override
+  String get syncPageDevicePlatform => '平台';
+
+  @override
+  String get syncPageDeviceId => '设备 ID';
+
+  @override
+  String get syncPageLastSync => '上次同步';
+
+  @override
+  String get syncPageRegister => '注册';
+
+  @override
+  String get syncPageRegisterTitle => '注册设备';
+
+  @override
+  String get syncPageRegisterHint => '输入同步中继服务器令牌以注册此设备。';
+
+  @override
+  String get syncPageTokenLabel => '认证令牌';
+
+  @override
+  String get syncPageTokenHint => '在此粘贴认证令牌';
+
+  @override
+  String get syncPageConfirm => '确认';
+
+  @override
+  String get syncPageCancel => '取消';
+
+  @override
+  String get syncPageRegistered => '已注册';
+
+  @override
+  String get syncPageUnregister => '取消注册';
+
+  @override
+  String get syncPageConfigSection => '同步设置';
+
+  @override
+  String get syncPageAutoSync => '自动同步';
+
+  @override
+  String get syncPageSyncWorkspaces => '同步工作区';
+
+  @override
+  String get syncPageSyncAgents => '同步智能体';
+
+  @override
+  String get syncPageSyncTasks => '同步任务';
+
+  @override
+  String get syncPageSyncChannels => '同步渠道';
+
+  @override
+  String get syncPageSyncNow => '立即同步';
+
+  @override
+  String get syncPageSyncing => '同步中…';
+
+  @override
+  String get syncPageHistorySection => '同步历史';
+
+  @override
+  String get syncPageNoRecords => '暂无同步记录';
+
+  @override
+  String get syncStatusSyncing => '同步中…';
+
+  @override
+  String get syncStatusSuccess => '同步完成';
+
+  @override
+  String get syncStatusFailed => '同步失败';
+
+  @override
+  String get syncStatusPaused => '同步已暂停';
+
+  @override
+  String get syncStatusIdle => '等待同步';
+
+  @override
+  String syncPageItemsSummary(String pushed, String pulled, String conflicts) {
+    return '已推送 $pushed，已拉取 $pulled，冲突 $conflicts';
+  }
+
+  @override
+  String get runtimePageTitle => '运行时主机';
+
+  @override
+  String get desktopNavRuntimeTooltip => '运行时';
+
+  @override
+  String get runtimePageHostSection => '主机状态';
+
+  @override
+  String get runtimePageUptime => '运行时间';
+
+  @override
+  String get runtimePageSuccessCount => '成功次数';
+
+  @override
+  String get runtimePageFailedCount => '失败次数';
+
+  @override
+  String get runtimePageStart => '启动主机';
+
+  @override
+  String get runtimePageStop => '停止主机';
+
+  @override
+  String get runtimeStatusRunning => '运行中';
+
+  @override
+  String get runtimeStatusStopped => '已停止';
+
+  @override
+  String get runtimeStatusCompleted => '已完成';
+
+  @override
+  String get runtimeStatusFailed => '失败';
+
+  @override
+  String get runtimeStatusCancelled => '已取消';
+
+  @override
+  String get runtimeStatusPending => '等待中';
+
+  @override
+  String get runtimePageActiveSection => '活跃执行';
+
+  @override
+  String get runtimePageNoActive => '暂无活跃执行';
+
+  @override
+  String get runtimePageSimulate => '模拟执行';
+
+  @override
+  String get runtimePageScheduleSection => '调度计划';
+
+  @override
+  String get runtimePageNoSchedules => '暂无调度计划';
+
+  @override
+  String get runtimePageHistorySection => '执行历史';
+
+  @override
+  String get runtimePageNoHistory => '暂无执行历史';
+
+  @override
+  String get scheduleIntervalOnce => '一次';
+
+  @override
+  String get scheduleIntervalHourly => '每小时';
+
+  @override
+  String get scheduleIntervalDaily => '每天';
+
+  @override
+  String get scheduleIntervalWeekly => '每周';
+
+  @override
+  String get scheduleIntervalMonthly => '每月';
 }
 
 /// The translations for Chinese, using the Han script (`zh_Hans`).
@@ -10972,6 +11520,554 @@ class AppLocalizationsZhHans extends AppLocalizationsZh {
 
   @override
   String get tasksPageSaveAction => '保存';
+
+  @override
+  String get agentFactoryTitle => '智能体工厂';
+
+  @override
+  String get agentFactoryNewAgent => '新建智能体';
+
+  @override
+  String get agentFactoryStepTemplate => '模板';
+
+  @override
+  String get agentFactoryStepIdentity => '身份';
+
+  @override
+  String get agentFactoryStepGenome => '角色与基因';
+
+  @override
+  String get agentFactoryStepReview => '确认';
+
+  @override
+  String get agentFactoryTemplateSubtitle => '选择模板或从零开始';
+
+  @override
+  String get agentFactoryScratch => '从零开始';
+
+  @override
+  String get agentFactoryScratchDesc => '白板构建智能体';
+
+  @override
+  String get agentFactoryIdentitySubtitle => '为智能体设置名称和描述';
+
+  @override
+  String get agentFactoryNameLabel => '名称';
+
+  @override
+  String get agentFactoryNameHint => '输入智能体名称';
+
+  @override
+  String get agentFactoryDescLabel => '描述';
+
+  @override
+  String get agentFactoryDescHint => '描述智能体的功能';
+
+  @override
+  String get agentFactoryGenomeSubtitle => '配置角色、个性和目标';
+
+  @override
+  String get agentFactoryReviewSubtitle => '创建前确认智能体配置';
+
+  @override
+  String get agentFactoryBack => '返回';
+
+  @override
+  String get agentFactoryNext => '下一步';
+
+  @override
+  String get agentFactoryCreate => '创建智能体';
+
+  @override
+  String get agentFactoryCreated => '已创建';
+
+  @override
+  String get agentFactoryCreatedSnackbar => '智能体';
+
+  @override
+  String get agentFactoryCreateFailed => '创建智能体失败';
+
+  @override
+  String get agentFactoryBasedOn => '基于';
+
+  @override
+  String get leadAgentInputTitle => '你想完成什么任务？';
+
+  @override
+  String get leadAgentInputHint => '输入一个目标或任务，让主导智能体进行分解和委派';
+
+  @override
+  String get leadAgentExecuteButton => '执行';
+
+  @override
+  String get leadAgentExecuting => '执行中…';
+
+  @override
+  String get leadAgentEmpty => '在上方输入目标以启动主导智能体';
+
+  @override
+  String get leadAgentStatusPlanning => '规划中…';
+
+  @override
+  String get leadAgentStatusDelegating => '委派任务中…';
+
+  @override
+  String get leadAgentStatusExecuting => '执行任务中…';
+
+  @override
+  String get leadAgentStatusReviewing => '审核结果中…';
+
+  @override
+  String get leadAgentStatusCompleted => '已完成';
+
+  @override
+  String get leadAgentStatusFailed => '失败';
+
+  @override
+  String get leadAgentSteps => '执行步骤';
+
+  @override
+  String get leadAgentResult => '最终结果';
+
+  @override
+  String get leadAgentAssignedTo => '分配给';
+
+  @override
+  String get leadAgentRunButton => '运行';
+
+  @override
+  String leadAgentDelegatedTo(String task) {
+    return '已委派：$task';
+  }
+
+  @override
+  String get agentsPageTeams => '团队';
+
+  @override
+  String get agentsPageTraces => '执行追踪';
+
+  @override
+  String get teamPageTitle => 'Agent 团队';
+
+  @override
+  String get teamPageCreateTeam => '创建团队';
+
+  @override
+  String get teamPageEmpty => '暂无团队。创建团队来组织你的 Agent。';
+
+  @override
+  String get teamPageTeamName => '团队名称';
+
+  @override
+  String get teamPageTeamDescription => '描述（可选）';
+
+  @override
+  String get teamPageSelectLead => '主导 Agent';
+
+  @override
+  String get teamPageNoLeadAgents => '暂无可用主导 Agent。请先创建一个主导 Agent。';
+
+  @override
+  String get teamPageCreate => '创建';
+
+  @override
+  String get teamPageCancel => '取消';
+
+  @override
+  String get teamPageDelete => '删除';
+
+  @override
+  String get teamPageDeleteConfirmTitle => '删除团队';
+
+  @override
+  String get teamPageDeleteConfirmContent => '确定要删除此团队吗？此操作不可撤销。';
+
+  @override
+  String get teamPageLeadAgent => '主导：';
+
+  @override
+  String get teamPageNoMembers => '未分配工作者 Agent';
+
+  @override
+  String get teamPageMembers => '成员';
+
+  @override
+  String get teamPageAddWorker => '添加工作者';
+
+  @override
+  String get teamPageManageMembers => '管理成员';
+
+  @override
+  String get teamPageNoAvailableWorkers => '没有可用工作者 Agent';
+
+  @override
+  String get teamPageClose => '关闭';
+
+  @override
+  String get tracesPageTitle => '执行追踪';
+
+  @override
+  String get tracesPageEmpty => '暂无执行记录。运行主导 Agent 后可查看追踪。';
+
+  @override
+  String get tracesPageSteps => '步骤';
+
+  @override
+  String get tracesPageDetailTitle => '执行详情';
+
+  @override
+  String get tracesPageRequest => '请求';
+
+  @override
+  String get tracesPageStatus => '状态';
+
+  @override
+  String get tracesPageResult => '结果';
+
+  @override
+  String get tracesPageCreated => '创建时间';
+
+  @override
+  String get tracesPageUpdated => '更新时间';
+
+  @override
+  String get tracesPageClose => '关闭';
+
+  @override
+  String get knowledgePageSkills => '技能';
+
+  @override
+  String get skillsPageTitle => '技能';
+
+  @override
+  String get skillsPageInstalled => '已安装';
+
+  @override
+  String get skillsPageMarketplace => '市场';
+
+  @override
+  String get skillsPageEmpty => '暂未安装技能';
+
+  @override
+  String get skillsPageEmptyHint => '浏览市场选项卡以安装技能。';
+
+  @override
+  String get skillsPageInstall => '安装';
+
+  @override
+  String get skillsPageUninstall => '卸载';
+
+  @override
+  String get skillsPageUninstallConfirmTitle => '卸载技能';
+
+  @override
+  String skillsPageUninstallConfirmContent(Object name) {
+    return '确定要卸载\"$name\"吗？这将从所有工作区中移除。';
+  }
+
+  @override
+  String get skillsPageImport => '导入';
+
+  @override
+  String get skillsPageImportTitle => '导入技能';
+
+  @override
+  String get skillsPageImportHint => '在此粘贴技能 JSON 清单';
+
+  @override
+  String get skillsPageImportAction => '导入';
+
+  @override
+  String get skillsPageImportInvalid => '无效的技能清单格式';
+
+  @override
+  String skillsPageImported(Object count) {
+    return '已导入 $count 个技能';
+  }
+
+  @override
+  String get skillsPageCancel => '取消';
+
+  @override
+  String get skillsPageSearchHint => '搜索技能...';
+
+  @override
+  String get skillsPageNoResults => '没有匹配的技能。';
+
+  @override
+  String get channelsPageTitle => '渠道';
+
+  @override
+  String get channelsPageEmpty => '暂未配置渠道';
+
+  @override
+  String get channelsPageEmptyHint => '添加渠道以将代理连接到外部服务。';
+
+  @override
+  String get channelsPageAddChannel => '添加渠道';
+
+  @override
+  String get channelsPageTypeLabel => '渠道类型';
+
+  @override
+  String get channelsPageNameLabel => '名称';
+
+  @override
+  String get channelsPageNameHint => '输入渠道名称';
+
+  @override
+  String get channelsPageAgentIdLabel => '代理 ID';
+
+  @override
+  String get channelsPageAgentIdHint => '输入要绑定的代理 ID';
+
+  @override
+  String get channelsPageCreate => '创建';
+
+  @override
+  String get channelsPageCancel => '取消';
+
+  @override
+  String get channelsPageSave => '保存';
+
+  @override
+  String get channelsPageDelete => '删除';
+
+  @override
+  String get channelsPageDeleteConfirmTitle => '删除渠道';
+
+  @override
+  String get channelsPageDeleteConfirmContent => '确定要删除此渠道吗？此操作无法撤销。';
+
+  @override
+  String get channelsPageConfigure => '配置';
+
+  @override
+  String get channelsPageTest => '测试';
+
+  @override
+  String get channelsPageTestSuccess => '连接测试成功';
+
+  @override
+  String get channelsPageTestFailed => '连接测试失败';
+
+  @override
+  String get channelsPageDisabled => '已禁用';
+
+  @override
+  String get channelsPageBoundTo => '绑定到';
+
+  @override
+  String get desktopNavChannelsTooltip => '渠道';
+
+  @override
+  String get channelsPageSelectType => '选择渠道类型';
+
+  @override
+  String get channelsPageBindAgent => '绑定到智能体';
+
+  @override
+  String get channelsStatusEnabled => '已启用';
+
+  @override
+  String get channelsEnable => '启用';
+
+  @override
+  String get channelsDisable => '禁用';
+
+  @override
+  String get channelsTypeTelegramDesc => 'Telegram 群组和频道的聊天机器人';
+
+  @override
+  String get channelsTypeDiscordDesc => 'Discord 服务器的机器人';
+
+  @override
+  String get channelsTypeSlackDesc => 'Slack 工作区的机器人';
+
+  @override
+  String get channelsTypeEmailDesc => '通过 SMTP/IMAP 收发电子邮件';
+
+  @override
+  String get channelsTypeWebhookDesc => '触发 REST Webhook';
+
+  @override
+  String get channelsTypeWebWidgetDesc => '可嵌入网站的聊天小部件';
+
+  @override
+  String get syncPageTitle => '同步';
+
+  @override
+  String get desktopNavSyncTooltip => '同步';
+
+  @override
+  String get syncPageDeviceSection => '设备';
+
+  @override
+  String get syncPageDeviceName => '名称';
+
+  @override
+  String get syncPageDevicePlatform => '平台';
+
+  @override
+  String get syncPageDeviceId => '设备 ID';
+
+  @override
+  String get syncPageLastSync => '上次同步';
+
+  @override
+  String get syncPageRegister => '注册';
+
+  @override
+  String get syncPageRegisterTitle => '注册设备';
+
+  @override
+  String get syncPageRegisterHint => '输入同步中继服务器令牌以注册此设备。';
+
+  @override
+  String get syncPageTokenLabel => '认证令牌';
+
+  @override
+  String get syncPageTokenHint => '在此粘贴认证令牌';
+
+  @override
+  String get syncPageConfirm => '确认';
+
+  @override
+  String get syncPageCancel => '取消';
+
+  @override
+  String get syncPageRegistered => '已注册';
+
+  @override
+  String get syncPageUnregister => '取消注册';
+
+  @override
+  String get syncPageConfigSection => '同步设置';
+
+  @override
+  String get syncPageAutoSync => '自动同步';
+
+  @override
+  String get syncPageSyncWorkspaces => '同步工作区';
+
+  @override
+  String get syncPageSyncAgents => '同步智能体';
+
+  @override
+  String get syncPageSyncTasks => '同步任务';
+
+  @override
+  String get syncPageSyncChannels => '同步渠道';
+
+  @override
+  String get syncPageSyncNow => '立即同步';
+
+  @override
+  String get syncPageSyncing => '同步中…';
+
+  @override
+  String get syncPageHistorySection => '同步历史';
+
+  @override
+  String get syncPageNoRecords => '暂无同步记录';
+
+  @override
+  String get syncStatusSyncing => '同步中…';
+
+  @override
+  String get syncStatusSuccess => '同步完成';
+
+  @override
+  String get syncStatusFailed => '同步失败';
+
+  @override
+  String get syncStatusPaused => '同步已暂停';
+
+  @override
+  String get syncStatusIdle => '等待同步';
+
+  @override
+  String syncPageItemsSummary(String pushed, String pulled, String conflicts) {
+    return '已推送 $pushed，已拉取 $pulled，冲突 $conflicts';
+  }
+
+  @override
+  String get runtimePageTitle => '运行时主机';
+
+  @override
+  String get desktopNavRuntimeTooltip => '运行时';
+
+  @override
+  String get runtimePageHostSection => '主机状态';
+
+  @override
+  String get runtimePageUptime => '运行时间';
+
+  @override
+  String get runtimePageSuccessCount => '成功次数';
+
+  @override
+  String get runtimePageFailedCount => '失败次数';
+
+  @override
+  String get runtimePageStart => '启动主机';
+
+  @override
+  String get runtimePageStop => '停止主机';
+
+  @override
+  String get runtimeStatusRunning => '运行中';
+
+  @override
+  String get runtimeStatusStopped => '已停止';
+
+  @override
+  String get runtimeStatusCompleted => '已完成';
+
+  @override
+  String get runtimeStatusFailed => '失败';
+
+  @override
+  String get runtimeStatusCancelled => '已取消';
+
+  @override
+  String get runtimeStatusPending => '等待中';
+
+  @override
+  String get runtimePageActiveSection => '活跃执行';
+
+  @override
+  String get runtimePageNoActive => '暂无活跃执行';
+
+  @override
+  String get runtimePageSimulate => '模拟执行';
+
+  @override
+  String get runtimePageScheduleSection => '调度计划';
+
+  @override
+  String get runtimePageNoSchedules => '暂无调度计划';
+
+  @override
+  String get runtimePageHistorySection => '执行历史';
+
+  @override
+  String get runtimePageNoHistory => '暂无执行历史';
+
+  @override
+  String get scheduleIntervalOnce => '一次';
+
+  @override
+  String get scheduleIntervalHourly => '每小时';
+
+  @override
+  String get scheduleIntervalDaily => '每天';
+
+  @override
+  String get scheduleIntervalWeekly => '每周';
+
+  @override
+  String get scheduleIntervalMonthly => '每月';
 }
 
 /// The translations for Chinese, using the Han script (`zh_Hant`).
@@ -16457,4 +17553,552 @@ class AppLocalizationsZhHant extends AppLocalizationsZh {
 
   @override
   String get tasksPageSaveAction => '保存';
+
+  @override
+  String get agentFactoryTitle => '智能體工廠';
+
+  @override
+  String get agentFactoryNewAgent => '新建智能體';
+
+  @override
+  String get agentFactoryStepTemplate => '模板';
+
+  @override
+  String get agentFactoryStepIdentity => '身份';
+
+  @override
+  String get agentFactoryStepGenome => '角色與基因';
+
+  @override
+  String get agentFactoryStepReview => '確認';
+
+  @override
+  String get agentFactoryTemplateSubtitle => '選擇模板或從零開始';
+
+  @override
+  String get agentFactoryScratch => '從零開始';
+
+  @override
+  String get agentFactoryScratchDesc => '白板構建智能體';
+
+  @override
+  String get agentFactoryIdentitySubtitle => '為智能體設定名稱和描述';
+
+  @override
+  String get agentFactoryNameLabel => '名稱';
+
+  @override
+  String get agentFactoryNameHint => '輸入智能體名稱';
+
+  @override
+  String get agentFactoryDescLabel => '描述';
+
+  @override
+  String get agentFactoryDescHint => '描述智能體的功能';
+
+  @override
+  String get agentFactoryGenomeSubtitle => '配置角色、個性和目標';
+
+  @override
+  String get agentFactoryReviewSubtitle => '建立前確認智能體配置';
+
+  @override
+  String get agentFactoryBack => '返回';
+
+  @override
+  String get agentFactoryNext => '下一步';
+
+  @override
+  String get agentFactoryCreate => '建立智能體';
+
+  @override
+  String get agentFactoryCreated => '已建立';
+
+  @override
+  String get agentFactoryCreatedSnackbar => '智能體';
+
+  @override
+  String get agentFactoryCreateFailed => '建立智能體失敗';
+
+  @override
+  String get agentFactoryBasedOn => '基於';
+
+  @override
+  String get leadAgentInputTitle => '你想完成什麼任務？';
+
+  @override
+  String get leadAgentInputHint => '輸入一個目標或任務，讓主導智能體進行分解和委派';
+
+  @override
+  String get leadAgentExecuteButton => '執行';
+
+  @override
+  String get leadAgentExecuting => '執行中…';
+
+  @override
+  String get leadAgentEmpty => '在上方輸入目標以啟動主導智能體';
+
+  @override
+  String get leadAgentStatusPlanning => '規劃中…';
+
+  @override
+  String get leadAgentStatusDelegating => '委派任務中…';
+
+  @override
+  String get leadAgentStatusExecuting => '執行任務中…';
+
+  @override
+  String get leadAgentStatusReviewing => '審核結果中…';
+
+  @override
+  String get leadAgentStatusCompleted => '已完成';
+
+  @override
+  String get leadAgentStatusFailed => '失敗';
+
+  @override
+  String get leadAgentSteps => '執行步驟';
+
+  @override
+  String get leadAgentResult => '最終結果';
+
+  @override
+  String get leadAgentAssignedTo => '分配給';
+
+  @override
+  String get leadAgentRunButton => '運行';
+
+  @override
+  String leadAgentDelegatedTo(String task) {
+    return '已委派：$task';
+  }
+
+  @override
+  String get agentsPageTeams => '團隊';
+
+  @override
+  String get agentsPageTraces => '執行追蹤';
+
+  @override
+  String get teamPageTitle => 'Agent 團隊';
+
+  @override
+  String get teamPageCreateTeam => '建立團隊';
+
+  @override
+  String get teamPageEmpty => '暫無團隊。建立團隊來組織你的 Agent。';
+
+  @override
+  String get teamPageTeamName => '團隊名稱';
+
+  @override
+  String get teamPageTeamDescription => '描述（可選）';
+
+  @override
+  String get teamPageSelectLead => '主導 Agent';
+
+  @override
+  String get teamPageNoLeadAgents => '暫無可用主導 Agent。請先建立一個主導 Agent。';
+
+  @override
+  String get teamPageCreate => '建立';
+
+  @override
+  String get teamPageCancel => '取消';
+
+  @override
+  String get teamPageDelete => '刪除';
+
+  @override
+  String get teamPageDeleteConfirmTitle => '刪除團隊';
+
+  @override
+  String get teamPageDeleteConfirmContent => '確定要刪除此團隊嗎？此操作不可撤銷。';
+
+  @override
+  String get teamPageLeadAgent => '主導：';
+
+  @override
+  String get teamPageNoMembers => '未分配工作者 Agent';
+
+  @override
+  String get teamPageMembers => '成員';
+
+  @override
+  String get teamPageAddWorker => '新增工作者';
+
+  @override
+  String get teamPageManageMembers => '管理成員';
+
+  @override
+  String get teamPageNoAvailableWorkers => '沒有可用工作者 Agent';
+
+  @override
+  String get teamPageClose => '關閉';
+
+  @override
+  String get tracesPageTitle => '執行追蹤';
+
+  @override
+  String get tracesPageEmpty => '暫無執行記錄。執行主導 Agent 後可查看追蹤。';
+
+  @override
+  String get tracesPageSteps => '步驟';
+
+  @override
+  String get tracesPageDetailTitle => '執行詳情';
+
+  @override
+  String get tracesPageRequest => '請求';
+
+  @override
+  String get tracesPageStatus => '狀態';
+
+  @override
+  String get tracesPageResult => '結果';
+
+  @override
+  String get tracesPageCreated => '建立時間';
+
+  @override
+  String get tracesPageUpdated => '更新時間';
+
+  @override
+  String get tracesPageClose => '關閉';
+
+  @override
+  String get knowledgePageSkills => '技能';
+
+  @override
+  String get skillsPageTitle => '技能';
+
+  @override
+  String get skillsPageInstalled => '已安裝';
+
+  @override
+  String get skillsPageMarketplace => '市場';
+
+  @override
+  String get skillsPageEmpty => '暫未安裝技能';
+
+  @override
+  String get skillsPageEmptyHint => '瀏覽市場索引標籤以安裝技能。';
+
+  @override
+  String get skillsPageInstall => '安裝';
+
+  @override
+  String get skillsPageUninstall => '解除安裝';
+
+  @override
+  String get skillsPageUninstallConfirmTitle => '解除安裝技能';
+
+  @override
+  String skillsPageUninstallConfirmContent(Object name) {
+    return '確定要解除安裝「$name」嗎？這將從所有工作區中移除。';
+  }
+
+  @override
+  String get skillsPageImport => '匯入';
+
+  @override
+  String get skillsPageImportTitle => '匯入技能';
+
+  @override
+  String get skillsPageImportHint => '在此貼上技能 JSON 資訊清單';
+
+  @override
+  String get skillsPageImportAction => '匯入';
+
+  @override
+  String get skillsPageImportInvalid => '無效的技能資訊清單格式';
+
+  @override
+  String skillsPageImported(Object count) {
+    return '已匯入 $count 個技能';
+  }
+
+  @override
+  String get skillsPageCancel => '取消';
+
+  @override
+  String get skillsPageSearchHint => '搜尋技能...';
+
+  @override
+  String get skillsPageNoResults => '沒有符合的技能。';
+
+  @override
+  String get channelsPageTitle => '渠道';
+
+  @override
+  String get channelsPageEmpty => '暫未配置渠道';
+
+  @override
+  String get channelsPageEmptyHint => '新增渠道以將代理連線到外部服務。';
+
+  @override
+  String get channelsPageAddChannel => '新增渠道';
+
+  @override
+  String get channelsPageTypeLabel => '渠道類型';
+
+  @override
+  String get channelsPageNameLabel => '名稱';
+
+  @override
+  String get channelsPageNameHint => '輸入渠道名稱';
+
+  @override
+  String get channelsPageAgentIdLabel => '代理 ID';
+
+  @override
+  String get channelsPageAgentIdHint => '輸入要繫結的代理 ID';
+
+  @override
+  String get channelsPageCreate => '建立';
+
+  @override
+  String get channelsPageCancel => '取消';
+
+  @override
+  String get channelsPageSave => '儲存';
+
+  @override
+  String get channelsPageDelete => '刪除';
+
+  @override
+  String get channelsPageDeleteConfirmTitle => '刪除渠道';
+
+  @override
+  String get channelsPageDeleteConfirmContent => '確定要刪除此渠道嗎？此操作無法復原。';
+
+  @override
+  String get channelsPageConfigure => '設定';
+
+  @override
+  String get channelsPageTest => '測試';
+
+  @override
+  String get channelsPageTestSuccess => '連線測試成功';
+
+  @override
+  String get channelsPageTestFailed => '連線測試失敗';
+
+  @override
+  String get channelsPageDisabled => '已停用';
+
+  @override
+  String get channelsPageBoundTo => '繫結到';
+
+  @override
+  String get desktopNavChannelsTooltip => '渠道';
+
+  @override
+  String get channelsPageSelectType => '選擇渠道類型';
+
+  @override
+  String get channelsPageBindAgent => '綁定到智能體';
+
+  @override
+  String get channelsStatusEnabled => '已啟用';
+
+  @override
+  String get channelsEnable => '啟用';
+
+  @override
+  String get channelsDisable => '停用';
+
+  @override
+  String get channelsTypeTelegramDesc => 'Telegram 群組和頻道的聊天機器人';
+
+  @override
+  String get channelsTypeDiscordDesc => 'Discord 伺服器的機器人';
+
+  @override
+  String get channelsTypeSlackDesc => 'Slack 工作區的機器人';
+
+  @override
+  String get channelsTypeEmailDesc => '透過 SMTP/IMAP 收發電子郵件';
+
+  @override
+  String get channelsTypeWebhookDesc => '觸發 REST Webhook';
+
+  @override
+  String get channelsTypeWebWidgetDesc => '可嵌入網站的聊天小部件';
+
+  @override
+  String get syncPageTitle => '同步';
+
+  @override
+  String get desktopNavSyncTooltip => '同步';
+
+  @override
+  String get syncPageDeviceSection => '裝置';
+
+  @override
+  String get syncPageDeviceName => '名稱';
+
+  @override
+  String get syncPageDevicePlatform => '平台';
+
+  @override
+  String get syncPageDeviceId => '裝置 ID';
+
+  @override
+  String get syncPageLastSync => '上次同步';
+
+  @override
+  String get syncPageRegister => '註冊';
+
+  @override
+  String get syncPageRegisterTitle => '註冊裝置';
+
+  @override
+  String get syncPageRegisterHint => '輸入同步中繼伺服器令牌以註冊此裝置。';
+
+  @override
+  String get syncPageTokenLabel => '認證令牌';
+
+  @override
+  String get syncPageTokenHint => '在此貼上認證令牌';
+
+  @override
+  String get syncPageConfirm => '確認';
+
+  @override
+  String get syncPageCancel => '取消';
+
+  @override
+  String get syncPageRegistered => '已註冊';
+
+  @override
+  String get syncPageUnregister => '取消註冊';
+
+  @override
+  String get syncPageConfigSection => '同步設定';
+
+  @override
+  String get syncPageAutoSync => '自動同步';
+
+  @override
+  String get syncPageSyncWorkspaces => '同步工作區';
+
+  @override
+  String get syncPageSyncAgents => '同步智能體';
+
+  @override
+  String get syncPageSyncTasks => '同步任務';
+
+  @override
+  String get syncPageSyncChannels => '同步渠道';
+
+  @override
+  String get syncPageSyncNow => '立即同步';
+
+  @override
+  String get syncPageSyncing => '同步中…';
+
+  @override
+  String get syncPageHistorySection => '同步歷史';
+
+  @override
+  String get syncPageNoRecords => '暫無同步記錄';
+
+  @override
+  String get syncStatusSyncing => '同步中…';
+
+  @override
+  String get syncStatusSuccess => '同步完成';
+
+  @override
+  String get syncStatusFailed => '同步失敗';
+
+  @override
+  String get syncStatusPaused => '同步已暫停';
+
+  @override
+  String get syncStatusIdle => '等待同步';
+
+  @override
+  String syncPageItemsSummary(String pushed, String pulled, String conflicts) {
+    return '已推送 $pushed，已拉取 $pulled，衝突 $conflicts';
+  }
+
+  @override
+  String get runtimePageTitle => '執行時主機';
+
+  @override
+  String get desktopNavRuntimeTooltip => '執行時';
+
+  @override
+  String get runtimePageHostSection => '主機狀態';
+
+  @override
+  String get runtimePageUptime => '運行時間';
+
+  @override
+  String get runtimePageSuccessCount => '成功次數';
+
+  @override
+  String get runtimePageFailedCount => '失敗次數';
+
+  @override
+  String get runtimePageStart => '啟動主機';
+
+  @override
+  String get runtimePageStop => '停止主機';
+
+  @override
+  String get runtimeStatusRunning => '運行中';
+
+  @override
+  String get runtimeStatusStopped => '已停止';
+
+  @override
+  String get runtimeStatusCompleted => '已完成';
+
+  @override
+  String get runtimeStatusFailed => '失敗';
+
+  @override
+  String get runtimeStatusCancelled => '已取消';
+
+  @override
+  String get runtimeStatusPending => '等待中';
+
+  @override
+  String get runtimePageActiveSection => '活躍執行';
+
+  @override
+  String get runtimePageNoActive => '暫無活躍執行';
+
+  @override
+  String get runtimePageSimulate => '模擬執行';
+
+  @override
+  String get runtimePageScheduleSection => '排程計劃';
+
+  @override
+  String get runtimePageNoSchedules => '暫無排程計劃';
+
+  @override
+  String get runtimePageHistorySection => '執行歷史';
+
+  @override
+  String get runtimePageNoHistory => '暫無執行歷史';
+
+  @override
+  String get scheduleIntervalOnce => '一次';
+
+  @override
+  String get scheduleIntervalHourly => '每小時';
+
+  @override
+  String get scheduleIntervalDaily => '每天';
+
+  @override
+  String get scheduleIntervalWeekly => '每週';
+
+  @override
+  String get scheduleIntervalMonthly => '每月';
 }

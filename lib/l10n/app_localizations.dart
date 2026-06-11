@@ -10525,6 +10525,1086 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Save'**
   String get tasksPageSaveAction;
+
+  /// No description provided for @agentFactoryTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Agent Factory'**
+  String get agentFactoryTitle;
+
+  /// No description provided for @agentFactoryNewAgent.
+  ///
+  /// In en, this message translates to:
+  /// **'New Agent'**
+  String get agentFactoryNewAgent;
+
+  /// No description provided for @agentFactoryStepTemplate.
+  ///
+  /// In en, this message translates to:
+  /// **'Template'**
+  String get agentFactoryStepTemplate;
+
+  /// No description provided for @agentFactoryStepIdentity.
+  ///
+  /// In en, this message translates to:
+  /// **'Identity'**
+  String get agentFactoryStepIdentity;
+
+  /// No description provided for @agentFactoryStepGenome.
+  ///
+  /// In en, this message translates to:
+  /// **'Role & Genome'**
+  String get agentFactoryStepGenome;
+
+  /// No description provided for @agentFactoryStepReview.
+  ///
+  /// In en, this message translates to:
+  /// **'Review'**
+  String get agentFactoryStepReview;
+
+  /// No description provided for @agentFactoryTemplateSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose a template or start from scratch'**
+  String get agentFactoryTemplateSubtitle;
+
+  /// No description provided for @agentFactoryScratch.
+  ///
+  /// In en, this message translates to:
+  /// **'Start from Scratch'**
+  String get agentFactoryScratch;
+
+  /// No description provided for @agentFactoryScratchDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Build your agent with a blank slate'**
+  String get agentFactoryScratchDesc;
+
+  /// No description provided for @agentFactoryIdentitySubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Give your agent a name and description'**
+  String get agentFactoryIdentitySubtitle;
+
+  /// No description provided for @agentFactoryNameLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Name'**
+  String get agentFactoryNameLabel;
+
+  /// No description provided for @agentFactoryNameHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter agent name'**
+  String get agentFactoryNameHint;
+
+  /// No description provided for @agentFactoryDescLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Description'**
+  String get agentFactoryDescLabel;
+
+  /// No description provided for @agentFactoryDescHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Describe what this agent does'**
+  String get agentFactoryDescHint;
+
+  /// No description provided for @agentFactoryGenomeSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Configure role, personality, and goals'**
+  String get agentFactoryGenomeSubtitle;
+
+  /// No description provided for @agentFactoryReviewSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Review your agent before creating'**
+  String get agentFactoryReviewSubtitle;
+
+  /// No description provided for @agentFactoryBack.
+  ///
+  /// In en, this message translates to:
+  /// **'Back'**
+  String get agentFactoryBack;
+
+  /// No description provided for @agentFactoryNext.
+  ///
+  /// In en, this message translates to:
+  /// **'Next'**
+  String get agentFactoryNext;
+
+  /// No description provided for @agentFactoryCreate.
+  ///
+  /// In en, this message translates to:
+  /// **'Create Agent'**
+  String get agentFactoryCreate;
+
+  /// No description provided for @agentFactoryCreated.
+  ///
+  /// In en, this message translates to:
+  /// **'created'**
+  String get agentFactoryCreated;
+
+  /// No description provided for @agentFactoryCreatedSnackbar.
+  ///
+  /// In en, this message translates to:
+  /// **'Agent'**
+  String get agentFactoryCreatedSnackbar;
+
+  /// No description provided for @agentFactoryCreateFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Failed to create agent'**
+  String get agentFactoryCreateFailed;
+
+  /// No description provided for @agentFactoryBasedOn.
+  ///
+  /// In en, this message translates to:
+  /// **'Based on'**
+  String get agentFactoryBasedOn;
+
+  /// No description provided for @leadAgentInputTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'What would you like to accomplish?'**
+  String get leadAgentInputTitle;
+
+  /// No description provided for @leadAgentInputHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter a goal or task for the lead agent to break down and delegate'**
+  String get leadAgentInputHint;
+
+  /// No description provided for @leadAgentExecuteButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Execute'**
+  String get leadAgentExecuteButton;
+
+  /// No description provided for @leadAgentExecuting.
+  ///
+  /// In en, this message translates to:
+  /// **'Executing…'**
+  String get leadAgentExecuting;
+
+  /// No description provided for @leadAgentEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter a goal above to start the lead agent'**
+  String get leadAgentEmpty;
+
+  /// No description provided for @leadAgentStatusPlanning.
+  ///
+  /// In en, this message translates to:
+  /// **'Planning…'**
+  String get leadAgentStatusPlanning;
+
+  /// No description provided for @leadAgentStatusDelegating.
+  ///
+  /// In en, this message translates to:
+  /// **'Delegating tasks…'**
+  String get leadAgentStatusDelegating;
+
+  /// No description provided for @leadAgentStatusExecuting.
+  ///
+  /// In en, this message translates to:
+  /// **'Executing tasks…'**
+  String get leadAgentStatusExecuting;
+
+  /// No description provided for @leadAgentStatusReviewing.
+  ///
+  /// In en, this message translates to:
+  /// **'Reviewing results…'**
+  String get leadAgentStatusReviewing;
+
+  /// No description provided for @leadAgentStatusCompleted.
+  ///
+  /// In en, this message translates to:
+  /// **'Completed'**
+  String get leadAgentStatusCompleted;
+
+  /// No description provided for @leadAgentStatusFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Failed'**
+  String get leadAgentStatusFailed;
+
+  /// No description provided for @leadAgentSteps.
+  ///
+  /// In en, this message translates to:
+  /// **'Execution Steps'**
+  String get leadAgentSteps;
+
+  /// No description provided for @leadAgentResult.
+  ///
+  /// In en, this message translates to:
+  /// **'Final Result'**
+  String get leadAgentResult;
+
+  /// No description provided for @leadAgentAssignedTo.
+  ///
+  /// In en, this message translates to:
+  /// **'Assigned to'**
+  String get leadAgentAssignedTo;
+
+  /// No description provided for @leadAgentRunButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Run'**
+  String get leadAgentRunButton;
+
+  /// No description provided for @leadAgentDelegatedTo.
+  ///
+  /// In en, this message translates to:
+  /// **'Delegated: {task}'**
+  String leadAgentDelegatedTo(String task);
+
+  /// No description provided for @agentsPageTeams.
+  ///
+  /// In en, this message translates to:
+  /// **'Teams'**
+  String get agentsPageTeams;
+
+  /// No description provided for @agentsPageTraces.
+  ///
+  /// In en, this message translates to:
+  /// **'Traces'**
+  String get agentsPageTraces;
+
+  /// No description provided for @teamPageTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Agent Teams'**
+  String get teamPageTitle;
+
+  /// No description provided for @teamPageCreateTeam.
+  ///
+  /// In en, this message translates to:
+  /// **'Create Team'**
+  String get teamPageCreateTeam;
+
+  /// No description provided for @teamPageEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'No teams yet. Create a team to organize your agents.'**
+  String get teamPageEmpty;
+
+  /// No description provided for @teamPageTeamName.
+  ///
+  /// In en, this message translates to:
+  /// **'Team Name'**
+  String get teamPageTeamName;
+
+  /// No description provided for @teamPageTeamDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Description (optional)'**
+  String get teamPageTeamDescription;
+
+  /// No description provided for @teamPageSelectLead.
+  ///
+  /// In en, this message translates to:
+  /// **'Lead Agent'**
+  String get teamPageSelectLead;
+
+  /// No description provided for @teamPageNoLeadAgents.
+  ///
+  /// In en, this message translates to:
+  /// **'No lead agents available. Create a lead agent first.'**
+  String get teamPageNoLeadAgents;
+
+  /// No description provided for @teamPageCreate.
+  ///
+  /// In en, this message translates to:
+  /// **'Create'**
+  String get teamPageCreate;
+
+  /// No description provided for @teamPageCancel.
+  ///
+  /// In en, this message translates to:
+  /// **'Cancel'**
+  String get teamPageCancel;
+
+  /// No description provided for @teamPageDelete.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete'**
+  String get teamPageDelete;
+
+  /// No description provided for @teamPageDeleteConfirmTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete Team'**
+  String get teamPageDeleteConfirmTitle;
+
+  /// No description provided for @teamPageDeleteConfirmContent.
+  ///
+  /// In en, this message translates to:
+  /// **'Are you sure you want to delete this team? This action cannot be undone.'**
+  String get teamPageDeleteConfirmContent;
+
+  /// No description provided for @teamPageLeadAgent.
+  ///
+  /// In en, this message translates to:
+  /// **'Lead:'**
+  String get teamPageLeadAgent;
+
+  /// No description provided for @teamPageNoMembers.
+  ///
+  /// In en, this message translates to:
+  /// **'No worker agents assigned'**
+  String get teamPageNoMembers;
+
+  /// No description provided for @teamPageMembers.
+  ///
+  /// In en, this message translates to:
+  /// **'Members'**
+  String get teamPageMembers;
+
+  /// No description provided for @teamPageAddWorker.
+  ///
+  /// In en, this message translates to:
+  /// **'Add Worker'**
+  String get teamPageAddWorker;
+
+  /// No description provided for @teamPageManageMembers.
+  ///
+  /// In en, this message translates to:
+  /// **'Manage Members'**
+  String get teamPageManageMembers;
+
+  /// No description provided for @teamPageNoAvailableWorkers.
+  ///
+  /// In en, this message translates to:
+  /// **'No available worker agents'**
+  String get teamPageNoAvailableWorkers;
+
+  /// No description provided for @teamPageClose.
+  ///
+  /// In en, this message translates to:
+  /// **'Close'**
+  String get teamPageClose;
+
+  /// No description provided for @tracesPageTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Execution Traces'**
+  String get tracesPageTitle;
+
+  /// No description provided for @tracesPageEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'No execution traces yet. Run a Lead Agent to see traces here.'**
+  String get tracesPageEmpty;
+
+  /// No description provided for @tracesPageSteps.
+  ///
+  /// In en, this message translates to:
+  /// **'steps'**
+  String get tracesPageSteps;
+
+  /// No description provided for @tracesPageDetailTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Execution Detail'**
+  String get tracesPageDetailTitle;
+
+  /// No description provided for @tracesPageRequest.
+  ///
+  /// In en, this message translates to:
+  /// **'Request'**
+  String get tracesPageRequest;
+
+  /// No description provided for @tracesPageStatus.
+  ///
+  /// In en, this message translates to:
+  /// **'Status'**
+  String get tracesPageStatus;
+
+  /// No description provided for @tracesPageResult.
+  ///
+  /// In en, this message translates to:
+  /// **'Result'**
+  String get tracesPageResult;
+
+  /// No description provided for @tracesPageCreated.
+  ///
+  /// In en, this message translates to:
+  /// **'Created'**
+  String get tracesPageCreated;
+
+  /// No description provided for @tracesPageUpdated.
+  ///
+  /// In en, this message translates to:
+  /// **'Updated'**
+  String get tracesPageUpdated;
+
+  /// No description provided for @tracesPageClose.
+  ///
+  /// In en, this message translates to:
+  /// **'Close'**
+  String get tracesPageClose;
+
+  /// No description provided for @knowledgePageSkills.
+  ///
+  /// In en, this message translates to:
+  /// **'Skills'**
+  String get knowledgePageSkills;
+
+  /// No description provided for @skillsPageTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Skills'**
+  String get skillsPageTitle;
+
+  /// No description provided for @skillsPageInstalled.
+  ///
+  /// In en, this message translates to:
+  /// **'Installed'**
+  String get skillsPageInstalled;
+
+  /// No description provided for @skillsPageMarketplace.
+  ///
+  /// In en, this message translates to:
+  /// **'Marketplace'**
+  String get skillsPageMarketplace;
+
+  /// No description provided for @skillsPageEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'No skills installed'**
+  String get skillsPageEmpty;
+
+  /// No description provided for @skillsPageEmptyHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Browse the Marketplace tab to install skills.'**
+  String get skillsPageEmptyHint;
+
+  /// No description provided for @skillsPageInstall.
+  ///
+  /// In en, this message translates to:
+  /// **'Install'**
+  String get skillsPageInstall;
+
+  /// No description provided for @skillsPageUninstall.
+  ///
+  /// In en, this message translates to:
+  /// **'Uninstall'**
+  String get skillsPageUninstall;
+
+  /// No description provided for @skillsPageUninstallConfirmTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Uninstall Skill'**
+  String get skillsPageUninstallConfirmTitle;
+
+  /// No description provided for @skillsPageUninstallConfirmContent.
+  ///
+  /// In en, this message translates to:
+  /// **'Are you sure you want to uninstall \"{name}\"? This will remove it from all workspaces.'**
+  String skillsPageUninstallConfirmContent(Object name);
+
+  /// No description provided for @skillsPageImport.
+  ///
+  /// In en, this message translates to:
+  /// **'Import'**
+  String get skillsPageImport;
+
+  /// No description provided for @skillsPageImportTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Import Skill'**
+  String get skillsPageImportTitle;
+
+  /// No description provided for @skillsPageImportHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Paste skill JSON manifest here'**
+  String get skillsPageImportHint;
+
+  /// No description provided for @skillsPageImportAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Import'**
+  String get skillsPageImportAction;
+
+  /// No description provided for @skillsPageImportInvalid.
+  ///
+  /// In en, this message translates to:
+  /// **'Invalid skill manifest format'**
+  String get skillsPageImportInvalid;
+
+  /// No description provided for @skillsPageImported.
+  ///
+  /// In en, this message translates to:
+  /// **'Imported {count} skill(s)'**
+  String skillsPageImported(Object count);
+
+  /// No description provided for @skillsPageCancel.
+  ///
+  /// In en, this message translates to:
+  /// **'Cancel'**
+  String get skillsPageCancel;
+
+  /// No description provided for @skillsPageSearchHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Search skills...'**
+  String get skillsPageSearchHint;
+
+  /// No description provided for @skillsPageNoResults.
+  ///
+  /// In en, this message translates to:
+  /// **'No skills match your search.'**
+  String get skillsPageNoResults;
+
+  /// No description provided for @channelsPageTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Channels'**
+  String get channelsPageTitle;
+
+  /// No description provided for @channelsPageEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'No channels configured'**
+  String get channelsPageEmpty;
+
+  /// No description provided for @channelsPageEmptyHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Add a channel to connect agents to external services.'**
+  String get channelsPageEmptyHint;
+
+  /// No description provided for @channelsPageAddChannel.
+  ///
+  /// In en, this message translates to:
+  /// **'Add Channel'**
+  String get channelsPageAddChannel;
+
+  /// No description provided for @channelsPageTypeLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Channel Type'**
+  String get channelsPageTypeLabel;
+
+  /// No description provided for @channelsPageNameLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Name'**
+  String get channelsPageNameLabel;
+
+  /// No description provided for @channelsPageNameHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter channel name'**
+  String get channelsPageNameHint;
+
+  /// No description provided for @channelsPageAgentIdLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Agent ID'**
+  String get channelsPageAgentIdLabel;
+
+  /// No description provided for @channelsPageAgentIdHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter the agent ID to bind'**
+  String get channelsPageAgentIdHint;
+
+  /// No description provided for @channelsPageCreate.
+  ///
+  /// In en, this message translates to:
+  /// **'Create'**
+  String get channelsPageCreate;
+
+  /// No description provided for @channelsPageCancel.
+  ///
+  /// In en, this message translates to:
+  /// **'Cancel'**
+  String get channelsPageCancel;
+
+  /// No description provided for @channelsPageSave.
+  ///
+  /// In en, this message translates to:
+  /// **'Save'**
+  String get channelsPageSave;
+
+  /// No description provided for @channelsPageDelete.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete'**
+  String get channelsPageDelete;
+
+  /// No description provided for @channelsPageDeleteConfirmTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete Channel'**
+  String get channelsPageDeleteConfirmTitle;
+
+  /// No description provided for @channelsPageDeleteConfirmContent.
+  ///
+  /// In en, this message translates to:
+  /// **'Are you sure you want to delete this channel? This action cannot be undone.'**
+  String get channelsPageDeleteConfirmContent;
+
+  /// No description provided for @channelsPageConfigure.
+  ///
+  /// In en, this message translates to:
+  /// **'Configure'**
+  String get channelsPageConfigure;
+
+  /// No description provided for @channelsPageTest.
+  ///
+  /// In en, this message translates to:
+  /// **'Test'**
+  String get channelsPageTest;
+
+  /// No description provided for @channelsPageTestSuccess.
+  ///
+  /// In en, this message translates to:
+  /// **'Connection test successful'**
+  String get channelsPageTestSuccess;
+
+  /// No description provided for @channelsPageTestFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Connection test failed'**
+  String get channelsPageTestFailed;
+
+  /// No description provided for @channelsPageDisabled.
+  ///
+  /// In en, this message translates to:
+  /// **'Disabled'**
+  String get channelsPageDisabled;
+
+  /// No description provided for @channelsPageBoundTo.
+  ///
+  /// In en, this message translates to:
+  /// **'Bound to'**
+  String get channelsPageBoundTo;
+
+  /// No description provided for @desktopNavChannelsTooltip.
+  ///
+  /// In en, this message translates to:
+  /// **'Channels'**
+  String get desktopNavChannelsTooltip;
+
+  /// No description provided for @channelsPageSelectType.
+  ///
+  /// In en, this message translates to:
+  /// **'Select Channel Type'**
+  String get channelsPageSelectType;
+
+  /// No description provided for @channelsPageBindAgent.
+  ///
+  /// In en, this message translates to:
+  /// **'Bind to Agent'**
+  String get channelsPageBindAgent;
+
+  /// No description provided for @channelsStatusEnabled.
+  ///
+  /// In en, this message translates to:
+  /// **'Enabled'**
+  String get channelsStatusEnabled;
+
+  /// No description provided for @channelsEnable.
+  ///
+  /// In en, this message translates to:
+  /// **'Enable'**
+  String get channelsEnable;
+
+  /// No description provided for @channelsDisable.
+  ///
+  /// In en, this message translates to:
+  /// **'Disable'**
+  String get channelsDisable;
+
+  /// No description provided for @channelsTypeTelegramDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Chat bot for Telegram groups and channels'**
+  String get channelsTypeTelegramDesc;
+
+  /// No description provided for @channelsTypeDiscordDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Bot for Discord servers'**
+  String get channelsTypeDiscordDesc;
+
+  /// No description provided for @channelsTypeSlackDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Bot for Slack workspaces'**
+  String get channelsTypeSlackDesc;
+
+  /// No description provided for @channelsTypeEmailDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Send and receive emails via SMTP/IMAP'**
+  String get channelsTypeEmailDesc;
+
+  /// No description provided for @channelsTypeWebhookDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Trigger REST webhooks'**
+  String get channelsTypeWebhookDesc;
+
+  /// No description provided for @channelsTypeWebWidgetDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Embeddable chat widget for websites'**
+  String get channelsTypeWebWidgetDesc;
+
+  /// No description provided for @syncPageTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Sync'**
+  String get syncPageTitle;
+
+  /// No description provided for @desktopNavSyncTooltip.
+  ///
+  /// In en, this message translates to:
+  /// **'Sync'**
+  String get desktopNavSyncTooltip;
+
+  /// No description provided for @syncPageDeviceSection.
+  ///
+  /// In en, this message translates to:
+  /// **'Device'**
+  String get syncPageDeviceSection;
+
+  /// No description provided for @syncPageDeviceName.
+  ///
+  /// In en, this message translates to:
+  /// **'Name'**
+  String get syncPageDeviceName;
+
+  /// No description provided for @syncPageDevicePlatform.
+  ///
+  /// In en, this message translates to:
+  /// **'Platform'**
+  String get syncPageDevicePlatform;
+
+  /// No description provided for @syncPageDeviceId.
+  ///
+  /// In en, this message translates to:
+  /// **'Device ID'**
+  String get syncPageDeviceId;
+
+  /// No description provided for @syncPageLastSync.
+  ///
+  /// In en, this message translates to:
+  /// **'Last Sync'**
+  String get syncPageLastSync;
+
+  /// No description provided for @syncPageRegister.
+  ///
+  /// In en, this message translates to:
+  /// **'Register'**
+  String get syncPageRegister;
+
+  /// No description provided for @syncPageRegisterTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Register Device'**
+  String get syncPageRegisterTitle;
+
+  /// No description provided for @syncPageRegisterHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter your sync relay server token to register this device.'**
+  String get syncPageRegisterHint;
+
+  /// No description provided for @syncPageTokenLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Auth Token'**
+  String get syncPageTokenLabel;
+
+  /// No description provided for @syncPageTokenHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Paste your auth token here'**
+  String get syncPageTokenHint;
+
+  /// No description provided for @syncPageConfirm.
+  ///
+  /// In en, this message translates to:
+  /// **'Confirm'**
+  String get syncPageConfirm;
+
+  /// No description provided for @syncPageCancel.
+  ///
+  /// In en, this message translates to:
+  /// **'Cancel'**
+  String get syncPageCancel;
+
+  /// No description provided for @syncPageRegistered.
+  ///
+  /// In en, this message translates to:
+  /// **'Registered'**
+  String get syncPageRegistered;
+
+  /// No description provided for @syncPageUnregister.
+  ///
+  /// In en, this message translates to:
+  /// **'Unregister'**
+  String get syncPageUnregister;
+
+  /// No description provided for @syncPageConfigSection.
+  ///
+  /// In en, this message translates to:
+  /// **'Sync Settings'**
+  String get syncPageConfigSection;
+
+  /// No description provided for @syncPageAutoSync.
+  ///
+  /// In en, this message translates to:
+  /// **'Auto Sync'**
+  String get syncPageAutoSync;
+
+  /// No description provided for @syncPageSyncWorkspaces.
+  ///
+  /// In en, this message translates to:
+  /// **'Sync Workspaces'**
+  String get syncPageSyncWorkspaces;
+
+  /// No description provided for @syncPageSyncAgents.
+  ///
+  /// In en, this message translates to:
+  /// **'Sync Agents'**
+  String get syncPageSyncAgents;
+
+  /// No description provided for @syncPageSyncTasks.
+  ///
+  /// In en, this message translates to:
+  /// **'Sync Tasks'**
+  String get syncPageSyncTasks;
+
+  /// No description provided for @syncPageSyncChannels.
+  ///
+  /// In en, this message translates to:
+  /// **'Sync Channels'**
+  String get syncPageSyncChannels;
+
+  /// No description provided for @syncPageSyncNow.
+  ///
+  /// In en, this message translates to:
+  /// **'Sync Now'**
+  String get syncPageSyncNow;
+
+  /// No description provided for @syncPageSyncing.
+  ///
+  /// In en, this message translates to:
+  /// **'Syncing…'**
+  String get syncPageSyncing;
+
+  /// No description provided for @syncPageHistorySection.
+  ///
+  /// In en, this message translates to:
+  /// **'Sync History'**
+  String get syncPageHistorySection;
+
+  /// No description provided for @syncPageNoRecords.
+  ///
+  /// In en, this message translates to:
+  /// **'No sync records yet'**
+  String get syncPageNoRecords;
+
+  /// No description provided for @syncStatusSyncing.
+  ///
+  /// In en, this message translates to:
+  /// **'Syncing…'**
+  String get syncStatusSyncing;
+
+  /// No description provided for @syncStatusSuccess.
+  ///
+  /// In en, this message translates to:
+  /// **'Sync completed'**
+  String get syncStatusSuccess;
+
+  /// No description provided for @syncStatusFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Sync failed'**
+  String get syncStatusFailed;
+
+  /// No description provided for @syncStatusPaused.
+  ///
+  /// In en, this message translates to:
+  /// **'Sync paused'**
+  String get syncStatusPaused;
+
+  /// No description provided for @syncStatusIdle.
+  ///
+  /// In en, this message translates to:
+  /// **'Waiting for sync'**
+  String get syncStatusIdle;
+
+  /// No description provided for @syncPageItemsSummary.
+  ///
+  /// In en, this message translates to:
+  /// **'{pushed} pushed, {pulled} pulled, {conflicts} conflicts'**
+  String syncPageItemsSummary(String pushed, String pulled, String conflicts);
+
+  /// No description provided for @runtimePageTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Runtime Host'**
+  String get runtimePageTitle;
+
+  /// No description provided for @desktopNavRuntimeTooltip.
+  ///
+  /// In en, this message translates to:
+  /// **'Runtime'**
+  String get desktopNavRuntimeTooltip;
+
+  /// No description provided for @runtimePageHostSection.
+  ///
+  /// In en, this message translates to:
+  /// **'Host Status'**
+  String get runtimePageHostSection;
+
+  /// No description provided for @runtimePageUptime.
+  ///
+  /// In en, this message translates to:
+  /// **'Uptime'**
+  String get runtimePageUptime;
+
+  /// No description provided for @runtimePageSuccessCount.
+  ///
+  /// In en, this message translates to:
+  /// **'Successes'**
+  String get runtimePageSuccessCount;
+
+  /// No description provided for @runtimePageFailedCount.
+  ///
+  /// In en, this message translates to:
+  /// **'Failures'**
+  String get runtimePageFailedCount;
+
+  /// No description provided for @runtimePageStart.
+  ///
+  /// In en, this message translates to:
+  /// **'Start Host'**
+  String get runtimePageStart;
+
+  /// No description provided for @runtimePageStop.
+  ///
+  /// In en, this message translates to:
+  /// **'Stop Host'**
+  String get runtimePageStop;
+
+  /// No description provided for @runtimeStatusRunning.
+  ///
+  /// In en, this message translates to:
+  /// **'Running'**
+  String get runtimeStatusRunning;
+
+  /// No description provided for @runtimeStatusStopped.
+  ///
+  /// In en, this message translates to:
+  /// **'Stopped'**
+  String get runtimeStatusStopped;
+
+  /// No description provided for @runtimeStatusCompleted.
+  ///
+  /// In en, this message translates to:
+  /// **'Completed'**
+  String get runtimeStatusCompleted;
+
+  /// No description provided for @runtimeStatusFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Failed'**
+  String get runtimeStatusFailed;
+
+  /// No description provided for @runtimeStatusCancelled.
+  ///
+  /// In en, this message translates to:
+  /// **'Cancelled'**
+  String get runtimeStatusCancelled;
+
+  /// No description provided for @runtimeStatusPending.
+  ///
+  /// In en, this message translates to:
+  /// **'Pending'**
+  String get runtimeStatusPending;
+
+  /// No description provided for @runtimePageActiveSection.
+  ///
+  /// In en, this message translates to:
+  /// **'Active Executions'**
+  String get runtimePageActiveSection;
+
+  /// No description provided for @runtimePageNoActive.
+  ///
+  /// In en, this message translates to:
+  /// **'No active executions'**
+  String get runtimePageNoActive;
+
+  /// No description provided for @runtimePageSimulate.
+  ///
+  /// In en, this message translates to:
+  /// **'Simulate Execution'**
+  String get runtimePageSimulate;
+
+  /// No description provided for @runtimePageScheduleSection.
+  ///
+  /// In en, this message translates to:
+  /// **'Schedules'**
+  String get runtimePageScheduleSection;
+
+  /// No description provided for @runtimePageNoSchedules.
+  ///
+  /// In en, this message translates to:
+  /// **'No scheduled runs'**
+  String get runtimePageNoSchedules;
+
+  /// No description provided for @runtimePageHistorySection.
+  ///
+  /// In en, this message translates to:
+  /// **'Execution History'**
+  String get runtimePageHistorySection;
+
+  /// No description provided for @runtimePageNoHistory.
+  ///
+  /// In en, this message translates to:
+  /// **'No execution history yet'**
+  String get runtimePageNoHistory;
+
+  /// No description provided for @scheduleIntervalOnce.
+  ///
+  /// In en, this message translates to:
+  /// **'Once'**
+  String get scheduleIntervalOnce;
+
+  /// No description provided for @scheduleIntervalHourly.
+  ///
+  /// In en, this message translates to:
+  /// **'Hourly'**
+  String get scheduleIntervalHourly;
+
+  /// No description provided for @scheduleIntervalDaily.
+  ///
+  /// In en, this message translates to:
+  /// **'Daily'**
+  String get scheduleIntervalDaily;
+
+  /// No description provided for @scheduleIntervalWeekly.
+  ///
+  /// In en, this message translates to:
+  /// **'Weekly'**
+  String get scheduleIntervalWeekly;
+
+  /// No description provided for @scheduleIntervalMonthly.
+  ///
+  /// In en, this message translates to:
+  /// **'Monthly'**
+  String get scheduleIntervalMonthly;
 }
 
 class _AppLocalizationsDelegate

@@ -1,10 +1,13 @@
 import 'dart:async';
 import 'dart:convert';
+
 import 'package:flutter/foundation.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:uuid/uuid.dart';
+
 import '../models/runtime_execution.dart';
 import '../services/scheduler_service.dart';
+import '../services/lead_agent_service.dart';
 
 /// The host's lifecycle status.
 enum RuntimeHostStatus {
@@ -26,6 +29,7 @@ enum RuntimeHostStatus {
 /// and integrates with [SchedulerService] for scheduled runs.
 ///
 /// Persists execution history to SharedPreferences under `runtime_executions_v1`.
+/// Uses [LeadAgentService] for actual agent execution instead of simulation.
 class RuntimeProvider extends ChangeNotifier {
   static const String _executionsKey = 'runtime_executions_v1';
   static const String _statusKey = 'runtime_host_status_v1';
@@ -37,6 +41,7 @@ class RuntimeProvider extends ChangeNotifier {
   DateTime? _hostStartedAt;
 
   SchedulerService? _scheduler;
+  LeadAgentService? _leadAgentService;
 
   RuntimeHostStatus get hostStatus => _hostStatus;
   List<RuntimeExecution> get executions => List.unmodifiable(_executions);
@@ -104,6 +109,11 @@ class RuntimeProvider extends ChangeNotifier {
   /// Link to a [SchedulerService] so the runtime can manage scheduler lifecycle.
   void attachScheduler(SchedulerService scheduler) {
     _scheduler = scheduler;
+  }
+
+  /// Link to a [LeadAgentService] for actual agent execution.
+  void attachLeadAgentService(LeadAgentService service) {
+    _leadAgentService = service;
   }
 
   /// Start the runtime host.
@@ -192,6 +202,63 @@ class RuntimeProvider extends ChangeNotifier {
     notifyListeners();
   }
 
+  /// Execute a lead agent in the runtime with real LLM calls.
+  ///
+  /// Uses [LeadAgentService] to run the full plan → delegate → execute → review
+  /// pipeline. Replaces the old placeholder simulateExecution().
+  Future<RuntimeExecution> executeAgent({
+    required String userRequest,
+    required String agentId,
+    required String agentName,
+    required String workspaceId,
+    void Function(String summary)? onProgress,
+  }) async {
+    final exec = await startExecution(
+      agentId: agentId,
+      agentName: agentName,
+      workspaceId: workspaceId,
+      taskTitle: userRequest.length > 80
+          ? '${userRequest.substring(0, 80)}...'
+          : userRequest,
+    );
+
+    if (_leadAgentService == null) {
+      await failExecution(
+        exec.id,
+        errorMessage: 'LeadAgentService not attached',
+      );
+      return exec;
+    }
+
+    try {
+      final result = await _leadAgentService!.execute(
+        userRequest: userRequest,
+        workspaceId: workspaceId,
+        leadAgentId: agentId,
+        onProgress: (trace) {
+          final summary = trace.status.name;
+          onProgress?.call(summary);
+        },
+      );
+
+      if (result.success) {
+        await completeExecution(
+          exec.id,
+          resultSummary: result.finalResponse ?? '(no response)',
+        );
+      } else {
+        await failExecution(
+          exec.id,
+          errorMessage: result.errorMessage ?? 'Unknown error',
+        );
+      }
+    } catch (e) {
+      await failExecution(exec.id, errorMessage: e.toString());
+    }
+
+    return exec;
+  }
+
   /// Get executions for a workspace.
   List<RuntimeExecution> getExecutionsForWorkspace(String? workspaceId) {
     if (workspaceId == null) return List.unmodifiable(_executions);
@@ -221,25 +288,5 @@ class RuntimeProvider extends ChangeNotifier {
         e.status != RuntimeExecutionStatus.running);
     await _persistExecutions();
     notifyListeners();
-  }
-
-  /// Simulate a background agent execution (placeholder for real LLM execution).
-  Future<void> simulateExecution({
-    required String agentId,
-    required String agentName,
-    required String workspaceId,
-    String taskTitle = 'Background task',
-  }) async {
-    final exec = await startExecution(
-      agentId: agentId,
-      agentName: agentName,
-      workspaceId: workspaceId,
-      taskTitle: taskTitle,
-    );
-    await Future.delayed(const Duration(seconds: 3));
-    await completeExecution(
-      exec.id,
-      resultSummary: 'Completed: $taskTitle',
-    );
   }
 }

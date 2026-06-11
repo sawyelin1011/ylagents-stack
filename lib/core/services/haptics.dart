@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart' as system;
+import 'package:flutter/services.dart' show HapticFeedback;
 import 'package:haptic_feedback/haptic_feedback.dart' as hfp;
 
 /// Centralized gentle haptics using the `haptic_feedback` plugin.
@@ -23,6 +24,8 @@ class Haptics {
       _safe(() => hfp.Haptics.vibrate(hfp.HapticsType.light));
     } else if (_isAndroid) {
       _safe(() => system.HapticFeedback.lightImpact());
+    } else if (_isWindows) {
+      _safeWin(HapticFeedback.lightImpact());
     }
   }
 
@@ -33,6 +36,8 @@ class Haptics {
       _safe(() => hfp.Haptics.vibrate(hfp.HapticsType.medium));
     } else if (_isAndroid) {
       _safe(() => system.HapticFeedback.mediumImpact());
+    } else if (_isWindows) {
+      _safeWin(HapticFeedback.mediumImpact());
     }
   }
 
@@ -41,8 +46,9 @@ class Haptics {
     if (_isIOS) {
       _safe(() => hfp.Haptics.vibrate(hfp.HapticsType.soft));
     } else if (_isAndroid) {
-      // Closest built-in equivalent to a very gentle tap
       _safe(() => system.HapticFeedback.selectionClick());
+    } else if (_isWindows) {
+      _safeWin(HapticFeedback.selectionClick());
     }
   }
 
@@ -53,19 +59,18 @@ class Haptics {
       _safe(() => hfp.Haptics.vibrate(hfp.HapticsType.soft));
     } else if (_isAndroid) {
       _safe(() => system.HapticFeedback.selectionClick());
+    } else if (_isWindows) {
+      _safeWin(HapticFeedback.selectionClick());
     }
   }
 
   /// Cancel any ongoing vibration (rarely needed in our use cases).
-  static void cancel() {
-    /* no-op */
-  }
+  static void cancel() { /* no-op */ }
 
   // Fire-and-forget wrapper to avoid exceptions on unsupported platforms.
   static void _safe(Future<void> Function() action) {
     if (kIsWeb) return; // Skip on web targets
     try {
-      // Don't await; haptic should not block UI.
       // ignore: discarded_futures
       action();
     } catch (_) {
@@ -73,8 +78,18 @@ class Haptics {
     }
   }
 
+  // Windows haptic calls are synchronous, so handle differently.
+  static void _safeWin(Future<void> Function() action) {
+    if (kIsWeb) return;
+    try {
+      _safe(action);
+    } catch (_) {}
+  }
+
   static bool get _isIOS =>
       !kIsWeb && defaultTargetPlatform == TargetPlatform.iOS;
   static bool get _isAndroid =>
       !kIsWeb && defaultTargetPlatform == TargetPlatform.android;
+  static bool get _isWindows =>
+      !kIsWeb && defaultTargetPlatform == TargetPlatform.windows;
 }

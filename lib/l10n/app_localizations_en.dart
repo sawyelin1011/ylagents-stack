@@ -5704,4 +5704,565 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get tasksPageSaveAction => 'Save';
+
+  @override
+  String get agentFactoryTitle => 'Agent Factory';
+
+  @override
+  String get agentFactoryNewAgent => 'New Agent';
+
+  @override
+  String get agentFactoryStepTemplate => 'Template';
+
+  @override
+  String get agentFactoryStepIdentity => 'Identity';
+
+  @override
+  String get agentFactoryStepGenome => 'Role & Genome';
+
+  @override
+  String get agentFactoryStepReview => 'Review';
+
+  @override
+  String get agentFactoryTemplateSubtitle =>
+      'Choose a template or start from scratch';
+
+  @override
+  String get agentFactoryScratch => 'Start from Scratch';
+
+  @override
+  String get agentFactoryScratchDesc => 'Build your agent with a blank slate';
+
+  @override
+  String get agentFactoryIdentitySubtitle =>
+      'Give your agent a name and description';
+
+  @override
+  String get agentFactoryNameLabel => 'Name';
+
+  @override
+  String get agentFactoryNameHint => 'Enter agent name';
+
+  @override
+  String get agentFactoryDescLabel => 'Description';
+
+  @override
+  String get agentFactoryDescHint => 'Describe what this agent does';
+
+  @override
+  String get agentFactoryGenomeSubtitle =>
+      'Configure role, personality, and goals';
+
+  @override
+  String get agentFactoryReviewSubtitle => 'Review your agent before creating';
+
+  @override
+  String get agentFactoryBack => 'Back';
+
+  @override
+  String get agentFactoryNext => 'Next';
+
+  @override
+  String get agentFactoryCreate => 'Create Agent';
+
+  @override
+  String get agentFactoryCreated => 'created';
+
+  @override
+  String get agentFactoryCreatedSnackbar => 'Agent';
+
+  @override
+  String get agentFactoryCreateFailed => 'Failed to create agent';
+
+  @override
+  String get agentFactoryBasedOn => 'Based on';
+
+  @override
+  String get leadAgentInputTitle => 'What would you like to accomplish?';
+
+  @override
+  String get leadAgentInputHint =>
+      'Enter a goal or task for the lead agent to break down and delegate';
+
+  @override
+  String get leadAgentExecuteButton => 'Execute';
+
+  @override
+  String get leadAgentExecuting => 'Executing…';
+
+  @override
+  String get leadAgentEmpty => 'Enter a goal above to start the lead agent';
+
+  @override
+  String get leadAgentStatusPlanning => 'Planning…';
+
+  @override
+  String get leadAgentStatusDelegating => 'Delegating tasks…';
+
+  @override
+  String get leadAgentStatusExecuting => 'Executing tasks…';
+
+  @override
+  String get leadAgentStatusReviewing => 'Reviewing results…';
+
+  @override
+  String get leadAgentStatusCompleted => 'Completed';
+
+  @override
+  String get leadAgentStatusFailed => 'Failed';
+
+  @override
+  String get leadAgentSteps => 'Execution Steps';
+
+  @override
+  String get leadAgentResult => 'Final Result';
+
+  @override
+  String get leadAgentAssignedTo => 'Assigned to';
+
+  @override
+  String get leadAgentRunButton => 'Run';
+
+  @override
+  String leadAgentDelegatedTo(String task) {
+    return 'Delegated: $task';
+  }
+
+  @override
+  String get agentsPageTeams => 'Teams';
+
+  @override
+  String get agentsPageTraces => 'Traces';
+
+  @override
+  String get teamPageTitle => 'Agent Teams';
+
+  @override
+  String get teamPageCreateTeam => 'Create Team';
+
+  @override
+  String get teamPageEmpty =>
+      'No teams yet. Create a team to organize your agents.';
+
+  @override
+  String get teamPageTeamName => 'Team Name';
+
+  @override
+  String get teamPageTeamDescription => 'Description (optional)';
+
+  @override
+  String get teamPageSelectLead => 'Lead Agent';
+
+  @override
+  String get teamPageNoLeadAgents =>
+      'No lead agents available. Create a lead agent first.';
+
+  @override
+  String get teamPageCreate => 'Create';
+
+  @override
+  String get teamPageCancel => 'Cancel';
+
+  @override
+  String get teamPageDelete => 'Delete';
+
+  @override
+  String get teamPageDeleteConfirmTitle => 'Delete Team';
+
+  @override
+  String get teamPageDeleteConfirmContent =>
+      'Are you sure you want to delete this team? This action cannot be undone.';
+
+  @override
+  String get teamPageLeadAgent => 'Lead:';
+
+  @override
+  String get teamPageNoMembers => 'No worker agents assigned';
+
+  @override
+  String get teamPageMembers => 'Members';
+
+  @override
+  String get teamPageAddWorker => 'Add Worker';
+
+  @override
+  String get teamPageManageMembers => 'Manage Members';
+
+  @override
+  String get teamPageNoAvailableWorkers => 'No available worker agents';
+
+  @override
+  String get teamPageClose => 'Close';
+
+  @override
+  String get tracesPageTitle => 'Execution Traces';
+
+  @override
+  String get tracesPageEmpty =>
+      'No execution traces yet. Run a Lead Agent to see traces here.';
+
+  @override
+  String get tracesPageSteps => 'steps';
+
+  @override
+  String get tracesPageDetailTitle => 'Execution Detail';
+
+  @override
+  String get tracesPageRequest => 'Request';
+
+  @override
+  String get tracesPageStatus => 'Status';
+
+  @override
+  String get tracesPageResult => 'Result';
+
+  @override
+  String get tracesPageCreated => 'Created';
+
+  @override
+  String get tracesPageUpdated => 'Updated';
+
+  @override
+  String get tracesPageClose => 'Close';
+
+  @override
+  String get knowledgePageSkills => 'Skills';
+
+  @override
+  String get skillsPageTitle => 'Skills';
+
+  @override
+  String get skillsPageInstalled => 'Installed';
+
+  @override
+  String get skillsPageMarketplace => 'Marketplace';
+
+  @override
+  String get skillsPageEmpty => 'No skills installed';
+
+  @override
+  String get skillsPageEmptyHint =>
+      'Browse the Marketplace tab to install skills.';
+
+  @override
+  String get skillsPageInstall => 'Install';
+
+  @override
+  String get skillsPageUninstall => 'Uninstall';
+
+  @override
+  String get skillsPageUninstallConfirmTitle => 'Uninstall Skill';
+
+  @override
+  String skillsPageUninstallConfirmContent(Object name) {
+    return 'Are you sure you want to uninstall \"$name\"? This will remove it from all workspaces.';
+  }
+
+  @override
+  String get skillsPageImport => 'Import';
+
+  @override
+  String get skillsPageImportTitle => 'Import Skill';
+
+  @override
+  String get skillsPageImportHint => 'Paste skill JSON manifest here';
+
+  @override
+  String get skillsPageImportAction => 'Import';
+
+  @override
+  String get skillsPageImportInvalid => 'Invalid skill manifest format';
+
+  @override
+  String skillsPageImported(Object count) {
+    return 'Imported $count skill(s)';
+  }
+
+  @override
+  String get skillsPageCancel => 'Cancel';
+
+  @override
+  String get skillsPageSearchHint => 'Search skills...';
+
+  @override
+  String get skillsPageNoResults => 'No skills match your search.';
+
+  @override
+  String get channelsPageTitle => 'Channels';
+
+  @override
+  String get channelsPageEmpty => 'No channels configured';
+
+  @override
+  String get channelsPageEmptyHint =>
+      'Add a channel to connect agents to external services.';
+
+  @override
+  String get channelsPageAddChannel => 'Add Channel';
+
+  @override
+  String get channelsPageTypeLabel => 'Channel Type';
+
+  @override
+  String get channelsPageNameLabel => 'Name';
+
+  @override
+  String get channelsPageNameHint => 'Enter channel name';
+
+  @override
+  String get channelsPageAgentIdLabel => 'Agent ID';
+
+  @override
+  String get channelsPageAgentIdHint => 'Enter the agent ID to bind';
+
+  @override
+  String get channelsPageCreate => 'Create';
+
+  @override
+  String get channelsPageCancel => 'Cancel';
+
+  @override
+  String get channelsPageSave => 'Save';
+
+  @override
+  String get channelsPageDelete => 'Delete';
+
+  @override
+  String get channelsPageDeleteConfirmTitle => 'Delete Channel';
+
+  @override
+  String get channelsPageDeleteConfirmContent =>
+      'Are you sure you want to delete this channel? This action cannot be undone.';
+
+  @override
+  String get channelsPageConfigure => 'Configure';
+
+  @override
+  String get channelsPageTest => 'Test';
+
+  @override
+  String get channelsPageTestSuccess => 'Connection test successful';
+
+  @override
+  String get channelsPageTestFailed => 'Connection test failed';
+
+  @override
+  String get channelsPageDisabled => 'Disabled';
+
+  @override
+  String get channelsPageBoundTo => 'Bound to';
+
+  @override
+  String get desktopNavChannelsTooltip => 'Channels';
+
+  @override
+  String get channelsPageSelectType => 'Select Channel Type';
+
+  @override
+  String get channelsPageBindAgent => 'Bind to Agent';
+
+  @override
+  String get channelsStatusEnabled => 'Enabled';
+
+  @override
+  String get channelsEnable => 'Enable';
+
+  @override
+  String get channelsDisable => 'Disable';
+
+  @override
+  String get channelsTypeTelegramDesc =>
+      'Chat bot for Telegram groups and channels';
+
+  @override
+  String get channelsTypeDiscordDesc => 'Bot for Discord servers';
+
+  @override
+  String get channelsTypeSlackDesc => 'Bot for Slack workspaces';
+
+  @override
+  String get channelsTypeEmailDesc => 'Send and receive emails via SMTP/IMAP';
+
+  @override
+  String get channelsTypeWebhookDesc => 'Trigger REST webhooks';
+
+  @override
+  String get channelsTypeWebWidgetDesc => 'Embeddable chat widget for websites';
+
+  @override
+  String get syncPageTitle => 'Sync';
+
+  @override
+  String get desktopNavSyncTooltip => 'Sync';
+
+  @override
+  String get syncPageDeviceSection => 'Device';
+
+  @override
+  String get syncPageDeviceName => 'Name';
+
+  @override
+  String get syncPageDevicePlatform => 'Platform';
+
+  @override
+  String get syncPageDeviceId => 'Device ID';
+
+  @override
+  String get syncPageLastSync => 'Last Sync';
+
+  @override
+  String get syncPageRegister => 'Register';
+
+  @override
+  String get syncPageRegisterTitle => 'Register Device';
+
+  @override
+  String get syncPageRegisterHint =>
+      'Enter your sync relay server token to register this device.';
+
+  @override
+  String get syncPageTokenLabel => 'Auth Token';
+
+  @override
+  String get syncPageTokenHint => 'Paste your auth token here';
+
+  @override
+  String get syncPageConfirm => 'Confirm';
+
+  @override
+  String get syncPageCancel => 'Cancel';
+
+  @override
+  String get syncPageRegistered => 'Registered';
+
+  @override
+  String get syncPageUnregister => 'Unregister';
+
+  @override
+  String get syncPageConfigSection => 'Sync Settings';
+
+  @override
+  String get syncPageAutoSync => 'Auto Sync';
+
+  @override
+  String get syncPageSyncWorkspaces => 'Sync Workspaces';
+
+  @override
+  String get syncPageSyncAgents => 'Sync Agents';
+
+  @override
+  String get syncPageSyncTasks => 'Sync Tasks';
+
+  @override
+  String get syncPageSyncChannels => 'Sync Channels';
+
+  @override
+  String get syncPageSyncNow => 'Sync Now';
+
+  @override
+  String get syncPageSyncing => 'Syncing…';
+
+  @override
+  String get syncPageHistorySection => 'Sync History';
+
+  @override
+  String get syncPageNoRecords => 'No sync records yet';
+
+  @override
+  String get syncStatusSyncing => 'Syncing…';
+
+  @override
+  String get syncStatusSuccess => 'Sync completed';
+
+  @override
+  String get syncStatusFailed => 'Sync failed';
+
+  @override
+  String get syncStatusPaused => 'Sync paused';
+
+  @override
+  String get syncStatusIdle => 'Waiting for sync';
+
+  @override
+  String syncPageItemsSummary(String pushed, String pulled, String conflicts) {
+    return '$pushed pushed, $pulled pulled, $conflicts conflicts';
+  }
+
+  @override
+  String get runtimePageTitle => 'Runtime Host';
+
+  @override
+  String get desktopNavRuntimeTooltip => 'Runtime';
+
+  @override
+  String get runtimePageHostSection => 'Host Status';
+
+  @override
+  String get runtimePageUptime => 'Uptime';
+
+  @override
+  String get runtimePageSuccessCount => 'Successes';
+
+  @override
+  String get runtimePageFailedCount => 'Failures';
+
+  @override
+  String get runtimePageStart => 'Start Host';
+
+  @override
+  String get runtimePageStop => 'Stop Host';
+
+  @override
+  String get runtimeStatusRunning => 'Running';
+
+  @override
+  String get runtimeStatusStopped => 'Stopped';
+
+  @override
+  String get runtimeStatusCompleted => 'Completed';
+
+  @override
+  String get runtimeStatusFailed => 'Failed';
+
+  @override
+  String get runtimeStatusCancelled => 'Cancelled';
+
+  @override
+  String get runtimeStatusPending => 'Pending';
+
+  @override
+  String get runtimePageActiveSection => 'Active Executions';
+
+  @override
+  String get runtimePageNoActive => 'No active executions';
+
+  @override
+  String get runtimePageSimulate => 'Simulate Execution';
+
+  @override
+  String get runtimePageScheduleSection => 'Schedules';
+
+  @override
+  String get runtimePageNoSchedules => 'No scheduled runs';
+
+  @override
+  String get runtimePageHistorySection => 'Execution History';
+
+  @override
+  String get runtimePageNoHistory => 'No execution history yet';
+
+  @override
+  String get scheduleIntervalOnce => 'Once';
+
+  @override
+  String get scheduleIntervalHourly => 'Hourly';
+
+  @override
+  String get scheduleIntervalDaily => 'Daily';
+
+  @override
+  String get scheduleIntervalWeekly => 'Weekly';
+
+  @override
+  String get scheduleIntervalMonthly => 'Monthly';
 }

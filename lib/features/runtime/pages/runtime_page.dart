@@ -257,8 +257,8 @@ class _ActiveExecutionsSection extends StatelessWidget {
                 padding: const EdgeInsets.only(top: 12),
                 child: OutlinedButton.icon(
                   icon: const Icon(lucide.Lucide.Play, size: 14),
-                  label: Text(l10n.runtimePageSimulate),
-                  onPressed: () => _simulateExecution(context, runtime),
+                  label: const Text('Run Agent'),
+                  onPressed: () => _executeAgent(context, runtime),
                   style: OutlinedButton.styleFrom(
                     visualDensity: VisualDensity.compact,
                   ),
@@ -270,18 +270,18 @@ class _ActiveExecutionsSection extends StatelessWidget {
     );
   }
 
-  void _simulateExecution(BuildContext context, RuntimeProvider runtime) {
+  void _executeAgent(BuildContext context, RuntimeProvider runtime) {
     final ws = context.read<WorkspaceProvider>();
     final agents = context.read<AgentProvider>();
     final workspaceId = ws.currentWorkspace?.id ?? '';
     final agentList = agents.getAgentsForWorkspace(workspaceId);
     if (agentList.isEmpty) return;
     final agent = agentList.first;
-    runtime.simulateExecution(
+    runtime.executeAgent(
+      userRequest: 'Execute a background task',
       agentId: agent.id,
       agentName: agent.name,
       workspaceId: workspaceId,
-      taskTitle: 'Simulated run',
     );
   }
 }
