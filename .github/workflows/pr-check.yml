@@ -48,7 +48,16 @@ jobs:
 
           echo "Format-checking files:"
           echo "$files"
-          dart format --output=none --set-exit-if-changed $files
+          dart format $files
+          # Check if any files were actually modified by the formatter
+          modified="$(git diff --name-only)"
+          if [ -n "$modified" ]; then
+            echo "Formatting issues found in:"
+            echo "$modified"
+            git diff
+            exit 1
+          fi
+          echo "All files are properly formatted."
 
       - name: Generate l10n and ensure committed outputs
         run: |

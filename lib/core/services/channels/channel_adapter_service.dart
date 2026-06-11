@@ -14,13 +14,13 @@ import 'web_widget_adapter.dart';
 class ChannelAdapterService {
   static final Map<ChannelType, ChannelAdapter> _adapters =
       <ChannelType, ChannelAdapter>{
-    ChannelType.telegram: TelegramAdapter(),
-    ChannelType.discord: DiscordAdapter(),
-    ChannelType.slack: SlackAdapter(),
-    ChannelType.email: EmailAdapter(),
-    ChannelType.webhook: WebhookAdapter(),
-    ChannelType.webWidget: WebWidgetAdapter(),
-  };
+        ChannelType.telegram: TelegramAdapter(),
+        ChannelType.discord: DiscordAdapter(),
+        ChannelType.slack: SlackAdapter(),
+        ChannelType.email: EmailAdapter(),
+        ChannelType.webhook: WebhookAdapter(),
+        ChannelType.webWidget: WebWidgetAdapter(),
+      };
 
   /// All registered adapters.
   static List<ChannelAdapter> get all => _adapters.values.toList();
@@ -39,19 +39,29 @@ class ChannelAdapterService {
   }) async {
     final adapter = _adapters[channel.type];
     if (adapter == null) {
-      return ChannelResult(success: false, message: 'No adapter for ${channel.type}');
+      return ChannelResult(
+        success: false,
+        message: 'No adapter for ${channel.type}',
+      );
     }
     if (!channel.enabled) {
       return ChannelResult(success: false, message: 'Channel is disabled');
     }
-    return adapter.sendMessage(channel.config, text: text, agentName: agentName);
+    return adapter.sendMessage(
+      channel.config,
+      text: text,
+      agentName: agentName,
+    );
   }
 
   /// Test a channel connection by actually calling the external API.
   static Future<ChannelResult> testChannel(AgentChannel channel) async {
     final adapter = _adapters[channel.type];
     if (adapter == null) {
-      return ChannelResult(success: false, message: 'No adapter for ${channel.type}');
+      return ChannelResult(
+        success: false,
+        message: 'No adapter for ${channel.type}',
+      );
     }
     return adapter.testConnection(channel.config);
   }

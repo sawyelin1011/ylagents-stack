@@ -71,17 +71,11 @@ class SlackAdapter implements ChannelAdapter {
       if (agentName != null)
         {
           'type': 'header',
-          'text': {
-            'type': 'plain_text',
-            'text': agentName,
-          },
+          'text': {'type': 'plain_text', 'text': agentName},
         },
       {
         'type': 'section',
-        'text': {
-          'type': 'mrkdwn',
-          'text': text,
-        },
+        'text': {'type': 'mrkdwn', 'text': text},
       },
     ];
 
@@ -159,7 +153,8 @@ class SlackAdapter implements ChannelAdapter {
           final teamName = data['team'] ?? '';
           return ChannelResult(
             success: true,
-            message: 'Slack bot "$botName" connected${teamName.isNotEmpty ? ' to $teamName' : ''}',
+            message:
+                'Slack bot "$botName" connected${teamName.isNotEmpty ? ' to $teamName' : ''}',
           );
         }
         return ChannelResult(
@@ -173,10 +168,7 @@ class SlackAdapter implements ChannelAdapter {
         message: 'HTTP ${response.statusCode}',
       );
     } catch (e) {
-      return ChannelResult(
-        success: false,
-        message: 'Connection failed: $e',
-      );
+      return ChannelResult(success: false, message: 'Connection failed: $e');
     }
   }
 }

@@ -59,16 +59,19 @@ class RuntimeProvider extends ChangeNotifier {
       _executions.isNotEmpty ? _executions.last : null;
 
   /// Number of successful executions.
-  int get successCount =>
-      _executions.where((e) => e.status == RuntimeExecutionStatus.completed).length;
+  int get successCount => _executions
+      .where((e) => e.status == RuntimeExecutionStatus.completed)
+      .length;
 
   /// Number of failed executions.
-  int get failedCount =>
-      _executions.where((e) => e.status == RuntimeExecutionStatus.failed).length;
+  int get failedCount => _executions
+      .where((e) => e.status == RuntimeExecutionStatus.failed)
+      .length;
 
   /// Executions currently in progress.
-  List<RuntimeExecution> get activeExecutions =>
-      _executions.where((e) => e.status == RuntimeExecutionStatus.running).toList();
+  List<RuntimeExecution> get activeExecutions => _executions
+      .where((e) => e.status == RuntimeExecutionStatus.running)
+      .toList();
 
   RuntimeProvider() {
     _load();
@@ -283,9 +286,11 @@ class RuntimeProvider extends ChangeNotifier {
 
   /// Prune execution history older than the given date.
   Future<void> pruneHistoryOlderThan(DateTime cutoff) async {
-    _executions.removeWhere((e) =>
-        e.startedAt.isBefore(cutoff) &&
-        e.status != RuntimeExecutionStatus.running);
+    _executions.removeWhere(
+      (e) =>
+          e.startedAt.isBefore(cutoff) &&
+          e.status != RuntimeExecutionStatus.running,
+    );
     await _persistExecutions();
     notifyListeners();
   }

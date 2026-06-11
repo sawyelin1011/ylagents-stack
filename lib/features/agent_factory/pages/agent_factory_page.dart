@@ -393,10 +393,7 @@ class _AgentFactoryPageState extends State<AgentFactoryPage> {
           children: [
             ..._goals.asMap().entries.map(
               (entry) => Chip(
-                label: Text(
-                  entry.value,
-                  style: const TextStyle(fontSize: 12),
-                ),
+                label: Text(entry.value, style: const TextStyle(fontSize: 12)),
                 onDeleted: () {
                   setState(() {
                     _goals.removeAt(entry.key);
@@ -534,9 +531,7 @@ class _AgentFactoryPageState extends State<AgentFactoryPage> {
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
         border: Border(
-          top: BorderSide(
-            color: cs.outlineVariant.withValues(alpha: 0.3),
-          ),
+          top: BorderSide(color: cs.outlineVariant.withValues(alpha: 0.3)),
         ),
       ),
       child: Row(
@@ -551,7 +546,9 @@ class _AgentFactoryPageState extends State<AgentFactoryPage> {
             const SizedBox.shrink(),
           if (_currentStep < _totalSteps - 1)
             FilledButton(
-              onPressed: _canGoNext ? () => setState(() => _currentStep++) : null,
+              onPressed: _canGoNext
+                  ? () => setState(() => _currentStep++)
+                  : null,
               child: Text(l10n.agentFactoryNext),
             )
           else
@@ -630,8 +627,8 @@ class _StepIndicator extends StatelessWidget {
                   color: isCompleted
                       ? colorScheme.primary
                       : isActive
-                          ? colorScheme.primaryContainer
-                          : colorScheme.surfaceContainerHighest,
+                      ? colorScheme.primaryContainer
+                      : colorScheme.surfaceContainerHighest,
                 ),
                 child: Center(
                   child: isCompleted
@@ -719,7 +716,11 @@ class _TemplateCard extends StatelessWidget {
                   color: colorScheme.primaryContainer.withValues(alpha: 0.5),
                   borderRadius: BorderRadius.circular(8),
                 ),
-                child: Icon(icon, color: colorScheme.onPrimaryContainer, size: 20),
+                child: Icon(
+                  icon,
+                  color: colorScheme.onPrimaryContainer,
+                  size: 20,
+                ),
               ),
               const SizedBox(width: 12),
               Expanded(
@@ -747,11 +748,7 @@ class _TemplateCard extends StatelessWidget {
                 ),
               ),
               if (isSelected)
-                Icon(
-                  lucide.Lucide.Check,
-                  color: colorScheme.primary,
-                  size: 18,
-                ),
+                Icon(lucide.Lucide.Check, color: colorScheme.primary, size: 18),
             ],
           ),
         ),
@@ -782,9 +779,7 @@ class _ReviewCard extends StatelessWidget {
       decoration: BoxDecoration(
         color: cs.surfaceContainerLowest,
         borderRadius: BorderRadius.circular(12),
-        border: Border.all(
-          color: cs.outlineVariant.withValues(alpha: 0.3),
-        ),
+        border: Border.all(color: cs.outlineVariant.withValues(alpha: 0.3)),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -837,10 +832,7 @@ class _ReviewRow extends StatelessWidget {
           Expanded(
             child: Text(
               value,
-              style: TextStyle(
-                fontSize: 12,
-                color: cs.onSurface,
-              ),
+              style: TextStyle(fontSize: 12, color: cs.onSurface),
             ),
           ),
         ],

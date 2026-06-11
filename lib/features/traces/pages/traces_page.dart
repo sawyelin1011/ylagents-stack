@@ -74,14 +74,8 @@ class _TracesPageState extends State<TracesPage> {
                     lucide.Lucide.CheckCircle,
                     Colors.green,
                   ),
-                  ExecutionStatus.failed => (
-                    lucide.Lucide.XCircle,
-                    cs.error,
-                  ),
-                  _ => (
-                    lucide.Lucide.Loader,
-                    cs.primary,
-                  ),
+                  ExecutionStatus.failed => (lucide.Lucide.XCircle, cs.error),
+                  _ => (lucide.Lucide.Loader, cs.primary),
                 };
 
                 return Card(
@@ -115,33 +109,40 @@ class _TracesPageState extends State<TracesPage> {
                                 Row(
                                   children: [
                                     if (leadAgent != null) ...[
-                                      Icon(lucide.Lucide.Crown,
-                                          size: 11,
-                                          color:
-                                              cs.onSurface
-                                                  .withValues(alpha: 0.5)),
+                                      Icon(
+                                        lucide.Lucide.Crown,
+                                        size: 11,
+                                        color: cs.onSurface.withValues(
+                                          alpha: 0.5,
+                                        ),
+                                      ),
                                       const SizedBox(width: 4),
                                       Text(
                                         leadAgent.name,
                                         style: TextStyle(
                                           fontSize: 11,
-                                          color: cs.onSurface
-                                              .withValues(alpha: 0.5),
+                                          color: cs.onSurface.withValues(
+                                            alpha: 0.5,
+                                          ),
                                         ),
                                       ),
                                       const SizedBox(width: 12),
                                     ],
-                                    Icon(lucide.Lucide.Clock,
-                                        size: 11,
-                                        color:
-                                            cs.onSurface.withValues(alpha: 0.5)),
+                                    Icon(
+                                      lucide.Lucide.Clock,
+                                      size: 11,
+                                      color: cs.onSurface.withValues(
+                                        alpha: 0.5,
+                                      ),
+                                    ),
                                     const SizedBox(width: 4),
                                     Text(
                                       _formatDate(trace.createdAt),
                                       style: TextStyle(
                                         fontSize: 11,
-                                        color: cs.onSurface
-                                            .withValues(alpha: 0.5),
+                                        color: cs.onSurface.withValues(
+                                          alpha: 0.5,
+                                        ),
                                       ),
                                     ),
                                     const SizedBox(width: 12),
@@ -149,8 +150,9 @@ class _TracesPageState extends State<TracesPage> {
                                       '${trace.steps.length} ${l10n.tracesPageSteps}',
                                       style: TextStyle(
                                         fontSize: 11,
-                                        color: cs.onSurface
-                                            .withValues(alpha: 0.5),
+                                        color: cs.onSurface.withValues(
+                                          alpha: 0.5,
+                                        ),
                                       ),
                                     ),
                                   ],
@@ -207,11 +209,7 @@ class _TracesPageState extends State<TracesPage> {
                 const SizedBox(height: 16),
 
                 // Status
-                _detailSection(
-                  l10n.tracesPageStatus,
-                  trace.status.name,
-                  cs,
-                ),
+                _detailSection(l10n.tracesPageStatus, trace.status.name, cs),
                 const SizedBox(height: 16),
 
                 // Steps
@@ -266,8 +264,7 @@ class _TracesPageState extends State<TracesPage> {
                                 ),
                               ],
                             ),
-                            if (step.result != null &&
-                                step.result!.isNotEmpty)
+                            if (step.result != null && step.result!.isNotEmpty)
                               Padding(
                                 padding: const EdgeInsets.only(top: 4),
                                 child: Text(
@@ -276,8 +273,7 @@ class _TracesPageState extends State<TracesPage> {
                                       : step.result!,
                                   style: TextStyle(
                                     fontSize: 11,
-                                    color: cs.onSurface
-                                        .withValues(alpha: 0.5),
+                                    color: cs.onSurface.withValues(alpha: 0.5),
                                     fontStyle: FontStyle.italic,
                                   ),
                                   maxLines: 3,
@@ -343,13 +339,7 @@ class _TracesPageState extends State<TracesPage> {
           ),
         ),
         const SizedBox(height: 2),
-        Text(
-          value,
-          style: TextStyle(
-            fontSize: 13,
-            color: cs.onSurface,
-          ),
-        ),
+        Text(value, style: TextStyle(fontSize: 13, color: cs.onSurface)),
       ],
     );
   }

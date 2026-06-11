@@ -49,8 +49,8 @@ class AgentChannel {
     this.enabled = true,
     DateTime? createdAt,
     DateTime? updatedAt,
-  })  : createdAt = createdAt ?? DateTime.now(),
-        updatedAt = updatedAt ?? DateTime.now();
+  }) : createdAt = createdAt ?? DateTime.now(),
+       updatedAt = updatedAt ?? DateTime.now();
 
   /// Parsed config as a mutable map for convenience.
   Map<String, dynamic> get config {
@@ -124,8 +124,7 @@ class AgentChannel {
     try {
       final arr = jsonDecode(raw) as List<dynamic>;
       return [
-        for (final e in arr)
-          AgentChannel.fromJson(e as Map<String, dynamic>),
+        for (final e in arr) AgentChannel.fromJson(e as Map<String, dynamic>),
       ];
     } catch (_) {
       return const <AgentChannel>[];

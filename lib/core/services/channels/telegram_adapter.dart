@@ -136,20 +136,14 @@ class TelegramAdapter implements ChannelAdapter {
             message: 'Telegram bot "$botName" connected OK',
           );
         }
-        return ChannelResult(
-          success: false,
-          message: 'Invalid bot token',
-        );
+        return ChannelResult(success: false, message: 'Invalid bot token');
       }
       return ChannelResult(
         success: false,
         message: 'HTTP ${response.statusCode}',
       );
     } catch (e) {
-      return ChannelResult(
-        success: false,
-        message: 'Connection failed: $e',
-      );
+      return ChannelResult(success: false, message: 'Connection failed: $e');
     }
   }
 }

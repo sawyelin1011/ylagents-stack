@@ -39,10 +39,9 @@ class AuthProvider extends ChangeNotifier {
     final deviceRaw = prefs.getString(_deviceKey);
     if (deviceRaw != null && deviceRaw.isNotEmpty) {
       try {
-        _currentDevice =
-            SyncDevice.fromJson(
-              jsonDecode(deviceRaw) as Map<String, dynamic>,
-            );
+        _currentDevice = SyncDevice.fromJson(
+          jsonDecode(deviceRaw) as Map<String, dynamic>,
+        );
       } catch (_) {}
     }
     final devicesRaw = prefs.getString(_devicesKey);
@@ -60,10 +59,7 @@ class AuthProvider extends ChangeNotifier {
 
   Future<void> _persistDevices() async {
     final prefs = await SharedPreferences.getInstance();
-    await prefs.setString(
-      _devicesKey,
-      SyncDevice.encodeList(_knownDevices),
-    );
+    await prefs.setString(_devicesKey, SyncDevice.encodeList(_knownDevices));
   }
 
   /// Ensure this device has an identity.
@@ -74,8 +70,9 @@ class AuthProvider extends ChangeNotifier {
   }) async {
     if (_currentDevice != null) return;
     final id = _uuid.v4();
-    final deviceName =
-        name.isNotEmpty ? name : 'Device ${_knownDevices.length + 1}';
+    final deviceName = name.isNotEmpty
+        ? name
+        : 'Device ${_knownDevices.length + 1}';
     _currentDevice = SyncDevice(
       id: id,
       name: deviceName,

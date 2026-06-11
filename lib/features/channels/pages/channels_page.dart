@@ -190,7 +190,10 @@ class _ChannelsPageState extends State<ChannelsPage> {
                         child: TextField(
                           controller: ctrl,
                           obscureText: field.isSecret,
-                          maxLines: field.inputType == ChannelFieldInputType.multiline ? 4 : 1,
+                          maxLines:
+                              field.inputType == ChannelFieldInputType.multiline
+                              ? 4
+                              : 1,
                           keyboardType: _flutterKeyboardType(field.inputType),
                           decoration: InputDecoration(
                             labelText: field.label,
@@ -276,9 +279,7 @@ class _ChannelsPageState extends State<ChannelsPage> {
                     type: type,
                     configJson: _encodeConfig(config),
                   );
-                  await context
-                      .read<ChannelProvider>()
-                      .createChannel(channel);
+                  await context.read<ChannelProvider>().createChannel(channel);
                   if (ctx.mounted) Navigator.pop(ctx);
                 },
                 child: Text(l10n.channelsPageCreate),
@@ -429,7 +430,10 @@ class _ChannelCard extends StatelessWidget {
                   ),
                 ),
                 Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 8,
+                    vertical: 2,
+                  ),
                   decoration: BoxDecoration(
                     color: channel.enabled
                         ? Colors.green.withValues(alpha: 0.1)
@@ -437,7 +441,9 @@ class _ChannelCard extends StatelessWidget {
                     borderRadius: BorderRadius.circular(12),
                   ),
                   child: Text(
-                    channel.enabled ? l10n.channelsStatusEnabled : l10n.channelsPageDisabled,
+                    channel.enabled
+                        ? l10n.channelsStatusEnabled
+                        : l10n.channelsPageDisabled,
                     style: TextStyle(
                       fontSize: 11,
                       color: channel.enabled
@@ -455,17 +461,15 @@ class _ChannelCard extends StatelessWidget {
                   ),
                   onSelected: (value) async {
                     if (value == 'toggle') {
-                      await context
-                          .read<ChannelProvider>()
-                          .toggleEnabled(channel.id);
+                      await context.read<ChannelProvider>().toggleEnabled(
+                        channel.id,
+                      );
                     } else if (value == 'delete') {
                       final confirmed = await showDialog<bool>(
                         context: context,
                         builder: (ctx) => AlertDialog(
                           title: Text(l10n.channelsPageDeleteConfirmTitle),
-                          content: Text(
-                            l10n.channelsPageDeleteConfirmContent,
-                          ),
+                          content: Text(l10n.channelsPageDeleteConfirmContent),
                           actions: [
                             TextButton(
                               onPressed: () => Navigator.pop(ctx, false),
@@ -482,9 +486,9 @@ class _ChannelCard extends StatelessWidget {
                         ),
                       );
                       if (confirmed == true && context.mounted) {
-                        await context
-                            .read<ChannelProvider>()
-                            .deleteChannel(channel.id);
+                        await context.read<ChannelProvider>().deleteChannel(
+                          channel.id,
+                        );
                       }
                     }
                   },

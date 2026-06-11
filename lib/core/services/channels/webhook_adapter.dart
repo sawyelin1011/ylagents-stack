@@ -75,7 +75,8 @@ class WebhookAdapter implements ChannelAdapter {
 
     final url = config['webhookUrl'] as String;
     final method = (config['method'] as String?)?.toUpperCase() ?? 'POST';
-    final contentType = (config['contentType'] as String?) ?? 'application/json';
+    final contentType =
+        (config['contentType'] as String?) ?? 'application/json';
     final secretToken = config['secretToken'] as String?;
     final customTemplate = config['customTemplate'] as String?;
 
@@ -85,11 +86,7 @@ class WebhookAdapter implements ChannelAdapter {
 
     if (customTemplate != null && customTemplate.isNotEmpty) {
       // Apply template with variable substitution
-      body = _applyTemplate(
-        customTemplate,
-        text,
-        agentName: agentName,
-      );
+      body = _applyTemplate(customTemplate, text, agentName: agentName);
     } else {
       // Default JSON payload
       final payload = <String, dynamic>{
@@ -115,11 +112,7 @@ class WebhookAdapter implements ChannelAdapter {
       http.Response response;
 
       if (method == 'PUT') {
-        response = await http.put(
-          Uri.parse(url),
-          headers: headers,
-          body: body,
-        );
+        response = await http.put(Uri.parse(url), headers: headers, body: body);
       } else {
         response = await http.post(
           Uri.parse(url),
@@ -204,20 +197,13 @@ class WebhookAdapter implements ChannelAdapter {
         message: 'HTTP ${response.statusCode}',
       );
     } catch (e) {
-      return ChannelResult(
-        success: false,
-        message: 'Connection failed: $e',
-      );
+      return ChannelResult(success: false, message: 'Connection failed: $e');
     }
   }
 
   /// Apply template with variable substitution.
   /// Supports: {{message}}, {{agentName}}, {{timestamp}}, {{random}}
-  String _applyTemplate(
-    String template,
-    String message, {
-    String? agentName,
-  }) {
+  String _applyTemplate(String template, String message, {String? agentName}) {
     var result = template;
     result = result.replaceAll('{{message}}', message);
     result = result.replaceAll('{{agentName}}', agentName ?? 'Kelivo');
@@ -228,7 +214,10 @@ class WebhookAdapter implements ChannelAdapter {
 
     // Replace {{random}} with a random integer
     final random = Random();
-    result = result.replaceAll('{{random}}', random.nextInt(1000000).toString());
+    result = result.replaceAll(
+      '{{random}}',
+      random.nextInt(1000000).toString(),
+    );
 
     return result;
   }

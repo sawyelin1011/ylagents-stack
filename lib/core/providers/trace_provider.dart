@@ -48,10 +48,7 @@ class TraceProvider extends ChangeNotifier {
   }
 
   /// Get the most recent trace for a lead agent in a workspace.
-  ExecutionTrace? getLatestTraceForAgent(
-    String? workspaceId,
-    String agentId,
-  ) {
+  ExecutionTrace? getLatestTraceForAgent(String? workspaceId, String agentId) {
     final agentTraces = _traces.where(
       (t) =>
           (workspaceId == null || t.workspaceId == workspaceId) &&

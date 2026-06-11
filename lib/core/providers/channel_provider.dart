@@ -47,9 +47,7 @@ class ChannelProvider extends ChangeNotifier {
 
   /// Get channels bound to a specific agent.
   List<AgentChannel> getChannelsForAgent(String agentId) {
-    return _channels
-        .where((c) => c.agentId == agentId)
-        .toList(growable: false);
+    return _channels.where((c) => c.agentId == agentId).toList(growable: false);
   }
 
   /// Get a single channel by ID.

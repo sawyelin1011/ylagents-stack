@@ -59,9 +59,11 @@ class _SkillsPageState extends State<SkillsPage>
         controller: _tabController,
         children: [
           _InstalledTab(),
-          _MarketplaceTab(onInstalled: () {
-            _tabController.animateTo(0);
-          }),
+          _MarketplaceTab(
+            onInstalled: () {
+              _tabController.animateTo(0);
+            },
+          ),
         ],
       ),
     );
@@ -184,17 +186,15 @@ class _InstalledTab extends StatelessWidget {
                   Navigator.pop(ctx);
                   ScaffoldMessenger.of(context).showSnackBar(
                     SnackBar(
-                      content: Text(
-                        l10n.skillsPageImported(count.toString()),
-                      ),
+                      content: Text(l10n.skillsPageImported(count.toString())),
                     ),
                   );
                 }
               } catch (e) {
                 if (ctx.mounted) {
-                  ScaffoldMessenger.of(ctx).showSnackBar(
-                    SnackBar(content: Text('$e')),
-                  );
+                  ScaffoldMessenger.of(
+                    ctx,
+                  ).showSnackBar(SnackBar(content: Text('$e')));
                 }
               }
             },
@@ -237,8 +237,7 @@ class _MarketplaceTabState extends State<_MarketplaceTab> {
           child: TextField(
             decoration: InputDecoration(
               hintText: l10n.skillsPageSearchHint,
-              prefixIcon:
-                  Icon(lucide.Lucide.Search, size: 16),
+              prefixIcon: Icon(lucide.Lucide.Search, size: 16),
               border: const OutlineInputBorder(),
               isDense: true,
             ),
@@ -250,19 +249,21 @@ class _MarketplaceTabState extends State<_MarketplaceTab> {
           padding: const EdgeInsets.symmetric(horizontal: 16),
           child: Wrap(
             spacing: 6,
-            children: SkillMarketplaceService.allTags.map(
-              (tag) => FilterChip(
-                label: Text(tag, style: const TextStyle(fontSize: 11)),
-                selected: _searchQuery.toLowerCase() == tag.toLowerCase(),
-                onSelected: (selected) {
-                  setState(() {
-                    _searchQuery = selected ? tag : '';
-                  });
-                },
-                visualDensity: VisualDensity.compact,
-                materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
-              ),
-            ).toList(),
+            children: SkillMarketplaceService.allTags
+                .map(
+                  (tag) => FilterChip(
+                    label: Text(tag, style: const TextStyle(fontSize: 11)),
+                    selected: _searchQuery.toLowerCase() == tag.toLowerCase(),
+                    onSelected: (selected) {
+                      setState(() {
+                        _searchQuery = selected ? tag : '';
+                      });
+                    },
+                    visualDensity: VisualDensity.compact,
+                    materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                  ),
+                )
+                .toList(),
           ),
         ),
         const SizedBox(height: 8),
@@ -320,11 +321,7 @@ class _SkillCard extends StatelessWidget {
           children: [
             Row(
               children: [
-                Icon(
-                  lucide.Lucide.BookTemplate,
-                  size: 18,
-                  color: cs.primary,
-                ),
+                Icon(lucide.Lucide.BookTemplate, size: 18, color: cs.primary),
                 const SizedBox(width: 8),
                 Expanded(
                   child: Column(
@@ -354,24 +351,18 @@ class _SkillCard extends StatelessWidget {
                       ? Chip(
                           label: Text(
                             l10n.skillsPageInstalled,
-                            style: TextStyle(
-                              fontSize: 11,
-                              color: Colors.green,
-                            ),
+                            style: TextStyle(fontSize: 11, color: Colors.green),
                           ),
                           visualDensity: VisualDensity.compact,
                           materialTapTargetSize:
                               MaterialTapTargetSize.shrinkWrap,
-                          backgroundColor:
-                              Colors.green.withValues(alpha: 0.1),
+                          backgroundColor: Colors.green.withValues(alpha: 0.1),
                         )
                       : FilledButton.tonalIcon(
                           icon: const Icon(lucide.Lucide.Download, size: 14),
                           label: Text(l10n.skillsPageInstall),
                           onPressed: () async {
-                            await context
-                                .read<SkillProvider>()
-                                .install(skill);
+                            await context.read<SkillProvider>().install(skill);
                             onInstalled?.call();
                           },
                           style: FilledButton.styleFrom(
@@ -391,9 +382,7 @@ class _SkillCard extends StatelessWidget {
                         builder: (ctx) => AlertDialog(
                           title: Text(l10n.skillsPageUninstallConfirmTitle),
                           content: Text(
-                            l10n.skillsPageUninstallConfirmContent(
-                              skill.name,
-                            ),
+                            l10n.skillsPageUninstallConfirmContent(skill.name),
                           ),
                           actions: [
                             TextButton(
@@ -411,9 +400,7 @@ class _SkillCard extends StatelessWidget {
                         ),
                       );
                       if (confirmed == true && context.mounted) {
-                        await context
-                            .read<SkillProvider>()
-                            .uninstall(skill.id);
+                        await context.read<SkillProvider>().uninstall(skill.id);
                       }
                     },
                     style: OutlinedButton.styleFrom(

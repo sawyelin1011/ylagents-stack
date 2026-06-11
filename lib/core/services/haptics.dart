@@ -65,7 +65,9 @@ class Haptics {
   }
 
   /// Cancel any ongoing vibration (rarely needed in our use cases).
-  static void cancel() { /* no-op */ }
+  static void cancel() {
+    /* no-op */
+  }
 
   // Fire-and-forget wrapper to avoid exceptions on unsupported platforms.
   static void _safe(Future<void> Function() action) {

@@ -185,22 +185,31 @@ void main() {
 
     test('all built-in templates have non-empty descriptions', () {
       for (final t in AgentTemplateService.builtInTemplates) {
-        expect(t.description.isNotEmpty, isTrue,
-            reason: 'Template ${t.id} has empty description');
+        expect(
+          t.description.isNotEmpty,
+          isTrue,
+          reason: 'Template ${t.id} has empty description',
+        );
       }
     });
 
     test('all built-in templates have valid agent types', () {
       for (final t in AgentTemplateService.builtInTemplates) {
-        expect(AgentType.values.contains(t.agentType), isTrue,
-            reason: 'Template ${t.id} has invalid agent type');
+        expect(
+          AgentType.values.contains(t.agentType),
+          isTrue,
+          reason: 'Template ${t.id} has invalid agent type',
+        );
       }
     });
 
     test('all built-in templates have suggested system prompts', () {
       for (final t in AgentTemplateService.builtInTemplates) {
-        expect(t.suggestedSystemPrompt.isNotEmpty, isTrue,
-            reason: 'Template ${t.id} has empty suggestedSystemPrompt');
+        expect(
+          t.suggestedSystemPrompt.isNotEmpty,
+          isTrue,
+          reason: 'Template ${t.id} has empty suggestedSystemPrompt',
+        );
       }
     });
 

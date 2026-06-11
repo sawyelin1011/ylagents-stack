@@ -20,7 +20,7 @@ class ManagerAgentService {
   final WorkerAgentService _workerService;
 
   ManagerAgentService({WorkerAgentService? workerService})
-      : _workerService = workerService ?? WorkerAgentService();
+    : _workerService = workerService ?? WorkerAgentService();
 
   /// Execute a team's tasks through the Manager → Workers pipeline.
   ///
@@ -39,27 +39,27 @@ class ManagerAgentService {
       required String agentId,
       required String systemPrompt,
       required String userMessage,
-    }) callLlm,
+    })
+    callLlm,
     void Function(int completed, int total)? onWorkerProgress,
   }) async {
     final managerSteps = <ExecutionStep>[];
     final workerResults = <String, String>{};
 
     // Log manager coordination
-    managerSteps.add(ExecutionStep(
-      id: _uuid.v4(),
-      type: StepType.delegate,
-      status: StepStatus.completed,
-      description: 'Manager routes ${tasks.length} tasks to team',
-      completedAt: DateTime.now(),
-    ));
+    managerSteps.add(
+      ExecutionStep(
+        id: _uuid.v4(),
+        type: StepType.delegate,
+        status: StepStatus.completed,
+        description: 'Manager routes ${tasks.length} tasks to team',
+        completedAt: DateTime.now(),
+      ),
+    );
 
     // Execute each task through workers
-    final workerTaskList = <({
-      String agentId,
-      String agentName,
-      String description
-    })>[];
+    final workerTaskList =
+        <({String agentId, String agentName, String description})>[];
 
     for (final (desc, assigneeId) in tasks) {
       if (assigneeId == null) continue;
@@ -81,18 +81,19 @@ class ManagerAgentService {
 
     for (final result in results) {
       workerResults[result.agentId] = result.output;
-      managerSteps.add(ExecutionStep(
-        id: _uuid.v4(),
-        type: StepType.execute,
-        status: result.success ? StepStatus.completed : StepStatus.failed,
-        description: 'Worker: ${result.agentName}',
-        agentId: result.agentId,
-        result:
-            result.output.length > 200
-                ? '${result.output.substring(0, 200)}...'
-                : result.output,
-        completedAt: DateTime.now(),
-      ));
+      managerSteps.add(
+        ExecutionStep(
+          id: _uuid.v4(),
+          type: StepType.execute,
+          status: result.success ? StepStatus.completed : StepStatus.failed,
+          description: 'Worker: ${result.agentName}',
+          agentId: result.agentId,
+          result: result.output.length > 200
+              ? '${result.output.substring(0, 200)}...'
+              : result.output,
+          completedAt: DateTime.now(),
+        ),
+      );
     }
 
     return ManagerResult(

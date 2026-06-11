@@ -22,8 +22,8 @@ class SyncDevice {
     this.authToken = '',
     DateTime? lastSyncAt,
     DateTime? registeredAt,
-  })  : lastSyncAt = lastSyncAt ?? DateTime.now(),
-        registeredAt = registeredAt ?? DateTime.now();
+  }) : lastSyncAt = lastSyncAt ?? DateTime.now(),
+       registeredAt = registeredAt ?? DateTime.now();
 
   SyncDevice copyWith({
     String? id,
@@ -78,8 +78,7 @@ class SyncDevice {
     try {
       final arr = jsonDecode(raw) as List<dynamic>;
       return [
-        for (final e in arr)
-          SyncDevice.fromJson(e as Map<String, dynamic>),
+        for (final e in arr) SyncDevice.fromJson(e as Map<String, dynamic>),
       ];
     } catch (_) {
       return const <SyncDevice>[];

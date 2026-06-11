@@ -153,8 +153,7 @@ class _LeadAgentExecutionPageState extends State<LeadAgentExecutionPage> {
                               ? l10n.leadAgentExecuting
                               : l10n.leadAgentExecuteButton,
                         ),
-                        onPressed:
-                            _isExecuting ? null : _execute,
+                        onPressed: _isExecuting ? null : _execute,
                       ),
                     ),
                   ],
@@ -214,21 +213,15 @@ class _LeadAgentExecutionPageState extends State<LeadAgentExecutionPage> {
               ),
             ),
             const SizedBox(height: 8),
-            ...trace.steps.map((step) => _StepCard(
-              step: step,
-              cs: cs,
-              l10n: l10n,
-            )),
+            ...trace.steps.map(
+              (step) => _StepCard(step: step, cs: cs, l10n: l10n),
+            ),
           ],
           const SizedBox(height: 16),
 
           // Final result
           if (trace.finalResponse != null && trace.finalResponse!.isNotEmpty)
-            _ResultCard(
-              response: trace.finalResponse!,
-              cs: cs,
-              l10n: l10n,
-            ),
+            _ResultCard(response: trace.finalResponse!, cs: cs, l10n: l10n),
         ],
       ),
     );
@@ -329,11 +322,7 @@ class _StepCard extends StatelessWidget {
   final ColorScheme cs;
   final AppLocalizations l10n;
 
-  const _StepCard({
-    required this.step,
-    required this.cs,
-    required this.l10n,
-  });
+  const _StepCard({required this.step, required this.cs, required this.l10n});
 
   @override
   Widget build(BuildContext context) {
@@ -368,10 +357,7 @@ class _StepCard extends StatelessWidget {
                     step.description,
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
-                    style: TextStyle(
-                      fontSize: 13,
-                      color: cs.onSurface,
-                    ),
+                    style: TextStyle(fontSize: 13, color: cs.onSurface),
                   ),
                   if (step.agentId != null)
                     Padding(
@@ -390,9 +376,7 @@ class _StepCard extends StatelessWidget {
                       child: Text(
                         step.result!.substring(
                           0,
-                          step.result!.length > 120
-                              ? 120
-                              : step.result!.length,
+                          step.result!.length > 120 ? 120 : step.result!.length,
                         ),
                         maxLines: 2,
                         overflow: TextOverflow.ellipsis,
@@ -455,17 +439,11 @@ class _ResultCard extends StatelessWidget {
           decoration: BoxDecoration(
             color: cs.surfaceContainerLowest,
             borderRadius: BorderRadius.circular(8),
-            border: Border.all(
-              color: cs.onSurface.withValues(alpha: 0.1),
-            ),
+            border: Border.all(color: cs.onSurface.withValues(alpha: 0.1)),
           ),
           child: SelectableText(
             response,
-            style: TextStyle(
-              fontSize: 13,
-              color: cs.onSurface,
-              height: 1.5,
-            ),
+            style: TextStyle(fontSize: 13, color: cs.onSurface, height: 1.5),
           ),
         ),
       ],

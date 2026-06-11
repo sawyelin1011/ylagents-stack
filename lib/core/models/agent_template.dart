@@ -56,12 +56,10 @@ class AgentTemplate {
     name: (json['name'] as String?) ?? '',
     description: (json['description'] as String?) ?? '',
     iconName: (json['iconName'] as String?) ?? 'Bot',
-    agentType:
-        AgentType.fromJson((json['agentType'] as String?) ?? 'standard'),
+    agentType: AgentType.fromJson((json['agentType'] as String?) ?? 'standard'),
     genome: json['genome'] != null
         ? AgentGenome.fromJson(json['genome'] as Map<String, dynamic>)
         : AgentGenome.empty,
-    suggestedSystemPrompt:
-        (json['suggestedSystemPrompt'] as String?) ?? '',
+    suggestedSystemPrompt: (json['suggestedSystemPrompt'] as String?) ?? '',
   );
 }

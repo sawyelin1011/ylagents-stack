@@ -66,8 +66,12 @@ class DiscordAdapter implements ChannelAdapter {
     final channelId = config['channelId'] as String;
 
     // Discord has a 2000 character limit per message
-    final content = agentName != null ? '**${_escape(agentName)}**\n$text' : text;
-    final truncated = content.length > 1990 ? '${content.substring(0, 1990)}...' : content;
+    final content = agentName != null
+        ? '**${_escape(agentName)}**\n$text'
+        : text;
+    final truncated = content.length > 1990
+        ? '${content.substring(0, 1990)}...'
+        : content;
 
     final uri = Uri.parse(
       'https://discord.com/api/v10/channels/$channelId/messages',
@@ -80,9 +84,7 @@ class DiscordAdapter implements ChannelAdapter {
           'Content-Type': 'application/json',
           'Authorization': 'Bot $token',
         },
-        body: jsonEncode({
-          'content': truncated,
-        }),
+        body: jsonEncode({'content': truncated}),
       );
 
       if (response.statusCode == 200 || response.statusCode == 201) {
@@ -138,10 +140,7 @@ class DiscordAdapter implements ChannelAdapter {
         message: 'Discord API error: HTTP ${response.statusCode}',
       );
     } catch (e) {
-      return ChannelResult(
-        success: false,
-        message: 'Connection failed: $e',
-      );
+      return ChannelResult(success: false, message: 'Connection failed: $e');
     }
   }
 

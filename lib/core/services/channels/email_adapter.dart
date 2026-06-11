@@ -100,7 +100,9 @@ class EmailAdapter implements ChannelAdapter {
         useTls: useTls,
         from: email,
         to: email, // Send to self as the channel target
-        subject: agentName != null ? '[Kelivo] $agentName' : '[Kelivo] Agent Message',
+        subject: agentName != null
+            ? '[Kelivo] $agentName'
+            : '[Kelivo] Agent Message',
         body: text,
         username: username,
         password: password,
@@ -111,10 +113,7 @@ class EmailAdapter implements ChannelAdapter {
       }
       return ChannelResult(success: false, message: result.error);
     } catch (e) {
-      return ChannelResult(
-        success: false,
-        message: 'Failed to send email: $e',
-      );
+      return ChannelResult(success: false, message: 'Failed to send email: $e');
     }
   }
 
@@ -134,11 +133,17 @@ class EmailAdapter implements ChannelAdapter {
     // Test TCP connectivity to the SMTP server
     try {
       if (kIsWeb) {
-        return const ChannelResult(success: true, message: 'Email configured (web)');
+        return const ChannelResult(
+          success: true,
+          message: 'Email configured (web)',
+        );
       }
 
-      final socket = await Socket.connect(host, port,
-        timeout: const Duration(seconds: 10));
+      final socket = await Socket.connect(
+        host,
+        port,
+        timeout: const Duration(seconds: 10),
+      );
       await socket.close();
 
       return ChannelResult(
@@ -168,12 +173,24 @@ class EmailAdapter implements ChannelAdapter {
   }) async {
     // Try Mailgun-compatible API first if host contains mailgun
     if (host.toLowerCase().contains('mailgun')) {
-      return _sendViaMailgun(from: from, to: to, subject: subject, body: body, apiKey: password);
+      return _sendViaMailgun(
+        from: from,
+        to: to,
+        subject: subject,
+        body: body,
+        apiKey: password,
+      );
     }
 
     // Try SendGrid-compatible API if host contains sendgrid
     if (host.toLowerCase().contains('sendgrid')) {
-      return _sendViaSendGrid(from: from, to: to, subject: subject, body: body, apiKey: password);
+      return _sendViaSendGrid(
+        from: from,
+        to: to,
+        subject: subject,
+        body: body,
+        apiKey: password,
+      );
     }
 
     // Generic SMTP: use the mail/send HTTP interface if available
@@ -189,7 +206,9 @@ class EmailAdapter implements ChannelAdapter {
     required String apiKey,
   }) async {
     try {
-      final uri = Uri.parse('https://api.mailgun.net/v3/mg.example.com/messages');
+      final uri = Uri.parse(
+        'https://api.mailgun.net/v3/mg.example.com/messages',
+      );
       final request = http.MultipartRequest('POST', uri);
       request.headers['Authorization'] =
           'Basic ${base64Encode(utf8.encode('api:$apiKey'))}';
@@ -202,7 +221,10 @@ class EmailAdapter implements ChannelAdapter {
       if (response.statusCode == 200) {
         return _EmailResult(success: true);
       }
-      return _EmailResult(success: false, error: 'Mailgun: HTTP ${response.statusCode}');
+      return _EmailResult(
+        success: false,
+        error: 'Mailgun: HTTP ${response.statusCode}',
+      );
     } catch (e) {
       return _EmailResult(success: false, error: 'Mailgun: $e');
     }
@@ -224,7 +246,11 @@ class EmailAdapter implements ChannelAdapter {
         },
         body: jsonEncode({
           'personalizations': [
-            {'to': [{'email': to}]}
+            {
+              'to': [
+                {'email': to},
+              ],
+            },
           ],
           'from': {'email': from},
           'subject': subject,
@@ -234,10 +260,15 @@ class EmailAdapter implements ChannelAdapter {
         }),
       );
 
-      if (response.statusCode == 200 || response.statusCode == 201 || response.statusCode == 202) {
+      if (response.statusCode == 200 ||
+          response.statusCode == 201 ||
+          response.statusCode == 202) {
         return _EmailResult(success: true);
       }
-      return _EmailResult(success: false, error: 'SendGrid: HTTP ${response.statusCode}');
+      return _EmailResult(
+        success: false,
+        error: 'SendGrid: HTTP ${response.statusCode}',
+      );
     } catch (e) {
       return _EmailResult(success: false, error: 'SendGrid: $e');
     }

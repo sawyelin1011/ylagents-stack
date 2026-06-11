@@ -81,7 +81,9 @@ void main() {
         sourceUrl: 'https://example.com',
         content: const SkillContent(
           prompts: [SkillPrompt(id: 'p1', name: 'P1', text: 'Do')],
-          workflows: [SkillWorkflow(id: 'w1', name: 'W1', steps: ['Step 1'])],
+          workflows: [
+            SkillWorkflow(id: 'w1', name: 'W1', steps: ['Step 1']),
+          ],
           requiredMcpTools: ['fetch'],
           knowledgeLinks: ['kb1'],
         ),
@@ -131,11 +133,15 @@ void main() {
     test('encodeList/decodeList round-trip', () {
       final skills = [
         Skill(
-          id: 's1', name: 'S1', description: 'One',
+          id: 's1',
+          name: 'S1',
+          description: 'One',
           content: SkillContent.empty(),
         ),
         Skill(
-          id: 's2', name: 'S2', description: 'Two',
+          id: 's2',
+          name: 'S2',
+          description: 'Two',
           content: SkillContent.empty(),
         ),
       ];

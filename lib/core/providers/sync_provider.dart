@@ -127,10 +127,9 @@ class SyncProvider extends ChangeNotifier {
     final configRaw = prefs.getString(_configKey);
     if (configRaw != null && configRaw.isNotEmpty) {
       try {
-        _config =
-            SyncConfig.fromJson(
-              jsonDecode(configRaw) as Map<String, dynamic>,
-            );
+        _config = SyncConfig.fromJson(
+          jsonDecode(configRaw) as Map<String, dynamic>,
+        );
       } catch (_) {}
     }
     final recordsRaw = prefs.getString(_recordsKey);
@@ -184,7 +183,9 @@ class SyncProvider extends ChangeNotifier {
 
   void _startAutoSyncTimer() {
     _autoSyncTimer?.cancel();
-    final interval = Duration(minutes: _config.syncIntervalMinutes.clamp(5, 1440));
+    final interval = Duration(
+      minutes: _config.syncIntervalMinutes.clamp(5, 1440),
+    );
     _autoSyncTimer = Timer.periodic(interval, (_) {
       if (_config.autoSyncEnabled && _config.relayServerUrl.isNotEmpty) {
         unawaited(performSync());
@@ -291,7 +292,10 @@ class SyncProvider extends ChangeNotifier {
       // Update last sync timestamp
       final serverTimestamp = (result['timestamp'] as num?)?.toInt();
       if (serverTimestamp != null) {
-        await prefs.setString(_lastSyncTimestampKey, serverTimestamp.toString());
+        await prefs.setString(
+          _lastSyncTimestampKey,
+          serverTimestamp.toString(),
+        );
       }
 
       return _SyncResult(
@@ -316,7 +320,10 @@ class SyncProvider extends ChangeNotifier {
   /// Test connection to the relay server.
   Future<ChannelResult> testRelayConnection() async {
     if (_config.relayServerUrl.isEmpty) {
-      return const ChannelResult(success: false, message: 'No relay server configured');
+      return const ChannelResult(
+        success: false,
+        message: 'No relay server configured',
+      );
     }
 
     try {
@@ -325,7 +332,10 @@ class SyncProvider extends ChangeNotifier {
       );
 
       if (response.statusCode == 200) {
-        return const ChannelResult(success: true, message: 'Relay server reachable');
+        return const ChannelResult(
+          success: true,
+          message: 'Relay server reachable',
+        );
       }
       return ChannelResult(
         success: false,
@@ -337,9 +347,15 @@ class SyncProvider extends ChangeNotifier {
   }
 
   /// Register this device with the relay server.
-  Future<ChannelResult> registerDevice(String deviceName, String platform) async {
+  Future<ChannelResult> registerDevice(
+    String deviceName,
+    String platform,
+  ) async {
     if (_config.relayServerUrl.isEmpty) {
-      return const ChannelResult(success: false, message: 'No relay server configured');
+      return const ChannelResult(
+        success: false,
+        message: 'No relay server configured',
+      );
     }
 
     try {
@@ -368,7 +384,10 @@ class SyncProvider extends ChangeNotifier {
   /// Unregister this device from the relay server.
   Future<ChannelResult> unregisterDevice() async {
     if (_config.relayServerUrl.isEmpty) {
-      return const ChannelResult(success: false, message: 'No relay server configured');
+      return const ChannelResult(
+        success: false,
+        message: 'No relay server configured',
+      );
     }
 
     try {
@@ -378,7 +397,10 @@ class SyncProvider extends ChangeNotifier {
       );
 
       if (response.statusCode >= 200 && response.statusCode < 300) {
-        return const ChannelResult(success: true, message: 'Device unregistered');
+        return const ChannelResult(
+          success: true,
+          message: 'Device unregistered',
+        );
       }
       return ChannelResult(
         success: false,
@@ -398,7 +420,10 @@ class SyncProvider extends ChangeNotifier {
   // ---- Existing methods preserved ----
 
   /// Start a sync operation.
-  Future<void> startSync({String deviceId = '', String workspaceId = ''}) async {
+  Future<void> startSync({
+    String deviceId = '',
+    String workspaceId = '',
+  }) async {
     final record = SyncRecord(
       id: _uuid.v4(),
       deviceId: deviceId,

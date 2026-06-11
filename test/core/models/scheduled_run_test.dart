@@ -84,9 +84,15 @@ void main() {
 
     test('copyWith preserves and overrides', () {
       final run = ScheduledRun(
-        id: 'sched1', agentId: 'a1', agentName: 'A', workspaceId: 'ws1',
+        id: 'sched1',
+        agentId: 'a1',
+        agentName: 'A',
+        workspaceId: 'ws1',
       );
-      final copy = run.copyWith(interval: ScheduleInterval.hourly, enabled: false);
+      final copy = run.copyWith(
+        interval: ScheduleInterval.hourly,
+        enabled: false,
+      );
       expect(copy.id, 'sched1');
       expect(copy.interval, ScheduleInterval.hourly);
       expect(copy.enabled, false);
@@ -95,7 +101,10 @@ void main() {
 
     test('copyWith clearLastRun clears lastRunAt', () {
       final run = ScheduledRun(
-        id: 'sched1', agentId: 'a1', agentName: 'A', workspaceId: 'ws1',
+        id: 'sched1',
+        agentId: 'a1',
+        agentName: 'A',
+        workspaceId: 'ws1',
         lastRunAt: DateTime(2026, 6, 11),
       );
       expect(run.copyWith(clearLastRun: true).lastRunAt, isNull);
@@ -103,7 +112,10 @@ void main() {
 
     test('copyWith clearNextRun clears nextRunAt', () {
       final run = ScheduledRun(
-        id: 'sched1', agentId: 'a1', agentName: 'A', workspaceId: 'ws1',
+        id: 'sched1',
+        agentId: 'a1',
+        agentName: 'A',
+        workspaceId: 'ws1',
         nextRunAt: DateTime(2026, 6, 12),
       );
       expect(run.copyWith(clearNextRun: true).nextRunAt, isNull);
@@ -134,14 +146,23 @@ void main() {
       expect(restored.taskTitle, run.taskTitle);
       expect(restored.interval, run.interval);
       expect(restored.enabled, run.enabled);
-      expect(restored.lastRunAt!.millisecondsSinceEpoch,
-          run.lastRunAt!.millisecondsSinceEpoch);
-      expect(restored.nextRunAt!.millisecondsSinceEpoch,
-          run.nextRunAt!.millisecondsSinceEpoch);
+      expect(
+        restored.lastRunAt!.millisecondsSinceEpoch,
+        run.lastRunAt!.millisecondsSinceEpoch,
+      );
+      expect(
+        restored.nextRunAt!.millisecondsSinceEpoch,
+        run.nextRunAt!.millisecondsSinceEpoch,
+      );
     });
 
     test('fromJson handles missing fields', () {
-      final json = <String, dynamic>{'id': 'sched1', 'agentId': 'a1', 'agentName': 'A', 'workspaceId': 'ws1'};
+      final json = <String, dynamic>{
+        'id': 'sched1',
+        'agentId': 'a1',
+        'agentName': 'A',
+        'workspaceId': 'ws1',
+      };
       final run = ScheduledRun.fromJson(json);
       expect(run.id, 'sched1');
       expect(run.interval, ScheduleInterval.daily);
@@ -152,8 +173,18 @@ void main() {
 
     test('encodeList/decodeList round-trip', () {
       final list = [
-        ScheduledRun(id: 's1', agentId: 'a1', agentName: 'A', workspaceId: 'ws1'),
-        ScheduledRun(id: 's2', agentId: 'a2', agentName: 'B', workspaceId: 'ws1'),
+        ScheduledRun(
+          id: 's1',
+          agentId: 'a1',
+          agentName: 'A',
+          workspaceId: 'ws1',
+        ),
+        ScheduledRun(
+          id: 's2',
+          agentId: 'a2',
+          agentName: 'B',
+          workspaceId: 'ws1',
+        ),
       ];
       final encoded = ScheduledRun.encodeList(list);
       final decoded = ScheduledRun.decodeList(encoded);

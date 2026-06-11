@@ -76,11 +76,7 @@ void main() {
     });
 
     test('toJson omits empty authToken', () {
-      final device = SyncDevice(
-        id: 'dev1',
-        name: 'Test',
-        platform: 'windows',
-      );
+      final device = SyncDevice(id: 'dev1', name: 'Test', platform: 'windows');
       final json = device.toJson();
       expect(json.containsKey('authToken'), false);
     });

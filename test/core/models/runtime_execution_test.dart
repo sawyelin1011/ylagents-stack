@@ -45,10 +45,7 @@ void main() {
 
     test('toJson/fromJson round-trip', () {
       for (final status in RuntimeExecutionStatus.values) {
-        expect(
-          RuntimeExecutionStatus.fromJson(status.toJson()),
-          status,
-        );
+        expect(RuntimeExecutionStatus.fromJson(status.toJson()), status);
       }
     });
   });
@@ -177,8 +174,10 @@ void main() {
       expect(restored.taskTitle, exec.taskTitle);
       expect(restored.status, exec.status);
       expect(restored.resultSummary, exec.resultSummary);
-      expect(restored.completedAt!.millisecondsSinceEpoch,
-          exec.completedAt!.millisecondsSinceEpoch);
+      expect(
+        restored.completedAt!.millisecondsSinceEpoch,
+        exec.completedAt!.millisecondsSinceEpoch,
+      );
     });
 
     test('toJson omits empty resultSummary and errorMessage', () {
@@ -212,12 +211,18 @@ void main() {
       final now = DateTime(2026, 6, 11);
       final list = [
         RuntimeExecution(
-          id: 'e1', agentId: 'a1', agentName: 'A',
-          workspaceId: 'ws1', startedAt: now,
+          id: 'e1',
+          agentId: 'a1',
+          agentName: 'A',
+          workspaceId: 'ws1',
+          startedAt: now,
         ),
         RuntimeExecution(
-          id: 'e2', agentId: 'a2', agentName: 'B',
-          workspaceId: 'ws1', startedAt: now,
+          id: 'e2',
+          agentId: 'a2',
+          agentName: 'B',
+          workspaceId: 'ws1',
+          startedAt: now,
         ),
       ];
       final encoded = RuntimeExecution.encodeList(list);

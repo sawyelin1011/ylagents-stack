@@ -45,8 +45,8 @@ class SyncRecord {
     this.errorMessage = '',
     DateTime? startedAt,
     DateTime? completedAt,
-  })  : startedAt = startedAt ?? DateTime.now(),
-        completedAt = completedAt ?? DateTime.now();
+  }) : startedAt = startedAt ?? DateTime.now(),
+       completedAt = completedAt ?? DateTime.now();
 
   Duration get duration => completedAt.difference(startedAt);
 
@@ -116,8 +116,7 @@ class SyncRecord {
     try {
       final arr = jsonDecode(raw) as List<dynamic>;
       return [
-        for (final e in arr)
-          SyncRecord.fromJson(e as Map<String, dynamic>),
+        for (final e in arr) SyncRecord.fromJson(e as Map<String, dynamic>),
       ];
     } catch (_) {
       return const <SyncRecord>[];

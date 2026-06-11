@@ -100,8 +100,11 @@ class _TeamPageState extends State<TeamPage> {
                       children: [
                         Row(
                           children: [
-                            Icon(lucide.Lucide.Users,
-                                size: 18, color: cs.primary),
+                            Icon(
+                              lucide.Lucide.Users,
+                              size: 18,
+                              color: cs.primary,
+                            ),
                             const SizedBox(width: 8),
                             Expanded(
                               child: Text(
@@ -116,12 +119,12 @@ class _TeamPageState extends State<TeamPage> {
                             PopupMenuButton<String>(
                               onSelected: (value) async {
                                 if (value == 'delete') {
-                                  final confirmed =
-                                      await showDialog<bool>(
+                                  final confirmed = await showDialog<bool>(
                                     context: context,
                                     builder: (ctx) => AlertDialog(
-                                      title: Text(l10n
-                                          .teamPageDeleteConfirmTitle),
+                                      title: Text(
+                                        l10n.teamPageDeleteConfirmTitle,
+                                      ),
                                       content: Text(
                                         l10n.teamPageDeleteConfirmContent,
                                       ),
@@ -129,18 +132,14 @@ class _TeamPageState extends State<TeamPage> {
                                         TextButton(
                                           onPressed: () =>
                                               Navigator.pop(ctx, false),
-                                          child: Text(
-                                            l10n.teamPageCancel,
-                                          ),
+                                          child: Text(l10n.teamPageCancel),
                                         ),
                                         TextButton(
                                           onPressed: () =>
                                               Navigator.pop(ctx, true),
                                           child: Text(
                                             l10n.teamPageDelete,
-                                            style: TextStyle(
-                                              color: cs.error,
-                                            ),
+                                            style: TextStyle(color: cs.error),
                                           ),
                                         ),
                                       ],
@@ -158,11 +157,16 @@ class _TeamPageState extends State<TeamPage> {
                                   value: 'delete',
                                   child: Row(
                                     children: [
-                                      Icon(lucide.Lucide.Trash,
-                                          size: 16, color: cs.error),
+                                      Icon(
+                                        lucide.Lucide.Trash,
+                                        size: 16,
+                                        color: cs.error,
+                                      ),
                                       const SizedBox(width: 8),
-                                      Text(l10n.teamPageDelete,
-                                          style: TextStyle(color: cs.error)),
+                                      Text(
+                                        l10n.teamPageDelete,
+                                        style: TextStyle(color: cs.error),
+                                      ),
                                     ],
                                   ),
                                 ),
@@ -255,9 +259,9 @@ class _TeamPageState extends State<TeamPage> {
     final workspaceId = wsProvider.currentWorkspace?.id;
     final leadAgents = workspaceId != null
         ? agentProvider
-            .getAgentsForWorkspace(workspaceId)
-            .where((a) => a.type == AgentType.lead && a.enabled)
-            .toList()
+              .getAgentsForWorkspace(workspaceId)
+              .where((a) => a.type == AgentType.lead && a.enabled)
+              .toList()
         : <Agent>[];
 
     showDialog(
@@ -393,8 +397,11 @@ class _TeamPageState extends State<TeamPage> {
                 final agent = agentProvider.getById(id);
                 return ListTile(
                   dense: true,
-                  leading: Icon(lucide.Lucide.HardHat,
-                      size: 16, color: cs.primary),
+                  leading: Icon(
+                    lucide.Lucide.HardHat,
+                    size: 16,
+                    color: cs.primary,
+                  ),
                   title: Text(
                     agent?.name ?? id,
                     style: const TextStyle(fontSize: 13),
@@ -402,9 +409,10 @@ class _TeamPageState extends State<TeamPage> {
                   trailing: IconButton(
                     icon: Icon(lucide.Lucide.X, size: 14, color: cs.error),
                     onPressed: () async {
-                      await context
-                          .read<TeamProvider>()
-                          .removeMember(team.id, id);
+                      await context.read<TeamProvider>().removeMember(
+                        team.id,
+                        id,
+                      );
                       if (ctx.mounted) Navigator.pop(ctx);
                       _showManageMembersDialog(
                         context,
@@ -457,18 +465,26 @@ class _TeamPageState extends State<TeamPage> {
                 ...availableWorkers.map(
                   (agent) => ListTile(
                     dense: true,
-                    leading:
-                        Icon(lucide.Lucide.UserPlus, size: 16, color: cs.primary),
+                    leading: Icon(
+                      lucide.Lucide.UserPlus,
+                      size: 16,
+                      color: cs.primary,
+                    ),
                     title: Text(
                       agent.name,
                       style: const TextStyle(fontSize: 13),
                     ),
                     trailing: IconButton(
-                      icon: Icon(lucide.Lucide.Plus, size: 14, color: cs.primary),
+                      icon: Icon(
+                        lucide.Lucide.Plus,
+                        size: 14,
+                        color: cs.primary,
+                      ),
                       onPressed: () async {
-                        await context
-                            .read<TeamProvider>()
-                            .addMember(team.id, agent.id);
+                        await context.read<TeamProvider>().addMember(
+                          team.id,
+                          agent.id,
+                        );
                         if (ctx.mounted) Navigator.pop(ctx);
                         _showManageMembersDialog(
                           context,
@@ -531,10 +547,7 @@ class _AgentRow extends StatelessWidget {
         Expanded(
           child: Text(
             agentName,
-            style: TextStyle(
-              fontSize: 13,
-              color: cs.onSurface,
-            ),
+            style: TextStyle(fontSize: 13, color: cs.onSurface),
           ),
         ),
       ],

@@ -77,13 +77,10 @@ class Skill {
     description: (json['description'] as String?) ?? '',
     version: (json['version'] as String?) ?? '1.0.0',
     author: json['author'] as String?,
-    tags: (json['tags'] as List<dynamic>?)
-            ?.map((e) => e.toString())
-            .toList() ??
+    tags:
+        (json['tags'] as List<dynamic>?)?.map((e) => e.toString()).toList() ??
         const [],
-    source: SkillInstallSource.fromJson(
-      (json['source'] as String?) ?? 'local',
-    ),
+    source: SkillInstallSource.fromJson((json['source'] as String?) ?? 'local'),
     sourceUrl: json['sourceUrl'] as String?,
     content: json['content'] != null
         ? SkillContent.fromJson(json['content'] as Map<String, dynamic>)
@@ -139,11 +136,11 @@ class SkillContent {
   });
 
   const SkillContent.empty()
-      : prompts = const [],
-        workflows = const [],
-        config = const {},
-        requiredMcpTools = const [],
-        knowledgeLinks = const [];
+    : prompts = const [],
+      workflows = const [],
+      config = const {},
+      requiredMcpTools = const [],
+      knowledgeLinks = const [];
 
   bool get isEmpty =>
       prompts.isEmpty &&
@@ -153,8 +150,7 @@ class SkillContent {
       knowledgeLinks.isEmpty;
 
   Map<String, dynamic> toJson() => {
-    if (prompts.isNotEmpty)
-      'prompts': prompts.map((p) => p.toJson()).toList(),
+    if (prompts.isNotEmpty) 'prompts': prompts.map((p) => p.toJson()).toList(),
     if (workflows.isNotEmpty)
       'workflows': workflows.map((w) => w.toJson()).toList(),
     if (config.isNotEmpty) 'config': config,
@@ -163,25 +159,27 @@ class SkillContent {
   };
 
   factory SkillContent.fromJson(Map<String, dynamic> json) => SkillContent(
-    prompts: (json['prompts'] as List<dynamic>?)
+    prompts:
+        (json['prompts'] as List<dynamic>?)
             ?.map((e) => SkillPrompt.fromJson(e as Map<String, dynamic>))
             .toList() ??
         const [],
-    workflows: (json['workflows'] as List<dynamic>?)
+    workflows:
+        (json['workflows'] as List<dynamic>?)
             ?.map((e) => SkillWorkflow.fromJson(e as Map<String, dynamic>))
             .toList() ??
         const [],
     config: Map<String, dynamic>.from(json['config'] as Map? ?? {}),
     requiredMcpTools:
         (json['requiredMcpTools'] as List<dynamic>?)
-                ?.map((e) => e.toString())
-                .toList() ??
-            const [],
+            ?.map((e) => e.toString())
+            .toList() ??
+        const [],
     knowledgeLinks:
         (json['knowledgeLinks'] as List<dynamic>?)
-                ?.map((e) => e.toString())
-                .toList() ??
-            const [],
+            ?.map((e) => e.toString())
+            .toList() ??
+        const [],
   );
 }
 
@@ -239,9 +237,8 @@ class SkillWorkflow {
     id: json['id'] as String,
     name: (json['name'] as String?) ?? '',
     description: (json['description'] as String?) ?? '',
-    steps: (json['steps'] as List<dynamic>?)
-            ?.map((e) => e.toString())
-            .toList() ??
+    steps:
+        (json['steps'] as List<dynamic>?)?.map((e) => e.toString()).toList() ??
         const [],
   );
 }

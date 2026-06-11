@@ -29,8 +29,8 @@ class AgentTeam {
     this.memberAgentIds = const <String>[],
     DateTime? createdAt,
     DateTime? updatedAt,
-  })  : createdAt = createdAt ?? DateTime.now(),
-        updatedAt = updatedAt ?? DateTime.now();
+  }) : createdAt = createdAt ?? DateTime.now(),
+       updatedAt = updatedAt ?? DateTime.now();
 
   AgentTeam copyWith({
     String? id,
@@ -47,12 +47,12 @@ class AgentTeam {
     return AgentTeam(
       id: id ?? this.id,
       name: name ?? this.name,
-      description:
-          clearDescription ? null : (description ?? this.description),
+      description: clearDescription ? null : (description ?? this.description),
       workspaceId: workspaceId ?? this.workspaceId,
       leadAgentId: leadAgentId ?? this.leadAgentId,
-      memberAgentIds:
-          clearMemberIds ? const [] : (memberAgentIds ?? this.memberAgentIds),
+      memberAgentIds: clearMemberIds
+          ? const []
+          : (memberAgentIds ?? this.memberAgentIds),
       createdAt: createdAt ?? this.createdAt,
       updatedAt: updatedAt ?? this.updatedAt,
     );
@@ -78,9 +78,9 @@ class AgentTeam {
     leadAgentId: json['leadAgentId'] as String,
     memberAgentIds:
         (json['memberAgentIds'] as List<dynamic>?)
-                ?.map((e) => e.toString())
-                .toList() ??
-            const <String>[],
+            ?.map((e) => e.toString())
+            .toList() ??
+        const <String>[],
     createdAt: DateTime.fromMillisecondsSinceEpoch(
       (json['createdAt'] as num?)?.toInt() ??
           DateTime.now().millisecondsSinceEpoch,
@@ -98,8 +98,7 @@ class AgentTeam {
     try {
       final arr = jsonDecode(raw) as List<dynamic>;
       return [
-        for (final e in arr)
-          AgentTeam.fromJson(e as Map<String, dynamic>),
+        for (final e in arr) AgentTeam.fromJson(e as Map<String, dynamic>),
       ];
     } catch (_) {
       return const <AgentTeam>[];

@@ -70,10 +70,7 @@ void main() {
 
     test('copyWith preserves and overrides', () {
       final record = SyncRecord(id: 'rec1', deviceId: 'dev1');
-      final copy = record.copyWith(
-        status: SyncStatus.success,
-        itemsPushed: 5,
-      );
+      final copy = record.copyWith(status: SyncStatus.success, itemsPushed: 5);
       expect(copy.id, 'rec1');
       expect(copy.deviceId, 'dev1');
       expect(copy.status, SyncStatus.success);
@@ -141,10 +138,7 @@ void main() {
     });
 
     test('fromJson handles minimal JSON', () {
-      final json = <String, dynamic>{
-        'id': 'rec1',
-        'deviceId': 'dev1',
-      };
+      final json = <String, dynamic>{'id': 'rec1', 'deviceId': 'dev1'};
       final record = SyncRecord.fromJson(json);
       expect(record.id, 'rec1');
       expect(record.status, SyncStatus.idle);

@@ -34,8 +34,8 @@ class ExecutionTrace {
     this.finalResponse,
     DateTime? createdAt,
     DateTime? updatedAt,
-  })  : createdAt = createdAt ?? DateTime.now(),
-        updatedAt = updatedAt ?? DateTime.now();
+  }) : createdAt = createdAt ?? DateTime.now(),
+       updatedAt = updatedAt ?? DateTime.now();
 
   ExecutionTrace copyWith({
     String? id,
@@ -56,8 +56,9 @@ class ExecutionTrace {
       userRequest: userRequest ?? this.userRequest,
       status: status ?? this.status,
       steps: steps ?? this.steps,
-      finalResponse:
-          clearFinalResponse ? null : (finalResponse ?? this.finalResponse),
+      finalResponse: clearFinalResponse
+          ? null
+          : (finalResponse ?? this.finalResponse),
       createdAt: createdAt ?? this.createdAt,
       updatedAt: updatedAt ?? this.updatedAt,
     );
@@ -84,10 +85,9 @@ class ExecutionTrace {
       status: ExecutionStatus.fromJson(
         (json['status'] as String?) ?? 'planning',
       ),
-      steps: (json['steps'] as List<dynamic>?)
-              ?.map(
-                (e) => ExecutionStep.fromJson(e as Map<String, dynamic>),
-              )
+      steps:
+          (json['steps'] as List<dynamic>?)
+              ?.map((e) => ExecutionStep.fromJson(e as Map<String, dynamic>))
               .toList() ??
           const [],
       finalResponse: json['finalResponse'] as String?,
@@ -107,8 +107,7 @@ class ExecutionTrace {
     try {
       final arr = jsonDecode(raw) as List<dynamic>;
       return [
-        for (final e in arr)
-          ExecutionTrace.fromJson(e as Map<String, dynamic>),
+        for (final e in arr) ExecutionTrace.fromJson(e as Map<String, dynamic>),
       ];
     } catch (_) {
       return [];
@@ -211,8 +210,7 @@ class ExecutionStep {
     return ExecutionStep(
       id: json['id'] as String,
       type: StepType.fromJson((json['type'] as String?) ?? 'plan'),
-      status:
-          StepStatus.fromJson((json['status'] as String?) ?? 'pending'),
+      status: StepStatus.fromJson((json['status'] as String?) ?? 'pending'),
       description: (json['description'] as String?) ?? '',
       agentId: json['agentId'] as String?,
       taskId: json['taskId'] as String?,

@@ -29,9 +29,7 @@ class _SyncPageState extends State<SyncPage> {
   Future<void> _ensureDeviceIdentity(BuildContext context) async {
     final auth = context.read<AuthProvider>();
     if (auth.currentDevice != null) return;
-    await auth.ensureDeviceIdentity(
-      platform: _detectPlatform(),
-    );
+    await auth.ensureDeviceIdentity(platform: _detectPlatform());
   }
 
   String _detectPlatform() {
@@ -74,9 +72,7 @@ class _SyncPageState extends State<SyncPage> {
                       )
                     : Icon(lucide.Lucide.RefreshCw, size: 14),
                 label: Text(
-                  sync.isSyncing
-                      ? l10n.syncPageSyncing
-                      : l10n.syncPageSyncNow,
+                  sync.isSyncing ? l10n.syncPageSyncing : l10n.syncPageSyncNow,
                 ),
                 onPressed: sync.isSyncing
                     ? null
@@ -106,17 +102,11 @@ class _SyncPageState extends State<SyncPage> {
     );
   }
 
-  Future<void> _triggerSync(
-    BuildContext context,
-    String? workspaceId,
-  ) async {
+  Future<void> _triggerSync(BuildContext context, String? workspaceId) async {
     final auth = context.read<AuthProvider>();
     final sync = context.read<SyncProvider>();
     final deviceId = auth.currentDevice?.id ?? '';
-    await sync.startSync(
-      deviceId: deviceId,
-      workspaceId: workspaceId ?? '',
-    );
+    await sync.startSync(deviceId: deviceId, workspaceId: workspaceId ?? '');
     // Simulate sync completion (real HTTP relay sync is future work)
     await Future.delayed(const Duration(seconds: 2));
     if (context.mounted) {
@@ -180,11 +170,7 @@ class _DeviceSection extends StatelessWidget {
                 cs: cs,
               ),
               const SizedBox(height: 4),
-              _InfoRow(
-                label: l10n.syncPageDeviceId,
-                value: device.id,
-                cs: cs,
-              ),
+              _InfoRow(label: l10n.syncPageDeviceId, value: device.id, cs: cs),
               const SizedBox(height: 4),
               _InfoRow(
                 label: l10n.syncPageLastSync,
@@ -415,11 +401,7 @@ class _RecordsSection extends StatelessWidget {
           children: [
             Row(
               children: [
-                Icon(
-                  lucide.Lucide.Clock,
-                  size: 18,
-                  color: cs.primary,
-                ),
+                Icon(lucide.Lucide.Clock, size: 18, color: cs.primary),
                 const SizedBox(width: 8),
                 Expanded(
                   child: Text(
@@ -495,10 +477,7 @@ class _SyncRecordRow extends StatelessWidget {
               children: [
                 Text(
                   statusText,
-                  style: TextStyle(
-                    fontSize: 13,
-                    color: cs.onSurface,
-                  ),
+                  style: TextStyle(fontSize: 13, color: cs.onSurface),
                 ),
                 Text(
                   l10n.syncPageItemsSummary(
@@ -600,10 +579,7 @@ class _ToggleRow extends StatelessWidget {
           Expanded(
             child: Text(
               label,
-              style: TextStyle(
-                fontSize: 13,
-                color: cs.onSurface,
-              ),
+              style: TextStyle(fontSize: 13, color: cs.onSurface),
             ),
           ),
           Switch(
@@ -623,11 +599,7 @@ class _InfoRow extends StatelessWidget {
   final String value;
   final ColorScheme cs;
 
-  const _InfoRow({
-    required this.label,
-    required this.value,
-    required this.cs,
-  });
+  const _InfoRow({required this.label, required this.value, required this.cs});
 
   @override
   Widget build(BuildContext context) {
@@ -647,10 +619,7 @@ class _InfoRow extends StatelessWidget {
         Expanded(
           child: Text(
             value,
-            style: TextStyle(
-              fontSize: 12,
-              color: cs.onSurface,
-            ),
+            style: TextStyle(fontSize: 12, color: cs.onSurface),
           ),
         ),
       ],

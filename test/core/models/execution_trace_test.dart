@@ -25,7 +25,10 @@ void main() {
 
     test('fromJson parses correctly', () {
       expect(ExecutionStatus.fromJson('planning'), ExecutionStatus.planning);
-      expect(ExecutionStatus.fromJson('delegating'), ExecutionStatus.delegating);
+      expect(
+        ExecutionStatus.fromJson('delegating'),
+        ExecutionStatus.delegating,
+      );
       expect(ExecutionStatus.fromJson('executing'), ExecutionStatus.executing);
       expect(ExecutionStatus.fromJson('reviewing'), ExecutionStatus.reviewing);
       expect(ExecutionStatus.fromJson('completed'), ExecutionStatus.completed);
@@ -195,10 +198,7 @@ void main() {
         agentId: 'agent-1',
         result: 'done',
       );
-      final copy = step.copyWith(
-        clearAgentId: true,
-        clearResult: true,
-      );
+      final copy = step.copyWith(clearAgentId: true, clearResult: true);
       expect(copy.agentId, isNull);
       expect(copy.result, isNull);
     });

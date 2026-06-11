@@ -66,8 +66,8 @@ class ScheduledRun {
     DateTime? updatedAt,
     this.lastRunAt,
     this.nextRunAt,
-  })  : createdAt = createdAt ?? DateTime.now(),
-        updatedAt = updatedAt ?? DateTime.now();
+  }) : createdAt = createdAt ?? DateTime.now(),
+       updatedAt = updatedAt ?? DateTime.now();
 
   ScheduledRun copyWith({
     String? id,
@@ -133,13 +133,13 @@ class ScheduledRun {
     ),
     lastRunAt: json['lastRunAt'] != null
         ? DateTime.fromMillisecondsSinceEpoch(
-          (json['lastRunAt'] as num).toInt(),
-        )
+            (json['lastRunAt'] as num).toInt(),
+          )
         : null,
     nextRunAt: json['nextRunAt'] != null
         ? DateTime.fromMillisecondsSinceEpoch(
-          (json['nextRunAt'] as num).toInt(),
-        )
+            (json['nextRunAt'] as num).toInt(),
+          )
         : null,
   );
 
@@ -150,8 +150,7 @@ class ScheduledRun {
     try {
       final arr = jsonDecode(raw) as List<dynamic>;
       return [
-        for (final e in arr)
-          ScheduledRun.fromJson(e as Map<String, dynamic>),
+        for (final e in arr) ScheduledRun.fromJson(e as Map<String, dynamic>),
       ];
     } catch (_) {
       return const <ScheduledRun>[];
@@ -233,11 +232,7 @@ class SchedulerService extends ChangeNotifier {
         ? null
         : now.add(schedule.interval.duration);
     _updateSchedule(
-      schedule.copyWith(
-        lastRunAt: now,
-        nextRunAt: nextRun,
-        updatedAt: now,
-      ),
+      schedule.copyWith(lastRunAt: now, nextRunAt: nextRun, updatedAt: now),
     );
   }
 
@@ -324,9 +319,7 @@ class SchedulerService extends ChangeNotifier {
   }
 
   /// Delete all schedules for a workspace.
-  Future<void> deleteSchedulesForWorkspace(
-    String workspaceId,
-  ) async {
+  Future<void> deleteSchedulesForWorkspace(String workspaceId) async {
     _schedules.removeWhere((s) => s.workspaceId == workspaceId);
     await _persist();
     notifyListeners();

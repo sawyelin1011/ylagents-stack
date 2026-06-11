@@ -44,7 +44,8 @@ class WorkerAgentService {
       required String agentId,
       required String systemPrompt,
       required String userMessage,
-    }) callLlm,
+    })
+    callLlm,
   }) async {
     try {
       final systemPrompt = _buildSystemPrompt(agentName, context);
@@ -72,13 +73,15 @@ class WorkerAgentService {
 
   /// Execute multiple tasks in sequence, collecting results.
   Future<List<WorkerExecutionResult>> executeTasks({
-    required List<({String agentId, String agentName, String description})> tasks,
+    required List<({String agentId, String agentName, String description})>
+    tasks,
     required String context,
     required Future<String> Function({
       required String agentId,
       required String systemPrompt,
       required String userMessage,
-    }) callLlm,
+    })
+    callLlm,
     void Function(int completed, int total)? onProgress,
   }) async {
     final results = <WorkerExecutionResult>[];

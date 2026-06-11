@@ -77,8 +77,7 @@ class RuntimeExecution {
       taskId: taskId ?? this.taskId,
       taskTitle: taskTitle ?? this.taskTitle,
       status: status ?? this.status,
-      resultSummary:
-          clearResult ? '' : (resultSummary ?? this.resultSummary),
+      resultSummary: clearResult ? '' : (resultSummary ?? this.resultSummary),
       errorMessage: clearError ? '' : (errorMessage ?? this.errorMessage),
       startedAt: startedAt ?? this.startedAt,
       completedAt: completedAt ?? this.completedAt,
@@ -96,8 +95,7 @@ class RuntimeExecution {
     if (resultSummary.isNotEmpty) 'resultSummary': resultSummary,
     if (errorMessage.isNotEmpty) 'errorMessage': errorMessage,
     'startedAt': startedAt.millisecondsSinceEpoch,
-    if (completedAt != null)
-      'completedAt': completedAt!.millisecondsSinceEpoch,
+    if (completedAt != null) 'completedAt': completedAt!.millisecondsSinceEpoch,
   };
 
   factory RuntimeExecution.fromJson(Map<String, dynamic> json) =>
@@ -119,8 +117,8 @@ class RuntimeExecution {
         ),
         completedAt: json['completedAt'] != null
             ? DateTime.fromMillisecondsSinceEpoch(
-              (json['completedAt'] as num).toInt(),
-            )
+                (json['completedAt'] as num).toInt(),
+              )
             : null,
       );
 

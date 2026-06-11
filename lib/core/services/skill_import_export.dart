@@ -72,7 +72,10 @@ class SkillImportExportService {
     try {
       final data = jsonDecode(jsonString);
       if (data is List) {
-        return data.isNotEmpty && data.every((e) => e is Map && e.containsKey('id') && e.containsKey('name'));
+        return data.isNotEmpty &&
+            data.every(
+              (e) => e is Map && e.containsKey('id') && e.containsKey('name'),
+            );
       }
       return data is Map && data.containsKey('id') && data.containsKey('name');
     } catch (_) {

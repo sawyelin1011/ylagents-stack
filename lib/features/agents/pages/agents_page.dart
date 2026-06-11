@@ -63,9 +63,7 @@ class AgentsPage extends StatelessWidget {
                   label: Text(l10n.agentsPageTraces),
                   onPressed: () {
                     Navigator.of(context).push(
-                      MaterialPageRoute(
-                        builder: (_) => const TracesPage(),
-                      ),
+                      MaterialPageRoute(builder: (_) => const TracesPage()),
                     );
                   },
                 ),
@@ -74,11 +72,9 @@ class AgentsPage extends StatelessWidget {
                   icon: const Icon(lucide.Lucide.Users, size: 16),
                   label: Text(l10n.agentsPageTeams),
                   onPressed: () {
-                    Navigator.of(context).push(
-                      MaterialPageRoute(
-                        builder: (_) => const TeamPage(),
-                      ),
-                    );
+                    Navigator.of(
+                      context,
+                    ).push(MaterialPageRoute(builder: (_) => const TeamPage()));
                   },
                 ),
                 const SizedBox(width: 8),

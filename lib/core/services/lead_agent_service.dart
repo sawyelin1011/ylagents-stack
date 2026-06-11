@@ -103,7 +103,8 @@ class LeadAgentService {
               id: _uuid.v4(),
               type: StepType.delegate,
               status: StepStatus.completed,
-              description: l10n?.leadAgentDelegatedTo(task.title) ??
+              description:
+                  l10n?.leadAgentDelegatedTo(task.title) ??
                   'Delegated: ${task.title}',
               agentId: task.assigneeAgentId,
               taskId: task.id,
@@ -113,9 +114,7 @@ class LeadAgentService {
           updatedAt: DateTime.now(),
         );
       }
-      await _updateTrace(
-        trace.copyWith(status: ExecutionStatus.executing),
-      );
+      await _updateTrace(trace.copyWith(status: ExecutionStatus.executing));
       onProgress?.call(trace);
 
       // 3. Execute — run each worker task and collect results
@@ -124,11 +123,9 @@ class LeadAgentService {
         if (task.assigneeAgentId == null) continue;
         final workerResult = await _executeTask(task, leadAgentId, userRequest);
         workerResults[task.id] = workerResult;
-        await taskProvider.updateTaskStatus(
-          task.id,
-          TaskStatus.completed,
-        );
-        final stepIndex = trace.steps.length - (subTasks.length - subTasks.indexOf(task));
+        await taskProvider.updateTaskStatus(task.id, TaskStatus.completed);
+        final stepIndex =
+            trace.steps.length - (subTasks.length - subTasks.indexOf(task));
         // Update the corresponding execution step
         trace = trace.copyWith(
           steps: trace.steps.map((s) {
@@ -151,9 +148,7 @@ class LeadAgentService {
       }
 
       // 4. Review — consolidate all worker results
-      await _updateTrace(
-        trace.copyWith(status: ExecutionStatus.reviewing),
-      );
+      await _updateTrace(trace.copyWith(status: ExecutionStatus.reviewing));
       onProgress?.call(trace);
       final finalResponse = await _review(
         userRequest,
@@ -215,28 +210,32 @@ class LeadAgentService {
       // Match list items: - Task description or 1. Task description
       final taskText = _extractTaskDescription(trimmed);
       if (taskText != null) {
-        steps.add(ExecutionStep(
-          id: _uuid.v4(),
-          type: StepType.plan,
-          status: StepStatus.completed,
-          description: taskText,
-          completedAt: DateTime.now(),
-        ));
+        steps.add(
+          ExecutionStep(
+            id: _uuid.v4(),
+            type: StepType.plan,
+            status: StepStatus.completed,
+            description: taskText,
+            completedAt: DateTime.now(),
+          ),
+        );
       }
     }
 
     if (steps.isEmpty) {
       // Fallback: create a single "execute plan" step
-      steps.add(ExecutionStep(
-        id: _uuid.v4(),
-        type: StepType.plan,
-        status: StepStatus.completed,
-        description: userRequest.substring(
-          0,
-          userRequest.length > 100 ? 100 : userRequest.length,
+      steps.add(
+        ExecutionStep(
+          id: _uuid.v4(),
+          type: StepType.plan,
+          status: StepStatus.completed,
+          description: userRequest.substring(
+            0,
+            userRequest.length > 100 ? 100 : userRequest.length,
+          ),
+          completedAt: DateTime.now(),
         ),
-        completedAt: DateTime.now(),
-      ));
+      );
     }
 
     return steps;
@@ -272,18 +271,21 @@ class LeadAgentService {
     for (int i = 0; i < planSteps.length; i++) {
       final step = planSteps[i];
       final assigneeId = i < workers.length ? workers[i].id : null;
-      tasks.add(Task(
-        id: _uuid.v4(),
-        title: step.description.substring(
-          0,
-          step.description.length > 80 ? 80 : step.description.length,
+      tasks.add(
+        Task(
+          id: _uuid.v4(),
+          title: step.description.substring(
+            0,
+            step.description.length > 80 ? 80 : step.description.length,
+          ),
+          description:
+              'Original request: $userRequest\n\nTask: ${step.description}',
+          workspaceId: workspaceId,
+          status: TaskStatus.todo,
+          assigneeAgentId: assigneeId,
+          sortOrder: i,
         ),
-        description: 'Original request: $userRequest\n\nTask: ${step.description}',
-        workspaceId: workspaceId,
-        status: TaskStatus.todo,
-        assigneeAgentId: assigneeId,
-        sortOrder: i,
-      ));
+      );
     }
     return tasks;
   }
@@ -317,14 +319,18 @@ class LeadAgentService {
     Map<String, String> workerResults,
     String leadAgentId,
   ) async {
-    final resultsText = workerResults.entries.map((e) {
-      final taskIndex = planSteps.indexWhere((s) => s.id == e.key);
-      final taskDesc =
-          taskIndex >= 0 ? planSteps[taskIndex].description : 'Task';
-      return '## $taskDesc\n\n${e.value}';
-    }).join('\n\n---\n\n');
+    final resultsText = workerResults.entries
+        .map((e) {
+          final taskIndex = planSteps.indexWhere((s) => s.id == e.key);
+          final taskDesc = taskIndex >= 0
+              ? planSteps[taskIndex].description
+              : 'Task';
+          return '## $taskDesc\n\n${e.value}';
+        })
+        .join('\n\n---\n\n');
 
-    final reviewPrompt = '''
+    final reviewPrompt =
+        '''
 User's original request: $userRequest
 
 Worker results:
@@ -357,18 +363,15 @@ Synthesize the information, resolve any contradictions, and present a clear answ
     if (assistant == null) return 'Assistant not found';
 
     final providerKey =
-        assistant.chatModelProvider ??
-        settingsProvider.currentModelProvider;
-    final modelId =
-        assistant.chatModelId ?? settingsProvider.currentModelId;
+        assistant.chatModelProvider ?? settingsProvider.currentModelProvider;
+    final modelId = assistant.chatModelId ?? settingsProvider.currentModelId;
     if (providerKey == null || modelId == null) {
       return 'Model not configured for this agent';
     }
 
     final config = settingsProvider.getProviderConfig(providerKey);
     final messages = <Map<String, dynamic>>[
-      if (systemPrompt.isNotEmpty)
-        {'role': 'system', 'content': systemPrompt},
+      if (systemPrompt.isNotEmpty) {'role': 'system', 'content': systemPrompt},
       {'role': 'user', 'content': userMessage},
     ];
 
@@ -392,9 +395,9 @@ Synthesize the information, resolve any contradictions, and present a clear answ
         },
         onError: (e) {
           if (!completer.isCompleted) {
-            completer.complete(buffer.isNotEmpty
-                ? buffer.toString()
-                : 'Error: $e');
+            completer.complete(
+              buffer.isNotEmpty ? buffer.toString() : 'Error: $e',
+            );
           }
         },
         onDone: () {
@@ -422,9 +425,7 @@ Synthesize the information, resolve any contradictions, and present a clear answ
     return allAgents
         .where(
           (a) =>
-              a.type == AgentType.worker &&
-              a.enabled &&
-              a.id != excludeAgentId,
+              a.type == AgentType.worker && a.enabled && a.id != excludeAgentId,
         )
         .toList();
   }
@@ -439,8 +440,7 @@ Synthesize the information, resolve any contradictions, and present a clear answ
       if (g.identity.isNotEmpty) 'You are ${g.identity}.',
       if (g.soul.isNotEmpty) g.soul,
       if (g.role.isNotEmpty) 'Your role: ${g.role}.',
-      if (g.goals.isNotEmpty)
-        'Your goals: ${g.goals.join(', ')}.',
+      if (g.goals.isNotEmpty) 'Your goals: ${g.goals.join(', ')}.',
       '',
       'The user\'s original request was: $userRequest',
       'Complete the assigned task below as part of a larger workflow.',

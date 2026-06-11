@@ -49,11 +49,7 @@ class _RuntimePageState extends State<RuntimePage> {
             cs: cs,
           ),
           const SizedBox(height: 16),
-          _ScheduleSection(
-            workspaceId: workspaceId,
-            l10n: l10n,
-            cs: cs,
-          ),
+          _ScheduleSection(workspaceId: workspaceId, l10n: l10n, cs: cs),
           const SizedBox(height: 16),
           _HistorySection(
             runtime: runtime,
@@ -114,12 +110,16 @@ class _HostStatusSection extends StatelessWidget {
                   height: 10,
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
-                    color: isRunning ? Colors.green : cs.onSurface.withValues(alpha: 0.3),
+                    color: isRunning
+                        ? Colors.green
+                        : cs.onSurface.withValues(alpha: 0.3),
                   ),
                 ),
                 const SizedBox(width: 8),
                 Text(
-                  isRunning ? l10n.runtimeStatusRunning : l10n.runtimeStatusStopped,
+                  isRunning
+                      ? l10n.runtimeStatusRunning
+                      : l10n.runtimeStatusStopped,
                   style: TextStyle(
                     fontSize: 14,
                     fontWeight: AppFontWeights.medium,
@@ -129,11 +129,7 @@ class _HostStatusSection extends StatelessWidget {
               ],
             ),
             const SizedBox(height: 8),
-            _InfoRow(
-              label: l10n.runtimePageUptime,
-              value: uptimeStr,
-              cs: cs,
-            ),
+            _InfoRow(label: l10n.runtimePageUptime, value: uptimeStr, cs: cs),
             const SizedBox(height: 4),
             _InfoRow(
               label: l10n.runtimePageSuccessCount,
@@ -247,11 +243,9 @@ class _ActiveExecutionsSection extends StatelessWidget {
                 ),
               )
             else
-              ...active.map((exec) => _ExecutionRow(
-                execution: exec,
-                cs: cs,
-                l10n: l10n,
-              )),
+              ...active.map(
+                (exec) => _ExecutionRow(execution: exec, cs: cs, l10n: l10n),
+              ),
             if (runtime.hostStatus == RuntimeHostStatus.running)
               Padding(
                 padding: const EdgeInsets.only(top: 12),
@@ -347,11 +341,10 @@ class _ScheduleSection extends StatelessWidget {
                 ),
               )
             else
-              ...schedules.map((schedule) => _ScheduleRow(
-                schedule: schedule,
-                cs: cs,
-                l10n: l10n,
-              )),
+              ...schedules.map(
+                (schedule) =>
+                    _ScheduleRow(schedule: schedule, cs: cs, l10n: l10n),
+              ),
           ],
         ),
       ),
@@ -421,11 +414,12 @@ class _HistorySection extends StatelessWidget {
                 ),
               )
             else
-              ...execs.reversed.take(20).map((exec) => _ExecutionRow(
-                execution: exec,
-                cs: cs,
-                l10n: l10n,
-              )),
+              ...execs.reversed
+                  .take(20)
+                  .map(
+                    (exec) =>
+                        _ExecutionRow(execution: exec, cs: cs, l10n: l10n),
+                  ),
           ],
         ),
       ),
@@ -579,10 +573,7 @@ class _ScheduleRow extends StatelessWidget {
               children: [
                 Text(
                   schedule.agentName,
-                  style: TextStyle(
-                    fontSize: 13,
-                    color: cs.onSurface,
-                  ),
+                  style: TextStyle(fontSize: 13, color: cs.onSurface),
                 ),
                 Text(
                   _intervalText(schedule.interval, l10n),
@@ -633,11 +624,7 @@ class _InfoRow extends StatelessWidget {
   final String value;
   final ColorScheme cs;
 
-  const _InfoRow({
-    required this.label,
-    required this.value,
-    required this.cs,
-  });
+  const _InfoRow({required this.label, required this.value, required this.cs});
 
   @override
   Widget build(BuildContext context) {
@@ -657,10 +644,7 @@ class _InfoRow extends StatelessWidget {
         Expanded(
           child: Text(
             value,
-            style: TextStyle(
-              fontSize: 12,
-              color: cs.onSurface,
-            ),
+            style: TextStyle(fontSize: 12, color: cs.onSurface),
           ),
         ),
       ],
