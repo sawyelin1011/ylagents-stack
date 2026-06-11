@@ -10,6 +10,8 @@ import '../../../icons/lucide_adapter.dart' as lucide;
 import '../../../theme/app_font_weights.dart';
 import '../../agent_factory/pages/agent_factory_page.dart';
 import '../../lead_agent/pages/lead_agent_execution_page.dart';
+import '../../team/pages/team_page.dart';
+import '../../traces/pages/traces_page.dart';
 
 /// Agents page — lists all agents in the current workspace.
 ///
@@ -56,6 +58,30 @@ class AgentsPage extends StatelessWidget {
                   ),
                 ),
                 const Spacer(),
+                OutlinedButton.icon(
+                  icon: const Icon(lucide.Lucide.Binary, size: 16),
+                  label: Text(l10n.agentsPageTraces),
+                  onPressed: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (_) => const TracesPage(),
+                      ),
+                    );
+                  },
+                ),
+                const SizedBox(width: 8),
+                OutlinedButton.icon(
+                  icon: const Icon(lucide.Lucide.Users, size: 16),
+                  label: Text(l10n.agentsPageTeams),
+                  onPressed: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (_) => const TeamPage(),
+                      ),
+                    );
+                  },
+                ),
+                const SizedBox(width: 8),
                 FilledButton.icon(
                   icon: const Icon(lucide.Lucide.Plus, size: 16),
                   label: Text(l10n.agentFactoryNewAgent),

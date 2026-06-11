@@ -2480,5 +2480,36 @@
         "type": "String"
       }
     }
-  }
+  },
+  "agentsPageTeams": "Teams",
+  "agentsPageTraces": "Traces",
+  "teamPageTitle": "Agent Teams",
+  "teamPageCreateTeam": "Create Team",
+  "teamPageEmpty": "No teams yet. Create a team to organize your agents.",
+  "teamPageTeamName": "Team Name",
+  "teamPageTeamDescription": "Description (optional)",
+  "teamPageSelectLead": "Lead Agent",
+  "teamPageNoLeadAgents": "No lead agents available. Create a lead agent first.",
+  "teamPageCreate": "Create",
+  "teamPageCancel": "Cancel",
+  "teamPageDelete": "Delete",
+  "teamPageDeleteConfirmTitle": "Delete Team",
+  "teamPageDeleteConfirmContent": "Are you sure you want to delete this team? This action cannot be undone.",
+  "teamPageLeadAgent": "Lead:",
+  "teamPageNoMembers": "No worker agents assigned",
+  "teamPageMembers": "Members",
+  "teamPageAddWorker": "Add Worker",
+  "teamPageManageMembers": "Manage Members",
+  "teamPageNoAvailableWorkers": "No available worker agents",
+  "teamPageClose": "Close",
+  "tracesPageTitle": "Execution Traces",
+  "tracesPageEmpty": "No execution traces yet. Run a Lead Agent to see traces here.",
+  "tracesPageSteps": "steps",
+  "tracesPageDetailTitle": "Execution Detail",
+  "tracesPageRequest": "Request",
+  "tracesPageStatus": "Status",
+  "tracesPageResult": "Result",
+  "tracesPageCreated": "Created",
+  "tracesPageUpdated": "Updated",
+  "tracesPageClose": "Close"
 }

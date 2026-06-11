@@ -2057,5 +2057,36 @@
         "type": "String"
       }
     }
-  }
+  },
+  "agentsPageTeams": "團隊",
+  "agentsPageTraces": "執行追蹤",
+  "teamPageTitle": "Agent 團隊",
+  "teamPageCreateTeam": "建立團隊",
+  "teamPageEmpty": "暫無團隊。建立團隊來組織你的 Agent。",
+  "teamPageTeamName": "團隊名稱",
+  "teamPageTeamDescription": "描述（可選）",
+  "teamPageSelectLead": "主導 Agent",
+  "teamPageNoLeadAgents": "暫無可用主導 Agent。請先建立一個主導 Agent。",
+  "teamPageCreate": "建立",
+  "teamPageCancel": "取消",
+  "teamPageDelete": "刪除",
+  "teamPageDeleteConfirmTitle": "刪除團隊",
+  "teamPageDeleteConfirmContent": "確定要刪除此團隊嗎？此操作不可撤銷。",
+  "teamPageLeadAgent": "主導：",
+  "teamPageNoMembers": "未分配工作者 Agent",
+  "teamPageMembers": "成員",
+  "teamPageAddWorker": "新增工作者",
+  "teamPageManageMembers": "管理成員",
+  "teamPageNoAvailableWorkers": "沒有可用工作者 Agent",
+  "teamPageClose": "關閉",
+  "tracesPageTitle": "執行追蹤",
+  "tracesPageEmpty": "暫無執行記錄。執行主導 Agent 後可查看追蹤。",
+  "tracesPageSteps": "步驟",
+  "tracesPageDetailTitle": "執行詳情",
+  "tracesPageRequest": "請求",
+  "tracesPageStatus": "狀態",
+  "tracesPageResult": "結果",
+  "tracesPageCreated": "建立時間",
+  "tracesPageUpdated": "更新時間",
+  "tracesPageClose": "關閉"
 }

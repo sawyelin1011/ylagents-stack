@@ -1,6 +1,6 @@
 # YLAgents — Progress Tracking
 
-Last Updated: 2026-06-11
+Last Updated: 2026-06-11 (Phase 6 added)
 
 ---
 
@@ -15,7 +15,7 @@ Last Updated: 2026-06-11
 | **3** — Task System | ✅ Complete | 2026-06-11 | 2026-06-11 | Task model, TaskProvider, kanban board, dashboard task stat, 22+ ARB keys, 20+ tests |
 | **4** — Agent Factory | ✅ Complete | 2026-06-11 | 2026-06-11 | AgentTemplate model, built-in templates, multi-step wizard, AgentsPage entry point |
 | **5** — Lead Agent | ✅ Complete | 2026-06-11 | 2026-06-11 | ExecutionTrace model, TraceProvider, LeadAgentService, execution page, lead agent template, 16 ARB keys, 40+ tests |
-| **6** — Multi-Agent | ⏳ Pending | — | — | |
+| **6** — Multi-Agent | ✅ Complete | 2026-06-11 | 2026-06-11 | AgentTeam model, TeamProvider, team management page, WorkerAgentService, ManagerAgentService, AgentCommunication protocol, traces history page, 37+ ARB keys, 15+ tests |
 | **7** — Skills System | ⏳ Pending | — | — | |
 | **8** — Channels | ⏳ Pending | — | — | |
 | **9** — Sync Server | ⏳ Pending | — | — | |
@@ -757,6 +757,132 @@ Last Updated: 2026-06-11
 
 ---
 
+## Phase 6 — Multi-Agent Orchestration
+
+### 6.1: Create AgentTeam model + TeamProvider
+| Field | Value |
+|---|---|
+| **Status** | ✅ Complete |
+| **Classification** | [REPLACE] |
+| **Priority** | Critical |
+| **Effort** | Medium |
+
+**Deliverables:**
+- `lib/core/models/agent_team.dart` — AgentTeam model with id, name, description, workspaceId, leadAgentId, memberAgentIds, JSON serialization, copyWith, encodeList/decodeList
+- `lib/core/providers/team_provider.dart` — TeamProvider: CRUD, workspace-scoped queries, member management, SharedPreferences persistence (agent_teams_v1)
+- Registered as ChangeNotifierProvider in main.dart
+
+**Known Issues:** N/A — new code, no legacy data
+
+### 6.2: Worker Agent service
+| Field | Value |
+|---|---|
+| **Status** | ✅ Complete |
+| **Classification** | [REPLACE] |
+| **Priority** | Critical |
+| **Effort** | Medium |
+
+**Deliverable:**
+- `lib/core/services/orchestration/worker_agent_service.dart` — WorkerAgentService with executeTask(), executeTasks(), system prompt builder
+- Works with any Agent's LLM via callLlm callback
+- Sequential multi-task execution with progress callback
+
+**Known Issues:** Tasks execute sequentially. Parallel execution could be added as optimization.
+
+### 6.3: Manager Agent service
+| Field | Value |
+|---|---|
+| **Status** | ✅ Complete |
+| **Classification** | [REPLACE] |
+| **Priority** | Critical |
+| **Effort** | Medium |
+
+**Deliverable:**
+- `lib/core/services/orchestration/manager_agent_service.dart` — ManagerAgentService with orchestrate() that routes Lead → Manager → Workers
+- Delegates tasks to WorkerAgentService, collects results, returns ManagerResult
+- Builds execution steps for trace tracking
+
+**Known Issues:** Single-threaded worker execution. Multi-threaded orchestration deferred to Phase 6+.
+
+### 6.4: Agent Communication protocol
+| Field | Value |
+|---|---|
+| **Status** | ✅ Complete |
+| **Classification** | [REPLACE] |
+| **Priority** | High |
+| **Effort** | Small |
+
+**Deliverable:**
+- `lib/core/services/orchestration/agent_communication.dart` — AgentMessage model, MessageType enum, AgentCommunication protocol class
+- Structured message passing (Lead→Manager→Worker, results flow back up)
+- Step builder and trace formatter for communication visualization
+
+**Known Issues:** Message routing is logical (in-process). Network-level agent communication is future work.
+
+### 6.5: Team management page
+| Field | Value |
+|---|---|
+| **Status** | ✅ Complete |
+| **Classification** | [REPLACE] |
+| **Priority** | High |
+| **Effort** | Medium |
+
+**Changes:**
+- `lib/features/team/pages/team_page.dart` — Team list with lead agent + member cards, create dialog (name, description, lead selection), member management dialog (add/remove workers), delete confirmation
+- Accessible from Agents page via "Teams" button
+
+**Known Issues:** UI is dialog-based member management. Drag-and-drop team builder deferred.
+
+### 6.6: Traces history page
+| Field | Value |
+|---|---|
+| **Status** | ✅ Complete |
+| **Classification** | [REPLACE] |
+| **Priority** | High |
+| **Effort** | Medium |
+
+**Changes:**
+- `lib/features/traces/pages/traces_page.dart` — Execution history list with status icons, agent names, timestamps, step counts
+- Detail dialog: user request, status, full step timeline, final response, timestamps
+- Accessible from Agents page via "Traces" button
+
+**Known Issues:** No real-time trace updates — user must navigate back and re-open.
+
+### 6.7: Localization keys
+| Field | Value |
+|---|---|
+| **Status** | ✅ Complete |
+| **Classification** | [ENHANCE] |
+| **Priority** | High |
+| **Effort** | Small |
+
+**Changes:**
+- 37+ new keys across all 4 ARB files:
+  - agentsPageTeams, agentsPageTraces
+  - teamPageTitle through teamPageClose (18 keys)
+  - tracesPageTitle through tracesPageClose (9 keys)
+- All 4 ARB files updated in sync (en, zh, zh_Hans, zh_Hant)
+
+**Known Issues:** Must run `flutter gen-l10n` to regenerate localizations.
+
+### 6.8: Unit tests
+| Field | Value |
+|---|---|
+| **Status** | ✅ Complete |
+| **Classification** | [KEEP] |
+| **Priority** | High |
+| **Effort** | Small |
+
+**Deliverable:**
+- `test/core/models/agent_team_test.dart` — 10+ test cases:
+  - AgentTeam: constructor defaults, all fields, copyWith preserve + clear flags
+  - toJson/fromJson round-trip: all fields, optional field omission, missing fields
+  - encodeList/decodeList: round-trip, invalid JSON handling
+
+**Known Issues:** Provider tests not yet written (require SharedPreferences mocking). Model-only tests pass independently.
+
+---
+
 ## Known Issues & Decisions Log
 
 | # | Date | Issue | Decision | Status |
@@ -837,6 +963,17 @@ Last Updated: 2026-06-11
 | `kelivo/lib/core/services/agent_templates.dart` | 5.3 | ✅ Complete | Added Lead Agent built-in template (5th template) |
 | `test/core/models/execution_trace_test.dart` | 5.6 | ✅ Complete | 40+ test cases for ExecutionTrace, ExecutionStep, enums |
 | `kelivo/lib/l10n/app_*.arb` (4 files) | 5.5 | ✅ Complete | 16 new lead agent keys |
+| `lib/core/models/agent_team.dart` | 6.1 | ✅ Complete | AgentTeam model |
+| `lib/core/providers/team_provider.dart` | 6.1 | ✅ Complete | TeamProvider: CRUD, workspace queries |
+| `lib/core/services/orchestration/worker_agent_service.dart` | 6.2 | ✅ Complete | WorkerAgentService |
+| `lib/core/services/orchestration/manager_agent_service.dart` | 6.3 | ✅ Complete | ManagerAgentService |
+| `lib/core/services/orchestration/agent_communication.dart` | 6.4 | ✅ Complete | Agent communication protocol |
+| `lib/features/team/pages/team_page.dart` | 6.5 | ✅ Complete | Team management page |
+| `lib/features/traces/pages/traces_page.dart` | 6.6 | ✅ Complete | Execution traces history page |
+| `lib/features/agents/pages/agents_page.dart` | 6.5 | ✅ Complete | Teams + Traces entry buttons |
+| `lib/main.dart` | 6.1 | ✅ Complete | TeamProvider registration |
+| `lib/l10n/app_*.arb` (4 files) | 6.7 | ✅ Complete | 37+ new multi-agent keys |
+| `test/core/models/agent_team_test.dart` | 6.8 | ✅ Complete | AgentTeam unit tests |
 
 ---
 

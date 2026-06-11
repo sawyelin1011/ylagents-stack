@@ -2057,5 +2057,36 @@
         "type": "String"
       }
     }
-  }
+  },
+  "agentsPageTeams": "团队",
+  "agentsPageTraces": "执行追踪",
+  "teamPageTitle": "Agent 团队",
+  "teamPageCreateTeam": "创建团队",
+  "teamPageEmpty": "暂无团队。创建团队来组织你的 Agent。",
+  "teamPageTeamName": "团队名称",
+  "teamPageTeamDescription": "描述（可选）",
+  "teamPageSelectLead": "主导 Agent",
+  "teamPageNoLeadAgents": "暂无可用主导 Agent。请先创建一个主导 Agent。",
+  "teamPageCreate": "创建",
+  "teamPageCancel": "取消",
+  "teamPageDelete": "删除",
+  "teamPageDeleteConfirmTitle": "删除团队",
+  "teamPageDeleteConfirmContent": "确定要删除此团队吗？此操作不可撤销。",
+  "teamPageLeadAgent": "主导：",
+  "teamPageNoMembers": "未分配工作者 Agent",
+  "teamPageMembers": "成员",
+  "teamPageAddWorker": "添加工作者",
+  "teamPageManageMembers": "管理成员",
+  "teamPageNoAvailableWorkers": "没有可用工作者 Agent",
+  "teamPageClose": "关闭",
+  "tracesPageTitle": "执行追踪",
+  "tracesPageEmpty": "暂无执行记录。运行主导 Agent 后可查看追踪。",
+  "tracesPageSteps": "步骤",
+  "tracesPageDetailTitle": "执行详情",
+  "tracesPageRequest": "请求",
+  "tracesPageStatus": "状态",
+  "tracesPageResult": "结果",
+  "tracesPageCreated": "创建时间",
+  "tracesPageUpdated": "更新时间",
+  "tracesPageClose": "关闭"
 }
