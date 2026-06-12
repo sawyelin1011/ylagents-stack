@@ -494,7 +494,10 @@ class _TeamPageState extends State<TeamPage> {
                           _showManageMembersDialog(
                             ctx,
                             team.copyWith(
-                              memberAgentIds: [...team.memberAgentIds, agent.id],
+                              memberAgentIds: [
+                                ...team.memberAgentIds,
+                                agent.id,
+                              ],
                             ),
                             agentProvider,
                             l10n,
