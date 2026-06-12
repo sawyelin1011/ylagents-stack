@@ -83,7 +83,9 @@ class Skill {
     source: SkillInstallSource.fromJson((json['source'] as String?) ?? 'local'),
     sourceUrl: json['sourceUrl'] as String?,
     content: json['content'] != null
-        ? SkillContent.fromJson(json['content'] as Map<String, dynamic>)
+        ? SkillContent.fromJson(
+            Map<String, dynamic>.from(json['content'] as Map),
+          )
         : SkillContent.empty(),
     installedAt: DateTime.fromMillisecondsSinceEpoch(
       (json['installedAt'] as num?)?.toInt() ??

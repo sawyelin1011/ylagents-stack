@@ -176,7 +176,10 @@ void main() {
       expect(template, isNotNull);
       expect(template!.name, 'Lead Agent');
       expect(template.agentType, AgentType.lead);
-      expect(template.genome.goals, contains('Delegate tasks'));
+      expect(
+        template.genome.goals,
+        contains('Delegate tasks to the most suitable worker agents'),
+      );
     });
 
     test('getById returns null for unknown id', () {

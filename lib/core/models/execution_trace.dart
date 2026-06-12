@@ -208,7 +208,7 @@ class ExecutionStep {
 
   factory ExecutionStep.fromJson(Map<String, dynamic> json) {
     return ExecutionStep(
-      id: json['id'] as String,
+      id: (json['id'] as String?) ?? '',
       type: StepType.fromJson((json['type'] as String?) ?? 'plan'),
       status: StepStatus.fromJson((json['status'] as String?) ?? 'pending'),
       description: (json['description'] as String?) ?? '',
