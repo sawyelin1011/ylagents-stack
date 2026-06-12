@@ -415,19 +415,20 @@ class _TeamPageState extends State<TeamPage> {
                         team.id,
                         id,
                       );
-                      if (ctx.mounted) Navigator.pop(ctx);
-                      // ignore: use_build_context_synchronously
-                      _showManageMembersDialog(
-                        context,
-                        team.copyWith(
-                          memberAgentIds: team.memberAgentIds
-                              .where((a) => a != id)
-                              .toList(),
-                        ),
-                        agentProvider,
-                        l10n,
-                        cs,
-                      );
+                      if (ctx.mounted) {
+                        Navigator.pop(ctx);
+                        _showManageMembersDialog(
+                          ctx,
+                          team.copyWith(
+                            memberAgentIds: team.memberAgentIds
+                                .where((a) => a != id)
+                                .toList(),
+                          ),
+                          agentProvider,
+                          l10n,
+                          cs,
+                        );
+                      }
                     },
                   ),
                 );
@@ -488,17 +489,18 @@ class _TeamPageState extends State<TeamPage> {
                           team.id,
                           agent.id,
                         );
-                        if (ctx.mounted) Navigator.pop(ctx);
-                        // ignore: use_build_context_synchronously
-                        _showManageMembersDialog(
-                          context,
-                          team.copyWith(
-                            memberAgentIds: [...team.memberAgentIds, agent.id],
-                          ),
-                          agentProvider,
-                          l10n,
-                          cs,
-                        );
+                        if (ctx.mounted) {
+                          Navigator.pop(ctx);
+                          _showManageMembersDialog(
+                            ctx,
+                            team.copyWith(
+                              memberAgentIds: [...team.memberAgentIds, agent.id],
+                            ),
+                            agentProvider,
+                            l10n,
+                            cs,
+                          );
+                        }
                       },
                     ),
                   ),
