@@ -66,3 +66,6 @@ internationalization.md
 /.agent/
 /.agents/
 /skills-lock.json
+.mcp.json
+.agentsroom/handoff-transcript-*.txt
+.agentsroom/handoff-summary-*.md
