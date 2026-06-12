@@ -631,7 +631,9 @@ class _SideDrawerState extends State<SideDrawer> with TickerProviderStateMixin {
                       onTap: () {
                         Navigator.pop(ctx);
                         Navigator.of(context).push(
-                          MaterialPageRoute(builder: (_) => const ChannelsPage()),
+                          MaterialPageRoute(
+                            builder: (_) => const ChannelsPage(),
+                          ),
                         );
                       },
                     ),
@@ -661,7 +663,9 @@ class _SideDrawerState extends State<SideDrawer> with TickerProviderStateMixin {
                       onTap: () {
                         Navigator.pop(ctx);
                         Navigator.of(context).push(
-                          MaterialPageRoute(builder: (_) => const RuntimePage()),
+                          MaterialPageRoute(
+                            builder: (_) => const RuntimePage(),
+                          ),
                         );
                       },
                     ),
