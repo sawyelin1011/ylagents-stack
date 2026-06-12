@@ -104,16 +104,22 @@ jobs:
           EOF
 
       - name: Setup Android signing
-        if: ${{ secrets.SIGN_KEYSTORE_BASE64 != '' }}
         env:
           SIGN_KEYSTORE_BASE64: ${{ secrets.SIGN_KEYSTORE_BASE64 }}
+          KEYSTORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
+          KEY_ALIAS: ${{ secrets.KEY_ALIAS }}
+          KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
         run: |
+          if [ -z "$SIGN_KEYSTORE_BASE64" ]; then
+            echo "No signing keystore configured, building unsigned APK"
+            exit 0
+          fi
           echo "$SIGN_KEYSTORE_BASE64" | base64 --decode > android/app/key.jks
           cat > android/key.properties <<PROPS
           storeFile=key.jks
-          storePassword=${{ secrets.KEYSTORE_PASSWORD }}
-          keyAlias=${{ secrets.KEY_ALIAS }}
-          keyPassword=${{ secrets.KEY_PASSWORD }}
+          storePassword=$KEYSTORE_PASSWORD
+          keyAlias=$KEY_ALIAS
+          keyPassword=$KEY_PASSWORD
           PROPS
 
       - run: flutter build apk --release --split-per-abi
