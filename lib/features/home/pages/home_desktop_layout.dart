@@ -14,6 +14,7 @@ import '../../../core/models/assistant.dart';
 import '../../../core/providers/user_provider.dart';
 import '../../../core/providers/settings_provider.dart';
 import '../../../core/providers/assistant_provider.dart';
+import '../../../core/providers/workspace_provider.dart';
 import '../../../shared/animations/widgets.dart';
 import '../../../shared/widgets/ios_tactile.dart';
 import '../../../utils/brand_assets.dart';
@@ -195,6 +196,7 @@ class HomeDesktopScaffold extends StatelessWidget {
       onNewConversation: ({closeDrawer = true}) => onNewConversation(),
       onSelectConversation: (id, {closeDrawer = true}) =>
           onSelectConversation(id),
+      workspaceId: context.read<WorkspaceProvider>().currentWorkspace?.id,
     );
 
     return AnimatedContainer(

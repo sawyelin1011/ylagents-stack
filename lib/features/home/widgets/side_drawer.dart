@@ -46,6 +46,21 @@ import '../../../desktop/hotkeys/sidebar_tab_bus.dart';
 import '../../../desktop/desktop_settings_navigation_bus.dart';
 import 'dart:async';
 import '../../../features/search/services/global_session_search_service.dart';
+import '../../../core/providers/agent_provider.dart';
+import '../../../core/providers/workspace_provider.dart';
+import '../../../core/models/agent.dart';
+import '../../../features/agents/pages/agents_page.dart';
+import '../../../features/tasks/pages/tasks_page.dart';
+import '../../../features/team/pages/team_page.dart';
+import '../../../features/traces/pages/traces_page.dart';
+import '../../../features/skills/pages/skills_page.dart';
+import '../../../features/channels/pages/channels_page.dart';
+import '../../../features/sync/pages/sync_page.dart';
+import '../../../features/runtime/pages/runtime_page.dart';
+import '../../../features/dashboard/pages/dashboard_page.dart';
+import '../../../features/agent_factory/pages/agent_factory_page.dart';
+import '../../../features/knowledge/pages/knowledge_page.dart';
+import '../../../features/lead_agent/pages/lead_agent_execution_page.dart';
 import 'assistant_avatar.dart';
 import 'assistant_entry_actions.dart';
 
@@ -520,6 +535,156 @@ class _SideDrawerState extends State<SideDrawer> with TickerProviderStateMixin {
                   ],
                 ),
               ),
+            ),
+          ),
+        );
+      },
+    );
+  }
+
+  void _showYlAgentsMenu(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
+    final cs = Theme.of(context).colorScheme;
+
+    showModalBottomSheet<void>(
+      context: context,
+      backgroundColor: cs.surface,
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(top: Radius.circular(18)),
+      ),
+      builder: (ctx) {
+        return SafeArea(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Text(
+                  'YLAgents',
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: AppFontWeights.semibold,
+                    color: cs.onSurface,
+                  ),
+                ),
+                const SizedBox(height: 12),
+                Wrap(
+                  spacing: 8,
+                  runSpacing: 8,
+                  alignment: WrapAlignment.center,
+                  children: [
+                    _YlAgentsMenuItem(
+                      icon: Lucide.chartColumnBig,
+                      label: l10n.desktopNavDashboardTooltip,
+                      onTap: () {
+                        Navigator.pop(ctx);
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (_) => const DashboardPage(),
+                          ),
+                        );
+                      },
+                    ),
+                    _YlAgentsMenuItem(
+                      icon: Lucide.checkSquare,
+                      label: l10n.desktopNavTasksTooltip,
+                      onTap: () {
+                        Navigator.pop(ctx);
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (_) => const TasksPage(),
+                          ),
+                        );
+                      },
+                    ),
+                    _YlAgentsMenuItem(
+                      icon: Lucide.bot,
+                      label: l10n.desktopNavAgentsTooltip,
+                      onTap: () {
+                        Navigator.pop(ctx);
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (_) => const AgentsPage(),
+                          ),
+                        );
+                      },
+                    ),
+                    _YlAgentsMenuItem(
+                      icon: Lucide.users,
+                      label: l10n.teamPageTitle,
+                      onTap: () {
+                        Navigator.pop(ctx);
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (_) => const TeamPage(),
+                          ),
+                        );
+                      },
+                    ),
+                    _YlAgentsMenuItem(
+                      icon: Lucide.bookTemplate,
+                      label: l10n.skillsPageTitle,
+                      onTap: () {
+                        Navigator.pop(ctx);
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (_) => const SkillsPage(),
+                          ),
+                        );
+                      },
+                    ),
+                    _YlAgentsMenuItem(
+                      icon: Lucide.network,
+                      label: l10n.desktopNavChannelsTooltip,
+                      onTap: () {
+                        Navigator.pop(ctx);
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (_) => const ChannelsPage(),
+                          ),
+                        );
+                      },
+                    ),
+                    _YlAgentsMenuItem(
+                      icon: Lucide.binary,
+                      label: l10n.tracesPageTitle,
+                      onTap: () {
+                        Navigator.pop(ctx);
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (_) => const TracesPage(),
+                          ),
+                        );
+                      },
+                    ),
+                    _YlAgentsMenuItem(
+                      icon: Lucide.refreshCw,
+                      label: l10n.desktopNavSyncTooltip,
+                      onTap: () {
+                        Navigator.pop(ctx);
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (_) => const SyncPage(),
+                          ),
+                        );
+                      },
+                    ),
+                    _YlAgentsMenuItem(
+                      icon: Lucide.server,
+                      label: l10n.desktopNavRuntimeTooltip,
+                      onTap: () {
+                        Navigator.pop(ctx);
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (_) => const RuntimePage(),
+                          ),
+                        );
+                      },
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 12),
+              ],
             ),
           ),
         );
@@ -2188,6 +2353,21 @@ class _SideDrawerState extends State<SideDrawer> with TickerProviderStateMixin {
                                     ),
                                   );
                                 },
+                              ),
+                            ),
+                          ),
+                          const SizedBox(width: 4),
+                          // YLAgents 菜单按钮
+                          SizedBox(
+                            width: 45,
+                            height: 45,
+                            child: Center(
+                              child: IosIconButton(
+                                size: 22,
+                                color: textBase,
+                                icon: Lucide.Boxes,
+                                padding: const EdgeInsets.all(10),
+                                onTap: () => _showYlAgentsMenu(context),
                               ),
                             ),
                           ),
@@ -4131,6 +4311,48 @@ class _AssistantInlineTileState extends State<_AssistantInlineTile> {
           ? null
           : (details) => widget.onSecondaryTapDown!(details.globalPosition),
       child: content,
+    );
+  }
+}
+
+/// A small grid item for the YLAgents bottom sheet menu.
+class _YlAgentsMenuItem extends StatelessWidget {
+  final IconData icon;
+  final String label;
+  final VoidCallback onTap;
+
+  const _YlAgentsMenuItem({
+    required this.icon,
+    required this.label,
+    required this.onTap,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    final cs = Theme.of(context).colorScheme;
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        width: 80,
+        padding: const EdgeInsets.symmetric(vertical: 12),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Icon(icon, size: 24, color: cs.primary),
+            const SizedBox(height: 6),
+            Text(
+              label,
+              textAlign: TextAlign.center,
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
+              style: TextStyle(
+                fontSize: 12,
+                color: cs.onSurface.withValues(alpha: 0.8),
+              ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }

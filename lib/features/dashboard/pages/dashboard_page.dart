@@ -14,7 +14,10 @@ import '../../../theme/app_font_weights.dart';
 /// Shows workspace name, type, agent count, conversation count, and quick actions.
 /// This is the default landing page when opening YLAgents.
 class DashboardPage extends StatelessWidget {
-  const DashboardPage({super.key});
+  final VoidCallback? onNewChat;
+  final VoidCallback? onNewAssistant;
+
+  const DashboardPage({super.key, this.onNewChat, this.onNewAssistant});
 
   @override
   Widget build(BuildContext context) {
@@ -86,11 +89,13 @@ class DashboardPage extends StatelessWidget {
                   icon: lucide.Lucide.messageCirclePlus,
                   label: l10n.dashboardPageNewChat,
                   color: cs.primary,
+                  onTap: onNewChat,
                 ),
                 _QuickActionChip(
                   icon: lucide.Lucide.plus,
                   label: l10n.dashboardPageNewAssistant,
                   color: cs.secondary,
+                  onTap: onNewAssistant,
                 ),
               ],
             ),
@@ -295,11 +300,13 @@ class _QuickActionChip extends StatelessWidget {
   final IconData icon;
   final String label;
   final Color color;
+  final VoidCallback? onTap;
 
   const _QuickActionChip({
     required this.icon,
     required this.label,
     required this.color,
+    this.onTap,
   });
 
   @override
@@ -307,7 +314,7 @@ class _QuickActionChip extends StatelessWidget {
     return ActionChip(
       avatar: Icon(icon, size: 16, color: color),
       label: Text(label),
-      onPressed: () {},
+      onPressed: onTap,
       side: BorderSide(color: color.withValues(alpha: 0.3)),
     );
   }

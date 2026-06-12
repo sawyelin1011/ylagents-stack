@@ -52,7 +52,7 @@ class _DesktopHomePageState extends State<DesktopHomePage> {
   void initState() {
     super.initState();
     if (widget.initialTabIndex != null) {
-      _activeTab = NavTab.values[widget.initialTabIndex!.clamp(0, 8)];
+      _activeTab = NavTab.values[widget.initialTabIndex!.clamp(0, NavTab.values.length - 1)];
     }
     _storageVisited = _activeTab == NavTab.settings;
     // Focus chat input on chat tab
@@ -161,6 +161,16 @@ class _DesktopHomePageState extends State<DesktopHomePage> {
     }
   }
 
+  void _onDashboardNewChat() {
+    _switchTab(NavTab.chats);
+    ChatActionBus.instance.fire(ChatAction.newTopic);
+  }
+
+  void _onDashboardNewAssistant() {
+    _switchTab(NavTab.chats);
+    ChatActionBus.instance.fire(ChatAction.newTopic);
+  }
+
   void _showMoreMenu(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
     final renderBox = context.findRenderObject() as RenderBox?;
@@ -250,7 +260,10 @@ class _DesktopHomePageState extends State<DesktopHomePage> {
               child: IndexedStack(
                 index: _activeTab.index,
                 children: [
-                  const DashboardPage(),
+                  const DashboardPage(
+                    onNewChat: _onDashboardNewChat,
+                    onNewAssistant: _onDashboardNewAssistant,
+                  ),
                   const TasksPage(),
                   const AgentsPage(),
                   const KnowledgePage(),

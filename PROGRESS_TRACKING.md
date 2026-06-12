@@ -1405,3 +1405,13 @@ Last Updated: 2026-06-11 (Phase 10 added)
 5. **Always prefer extension over replacement**
 6. **Every feature must ask**: Can this become Workspace Aware? Agent Aware? Multi-Agent Aware?
 7. **No mock, no simple, no placeholder** — every deliverable is real production code
+## New Fixes — 2026-06-13
+
+| # | Date | Issue | Decision | Status |
+|---|---|---|---|---|---|
+| 30 | 2026-06-13 | lib/secrets/fallback.dart missing from working tree | Created locally with empty siliconflowFallbackKey; CI already injects it. | Fixed |
+| 31 | 2026-06-13 | Mobile HomePage does not pass workspaceId to SideDrawer | workspaceId now passed from home_mobile_layout.dart and home_desktop_layout.dart. | Fixed |
+| 32 | 2026-06-13 | Dashboard quick action chips have no onTap | Added onNewChat and onNewAssistant callbacks wired to NavTab.chats + ChatAction.newTopic. | Fixed |
+| 33 | 2026-06-13 | Mobile has no entry point to YLAgents pages | Added Lucide.Boxes menu button in SideDrawer bottom bar that opens a bottom sheet with all YLAgents feature pages. | Fixed |
+| 34 | 2026-06-13 | NavTab clamp hardcoded to 8 instead of dynamic | Changed to NavTab.values.length - 1 so it auto-adjusts when tabs are added/removed. | Fixed |
+| 35 | 2026-06-13 | No auto-release CI workflow for Android/iOS/Windows | Created .github/workflows/auto-release.yml with quality gates, version resolution, and GitHub release publishing. | Fixed |
