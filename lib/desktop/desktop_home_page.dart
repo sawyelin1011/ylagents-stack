@@ -52,7 +52,8 @@ class _DesktopHomePageState extends State<DesktopHomePage> {
   void initState() {
     super.initState();
     if (widget.initialTabIndex != null) {
-      _activeTab = NavTab.values[widget.initialTabIndex!.clamp(0, NavTab.values.length - 1)];
+      _activeTab = NavTab
+          .values[widget.initialTabIndex!.clamp(0, NavTab.values.length - 1)];
     }
     _storageVisited = _activeTab == NavTab.settings;
     // Focus chat input on chat tab

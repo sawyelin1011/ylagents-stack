@@ -591,9 +591,7 @@ class _SideDrawerState extends State<SideDrawer> with TickerProviderStateMixin {
                       onTap: () {
                         Navigator.pop(ctx);
                         Navigator.of(context).push(
-                          MaterialPageRoute(
-                            builder: (_) => const TasksPage(),
-                          ),
+                          MaterialPageRoute(builder: (_) => const TasksPage()),
                         );
                       },
                     ),
@@ -603,9 +601,7 @@ class _SideDrawerState extends State<SideDrawer> with TickerProviderStateMixin {
                       onTap: () {
                         Navigator.pop(ctx);
                         Navigator.of(context).push(
-                          MaterialPageRoute(
-                            builder: (_) => const AgentsPage(),
-                          ),
+                          MaterialPageRoute(builder: (_) => const AgentsPage()),
                         );
                       },
                     ),
@@ -615,9 +611,7 @@ class _SideDrawerState extends State<SideDrawer> with TickerProviderStateMixin {
                       onTap: () {
                         Navigator.pop(ctx);
                         Navigator.of(context).push(
-                          MaterialPageRoute(
-                            builder: (_) => const TeamPage(),
-                          ),
+                          MaterialPageRoute(builder: (_) => const TeamPage()),
                         );
                       },
                     ),
@@ -627,9 +621,7 @@ class _SideDrawerState extends State<SideDrawer> with TickerProviderStateMixin {
                       onTap: () {
                         Navigator.pop(ctx);
                         Navigator.of(context).push(
-                          MaterialPageRoute(
-                            builder: (_) => const SkillsPage(),
-                          ),
+                          MaterialPageRoute(builder: (_) => const SkillsPage()),
                         );
                       },
                     ),
@@ -639,9 +631,7 @@ class _SideDrawerState extends State<SideDrawer> with TickerProviderStateMixin {
                       onTap: () {
                         Navigator.pop(ctx);
                         Navigator.of(context).push(
-                          MaterialPageRoute(
-                            builder: (_) => const ChannelsPage(),
-                          ),
+                          MaterialPageRoute(builder: (_) => const ChannelsPage()),
                         );
                       },
                     ),
@@ -651,9 +641,7 @@ class _SideDrawerState extends State<SideDrawer> with TickerProviderStateMixin {
                       onTap: () {
                         Navigator.pop(ctx);
                         Navigator.of(context).push(
-                          MaterialPageRoute(
-                            builder: (_) => const TracesPage(),
-                          ),
+                          MaterialPageRoute(builder: (_) => const TracesPage()),
                         );
                       },
                     ),
@@ -663,9 +651,7 @@ class _SideDrawerState extends State<SideDrawer> with TickerProviderStateMixin {
                       onTap: () {
                         Navigator.pop(ctx);
                         Navigator.of(context).push(
-                          MaterialPageRoute(
-                            builder: (_) => const SyncPage(),
-                          ),
+                          MaterialPageRoute(builder: (_) => const SyncPage()),
                         );
                       },
                     ),
@@ -675,9 +661,7 @@ class _SideDrawerState extends State<SideDrawer> with TickerProviderStateMixin {
                       onTap: () {
                         Navigator.pop(ctx);
                         Navigator.of(context).push(
-                          MaterialPageRoute(
-                            builder: (_) => const RuntimePage(),
-                          ),
+                          MaterialPageRoute(builder: (_) => const RuntimePage()),
                         );
                       },
                     ),
