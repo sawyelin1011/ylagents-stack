@@ -4,7 +4,7 @@ import 'package:Kelivo/core/models/agent_team.dart';
 void main() {
   group('AgentTeam', () {
     test('constructor sets default values', () {
-      final now = DateTime.now();
+      final now = DateTime.now(); // ignore: unused_local_variable
       final team = AgentTeam(
         id: 'team-1',
         name: 'Test Team',

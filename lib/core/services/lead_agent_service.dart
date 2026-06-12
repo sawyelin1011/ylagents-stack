@@ -1,7 +1,6 @@
 import 'dart:async';
-import 'dart:convert';
-
-import 'package:flutter/foundation.dart';
+// import 'dart:convert';
+// import 'package:flutter/foundation.dart';
 import 'package:uuid/uuid.dart';
 
 import '../../l10n/app_localizations.dart';
@@ -134,6 +133,7 @@ class LeadAgentService {
         final workerResult = await _executeTask(task, leadAgentId, userRequest);
         workerResults[task.id] = workerResult;
         await taskProvider.updateTaskStatus(task.id, TaskStatus.completed);
+        // ignore: unused_local_variable
         final stepIndex =
             trace.steps.length - (subTasks.length - subTasks.indexOf(task));
         // Update the corresponding execution step
@@ -370,6 +370,7 @@ Synthesize the information, resolve any contradictions, and present a clear answ
     required String userMessage,
   }) async {
     // Get the assistant for this agent
+    // ignore: unused_local_variable
     final agent = agentProvider.getById(agentId);
     final assistant = assistantProvider.getById(agentId);
     if (assistant == null) return 'Assistant not found';

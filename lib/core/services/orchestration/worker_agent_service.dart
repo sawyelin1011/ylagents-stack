@@ -1,8 +1,8 @@
 import 'dart:async';
 import 'package:uuid/uuid.dart';
-import '../../models/agent.dart';
-import '../../models/execution_trace.dart';
-import '../../models/task.dart';
+// import '../../models/agent.dart';
+// import '../../models/execution_trace.dart';
+// import '../../models/task.dart';
 
 /// Result from a single worker's execution.
 class WorkerExecutionResult {
@@ -27,7 +27,7 @@ class WorkerExecutionResult {
 /// Workers do NOT communicate with each other — all results
 /// flow back through the Lead or Manager agent.
 class WorkerAgentService {
-  final _uuid = const Uuid();
+  final _uuid = const Uuid(); // ignore: unused_field
 
   /// Execute a single task using a worker agent's LLM.
   ///

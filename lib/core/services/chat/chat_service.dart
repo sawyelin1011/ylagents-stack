@@ -1569,9 +1569,7 @@ class ChatService extends ChangeNotifier {
     }
     // Also migrate draft conversations
     for (final draft in _draftConversations.values) {
-      if (draft.workspaceId == null) {
-        draft.workspaceId = workspaceId;
-      }
+      draft.workspaceId ??= workspaceId;
     }
     if (changed) {
       notifyListeners();

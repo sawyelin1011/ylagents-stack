@@ -179,7 +179,7 @@ class WebWidgetAdapter implements ChannelAdapter {
     s.async = true;
     s.setAttribute('data-title', '$title');
     s.setAttribute('data-color', '$primaryColor');
-    ${greeting.isNotEmpty ? "s.setAttribute('data-greeting', '" + greeting.replaceAll("'", "\\'") + "');" : ''}
+    ${greeting.isNotEmpty ? "s.setAttribute('data-greeting', '${greeting.replaceAll("'", "\\'")}');" : ''}
     ${allowedOrigins.isNotEmpty ? "s.setAttribute('data-origins', '$allowedOrigins');" : ''}
     document.head.appendChild(s);
   })();

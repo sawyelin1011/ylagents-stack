@@ -1,6 +1,5 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import '../../../core/models/agent_channel.dart';
 import '../../../core/providers/channel_provider.dart';
@@ -280,6 +279,7 @@ class _ChannelsPageState extends State<ChannelsPage> {
                     type: type,
                     configJson: _encodeConfig(config),
                   );
+                  // ignore: use_build_context_synchronously
                   await context.read<ChannelProvider>().createChannel(channel);
                   if (ctx.mounted) Navigator.pop(ctx);
                 },

@@ -59,7 +59,6 @@ class DesktopNavRail extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final cs = Theme.of(context).colorScheme;
     final l10n = AppLocalizations.of(context)!;
     final isMac = Platform.isMacOS;
     final double topGap = isMac ? 36.0 : 8.0;

@@ -146,6 +146,7 @@ class _TeamPageState extends State<TeamPage> {
                                     ),
                                   );
                                   if (confirmed == true && mounted) {
+                                    // ignore: use_build_context_synchronously
                                     await context
                                         .read<TeamProvider>()
                                         .deleteTeam(team.id);
@@ -305,6 +306,7 @@ class _TeamPageState extends State<TeamPage> {
                   )
                 else
                   DropdownButtonFormField<String>(
+                    // ignore: deprecated_member_use
                     value: selectedLeadId,
                     decoration: InputDecoration(
                       labelText: l10n.teamPageSelectLead,
@@ -414,6 +416,7 @@ class _TeamPageState extends State<TeamPage> {
                         id,
                       );
                       if (ctx.mounted) Navigator.pop(ctx);
+                      // ignore: use_build_context_synchronously
                       _showManageMembersDialog(
                         context,
                         team.copyWith(
@@ -486,6 +489,7 @@ class _TeamPageState extends State<TeamPage> {
                           agent.id,
                         );
                         if (ctx.mounted) Navigator.pop(ctx);
+                        // ignore: use_build_context_synchronously
                         _showManageMembersDialog(
                           context,
                           team.copyWith(

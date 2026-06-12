@@ -468,6 +468,7 @@ class MyApp extends StatelessWidget {
                           );
                           final personalId = wsProvider.currentWorkspace?.id;
                           if (personalId != null) {
+                            // ignore: use_build_context_synchronously
                             final assistantProvider = ctx
                                 .read<AssistantProvider>();
                             final unassigned = assistantProvider.assistants
@@ -477,6 +478,7 @@ class MyApp extends StatelessWidget {
                             await wsProvider.migrateLegacyData(
                               personalWorkspaceId: personalId,
                               unassignedAssistantIds: unassigned,
+                              // ignore: use_build_context_synchronously
                               chatService: ctx.read<ChatService>(),
                               onUpdateAssistant: (id, wsId) async {
                                 final a = assistantProvider.getById(id);

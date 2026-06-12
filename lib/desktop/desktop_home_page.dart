@@ -43,7 +43,7 @@ class DesktopHomePage extends StatefulWidget {
 
 class _DesktopHomePageState extends State<DesktopHomePage> {
   NavTab _activeTab = NavTab.dashboard;
-  bool _storageVisited = false;
+  bool _storageVisited = false; // ignore: unused_field
   StreamSubscription<HotkeyAction>? _hotkeySub;
   StreamSubscription<ChatAction>? _chatActionSub;
   StreamSubscription<DesktopSettingsNavigationTarget>? _settingsNavSub;
@@ -206,8 +206,10 @@ class _DesktopHomePageState extends State<DesktopHomePage> {
       ],
     ).then((value) {
       if (value == 'translate') {
+        // ignore: use_build_context_synchronously
         _showTranslatePage(context);
       } else if (value == 'storage') {
+        // ignore: use_build_context_synchronously
         _showStoragePage(context);
       }
     });
@@ -261,7 +263,7 @@ class _DesktopHomePageState extends State<DesktopHomePage> {
               child: IndexedStack(
                 index: _activeTab.index,
                 children: [
-                  const DashboardPage(
+                  DashboardPage(
                     onNewChat: _onDashboardNewChat,
                     onNewAssistant: _onDashboardNewAssistant,
                   ),

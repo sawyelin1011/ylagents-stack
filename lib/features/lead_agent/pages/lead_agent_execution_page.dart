@@ -28,7 +28,7 @@ class _LeadAgentExecutionPageState extends State<LeadAgentExecutionPage> {
   final _requestController = TextEditingController();
   bool _isExecuting = false;
   ExecutionTrace? _currentTrace;
-  String? _currentResult;
+  String? _currentResult; // ignore: unused_field
 
   @override
   void dispose() {

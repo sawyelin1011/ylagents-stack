@@ -12,7 +12,7 @@ class TraceProvider extends ChangeNotifier {
   static const String _storageKey = 'execution_traces_v1';
 
   final List<ExecutionTrace> _traces = <ExecutionTrace>[];
-  bool _loaded = false;
+  bool _loaded = false; // ignore: unused_field
 
   /// Unmodifiable view of all traces.
   UnmodifiableListView<ExecutionTrace> get traces =>

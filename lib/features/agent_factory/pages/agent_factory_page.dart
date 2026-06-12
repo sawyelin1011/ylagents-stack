@@ -317,6 +317,7 @@ class _AgentFactoryPageState extends State<AgentFactoryPage> {
         const SizedBox(height: 20),
         // Agent type dropdown
         DropdownButtonFormField<AgentType>(
+          // ignore: deprecated_member_use
           value: _agentType,
           decoration: InputDecoration(
             labelText: l10n.agentGenomeTypeLabel,

@@ -3,7 +3,7 @@ import 'package:provider/provider.dart';
 import '../../../core/providers/auth_provider.dart';
 import '../../../core/providers/sync_provider.dart';
 import '../../../core/providers/workspace_provider.dart';
-import '../../../core/models/sync_device.dart';
+// import '../../../core/models/sync_device.dart';
 import '../../../core/models/sync_record.dart';
 import '../../../icons/lucide_adapter.dart' as lucide;
 import '../../../l10n/app_localizations.dart';

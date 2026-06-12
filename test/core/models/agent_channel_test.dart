@@ -26,7 +26,7 @@ void main() {
 
   group('AgentChannel', () {
     test('constructor sets default values', () {
-      final now = DateTime.now();
+      final now = DateTime.now(); // ignore: unused_local_variable
       final channel = AgentChannel(
         id: 'ch-1',
         name: 'My Bot',

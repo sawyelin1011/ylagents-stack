@@ -3,7 +3,7 @@ import 'package:uuid/uuid.dart';
 import '../../models/agent.dart';
 import '../../models/agent_team.dart';
 import '../../models/execution_trace.dart';
-import '../../models/task.dart';
+// import '../../models/task.dart';
 import 'worker_agent_service.dart';
 
 /// Coordinates work between a Lead Agent and a team of Workers.
