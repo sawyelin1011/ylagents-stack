@@ -122,21 +122,20 @@ jobs:
           keyPassword=$KEY_PASSWORD
           PROPS
 
-      - run: flutter build apk --release --split-per-abi
+      - run: flutter build apk --debug
 
       - name: Rename APKs
         run: |
           cd build/app/outputs/flutter-apk
-          for f in app-*-release.apk; do
-            abi=$(echo "$f" | sed -E 's/app-(.*)-release\.apk/\1/')
-            mv "$f" "Kelivo_android_${VERSION}_${abi}.apk"
+          for f in app-*.apk; do
+            mv "$f" "Kelivo_android_debug_${VERSION}.apk"
           done
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: Android-APKs
-          path: build/app/outputs/flutter-apk/Kelivo_android_*.apk
+          name: Android-Debug-APK
+          path: build/app/outputs/flutter-apk/Kelivo_android_debug_*.apk
 
       - name: Publish release
         if: env.IS_RELEASE == 'true'
