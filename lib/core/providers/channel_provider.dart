@@ -1,13 +1,13 @@
 import 'dart:convert';
 import 'package:flutter/foundation.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import '../models/agent_channel.dart';
 
 /// Debug log helper - only prints in debug mode.
 void _debugLog(String msg) {
   // ignore: avoid_print
   debugPrint('[ChannelProvider] $msg');
 }
-import 'package:shared_preferences/shared_preferences.dart';
-import '../models/agent_channel.dart';
 
 /// Manages [AgentChannel] persistence and lifecycle.
 ///

@@ -4,11 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../../core/models/agent_channel.dart';
 import '../../../core/providers/channel_provider.dart';
-
-void _debugLog(String msg) {
-  // ignore: avoid_print
-  debugPrint('[ChannelsPage] $msg');
-}
 import '../../../core/providers/agent_provider.dart';
 import '../../../core/providers/workspace_provider.dart';
 import '../../../core/services/channels/channel_adapter.dart';
@@ -16,6 +11,11 @@ import '../../../core/services/channels/channel_registry.dart';
 import '../../../icons/lucide_adapter.dart' as lucide;
 import '../../../l10n/app_localizations.dart';
 import '../../../theme/app_font_weights.dart';
+
+void _debugLog(String msg) {
+  // ignore: avoid_print
+  debugPrint('[ChannelsPage] $msg');
+}
 
 /// Channels management page — configure external channel integrations.
 class ChannelsPage extends StatefulWidget {
