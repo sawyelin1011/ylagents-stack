@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../../core/models/workspace.dart';
@@ -40,35 +41,41 @@ class DashboardPage extends StatelessWidget {
             _WorkspaceHeader(l10n: l10n, cs: cs),
             const SizedBox(height: 24),
             // Stats cards
-            Row(
-              children: [
-                Expanded(
-                  child: _StatCard(
-                    icon: lucide.Lucide.bot,
-                    label: l10n.desktopNavAgentsTooltip,
-                    value: '$agentCount',
-                    color: cs.primary,
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                children: [
+                  SizedBox(
+                    width: 140,
+                    child: _StatCard(
+                      icon: lucide.Lucide.bot,
+                      label: l10n.desktopNavAgentsTooltip,
+                      value: '$agentCount',
+                      color: cs.primary,
+                    ),
                   ),
-                ),
-                const SizedBox(width: 12),
-                Expanded(
-                  child: _StatCard(
-                    icon: lucide.Lucide.messageCircle,
-                    label: l10n.desktopNavChatTooltip,
-                    value: '${conversations.length}',
-                    color: cs.secondary,
+                  const SizedBox(width: 12),
+                  SizedBox(
+                    width: 140,
+                    child: _StatCard(
+                      icon: lucide.Lucide.messageCircle,
+                      label: l10n.desktopNavChatTooltip,
+                      value: '${conversations.length}',
+                      color: cs.secondary,
+                    ),
                   ),
-                ),
-                const SizedBox(width: 12),
-                Expanded(
-                  child: _StatCard(
-                    icon: lucide.Lucide.checkSquare,
-                    label: l10n.dashboardPageTasks,
-                    value: '${context.watch<TaskProvider>().taskCount}',
-                    color: cs.tertiary,
+                  const SizedBox(width: 12),
+                  SizedBox(
+                    width: 140,
+                    child: _StatCard(
+                      icon: lucide.Lucide.checkSquare,
+                      label: l10n.dashboardPageTasks,
+                      value: '${context.watch<TaskProvider>().taskCount}',
+                      color: cs.tertiary,
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
             const SizedBox(height: 24),
             // Quick actions section
@@ -89,13 +96,19 @@ class DashboardPage extends StatelessWidget {
                   icon: lucide.Lucide.messageCirclePlus,
                   label: l10n.dashboardPageNewChat,
                   color: cs.primary,
-                  onTap: onNewChat,
+                  onTap: () {
+                    debugPrint('[DashboardPage] QuickAction: New Chat tapped');
+                    onNewChat?.call();
+                  },
                 ),
                 _QuickActionChip(
                   icon: lucide.Lucide.plus,
                   label: l10n.dashboardPageNewAssistant,
                   color: cs.secondary,
-                  onTap: onNewAssistant,
+                  onTap: () {
+                    debugPrint('[DashboardPage] QuickAction: New Assistant tapped');
+                    onNewAssistant?.call();
+                  },
                 ),
               ],
             ),
@@ -200,26 +213,32 @@ class _WorkspaceHeader extends StatelessWidget {
           ),
         ),
         const SizedBox(width: 16),
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              ws.name,
-              style: TextStyle(
-                fontSize: 22,
-                fontWeight: AppFontWeights.semibold,
-                color: cs.onSurface,
+        Expanded(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                ws.name,
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+                style: TextStyle(
+                  fontSize: 22,
+                  fontWeight: AppFontWeights.semibold,
+                  color: cs.onSurface,
+                ),
               ),
-            ),
-            const SizedBox(height: 2),
-            Text(
-              _typeLabel(ws.type, l10n),
-              style: TextStyle(
-                fontSize: 13,
-                color: cs.onSurface.withValues(alpha: 0.6),
+              const SizedBox(height: 2),
+              Text(
+                _typeLabel(ws.type, l10n),
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+                style: TextStyle(
+                  fontSize: 13,
+                  color: cs.onSurface.withValues(alpha: 0.6),
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ],
     );

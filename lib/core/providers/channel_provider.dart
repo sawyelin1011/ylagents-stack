@@ -1,5 +1,11 @@
 import 'dart:convert';
 import 'package:flutter/foundation.dart';
+
+/// Debug log helper - only prints in debug mode.
+void _debugLog(String msg) {
+  // ignore: avoid_print
+  debugPrint('[ChannelProvider] $msg');
+}
 import 'package:shared_preferences/shared_preferences.dart';
 import '../models/agent_channel.dart';
 
@@ -25,8 +31,10 @@ class ChannelProvider extends ChangeNotifier {
   Future<void> _load() async {
     final prefs = await SharedPreferences.getInstance();
     final raw = prefs.getString(_storageKey);
+    _debugLog('_load: raw=${raw?.length ?? 0} chars');
     if (raw != null && raw.isNotEmpty) {
       _channels.addAll(AgentChannel.decodeList(raw));
+      _debugLog('_load: loaded ${_channels.length} channels');
     }
     _loaded = true;
     notifyListeners();
@@ -39,10 +47,13 @@ class ChannelProvider extends ChangeNotifier {
 
   /// Get channels for a workspace.
   List<AgentChannel> getChannelsForWorkspace(String? workspaceId) {
+    _debugLog('getChannelsForWorkspace: workspaceId=$workspaceId total=${_channels.length}');
     if (workspaceId == null) return List.unmodifiable(_channels);
-    return _channels
+    final result = _channels
         .where((c) => c.workspaceId == workspaceId)
         .toList(growable: false);
+    _debugLog('getChannelsForWorkspace: returning ${result.length} channels');
+    return result;
   }
 
   /// Get channels bound to a specific agent.
@@ -59,13 +70,21 @@ class ChannelProvider extends ChangeNotifier {
 
   /// Create a new channel. Returns true if created, false if duplicate.
   Future<bool> createChannel(AgentChannel channel) async {
+    _debugLog('createChannel: name=${channel.name} type=${channel.type} agentId=${channel.agentId} wsId=${channel.workspaceId}');
+    _debugLog('createChannel: _loaded=$_loaded _channels.length=${_channels.length}');
     // Reject duplicate agent+type pair
     final exists = _channels.any(
       (c) => c.agentId == channel.agentId && c.type == channel.type,
     );
-    if (exists) return false;
+    _debugLog('createChannel: duplicate check=$exists (agentId=${channel.agentId}, type=${channel.type})');
+    if (exists) {
+      _debugLog('createChannel: REJECTED - duplicate found');
+      return false;
+    }
     _channels.add(channel);
+    _debugLog('createChannel: ADDED, now ${_channels.length} channels');
     await _persist();
+    _debugLog('createChannel: PERSISTED');
     notifyListeners();
     return true;
   }

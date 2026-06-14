@@ -1,8 +1,14 @@
 import 'dart:convert';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../../core/models/agent_channel.dart';
 import '../../../core/providers/channel_provider.dart';
+
+void _debugLog(String msg) {
+  // ignore: avoid_print
+  debugPrint('[ChannelsPage] $msg');
+}
 import '../../../core/providers/agent_provider.dart';
 import '../../../core/providers/workspace_provider.dart';
 import '../../../core/services/channels/channel_adapter.dart';
@@ -239,10 +245,13 @@ class _ChannelsPageState extends State<ChannelsPage> {
                 onPressed: () async {
                   final name = nameController.text.trim();
                   if (name.isEmpty) return;
+                  _debugLog('SAVE button pressed: name="$name"');
                   final wsProvider = context.read<WorkspaceProvider>();
                   final wsId = wsProvider.currentWorkspace?.id ?? '';
+                  _debugLog('SAVE: wsId=$wsId');
                   final agentProvider = context.read<AgentProvider>();
                   final agents = agentProvider.getAgentsForWorkspace(wsId);
+                  _debugLog('SAVE: agents.length=${agents.length}');
 
                   final config = <String, dynamic>{};
                   for (final field in adapter.configFields) {
@@ -270,6 +279,7 @@ class _ChannelsPageState extends State<ChannelsPage> {
                     );
                     if (selectedAgentId == null) return;
                   }
+                  _debugLog('SAVE: selectedAgentId=$selectedAgentId');
 
                   final channel = AgentChannel(
                     id: '${DateTime.now().millisecondsSinceEpoch}_${type.name}',
@@ -283,6 +293,7 @@ class _ChannelsPageState extends State<ChannelsPage> {
                   final created = await context
                       .read<ChannelProvider>()
                       .createChannel(channel);
+                  _debugLog('SAVE: channel created=$created');
                   if (ctx.mounted) {
                     if (created) {
                       Navigator.pop(ctx);
