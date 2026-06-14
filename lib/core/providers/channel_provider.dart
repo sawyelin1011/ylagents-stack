@@ -57,16 +57,17 @@ class ChannelProvider extends ChangeNotifier {
     return _channels[idx];
   }
 
-  /// Create a new channel.
-  Future<void> createChannel(AgentChannel channel) async {
+  /// Create a new channel. Returns true if created, false if duplicate.
+  Future<bool> createChannel(AgentChannel channel) async {
     // Reject duplicate agent+type pair
     final exists = _channels.any(
       (c) => c.agentId == channel.agentId && c.type == channel.type,
     );
-    if (exists) return;
+    if (exists) return false;
     _channels.add(channel);
     await _persist();
     notifyListeners();
+    return true;
   }
 
   /// Update an existing channel.

@@ -1,0 +1,8 @@
+app:
+  name: Kelivo
+  packageName: com.psycheas.kelivo
+  bundleId: com.psycheas.kelivo
+
+env: dev
+model: google/gemini-3-flash-preview
+reasoning: medium

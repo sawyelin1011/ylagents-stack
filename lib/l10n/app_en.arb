@@ -2555,6 +2555,7 @@
   "desktopNavChannelsTooltip": "Channels",
   "channelsPageSelectType": "Select Channel Type",
   "channelsPageBindAgent": "Bind to Agent",
+  "channelsPageDuplicate": "This channel already exists",
   "channelsStatusEnabled": "Enabled",
   "channelsEnable": "Enable",
   "channelsDisable": "Disable",

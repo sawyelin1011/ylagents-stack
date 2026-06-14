@@ -5834,6 +5834,9 @@ class AppLocalizationsZh extends AppLocalizations {
   String get channelsPageBindAgent => '绑定到智能体';
 
   @override
+  String get channelsPageDuplicate => '该渠道已存在';
+
+  @override
   String get channelsStatusEnabled => '已启用';
 
   @override
@@ -11865,6 +11868,9 @@ class AppLocalizationsZhHans extends AppLocalizationsZh {
 
   @override
   String get channelsPageBindAgent => '绑定到智能体';
+
+  @override
+  String get channelsPageDuplicate => '该渠道已存在';
 
   @override
   String get channelsStatusEnabled => '已启用';

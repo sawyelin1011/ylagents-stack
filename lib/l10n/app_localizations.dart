@@ -11204,6 +11204,12 @@ abstract class AppLocalizations {
   /// **'Bind to Agent'**
   String get channelsPageBindAgent;
 
+  /// No description provided for @channelsPageDuplicate.
+  ///
+  /// In en, this message translates to:
+  /// **'This channel already exists'**
+  String get channelsPageDuplicate;
+
   /// No description provided for @channelsStatusEnabled.
   ///
   /// In en, this message translates to:

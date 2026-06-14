@@ -280,8 +280,22 @@ class _ChannelsPageState extends State<ChannelsPage> {
                     configJson: _encodeConfig(config),
                   );
                   // ignore: use_build_context_synchronously
-                  await context.read<ChannelProvider>().createChannel(channel);
-                  if (ctx.mounted) Navigator.pop(ctx);
+                  final created = await context
+                      .read<ChannelProvider>()
+                      .createChannel(channel);
+                  if (ctx.mounted) {
+                    if (created) {
+                      Navigator.pop(ctx);
+                    } else {
+                      ScaffoldMessenger.of(ctx).showSnackBar(
+                        SnackBar(
+                          content: Text(
+                            l10n.channelsPageDuplicate,
+                          ),
+                        ),
+                      );
+                    }
+                  }
                 },
                 child: Text(l10n.channelsPageCreate),
               ),

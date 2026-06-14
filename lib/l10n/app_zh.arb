@@ -2132,6 +2132,7 @@
   "desktopNavChannelsTooltip": "渠道",
   "channelsPageSelectType": "选择渠道类型",
   "channelsPageBindAgent": "绑定到智能体",
+  "channelsPageDuplicate": "该渠道已存在",
   "channelsStatusEnabled": "已启用",
   "channelsEnable": "启用",
   "channelsDisable": "禁用",

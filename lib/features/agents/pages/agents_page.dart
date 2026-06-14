@@ -58,36 +58,45 @@ class AgentsPage extends StatelessWidget {
                   ),
                 ),
                 const Spacer(),
-                OutlinedButton.icon(
-                  icon: const Icon(lucide.Lucide.binary, size: 16),
-                  label: Text(l10n.agentsPageTraces),
-                  onPressed: () {
-                    Navigator.of(context).push(
-                      MaterialPageRoute(builder: (_) => const TracesPage()),
-                    );
-                  },
-                ),
-                const SizedBox(width: 8),
-                OutlinedButton.icon(
-                  icon: const Icon(lucide.Lucide.users, size: 16),
-                  label: Text(l10n.agentsPageTeams),
-                  onPressed: () {
-                    Navigator.of(
-                      context,
-                    ).push(MaterialPageRoute(builder: (_) => const TeamPage()));
-                  },
-                ),
-                const SizedBox(width: 8),
-                FilledButton.icon(
-                  icon: const Icon(lucide.Lucide.plus, size: 16),
-                  label: Text(l10n.agentFactoryNewAgent),
-                  onPressed: () {
-                    Navigator.of(context).push(
-                      MaterialPageRoute(
-                        builder: (_) => const AgentFactoryPage(),
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    children: [
+                      OutlinedButton.icon(
+                        icon: const Icon(lucide.Lucide.binary, size: 16),
+                        label: Text(l10n.agentsPageTraces),
+                        onPressed: () {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(builder: (_) => const TracesPage()),
+                          );
+                        },
                       ),
-                    );
-                  },
+                      const SizedBox(width: 8),
+                      OutlinedButton.icon(
+                        icon: const Icon(lucide.Lucide.users, size: 16),
+                        label: Text(l10n.agentsPageTeams),
+                        onPressed: () {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (_) => const TeamPage(),
+                            ),
+                          );
+                        },
+                      ),
+                      const SizedBox(width: 8),
+                      FilledButton.icon(
+                        icon: const Icon(lucide.Lucide.plus, size: 16),
+                        label: Text(l10n.agentFactoryNewAgent),
+                        onPressed: () {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (_) => const AgentFactoryPage(),
+                            ),
+                          );
+                        },
+                      ),
+                    ],
+                  ),
                 ),
               ],
             ),

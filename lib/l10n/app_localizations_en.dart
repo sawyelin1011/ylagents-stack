@@ -6062,6 +6062,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get channelsPageBindAgent => 'Bind to Agent';
 
   @override
+  String get channelsPageDuplicate => 'This channel already exists';
+
+  @override
   String get channelsStatusEnabled => 'Enabled';
 
   @override
